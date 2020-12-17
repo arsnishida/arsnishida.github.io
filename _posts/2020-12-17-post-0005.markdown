@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Scitools scATAC Metrics"
+date:   2020-12-17
+tags: scitools
+---
+
+**TSS enrichment at a single cell level:**
+<br>Calculated as the ratio of signal to noise. Signal is defined as the region around TSS +/- 100bp. Noise is defined as the 100bp regions +/- 2000bp from TSS regions that do no overlap with signal. This leads signal and noise being slightly different in size but reads are uniquely counted into a single bin versus other methods where a read can fall into multiple TSS and noise regions. Output is a two-column value file.
+<br>`scitools bam_tssenrich [bam] [hg38 or mm10 or dm6]`
+
+**TSS enrichment at bulk level, ENCODE:**
+<br>Calculated via ENCODE standards, [ENCODE ENRICHMENT](https://www.encodeproject.org/data-standards/terms/#enrichment)
+<br>`scitools bam_tssenrich -E [bam] [hg38 or mm10 or dm6]`
+<br>Example enrichment output figure: [figure-01]
+
+TSS bulk calculation starts with a bam2bed conversion and is potentially intensive depending on the size of the BAM. A parallelizable version of the bulk TSS calculation can be performed on exacloud.
+
+**TSS enrichment at bulk level, inflated:**
+<br>This uses a larger distance from TSS sites, larger bins combining more reads, and chooses highest positions via, [this article](https://www.biorxiv.org/content/10.1101/2020.05.10.087585v1)
+<br>`scitools bam_tssenrich -E -r 2000 -n 11 -s MAX [bam] [hg38 or mm10 or dm6]`
+
+**TSS sites are gathered from ENSEMBL and are curated as such:**
+`/home/groups/oroaklab/refs/hg38/ensembl_tss/readme.txt`
+`/home/groups/oroaklab/refs/mm10/ensembl_tss/readme.txt`
+`/home/groups/oroaklab/refs/dm6/ensembl_tss/readme.txt`
+
+**Independent FRIP caller:**
+<br>This FRIP calculation is divorced from scitools atac_count and is slightly more accurate. The existing FRIP calculation that occurs during matrix generation double-counts reads that overlap multiple peaks.
+<br>`scitools bam_frip [bam] [bed]`
+
+[figure-01]: https://ohsu.app.box.com/file/754659307104
