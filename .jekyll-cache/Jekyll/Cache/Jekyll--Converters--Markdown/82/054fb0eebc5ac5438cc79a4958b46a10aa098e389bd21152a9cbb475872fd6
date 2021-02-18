@@ -1,0 +1,20 @@
+I"–<p>Load the scitools python environment.
+<br /><code class="language-plaintext highlighter-rouge">source /home/groups/oroaklab/nishida/scitools_env/bin/activate</code></p>
+
+<p>Link and rename example data.
+<br /><code class="language-plaintext highlighter-rouge">dir="/home/groups/oroaklab/adey_lab/projects/Drosophila_Tau/201208_EL_Tau"</code>
+<br /><code class="language-plaintext highlighter-rouge">pre="201208_EL_Tau_all.no_bulk.merge.bbrd.q10.filt.macs3.TSS2plus.filt.RG.dm_peaks.w_bulk_bed.counts"</code>
+<br /><code class="language-plaintext highlighter-rouge">ln -s ${dir}/${pre}.sparseMatrix.cols.gz cols.gz</code>
+<br /><code class="language-plaintext highlighter-rouge">ln -s ${dir}/${pre}.sparseMatrix.values.gz values.gz</code>
+<br /><code class="language-plaintext highlighter-rouge">ln -s ${dir}/${pre}.cistopic.50.UMAP.dims umap.dims</code></p>
+
+<p>Run the scitools function.
+<br /><code class="language-plaintext highlighter-rouge">scitools matrix_scrublet values.gz cols.gz output_prefix</code></p>
+
+<p>Plot the values onto UMAP.
+<br /><code class="language-plaintext highlighter-rouge">scitools plot-dims -V output_prefix.doublet_scores.values -S 0,1 umap.dims</code></p>
+
+<p>Example Scrublet distribution figure: <a href="https://ohsu.app.box.com/file/777868542912">figure-01</a>
+<br />Example Scrublet values projected onto UMAP figure: <a href="https://ohsu.app.box.com/file/777870009592">figure-02</a></p>
+
+:ET
