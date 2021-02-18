@@ -24,5 +24,7 @@ Plot the values onto UMAP.
 Example Scrublet distribution figure: [figure-01]
 <br>Example Scrublet values projected onto UMAP figure: [figure-02]
 
+A bimodial scrublet distribution should make a clear case for what is and isn't a doublet. A scrublet distribution that just tapers off is likely not flagging true doublets, just cells with weaker signal. Draw your own threshold and remove doublet-filled clusters based on the projection onto the UMAP.
+
 [figure-01]: https://ohsu.app.box.com/file/777868542912
 [figure-02]: https://ohsu.app.box.com/file/777870009592

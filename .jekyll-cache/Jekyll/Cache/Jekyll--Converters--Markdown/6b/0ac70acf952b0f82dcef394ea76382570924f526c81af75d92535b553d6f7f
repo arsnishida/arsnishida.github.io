@@ -1,4 +1,4 @@
-I"–<p>Load the scitools python environment.
+I"Ö<p>Load the scitools python environment.
 <br /><code class="language-plaintext highlighter-rouge">source /home/groups/oroaklab/nishida/scitools_env/bin/activate</code></p>
 
 <p>Link and rename example data.
@@ -16,5 +16,7 @@
 
 <p>Example Scrublet distribution figure: <a href="https://ohsu.app.box.com/file/777868542912">figure-01</a>
 <br />Example Scrublet values projected onto UMAP figure: <a href="https://ohsu.app.box.com/file/777870009592">figure-02</a></p>
+
+<p>A bimodial scrublet distribution should make a clear case for what is and isnâ€™t a doublet. A scrublet distribution that just tapers off are likely to not be flagging true doublets, just cells with weaker signal. Draw your own threshold and remove doublet-filled clusters based on the projection onto the UMAP.</p>
 
 :ET
