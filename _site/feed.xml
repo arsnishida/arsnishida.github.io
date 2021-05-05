@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-18T11:58:20-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Scitools Scrublet Function</title><link href="http://localhost:4000/2021/02/18/post-0006.html" rel="alternate" type="text/html" title="Scitools Scrublet Function" /><published>2021-02-18T00:00:00-08:00</published><updated>2021-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2021/02/18/post-0006</id><content type="html" xml:base="http://localhost:4000/2021/02/18/post-0006.html">&lt;p&gt;Load the scitools python environment.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-05T14:47:00-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">NextSeq Fidelity Evaluation</title><link href="http://localhost:4000/2021/05/05/post-0007.html" rel="alternate" type="text/html" title="NextSeq Fidelity Evaluation" /><published>2021-05-05T00:00:00-07:00</published><updated>2021-05-05T00:00:00-07:00</updated><id>http://localhost:4000/2021/05/05/post-0007</id><content type="html" xml:base="http://localhost:4000/2021/05/05/post-0007.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/nextseq_organization_may4&lt;/code&gt;
+&lt;br /&gt;Ran: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s the breakdown of how our runs have fared over the years. There’s about ~300 runs post-2018 and 89 have errors that terminate NextSeq2Fastq but there’s no re-calling.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;451 Madbum Seq Runs:
+	234 DO NOT have folders in both oroaklab and oroakdata
+		209 are missing log files
+			190 before 2018
+			19 after 2018
+		17 successful bcl2fastq but not attempt to backup
+		7 prematurely terminate
+		1 extreme outlier problem
+	217 have folders in both oroaklab and oroakdata
+		184 have md5sums
+			176 successful copying
+			8 unsuccessful copying
+				6 prematurely terminate during bcl2fastq but falsely counted as successful by NextSeq2Fastq
+				2 are missing log files
+		27 DO NOT have md5sums
+			13 successful bcl2fastq but overly cautious and terminate before copying
+			3 are missing log files
+			9 prematurely terminate
+			2 extreme outlier problems
+		6 other (alt chemistry with different formats)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Are all these prematurely terminations and missing logs bad? Yes and no. These may represent cases where people may not actually be using the data (the run is bad and isn’t used). These may also represent cases where the FASTQs are incomplete and are being used as though they were complete. But there’s no way to discern this difference, there are no records or logs meaning we can’t go back, and ultimately the data doesn’t become backed up.&lt;/p&gt;
+
+&lt;p&gt;I fixed NextSeq2Fastq to more accurately parse the logs but this is one of the minor issues (we only have 6 instances where bcl2fastq fails but does not properly give an ERROR message so everything continues without detection). For the most part, it is accurately throwing errors in the logs and correctly stopping the process but nobody is reading the logs. If the process terminates and throws an error we need to evaluate what happened. And if you do nonstandard bcl2fastq calls or if the run has some funky chemistry you need to manually calculate md5sums and rsync the folder or we won’t have backups.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example using my adjusted NextSeq2Fastq call showing how we’re losing 75% of the data.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
+
+f6c2b0ec6a4bcf2c6c1725bdf3fa7b47  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
+0bd9dd75fbdab145d749fac73b0503db  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz
+86a47c890822517dc8e15f414548fedd  /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
+5b5d52f587f9f6ae05292009cf39fe4f  /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz
+
+$ zcat /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz | wc -l
+919755600
+$ zcat /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz  | wc -l
+228860360
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How do we fix our old runs? I think for every pre-2021 we just freeze and rsync it as it is but for everything post-2021 we redo it.&lt;/p&gt;
+
+&lt;p&gt;Also, once the machine finally gets back on the network we are changing how Nextseq2Fastq works and nobody else will have to run it (which is why we’re looking at it now in addition to trying to backup and save space).&lt;/p&gt;</content><author><name></name></author><category term="seq" /><summary type="html">Directory: /home/groups/oroaklab/nishida/nextseq_organization_may4 Ran: /home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt</summary></entry><entry><title type="html">Scitools Scrublet Function</title><link href="http://localhost:4000/2021/02/18/post-0006.html" rel="alternate" type="text/html" title="Scitools Scrublet Function" /><published>2021-02-18T00:00:00-08:00</published><updated>2021-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2021/02/18/post-0006</id><content type="html" xml:base="http://localhost:4000/2021/02/18/post-0006.html">&lt;p&gt;Load the scitools python environment.
 &lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source /home/groups/oroaklab/nishida/scitools_env/bin/activate&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Link and rename example data.
@@ -17,7 +61,7 @@
 &lt;p&gt;Example Scrublet distribution figure: &lt;a href=&quot;https://ohsu.app.box.com/file/777868542912&quot;&gt;figure-01&lt;/a&gt;
 &lt;br /&gt;Example Scrublet values projected onto UMAP figure: &lt;a href=&quot;https://ohsu.app.box.com/file/777870009592&quot;&gt;figure-02&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;A bimodial scrublet distribution should make a clear case for what is and isn’t a doublet. A scrublet distribution that just tapers off are likely to not be flagging true doublets, just cells with weaker signal. Draw your own threshold and remove doublet-filled clusters based on the projection onto the UMAP.&lt;/p&gt;</content><author><name></name></author><category term="scitools" /><summary type="html">Load the scitools python environment. source /home/groups/oroaklab/nishida/scitools_env/bin/activate</summary></entry><entry><title type="html">Scitools scATAC Metrics</title><link href="http://localhost:4000/2020/12/17/post-0005.html" rel="alternate" type="text/html" title="Scitools scATAC Metrics" /><published>2020-12-17T00:00:00-08:00</published><updated>2020-12-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/12/17/post-0005</id><content type="html" xml:base="http://localhost:4000/2020/12/17/post-0005.html">&lt;p&gt;&lt;strong&gt;TSS enrichment at a single cell level:&lt;/strong&gt;
+&lt;p&gt;A bimodial scrublet distribution should make a clear case for what is and isn’t a doublet. A scrublet distribution that just tapers off is likely not flagging true doublets, just cells with weaker signal. Draw your own threshold and remove doublet-filled clusters based on the projection onto the UMAP.&lt;/p&gt;</content><author><name></name></author><category term="scitools" /><summary type="html">Load the scitools python environment. source /home/groups/oroaklab/nishida/scitools_env/bin/activate</summary></entry><entry><title type="html">Scitools scATAC Metrics</title><link href="http://localhost:4000/2020/12/17/post-0005.html" rel="alternate" type="text/html" title="Scitools scATAC Metrics" /><published>2020-12-17T00:00:00-08:00</published><updated>2020-12-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/12/17/post-0005</id><content type="html" xml:base="http://localhost:4000/2020/12/17/post-0005.html">&lt;p&gt;&lt;strong&gt;TSS enrichment at a single cell level:&lt;/strong&gt;
 &lt;br /&gt;Calculated as the ratio of signal to noise. Signal is defined as the region around TSS +/- 100bp. Noise is defined as the 100bp regions +/- 2000bp from TSS regions that do no overlap with signal. This leads signal and noise being slightly different in size but reads are uniquely counted into a single bin versus other methods where a read can fall into multiple TSS and noise regions. Output is a two-column value file.
 &lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scitools bam_tssenrich [bam] [hg38 or mm10 or dm6]&lt;/code&gt;&lt;/p&gt;
 

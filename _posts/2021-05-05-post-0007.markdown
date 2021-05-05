@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "NextSeq Fidelity Evaluation"
+date:   2021-05-05
+tags: seq
+---
+
+Directory: `/home/groups/oroaklab/nishida/nextseq_organization_may4`
+<br>Ran: `/home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt`
+
+Here's the breakdown of how our runs have fared over the years. There's about ~300 runs post-2018 and 89 have errors that terminate NextSeq2Fastq but there's no re-calling.
+```
+451 Madbum Seq Runs:
+	234 DO NOT have folders in both oroaklab and oroakdata
+		209 are missing log files
+			190 before 2018
+			19 after 2018
+		17 successful bcl2fastq but not attempt to backup
+		7 prematurely terminate
+		1 extreme outlier problem
+	217 have folders in both oroaklab and oroakdata
+		184 have md5sums
+			176 successful copying
+			8 unsuccessful copying
+				6 prematurely terminate during bcl2fastq but falsely counted as successful by NextSeq2Fastq
+				2 are missing log files
+		27 DO NOT have md5sums
+			13 successful bcl2fastq but overly cautious and terminate before copying
+			3 are missing log files
+			9 prematurely terminate
+			2 extreme outlier problems
+		6 other (alt chemistry with different formats)
+```
+Are all these prematurely terminations and missing logs bad? Yes and no. These may represent cases where people may not actually be using the data (the run is bad and isn't used). These may also represent cases where the FASTQs are incomplete and are being used as though they were complete. But there's no way to discern this difference, there are no records or logs meaning we can't go back, and ultimately the data doesn't become backed up.
+
+I fixed NextSeq2Fastq to more accurately parse the logs but this is one of the minor issues (we only have 6 instances where bcl2fastq fails but does not properly give an ERROR message so everything continues without detection). For the most part, it is accurately throwing errors in the logs and correctly stopping the process but nobody is reading the logs. If the process terminates and throws an error we need to evaluate what happened. And if you do nonstandard bcl2fastq calls or if the run has some funky chemistry you need to manually calculate md5sums and rsync the folder or we won't have backups.
+
+Here's an example using my adjusted NextSeq2Fastq call showing how we're losing 75% of the data.
+```
+perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
+
+f6c2b0ec6a4bcf2c6c1725bdf3fa7b47  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
+0bd9dd75fbdab145d749fac73b0503db  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz
+86a47c890822517dc8e15f414548fedd  /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
+5b5d52f587f9f6ae05292009cf39fe4f  /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz
+
+$ zcat /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz | wc -l
+919755600
+$ zcat /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz  | wc -l
+228860360
+```
+How do we fix our old runs? I think for every pre-2021 we just freeze and rsync it as it is but for everything post-2021 we redo it.
+
+Also, once the machine finally gets back on the network we are changing how Nextseq2Fastq works and nobody else will have to run it (which is why we're looking at it now in addition to trying to backup and save space).
