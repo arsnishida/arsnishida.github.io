@@ -37,7 +37,7 @@ I fixed NextSeq2Fastq to more accurately parse the logs but this is one of the m
 
 Here's an example using my adjusted NextSeq2Fastq call showing how we're losing 75% of the data.
 ```
-perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
+$ perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
 
 f6c2b0ec6a4bcf2c6c1725bdf3fa7b47  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
 0bd9dd75fbdab145d749fac73b0503db  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz

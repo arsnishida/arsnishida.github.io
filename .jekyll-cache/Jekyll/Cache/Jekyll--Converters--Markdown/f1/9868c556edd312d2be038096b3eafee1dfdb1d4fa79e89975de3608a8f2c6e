@@ -1,4 +1,4 @@
-I";<p><strong>Project List</strong>:</p>
+I".<p><strong>Project List</strong>:</p>
 
 <h3>general</h3>
 <ul>
@@ -26,6 +26,8 @@
 <h3>scitools</h3>
 <ul>
     
+      <li><a href="/2021/05/08/post-0009.html">Single Cell Alignments with no Alt Chromosomes</a></li>
+    
       <li><a href="/2021/02/18/post-0006.html">Scitools Scrublet Function</a></li>
     
       <li><a href="/2020/12/17/post-0005.html">Scitools scATAC Metrics</a></li>
@@ -36,6 +38,13 @@
 <ul>
     
       <li><a href="/2021/05/05/post-0007.html">NextSeq Fidelity Evaluation</a></li>
+    
+  </ul>
+
+<h3>tbr1</h3>
+<ul>
+    
+      <li><a href="/2021/05/07/post-0008.html">Single Cell TBR1 Preliminary Evaluations</a></li>
     
   </ul>
 :ET

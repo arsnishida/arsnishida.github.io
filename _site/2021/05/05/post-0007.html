@@ -15,7 +15,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-05-05T00:00:00-07:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2021/05/05/post-0007.html","headline":"NextSeq Fidelity Evaluation","dateModified":"2021-05-05T00:00:00-07:00","datePublished":"2021-05-05T00:00:00-07:00","description":"Directory: /home/groups/oroaklab/nishida/nextseq_organization_may4 Ran: /home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/05/05/post-0007.html"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"NextSeq Fidelity Evaluation","dateModified":"2021-05-05T00:00:00-07:00","datePublished":"2021-05-05T00:00:00-07:00","url":"http://localhost:4000/2021/05/05/post-0007.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/05/05/post-0007.html"},"description":"Directory: /home/groups/oroaklab/nishida/nextseq_organization_may4 Ran: /home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
 <body><header class="site-header" role="banner">
@@ -75,7 +75,7 @@
 <p>I fixed NextSeq2Fastq to more accurately parse the logs but this is one of the minor issues (we only have 6 instances where bcl2fastq fails but does not properly give an ERROR message so everything continues without detection). For the most part, it is accurately throwing errors in the logs and correctly stopping the process but nobody is reading the logs. If the process terminates and throws an error we need to evaluate what happened. And if you do nonstandard bcl2fastq calls or if the run has some funky chemistry you need to manually calculate md5sums and rsync the folder or we won’t have backups.</p>
 
 <p>Here’s an example using my adjusted NextSeq2Fastq call showing how we’re losing 75% of the data.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
 
 f6c2b0ec6a4bcf2c6c1725bdf3fa7b47  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
 0bd9dd75fbdab145d749fac73b0503db  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz

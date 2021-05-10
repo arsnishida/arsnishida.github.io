@@ -1,4 +1,4 @@
-I"�<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/nextseq_organization_may4</code>
+I"�<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/nextseq_organization_may4</code>
 <br />Ran: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/nextseq_organization_may4/run.txt</code></p>
 
 <p>Here’s the breakdown of how our runs have fared over the years. There’s about ~300 runs post-2018 and 89 have errors that terminate NextSeq2Fastq but there’s no re-calling.</p>
@@ -28,7 +28,7 @@
 <p>I fixed NextSeq2Fastq to more accurately parse the logs but this is one of the minor issues (we only have 6 instances where bcl2fastq fails but does not properly give an ERROR message so everything continues without detection). For the most part, it is accurately throwing errors in the logs and correctly stopping the process but nobody is reading the logs. If the process terminates and throws an error we need to evaluate what happened. And if you do nonstandard bcl2fastq calls or if the run has some funky chemistry you need to manually calculate md5sums and rsync the folder or we won’t have backups.</p>
 
 <p>Here’s an example using my adjusted NextSeq2Fastq call showing how we’re losing 75% of the data.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ perl /home/groups/oroaklab/nishida/nextseq_organization_may4/NextSeq2Fastq.pl -R 210326_NS500556_0469_AHKWVYAFX2 -f /home/groups/oroaklab/nishida/nextseq_organization_may4 -l /home/groups/oroaklab/nishida/nextseq_organization_may4/run_processing.log
 
 f6c2b0ec6a4bcf2c6c1725bdf3fa7b47  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R1_001.fastq.gz
 0bd9dd75fbdab145d749fac73b0503db  /home/groups/oroaklab/nishida/nextseq_organization_may4/210326_NS500556_0469_AHKWVYAFX2/Undetermined_S0_R2_001.fastq.gz

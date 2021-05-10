@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Single Cell TBR1 Coembedding Tests"
+date:   2021-05-09
+tags: tbr1
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/casey_coembed`
+
+To address the lack of discrete clustering we used previously generated data from Casey to anchor our data.
+
+Using Casey's peak set alone with the data creates a bit more separation. Though maybe it is mostly from how small and transparent I plotted the points on the UMAP. [figure-01]
+
+Direct coembedding of the data together fails. Datasets are completely separated. [figure-02]
+
+\- Setting up the Arrow file with coembedded data, `run_archr_1_setup.Rscript`.
+<br>- Preliminary analysis with the coembedded data, `run_archr_2_coembed.Rscript`.
+<br>- Commands for merging datasets and using the alternative peak set, `run_coembed.txt`.
+
+[figure-01]: https://ohsu.app.box.com/file/808812473361
+[figure-02]: https://ohsu.app.box.com/file/808810814006

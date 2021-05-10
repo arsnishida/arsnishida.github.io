@@ -1,0 +1,36 @@
+I"¬<p>Alt chromosomes in our hg38 and mm10 alignments (<a href="https://genome.ucsc.edu/FAQ/FAQdownloads.html#downloadAlt">UCSC description</a>) cause multi-mapping in those regions. BWA flags multi-mapping reads with a MAPQ score of 0 causing them to all be lost downstream in our analysis pipeline. For most single-cell analyses we do not need to consider the alternative chromosomes and they can fall in regions of genes used as markers.</p>
+
+<p>Here are replaced genome builds without alts. See <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/hg38/GCA_000001405.15_GRCh38/retrieval.txt</code> and <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/mm10/GCA_000001635.5_GRCm38.p3_no_alt_analysis_set/retrieval.txt</code> for origins of FASTA files. Indexes for BWA were recalled with v0.7.15-r1140.</p>
+
+<p><strong>FASTQ-Align Call</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ln -s /home/groups/oroaklab/demultiplex/201214_NS500556_0445_AHMF2CBGXF/201214_NS500556_0445_AHMF2CBGXF.1.fq.gz testR1.fq.gz
+ln -s /home/groups/oroaklab/demultiplex/201214_NS500556_0445_AHMF2CBGXF/201214_NS500556_0445_AHMF2CBGXF.2.fq.gz testR2.fq.gz 
+no_alt_align_hg38_="/home/groups/oroaklab/refs/hg38/hs38d1_noalt.fna.gz"
+no_alt_align_mm10_="/home/groups/oroaklab/refs/hg38/GCA_000001635.5_GRCm38.p3_noalt.fna.gz"
+scitools fastq-align -t 28 $no_alt_align_hg38_ testoutput testR1.fq.gz testR2.fq.gz
+</code></pre></div></div>
+
+<p><strong>MAPQ using standard genome with alts vs. hs38d1_noalt</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ samtools view /home/groups/oroaklab/adey_lab/projects/Panc_U54/201214_NS500556_0445_AHMF2CBGXF/201214_NS500556_0445_AHMF2CBGXF.bam chr1:198,636,928-198,659,067 | cut -f 5 | sort | uniq -c
+   2500 0
+$ samtools view testoutput.bam chr1:198,636,928-198,659,067 | cut -f 5 | sort | uniq -c
+     19 0
+      1 1
+      1 6
+      3 24
+      1 36
+      1 39
+     22 40
+      1 41
+      1 44
+      1 45
+      1 49
+      1 50
+      1 51
+      2 53
+      4 54
+      1 57
+      2 59
+   4874 60
+</code></pre></div></div>
+:ET

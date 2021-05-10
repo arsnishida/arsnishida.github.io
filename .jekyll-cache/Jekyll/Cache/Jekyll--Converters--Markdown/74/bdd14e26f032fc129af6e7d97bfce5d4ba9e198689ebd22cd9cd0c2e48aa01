@@ -1,0 +1,43 @@
+I"Î<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1</code></p>
+
+<p>Ryan made a first pass through this data written up on <a href="https://mulqueenr.github.io/tbr1/">his blog</a>. I used his annotations and kept the old TSS enrichments (ArchR calculates its own internally). He made these after filtering so not all of the cells in the current ArchR project will have entries but these cells are confidently going to be filtered out. I went through ArchR up to about part 6 in the ArchR full manual. I made a broad first pass to get everything recorded, added Ryanâ€™s existing stuff, plotted the metrics, filtered, and then did the dimensionality reduction and clustering. Then after the lab meeting I went and played around the filtering and iterative LSI options.</p>
+
+<p>- Directory setup and bigwig creation, <code class="language-plaintext highlighter-rouge">run.txt</code>.
+<br />- Setting up the Arrow file, <code class="language-plaintext highlighter-rouge">run_archr_1_setup.Rscript</code>.
+<br />- Tiling matrix workaround and the main steps without filtering, <code class="language-plaintext highlighter-rouge">run_archr_2_process.Rscript</code>.
+<br />- Adding annotations, plotting distributions, filtering, and dimred/clustering, <code class="language-plaintext highlighter-rouge">run_archr_3_filter.Rscript</code>.
+<br />- Similar to preliminary pass but with harder filtering, <code class="language-plaintext highlighter-rouge">run_archr_4_harderfilter.Rscript</code>.
+<br />- Harder filtering and alternative LSI calling, <code class="language-plaintext highlighter-rouge">run_archr_5_LSIfeatures_harderfilter.Rscript</code>.
+<br />- All of the above but with also with filtering by fragment size, <code class="language-plaintext highlighter-rouge">run_archr_6_fragFilter_LSIfeatures_harderfilter.Rscript</code>.</p>
+
+<p>Results:
+ArchROutput/Plots
+may3-5 figs</p>
+
+<p>With module R/4.0.4 this little bit will let you load up the current ArchR project for yourself:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># library, resource ArchR
+library(presto)
+library(ArchR)
+
+# set env
+addArchRGenome("mm10")
+set.seed(25)
+
+# reload the previous project
+proj &lt;- loadArchRProject(path = "/home/groups/oroaklab/nishida/sc_tmp1/ArchROutput/")
+</code></pre></div></div>
+
+<p>###</p>
+
+<p><strong>TSS enrichment at a single cell level:</strong>
+<br />Calculated as the ratio of signal to noise. Signal is defined as the region around TSS +/- 100bp. Noise is defined as the 100bp regions +/- 2000bp from TSS regions that do no overlap with signal. This leads signal and noise being slightly different in size but reads are uniquely counted into a single bin versus other methods where a read can fall into multiple TSS and noise regions. Output is a two-column value file.
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich [bam] [hg38 or mm10 or dm6]</code></p>
+
+<p><strong>TSS enrichment at bulk level, ENCODE:</strong>
+<br />Calculated via ENCODE standards, <a href="https://www.encodeproject.org/data-standards/terms/#enrichment">ENCODE ENRICHMENT</a>
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich -E [bam] [hg38 or mm10 or dm6]</code>
+<br />Example enrichment output figure: [figure-01]</p>
+
+<p><a href="https://www.encodeproject.org/data-standards/terms/#enrichment">ENCODE ENRICHMENT</a>
+[figure-01]: https://ohsu.app.box.com/file/754659307104</p>
+:ET

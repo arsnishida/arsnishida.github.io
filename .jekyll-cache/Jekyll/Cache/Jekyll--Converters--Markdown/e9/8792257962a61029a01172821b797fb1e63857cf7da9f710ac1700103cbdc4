@@ -1,0 +1,48 @@
+I"<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/casey_coembed</code></p>
+
+<p>Problem and state. Tests. Coembedding.</p>
+
+<h1 id="tbr1-data-using-caseys-peaks">tbr1 data using casey’s peaks</h1>
+<p>ln -s /home/groups/oroaklab/adey_lab/projects/spatial/wholebrain/wholebrain.bbrd.q10.filt.500.bed .
+ln -s /home/groups/oroaklab/adey_lab/projects/tbr1_mus/210225_allplates/tbr1_ko.filt.bai .
+ln -s /home/groups/oroaklab/adey_lab/projects/tbr1_mus/210225_allplates/tbr1_ko.filt.bam .
+scitools atac-count tbr1_ko.filt.bam wholebrain.bbrd.q10.filt.500.bed
+scitools cistopic3 wholebrain.bbrd.q10.filt.500.counts.sparseMatrix.values.gz
+scitools matrix-umap wholebrain.bbrd.q10.filt.500.counts.cistopic.50.matrix
+scitools plot-dims -O plotdims.devel -p .5 -f .2 -A ../devel.annot wholebrain.bbrd.q10.filt.500.counts.cistopic.50.UMAP.dims
+scitools plot-dims -X -O plotdims.TSS -p .5 -f .2 -V ../tbr1_ko.filt.TSSenrich.value -S 0,5 wholebrain.bbrd.q10.filt.500.counts.cistopic.50.UMAP.dims</p>
+
+<h1 id="merged-sparse-matrices-for-full-coembedding-with-cistopics-ultimately-not-used">merged sparse matrices for full coembedding with cistopics, ultimately not used</h1>
+<p>ln -s /home/groups/oroaklab/adey_lab/projects/tbr1_mus/210225_allplates/tbr1_ko.filt.500.counts.sparseMatrix.*.gz
+scitools matrix-merge-sparse tbr1_ko.filt.500.counts.sparseMatrix.values.gz wholebrain.bbrd.q10.filt.500.counts.sparseMatrix.values.gz</p>
+
+<h1 id="merge-bam-for-full-coembedding-within-archr">merge BAM for full coembedding within ArchR</h1>
+<p>scitools bam-merge combined.bam tbr1_ko.filt.bam wholebrain.bbrd.q10.filt.bam</p>
+
+<p>###########</p>
+
+<p><strong>TSS enrichment at a single cell level:</strong>
+<br />Calculated as the ratio of signal to noise. Signal is defined as the region around TSS +/- 100bp. Noise is defined as the 100bp regions +/- 2000bp from TSS regions that do no overlap with signal. This leads signal and noise being slightly different in size but reads are uniquely counted into a single bin versus other methods where a read can fall into multiple TSS and noise regions. Output is a two-column value file.
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich [bam] [hg38 or mm10 or dm6]</code></p>
+
+<p><strong>TSS enrichment at bulk level, ENCODE:</strong>
+<br />Calculated via ENCODE standards, <a href="https://www.encodeproject.org/data-standards/terms/#enrichment">ENCODE ENRICHMENT</a>
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich -E [bam] [hg38 or mm10 or dm6]</code>
+<br />Example enrichment output figure: <a href="https://ohsu.app.box.com/file/754659307104">figure-01</a></p>
+
+<p>TSS bulk calculation starts with a bam2bed conversion and is potentially intensive depending on the size of the BAM. A parallelizable version of the bulk TSS calculation can be performed on exacloud.</p>
+
+<p><strong>TSS enrichment at bulk level, inflated:</strong>
+<br />This uses a larger distance from TSS sites, larger bins combining more reads, and chooses highest positions via, <a href="https://www.biorxiv.org/content/10.1101/2020.05.10.087585v1">this article</a>
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich -E -r 2000 -n 11 -s MAX [bam] [hg38 or mm10 or dm6]</code></p>
+
+<p><strong>TSS sites are gathered from ENSEMBL and are curated as such:</strong>
+<code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/hg38/ensembl_tss/readme.txt</code>
+<code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/mm10/ensembl_tss/readme.txt</code>
+<code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/dm6/ensembl_tss/readme.txt</code></p>
+
+<p><strong>Independent FRIP caller:</strong>
+<br />This FRIP calculation is divorced from scitools atac_count and is slightly more accurate. The existing FRIP calculation that occurs during matrix generation double-counts reads that overlap multiple peaks.
+<br /><code class="language-plaintext highlighter-rouge">scitools bam_frip [bam] [bed]</code></p>
+
+:ET
