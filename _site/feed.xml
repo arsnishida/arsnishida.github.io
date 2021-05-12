@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-09T21:38:20-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Single Cell TBR1 Coembedding Tests</title><link href="http://localhost:4000/2021/05/09/post-0010.html" rel="alternate" type="text/html" title="Single Cell TBR1 Coembedding Tests" /><published>2021-05-09T00:00:00-07:00</published><updated>2021-05-09T00:00:00-07:00</updated><id>http://localhost:4000/2021/05/09/post-0010</id><content type="html" xml:base="http://localhost:4000/2021/05/09/post-0010.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/casey_coembed&lt;/code&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-11T19:10:17-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Single Cell TBR1 ENCODE DHS Index Tests</title><link href="http://localhost:4000/2021/05/11/post-0011.html" rel="alternate" type="text/html" title="Single Cell TBR1 ENCODE DHS Index Tests" /><published>2021-05-11T00:00:00-07:00</published><updated>2021-05-11T00:00:00-07:00</updated><id>http://localhost:4000/2021/05/11/post-0011</id><content type="html" xml:base="http://localhost:4000/2021/05/11/post-0011.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/first_pass&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run_archr_1_setup.Rscript&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Calling peaks on this data doesn’t work because it is too noisy. Using Casey’s cleaner peak set was working a bit better. Tiling helps sparse amounts of data but won’t help with noise. This peak set is basically Casey’s peak set+. List is from here: &lt;a href=&quot;https://www.biorxiv.org/content/10.1101/2020.06.26.172718v3&quot;&gt;biorxiv paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the data wasn’t as noisy then calling peaks specifically across this dataset is the best approach. You’d even get novel peaks. But with technically poor data the technical methods alone do not seem to be working. Using biologically motivated references however seems to select appropriate sites for consideration in dimensionality reduction. &lt;a href=&quot;https://ohsu.app.box.com/file/809562739594&quot;&gt;figure-01&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Since this seems to be working, the dimensionality reduction needs to be re-run with filtering and doublet removal. Doublet removal on a dataset this size is giving memory issues so I am moving it to Exacloud.&lt;/p&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/first_pass</summary></entry><entry><title type="html">Single Cell TBR1 Coembedding Tests</title><link href="http://localhost:4000/2021/05/09/post-0010.html" rel="alternate" type="text/html" title="Single Cell TBR1 Coembedding Tests" /><published>2021-05-09T00:00:00-07:00</published><updated>2021-05-09T00:00:00-07:00</updated><id>http://localhost:4000/2021/05/09/post-0010</id><content type="html" xml:base="http://localhost:4000/2021/05/09/post-0010.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/casey_coembed&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;To address the lack of discrete clustering we used previously generated data from Casey to anchor our data.&lt;/p&gt;
 
@@ -185,25 +193,4 @@ $ zcat /home/groups/oroaklab/fastq/210326_NS500556_0469_AHKWVYAFX2/Undetermined_
 
 &lt;p&gt;An issue with these annotations are cases where the mutation shows up in small frequency in a non-main sample. This may be more than error and may be evidence of a trans parental mosaic mutation. We are currently only testing pzero on the main sample with the previously derived allele frequency. We could test for novel mosaics in other samples. For now, I am using a hard cutoff where a mutation must have of an allele frequency &amp;gt; 0.01 (found in 1 of 100 reads).&lt;/p&gt;
 
-&lt;p&gt;Three examples taken from pool 1 where the originally identified mutation was in a child but from this validation could be a parental mosaic. The first two cases are germline in the child and could be parental mosaics. &lt;a href=&quot;https://ohsu.app.box.com/file/728529690028&quot;&gt;figure-01&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="ssc" /><summary type="html">Directory: https://ohsu.app.box.com/folder/81820136345</summary></entry><entry><title type="html">Example</title><link href="http://localhost:4000/2020/10/07/post-0001.html" rel="alternate" type="text/html" title="Example" /><published>2020-10-07T00:00:00-07:00</published><updated>2020-10-07T00:00:00-07:00</updated><id>http://localhost:4000/2020/10/07/post-0001</id><content type="html" xml:base="http://localhost:4000/2020/10/07/post-0001.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/sample/directory&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Summary of post. Placeholder sentence. Write descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-
-&lt;p&gt;Description of Figure 1. &lt;a href=&quot;https://ohsu.app.box.com/file/726755681832&quot;&gt;figure-01&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Description of Figure 2. &lt;a href=&quot;https://ohsu.app.box.com/file/726746699799&quot;&gt;figure-02&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Function example 1:
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Line 1
-Line 2
-Line 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Function example 2:
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Line 1
-Line 2
-Line 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="general" /><summary type="html">Directory: /home/groups/oroaklab/sample/directory</summary></entry></feed>
+&lt;p&gt;Three examples taken from pool 1 where the originally identified mutation was in a child but from this validation could be a parental mosaic. The first two cases are germline in the child and could be parental mosaics. &lt;a href=&quot;https://ohsu.app.box.com/file/728529690028&quot;&gt;figure-01&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="ssc" /><summary type="html">Directory: https://ohsu.app.box.com/folder/81820136345</summary></entry></feed>
