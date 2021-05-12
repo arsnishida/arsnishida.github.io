@@ -7,7 +7,7 @@ tags: tbr1
 
 Directory: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/first_pass`
 
-Run: `run_archr_1_setup.Rscript`.
+Code: `run.txt`.
 
 Calling peaks on this data doesn’t work because it is too noisy. Using Casey’s cleaner peak set was working a bit better. Tiling helps sparse amounts of data but won’t help with noise. This peak set is basically Casey’s peak set+. List is from here: [biorxiv paper](https://www.biorxiv.org/content/10.1101/2020.06.26.172718v3).
 
