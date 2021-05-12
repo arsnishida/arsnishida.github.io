@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "SPARK Mosaic List, Summary Counts of Annotations"
+date:   2021-05-11
+tags: SPARK
+---
+
+Directory: `https://www.dropbox.com/home/SPARK%20Mosaics`
+
+This provides a full tabulated count of the annotations per category for each of the lists of SPARK mosaic data using the data without germline parental calls.
+
+Link to Markdown: [R Markdown](https://ohsu.app.box.com/file/809575535619)
