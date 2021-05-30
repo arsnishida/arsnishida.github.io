@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "SPARK Joint Coverage Counter Tool Fidelity"
+date:   2021-05-30
+tags: SPARK
+---
+
+Directory: `/home/groups/oroaklab/nishida/spark_mosaic/burden/test_compare`
+
+The tool, `/home/users/kruppd/scripts/file/joint_coverage_calc_front.py`, needed to be rewritten into something more flexible. It also needs to eliminate hard-coded family information since my tables are already pre-split by family. This changes it into simply looking for the overlap of sites between a sorted coverage file and the reference with bedops and takes advantage of numerical sorting of the output to make quicker counts. Here a comparison is performed attempting to regenerate the original output in both manners and checking for fidelity. Code for running is in: `/home/groups/oroaklab/nishida/spark_mosaic/burden/test_compare/run.txt`.
+
+The md5sums are comparable in the first check of comparing the re-use of the original tools.
+```
+$ md5sum $NEW_OUT
+aae58c37f826d37f62e9449e8a03c90a  /home/groups/oroaklab/nishida/spark_mosaic/burden/test_compare/interval_joint_cov_P24_01.comp.table
+$ md5sum $ORIGINAL_OUT
+aae58c37f826d37f62e9449e8a03c90a  /home/groups/oroaklab/data/SSC/reprocessed/metrics/joint_cov/pilot_24/interval_joint_cov_P24_01.table
+```
+
+The count outputs are nearly identical in the second check for comparing the new tool to the old tool.  The minor difference is that they are off by 51 due to me missing a count when I am transitioning between thresholds. But since the counts are in the 1M's this seems like a gentle difference (and can be fixed post-hoc if necessary). Markdown showing the similarities: [figure-01]
+
+[figure-01]: https://www.dropbox.com/home/SPARK%20Mosaics/markdowns?preview=compare_burden_counter.html
