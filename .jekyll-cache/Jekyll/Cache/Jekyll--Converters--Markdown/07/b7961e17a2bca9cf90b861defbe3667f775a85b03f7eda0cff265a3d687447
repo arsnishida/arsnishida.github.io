@@ -1,0 +1,20 @@
+I"ß<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">run.txt</code></p>
+
+<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/burden</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">run.2_redo_newref.txt</code></p>
+
+<p>References are regenerated from ANNOVAR. Comparisons between this Annovar 2018 hg38 reference and the current 2021 reference are here showing &gt; 99% bases present in the older version relative to the newer. <a href="https://ohsu.app.box.com/file/817670565940">figure-01</a></p>
+
+<p>Joint coverage across families were recalled with this new reference and with the small bug fixed (coverage counts are no longer off by 1).</p>
+
+<p>Joint coverage plots were recreated separately for simplex quads, multiplex quads, and simplex trios. These count the number of bases over 52 thresholds (from the range of needing 1-250 counts) for each member of a family, the total of the family, and the average of the family.  These are subset into six regions, non-SDTRF (CDS) sites and SDTRF sites and then those are split into autosomal, X, and Y chromosomes.</p>
+
+<p>Coverage plots are in the following markdown. There is now appropriate coverage across the exome and thresholds can be picked. <a href="https://www.dropbox.com/home/SPARK%20Mosaics/markdowns?preview=burden_coverage_plots.html">figure-02</a></p>
+
+<p>Links to Burden Data:
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplextrios.txt">jointcoverage.simplextrios.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplexquads.txt">jointcoverage.simplexquads.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.multiplexquads.txt</a></p>
+
+:ET

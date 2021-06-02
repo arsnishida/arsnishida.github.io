@@ -1,9 +1,0 @@
-I"!<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites</code>
-<br />Run: <code class="language-plaintext highlighter-rouge">run.txt</code></p>
-
-<p>The purpose of this is to establish the reference file created in hg19 for hg38: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/refs/GRCh37/Homo_sapiens_refseq_cds_splice_positions.txt</code>. There are however no instructions concerning how it was made or the refseq version from which it was created. Every CDS and stop codon entry in the GTF will be pulled out to represent ‘cds’. Every transcript with more than one exon will have a ‘splice’ entry for the two bases extending internally for each internal exon boundary.</p>
-
-<p>test <a href="https://www.dropbox.com/home/SPARK%20Mosaics/linked_files?preview=blog_SPARK_refseqCdsSplice_compare.png">figure-01</a>
-test <a href="https://www.dropbox.com/home/SPARK%20Mosaics/linked_files?preview=SPARK_refseqCdsSplice_compare.xlsx">figure-02</a></p>
-
-:ET

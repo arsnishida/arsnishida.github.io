@@ -5,6 +5,8 @@ date:   2021-05-30
 tags: SPARK
 ---
 
+**Warning! Legacy entry. Refer to Jun 2 update fixing lower coverages.**
+
 Directory: `/home/groups/oroaklab/nishida/spark_mosaic/burden`
 <br>Run: `run.txt`
 
