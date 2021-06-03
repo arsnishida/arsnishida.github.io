@@ -1,0 +1,17 @@
+I"<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/final_june</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">run.txt</code></p>
+
+<p>Another round of recategorizing as per: <code class="language-plaintext highlighter-rouge">/home/users/kruppd/scripts/cohort/ssc_fraction_and_filter_snvs.R</code>.</p>
+
+<p>To all final SPARK tables, we are adding a column for the annotation of FRACTION_MORE and columns for the PSAME tests (for mosaic transmission only).
+FRACTION_MORE describes and subsets the categories of FRACTION into more granularity.
+The following tests are applied to the following categories:</p>
+<ul>
+  <li>GERMLINE_CHILD is tested for GERMLINE_CHILD_GONADAL (50% in both children and absent in parents, quads only)</li>
+  <li>MULTI_MOSAIC calls are tested if they are MOSAIC_CHILD_GONADAL (mosaic in both children and absent in parents, quads only).</li>
+  <li>GERMLINE_PARENTAL calls are tested for transmission and become either GERMLINE_PARENTAL_NONTRANS, GERMLINE_PARENTAL_TRANS_MATERNAL, GERMLINE_PARENTAL_TRANS_PATERNAL, GERMLINE_PARENTAL_TRANS_EITHER, or GERMLINE_PARENTAL_TRANS_CONFLICT.</li>
+  <li>MOSAIC_PARENTAL_TRANS and MOSAIC_PARENTAL_WITH_TRANS_CONFLICT are tested with stricter parameters. Their phet threshold is decreased from 0.001 to 0.0001 and they are tested with a Fisher’s Exact test between parents and children, the probability yielding PSAME with a threhsold of &lt; 0.01. MOSAIC_PARENTAL_TRANS_PATERNAL, MOSAIC_PARENTAL_TRANS_MATERNAL, MOSAIC_PARENTAL_LIKELY_GERMLINE (if failing higher phet thresholding), or put back into MOSAIC_PARENTAL_WITH_TRANS_CONFLICT (if failing PSAME tests).</li>
+  <li>All other FRACTION categories are left as they are for FRACTION_MORE.</li>
+</ul>
+
+:ET
