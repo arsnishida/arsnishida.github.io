@@ -21,6 +21,13 @@ Mosaic Lists:
 SPARK Annotations Used, 20190820:
 <br>[SPARK Annotations](https://www.dropbox.com/s/gg5ewe0bbqhjimw/SPARK.27K.mastertable.20190820.txt?dl=0)
 
+Links to List of Gene Names with Alternate Names:
+<br>[Essential.alt.genes](https://www.dropbox.com/s/4jcjuaz8c3dhbtf/Essential.alt.genes?dl=0)
+<br>[Exac.Intol.alt.genes](https://www.dropbox.com/s/jbrpq5fb8qz16ri/Exac.Intol.alt.genes?dl=0)
+<br>[Exac.Mid.alt.genes](https://www.dropbox.com/s/yjw7r0fwh3lxqil/Exac.Mid.alt.genes?dl=0)
+<br>[Exac.Tol.alt.genes](https://www.dropbox.com/s/443h1423awxmxza/Exac.Tol.alt.genes?dl=0)
+<br>[FUSIL.alt.genes](https://www.dropbox.com/s/qbptliwg3irwnod/FUSIL.alt.genes?dl=0)
+
 Joint Coverage:
 <br>[Genomic Joint Coverage, Simplex Quads](https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0)
 <br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0)
@@ -77,3 +84,4 @@ Tables are modified for June 3. I added five new columns. The PSAME columns and 
 *Update for May 9, 2021
 
 Tables are modified for May 9. I updated the "FRACTION" annotation column adjusting an error in the later files. There is one new column at the end called, "FRACTION_ORIGINAL". This contains the first call of the fraction that should be ignored but I'm keeping it in the file as a record.
+

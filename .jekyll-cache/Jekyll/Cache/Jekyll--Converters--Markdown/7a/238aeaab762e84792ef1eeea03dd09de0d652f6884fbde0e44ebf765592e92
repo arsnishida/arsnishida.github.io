@@ -1,0 +1,51 @@
+I"i<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38/genesets</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">run.txt</code></p>
+
+<p>The list of gene names are taken directly from the files used previously except for the newer FUSIL list. They are taken from the following references:
+<br /><a href="https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003484">Essential gene list</a>, 2455 genes
+<br /><a href="https://www.nature.com/articles/nature19057">EXAC gene lists</a>, 3232 genes (Intolerant), 4555 genes (Mid), 10264 genes (Tolerant)
+<br /><a href="https://www.nature.com/articles/s41467-020-14284-2">FUSIL gene list</a>, 163 genes</p>
+
+<p>Annotations of the base positions are taken from Annovar’s hg38 RefSeq reference (2018-06-15). Previously, the appropriate annotations were pulled with a simple grep and throwing out anything annotated as antisense ‘-AS’ as such:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while read gene ; do 
+  grep -w $gene /home/groups/oroaklab/refs/GRCh37/Homo_sapiens_refseq_cds_splice_with_gene_and_SDTRF.txt | grep -v \-AS.\&gt; | grep -vw SDTRF &gt;&gt; geneset_pos_cds_exac_tolerant.txt
+  grep -w $gene /home/groups/oroaklab/refs/GRCh37/Homo_sapiens_refseq_cds_splice_with_gene_and_SDTRF.txt | grep -v \-AS.\&gt; | grep -w SDTRF &gt;&gt; geneset_pos_sdtrf_exac_tolerant.txt
+done &lt; ~/tmp/Exac.Tol.genes
+</code></pre></div></div>
+<p>Annotations now are done by looking for exact matches of the gene name parsing every name after spliting the annotation field by both ‘,’ and ‘;’.</p>
+
+<p>Gene names were originally derived from older hg19 annotations. Gene names that were not found were replaced with their updated name taken from <a href="GeneCards.org">GeneCards.org</a>.</p>
+
+<p>What was changed, what was missing.
+<code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38/genesets/missing.txt</code></p>
+
+<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/burden_genesets</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">run.txt</code></p>
+
+<p>EXAC TOL?	DCRB	DSCR4</p>
+
+<p>Joint coverage across families were recalled with these genesets.</p>
+
+<p>Numbers go here.</p>
+
+<p>Links to Geneset Burden Data for Quad Simplex:
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplextrios.txt">jointcoverage.Essential.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplexquads.txt">jointcoverage.ExacInt.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacMid.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacTol.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.FUSIL.txt</a></p>
+
+<p>Links to Geneset Burden Data for Quad Multiplex:
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplextrios.txt">jointcoverage.Essential.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplexquads.txt">jointcoverage.ExacInt.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacMid.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacTol.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.FUSIL.txt</a></p>
+
+<p>Links to Geneset Burden Data for Trio Simplex:
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplextrios.txt">jointcoverage.Essential.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplexquads.txt">jointcoverage.ExacInt.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacMid.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.ExacTol.txt</a>
+<br /><a href="https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt">jointcoverage.FUSIL.txt</a></p>
+:ET
