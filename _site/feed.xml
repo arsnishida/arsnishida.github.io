@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-06-13T23:26:59-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Preliminary Cicero Output</title><link href="http://localhost:4000/2021/06/10/post-0022.html" rel="alternate" type="text/html" title="Preliminary Cicero Output" /><published>2021-06-10T00:00:00-07:00</published><updated>2021-06-10T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/10/post-0022</id><content type="html" xml:base="http://localhost:4000/2021/06/10/post-0022.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/cicero/&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-06-14T20:48:22-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Preliminary Cicero Output</title><link href="http://localhost:4000/2021/06/10/post-0022.html" rel="alternate" type="text/html" title="Preliminary Cicero Output" /><published>2021-06-10T00:00:00-07:00</published><updated>2021-06-10T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/10/post-0022</id><content type="html" xml:base="http://localhost:4000/2021/06/10/post-0022.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/cicero/&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;pending&lt;/p&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_tmp1/cicero/ Run: run.txt</summary></entry><entry><title type="html">SPARK Gene Set Joint Coverage</title><link href="http://localhost:4000/2021/06/10/post-0021.html" rel="alternate" type="text/html" title="SPARK Gene Set Joint Coverage" /><published>2021-06-10T00:00:00-07:00</published><updated>2021-06-10T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/10/post-0021</id><content type="html" xml:base="http://localhost:4000/2021/06/10/post-0021.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38/genesets&lt;/code&gt;
@@ -44,7 +44,37 @@ EXAC TOL LIST:
 &lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/burden_genesets&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Coverage numbers here.
+&lt;p&gt;Total bases covered.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;essential	nonSDTRF	full	5823791
+essential	nonSDTRF	chrx	130972
+essential	nonSDTRF	chry	0
+essential	SDTRF	full	238236
+essential	SDTRF	chrx	6074
+essential	SDTRF	chry	0
+exintol	nonSDTRF	full	8778453
+exintol	nonSDTRF	chrx	585376
+exintol	nonSDTRF	chry	0
+exintol	SDTRF	full	298903
+exintol	SDTRF	chrx	23054
+exintol	SDTRF	chry	0
+exmid	nonSDTRF	full	5348096
+exmid	nonSDTRF	chrx	309748
+exmid	nonSDTRF	chry	25108
+exmid	SDTRF	full	525697
+exmid	SDTRF	chrx	70317
+exmid	SDTRF	chry	132
+extol	nonSDTRF	full	16220596
+extol	nonSDTRF	chrx	195333
+extol	nonSDTRF	chry	23785
+extol	SDTRF	full	1162687
+extol	SDTRF	chrx	35326
+extol	SDTRF	chry	4724
+fusil	nonSDTRF	full	357541
+fusil	nonSDTRF	chrx	0
+fusil	nonSDTRF	chry	0
+fusil	SDTRF	full	12170
+fusil	SDTRF	chrx	0
+fusil	SDTRF	chry	0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Links to List of Gene Names with Alternate Names:
@@ -57,22 +87,22 @@ EXAC TOL LIST:
 &lt;p&gt;Links to Geneset Burden Data for Quad Simplex:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/da0va0l5ss0vak5/jointcoverage.simplexquads_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zbmbc5ueysvzm7j/jointcoverage.simplexquads_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0sik284bf7yrk2l/jointcoverage.simplexquads_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p430qmv0jsmhxkk/jointcoverage.simplexquads_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Links to Geneset Burden Data for Quad Multiplex:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/t3rojxivrev0r9y/jointcoverage.multiplexquads_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8bjecr0y5nawjca/jointcoverage.multiplexquads_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ramv1qr8a1hoty0/jointcoverage.multiplexquads_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/yqd7pzbxpk5c2ds/jointcoverage.multiplexquads_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6fpa9ocjp0x4nwi/jointcoverage.multiplexquads_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Links to Geneset Burden Data for Trio Simplex:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1gw1w6w4fwrn4o4/jointcoverage.simplextrios_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/a30p1fe5r99vkf0/jointcoverage.simplextrios_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xn1t88bl1r9028d/jointcoverage.simplextrios_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7gzbgk0pryo7eoi/jointcoverage.simplextrios_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Directory: /home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38/genesets Run: run.txt</summary></entry><entry><title type="html">SPARK Mosaic Index</title><link href="http://localhost:4000/2021/06/03/post-0020.html" rel="alternate" type="text/html" title="SPARK Mosaic Index" /><published>2021-06-03T00:00:00-07:00</published><updated>2021-06-03T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/03/post-0020</id><content type="html" xml:base="http://localhost:4000/2021/06/03/post-0020.html">&lt;p&gt;&lt;em&gt;This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Mosaic Lists:
@@ -100,6 +130,27 @@ EXAC TOL LIST:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Quads&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Multiplex Quads&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Trios&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Joint Coverage by Gene-set for Quad Simplex:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/da0va0l5ss0vak5/jointcoverage.simplexquads_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zbmbc5ueysvzm7j/jointcoverage.simplexquads_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0sik284bf7yrk2l/jointcoverage.simplexquads_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p430qmv0jsmhxkk/jointcoverage.simplexquads_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Joint Coverage by Gene-set for Quad Multiplex:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/t3rojxivrev0r9y/jointcoverage.multiplexquads_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8bjecr0y5nawjca/jointcoverage.multiplexquads_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ramv1qr8a1hoty0/jointcoverage.multiplexquads_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/yqd7pzbxpk5c2ds/jointcoverage.multiplexquads_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6fpa9ocjp0x4nwi/jointcoverage.multiplexquads_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Joint Coverage by Gene-set for Trio Simplex:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1gw1w6w4fwrn4o4/jointcoverage.simplextrios_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/a30p1fe5r99vkf0/jointcoverage.simplextrios_exintol.txt?dl=0&quot;&gt;jointcoverage.ExacInt.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xn1t88bl1r9028d/jointcoverage.simplextrios_exmid.txt?dl=0&quot;&gt;jointcoverage.ExacMid.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7gzbgk0pryo7eoi/jointcoverage.simplextrios_extol.txt?dl=0&quot;&gt;jointcoverage.ExacTol.txt&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Markdowns:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0&quot;&gt;Comparison of Burden Counters&lt;/a&gt;

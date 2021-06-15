@@ -50,8 +50,38 @@ Gene set joint coverage files for the burden analysis were made using these five
 Directory: `/home/groups/oroaklab/nishida/spark_mosaic/burden_genesets`
 <br>Run: `run.txt`
 
+Total bases covered.
 ```
-Coverage numbers here.
+essential	nonSDTRF	full	5823791
+essential	nonSDTRF	chrx	130972
+essential	nonSDTRF	chry	0
+essential	SDTRF	full	238236
+essential	SDTRF	chrx	6074
+essential	SDTRF	chry	0
+exintol	nonSDTRF	full	8778453
+exintol	nonSDTRF	chrx	585376
+exintol	nonSDTRF	chry	0
+exintol	SDTRF	full	298903
+exintol	SDTRF	chrx	23054
+exintol	SDTRF	chry	0
+exmid	nonSDTRF	full	5348096
+exmid	nonSDTRF	chrx	309748
+exmid	nonSDTRF	chry	25108
+exmid	SDTRF	full	525697
+exmid	SDTRF	chrx	70317
+exmid	SDTRF	chry	132
+extol	nonSDTRF	full	16220596
+extol	nonSDTRF	chrx	195333
+extol	nonSDTRF	chry	23785
+extol	SDTRF	full	1162687
+extol	SDTRF	chrx	35326
+extol	SDTRF	chry	4724
+fusil	nonSDTRF	full	357541
+fusil	nonSDTRF	chrx	0
+fusil	nonSDTRF	chry	0
+fusil	SDTRF	full	12170
+fusil	SDTRF	chrx	0
+fusil	SDTRF	chry	0
 ```
 
 Links to List of Gene Names with Alternate Names:
@@ -64,20 +94,20 @@ Links to List of Gene Names with Alternate Names:
 Links to Geneset Burden Data for Quad Simplex:
 <br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0)
 <br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/da0va0l5ss0vak5/jointcoverage.simplexquads_exintol.txt?dl=0)
-<br>[jointcoverage.ExacMid.txt]()
-<br>[jointcoverage.ExacTol.txt]()
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/zbmbc5ueysvzm7j/jointcoverage.simplexquads_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/0sik284bf7yrk2l/jointcoverage.simplexquads_extol.txt?dl=0)
 <br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/p430qmv0jsmhxkk/jointcoverage.simplexquads_fusil.txt?dl=0)
 
 Links to Geneset Burden Data for Quad Multiplex:
 <br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/t3rojxivrev0r9y/jointcoverage.multiplexquads_essential.txt?dl=0)
 <br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/8bjecr0y5nawjca/jointcoverage.multiplexquads_exintol.txt?dl=0)
-<br>[jointcoverage.ExacMid.txt]()
-<br>[jointcoverage.ExacTol.txt]()
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/ramv1qr8a1hoty0/jointcoverage.multiplexquads_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/yqd7pzbxpk5c2ds/jointcoverage.multiplexquads_extol.txt?dl=0)
 <br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/6fpa9ocjp0x4nwi/jointcoverage.multiplexquads_fusil.txt?dl=0)
 
 Links to Geneset Burden Data for Trio Simplex:
 <br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/1gw1w6w4fwrn4o4/jointcoverage.simplextrios_essential.txt?dl=0)
 <br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/a30p1fe5r99vkf0/jointcoverage.simplextrios_exintol.txt?dl=0)
-<br>[jointcoverage.ExacMid.txt]()
-<br>[jointcoverage.ExacTol.txt]()
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/xn1t88bl1r9028d/jointcoverage.simplextrios_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/7gzbgk0pryo7eoi/jointcoverage.simplextrios_extol.txt?dl=0)
 <br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0)

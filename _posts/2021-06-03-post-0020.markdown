@@ -33,6 +33,27 @@ Joint Coverage:
 <br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0)
 <br>[Genomic Joint Coverage, Simplex Trios](https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0)
 
+Joint Coverage by Gene-set for Quad Simplex:
+<br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0)
+<br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/da0va0l5ss0vak5/jointcoverage.simplexquads_exintol.txt?dl=0)
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/zbmbc5ueysvzm7j/jointcoverage.simplexquads_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/0sik284bf7yrk2l/jointcoverage.simplexquads_extol.txt?dl=0)
+<br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/p430qmv0jsmhxkk/jointcoverage.simplexquads_fusil.txt?dl=0)
+
+Joint Coverage by Gene-set for Quad Multiplex:
+<br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/t3rojxivrev0r9y/jointcoverage.multiplexquads_essential.txt?dl=0)
+<br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/8bjecr0y5nawjca/jointcoverage.multiplexquads_exintol.txt?dl=0)
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/ramv1qr8a1hoty0/jointcoverage.multiplexquads_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/yqd7pzbxpk5c2ds/jointcoverage.multiplexquads_extol.txt?dl=0)
+<br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/6fpa9ocjp0x4nwi/jointcoverage.multiplexquads_fusil.txt?dl=0)
+
+Joint Coverage by Gene-set for Trio Simplex:
+<br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/1gw1w6w4fwrn4o4/jointcoverage.simplextrios_essential.txt?dl=0)
+<br>[jointcoverage.ExacInt.txt](https://www.dropbox.com/s/a30p1fe5r99vkf0/jointcoverage.simplextrios_exintol.txt?dl=0)
+<br>[jointcoverage.ExacMid.txt](https://www.dropbox.com/s/xn1t88bl1r9028d/jointcoverage.simplextrios_exmid.txt?dl=0)
+<br>[jointcoverage.ExacTol.txt](https://www.dropbox.com/s/7gzbgk0pryo7eoi/jointcoverage.simplextrios_extol.txt?dl=0)
+<br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0)
+
 Markdowns:
 <br>[Comparison of Burden Counters](https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0)
 <br>[Summary of FRACTION Annotations](https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0)
