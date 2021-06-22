@@ -1,0 +1,10 @@
+I"�<p>This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. Counting and pasting coverages per family should probably be done outside of R to actually work quickly. This is just on the quad simplex files.</p>
+
+<p>Link to markdown:
+<br /><a href="https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0">Preliminary Burden, part 2</a></p>
+
+<p>Notes per section:
+<br />4.1 - Generate Count Tables/Count Table Creation for All Variants - This takes too long in R. Just count them up outside of R.
+<br />5.2/5.3 - Plot/Decile Plot, All Deciles - Just choose one of percent bases or # bases going forward, doens’t matter. There’s not a dramatic tail at the bottom fifthtile but its reasonably lower than everything to just drop. Splitting out by FA, MO, PRO, and SIB shows they’re all the same.
+<br />5.9/5.10 - Plot/Plot SNV Counts, Mosaic Child, Boxplots using # SNVs and # SNVs / EXOME COVERAGE - The boxplots don’t work that well since most of the families have 0 counts in the discrete categories. These would probably be better as histograms. I wanted to plot out just the raw number of counts to see if there were outlying families with too many calls. There are a few and the ones I spot checked also have low exome coverage. Plot # of calls by Exome Coverage really quick.</p>
+:ET

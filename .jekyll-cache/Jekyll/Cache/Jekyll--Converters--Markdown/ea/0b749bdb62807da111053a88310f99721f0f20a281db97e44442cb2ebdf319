@@ -1,0 +1,14 @@
+I"�<p>This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am going through the loading and reorganizing of the data. This includes preliminary filtering, collapsing of certain rows, and reclassifying some specific names. This is just on the quad simplex files.</p>
+
+<p>Link to markdown:
+<br /><a href="https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0">Preliminary Burden, part 1</a></p>
+
+<p>Notes per section:
+<br />2.6 - Load/Masterlist Subset - I should bring in the full master-table down instead of this subset eventually.
+<br />2.7 - Load/Coverage Denominators - Move this to a loadable file eventually.
+<br />3.1 - Filter and Subset/Variant Filter - Right now not filtering families, add those here.
+<br />3.2 - Filter and Subset/Duplicate Variant Entries - This describes and collapses the situations where multiple variants for the same family are occuring (usually due to transmission). There are 5 mosaic child calls that are borderline that we are dropping here which should be fine (the full numbers for these are printed out so you can see why they are at the border). There are also many instances where a variant is called in the child but found to be mosaic in the parent who does not have an original call. I am currently dropping these on the basis of the fact that no original variant call was made for these.
+<br />3.3 - Filter and Subset/Collapse Complex Events - Currently not marking or collapsing complex events.
+<br />3.4 - Filter and Subset/Variant Reclassification to Germline - Hard reclassification of any mosaic with AF_U90_CI_AC_MAIN &gt;= 0.4 as “MOSAIC_TO_GERMLINE”. Check AF plots before and after down the road.
+<br />3.5 - Filter and Subset/Function Reclassifications - The current categories are: nonsynonymous SNV, stopgain, stoploss, synonymous SNV, unknown. We may want to group these or add splicing information into these column.</p>
+:ET
