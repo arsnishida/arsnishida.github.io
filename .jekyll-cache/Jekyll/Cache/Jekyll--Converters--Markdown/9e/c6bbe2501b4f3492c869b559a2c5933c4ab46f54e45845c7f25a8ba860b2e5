@@ -1,0 +1,11 @@
+I"<p>This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting out the fraction of allele frequencies we seeing across the different variant fractions and by person. This is just on the quad simplex files.</p>
+
+<p>Link to markdown:
+<br /><a href="https://www.dropbox.com/s/29z48y39rflny96/prelim_burden_quadsimplex_03.html?dl=0">Preliminary Allele Fractions, part 3</a></p>
+
+<p>Notes per section:
+<br />4 - Plots of All AF Densities - These look in line with what we expect.
+<br />5.2, 6.2, 7.2, 8.2 - Plots Relative to Old, Original Data - All of this newer data is slightly right-shifted relative to the older data. This is due to the older data having more depth and more capable of getting smaller AF’s and is expected.
+<br />5.3, 6.3, 7.3, 8.3 - Plots with and without Filters - The filters are pretty conservative but are taking out a large number of calls aggressively on the lower-end. The numbers of calls being thrown out from these filters are large but expected (mainly just getting rid of calls with fewer than 5 alt reads).
+<br />9 - Plots with and without Transmission Filters - This also shows how dramatic the PSAME and higher PHET threshold are for removing false parental transmission calls.</p>
+:ET

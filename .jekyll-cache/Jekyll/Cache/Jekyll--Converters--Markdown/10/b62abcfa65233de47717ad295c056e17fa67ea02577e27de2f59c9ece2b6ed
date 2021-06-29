@@ -1,0 +1,8 @@
+I";<p>This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting out the fraction of allele frequencies we seeing across the different variant fractions and by person. This is just on the quad simplex files.</p>
+
+<p>Link to markdown:
+<br /><a href="HTTP">Preliminary Allele Fractions, part 3</a></p>
+
+<p>Notes per section:
+<br />4.4 - Plot / Mosaic Child - There is a single Proband from a family with 12 counts which is a clear outlier with every other family having less than 5 counts.</p>
+:ET

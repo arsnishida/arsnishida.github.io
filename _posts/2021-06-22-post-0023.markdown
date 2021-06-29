@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SPARK Burden Preliminary Pass 01, Filtering and Classifications"
+title:  "SPARK Preliminary Pass 01, Filtering and Classifications"
 date:   2021-06-22
 tags: SPARK
 ---

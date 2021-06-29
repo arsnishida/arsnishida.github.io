@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SPARK Burden Preliminary Pass 02b, Coverage and SNV Count Plots as Hists"
+title:  "SPARK Preliminary Pass 02b, Coverage and SNV Count Plots as Hists"
 date:   2021-06-26
 tags: SPARK
 ---
