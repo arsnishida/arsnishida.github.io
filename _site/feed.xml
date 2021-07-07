@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-06T13:19:43-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Preliminary Pass 04, Coverages and SNV Counts with Joint Family Coverages</title><link href="http://localhost:4000/2021/07/06/post-0027.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 04, Coverages and SNV Counts with Joint Family Coverages" /><published>2021-07-06T00:00:00-07:00</published><updated>2021-07-06T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/06/post-0027</id><content type="html" xml:base="http://localhost:4000/2021/07/06/post-0027.html">&lt;p&gt;This is a second pass through the data. This is a redo of parts 1, 2, and 2b with coverages coming from joint coverages (entire family, parents, and children). This is just on the quad simplex files.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-07T11:25:41-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Preliminary Pass 04, Coverages and SNV Counts with Joint Family Coverages</title><link href="http://localhost:4000/2021/07/06/post-0027.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 04, Coverages and SNV Counts with Joint Family Coverages" /><published>2021-07-06T00:00:00-07:00</published><updated>2021-07-06T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/06/post-0027</id><content type="html" xml:base="http://localhost:4000/2021/07/06/post-0027.html">&lt;p&gt;This is a second pass through the data. This is a redo of parts 1, 2, and 2b with coverages coming from joint coverages (entire family, parents, and children). This is just on the quad simplex files.&lt;/p&gt;
 
 &lt;p&gt;The first markdown includes how the data was loaded, filtered, and subset and has no plots. The second markdown contains the plots.&lt;/p&gt;
 
@@ -189,9 +189,12 @@ fusil	SDTRF	chry	0
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qbptliwg3irwnod/FUSIL.alt.genes?dl=0&quot;&gt;FUSIL.alt.genes&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Joint Coverage:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Multiplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Trios&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0&quot;&gt;Genomic Individal/Avg Coverage, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xp96tughn8vhjzu/jointcoverage.2.simplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0&quot;&gt;Genomic Individal/Avg Coverage, Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/dm5ppo3fn2q0vrv/jointcoverage.2.multiplexquads.txt?dl=0&quot;&gt;Genomic Joint Coverage, Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0&quot;&gt;Genomic Individal/Avg Coverage, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0&quot;&gt;Genomic Joint Coverage, Simplex Trios&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Joint Coverage by Gene-set for Quad Simplex:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0&quot;&gt;jointcoverage.Essential.txt&lt;/a&gt;
@@ -215,9 +218,15 @@ fusil	SDTRF	chry	0
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0&quot;&gt;jointcoverage.FUSIL.txt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Markdowns:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0&quot;&gt;Comparison of Burden Counters&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0&quot;&gt;Summary of FRACTION Annotations&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0&quot;&gt;Genomic Burden Coverage Plots&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0&quot;&gt;Preliminary, Loading, Filtering, and Subsetting&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0&quot;&gt;Preliminary, Plotting Genomic Coverages and SNV Counts&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/w09g46khn7xazng/prelim_burden_quadsimplex_02b.html?dl=0&quot;&gt;Preliminary, Plotting SNV Counts as Hists&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/29z48y39rflny96/prelim_burden_quadsimplex_03.html?dl=0&quot;&gt;Preliminary, Plotting Allele Frequencies&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/3ne6r98f4o1n3hi/prelim_burden_quadsimplex_04a.html?dl=0&quot;&gt;Preliminary, Updated Loading, Filtering, and Subsetting&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nytxd9qmoq882se/prelim_burden_quadsimplex_04b.html?dl=0&quot;&gt;Preliminary, Updated Genomic Coverages and SNV Counts&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0&quot;&gt;Testing, Comparison of Burden Counters&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0&quot;&gt;Testing, Summary of FRACTION Annotations&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0&quot;&gt;Testing, Genomic Burden Coverage Plots&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The data is first filtered with loose criteria that will not be changed: there must be 8 reads at the location for the samples, the population allele frequencies must be less than 0.001, the variant is called less than four times across the families in the list, it must have at least 3 variant reads, and it must have an exonic refseq annotation. The data is then filtered again with stricter criteria (testfilter). These criteria were developed for the older lists, might not be as appropriate for these lists, and may change eventually. These stricter criteria are: five variant reads, greater than 0.03 AF, called by at least two callers (mpup, lofreq, or varscan), has an upper 90% confidence intervals via Agresti-Coull method above or equal to 5%, MISMATCH_XM_ALT_MEDIAN &amp;lt;= 3, and SCORE_400_RB3 &amp;gt; 0.518. I then filtered it down to toss out the numerous germline parental calls that won’t be of use to us for looking at mosaics. The data here is unlikely to change but will certainly get filtered down further in the future.&lt;/p&gt;
 

@@ -29,9 +29,12 @@ Links to List of Gene Names with Alternate Names:
 <br>[FUSIL.alt.genes](https://www.dropbox.com/s/qbptliwg3irwnod/FUSIL.alt.genes?dl=0)
 
 Joint Coverage:
-<br>[Genomic Joint Coverage, Simplex Quads](https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0)
-<br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0)
-<br>[Genomic Joint Coverage, Simplex Trios](https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0)
+<br>[Genomic Individal/Avg Coverage, Simplex Quads](https://www.dropbox.com/s/o3qeqthlx4xjykn/jointcoverage.simplexquads.txt?dl=0)
+<br>[Genomic Joint Coverage, Simplex Quads](https://www.dropbox.com/s/xp96tughn8vhjzu/jointcoverage.2.simplexquads.txt?dl=0)
+<br>[Genomic Individal/Avg Coverage, Multiplex Quads](https://www.dropbox.com/s/o5zx9ljr7q2bn92/jointcoverage.multiplexquads.txt?dl=0)
+<br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/dm5ppo3fn2q0vrv/jointcoverage.2.multiplexquads.txt?dl=0)
+<br>[Genomic Individal/Avg Coverage, Simplex Trios](https://www.dropbox.com/s/qu5nps1knpeuf34/jointcoverage.simplextrios.txt?dl=0)
+<br>[Genomic Joint Coverage, Simplex Trios](https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0)
 
 Joint Coverage by Gene-set for Quad Simplex:
 <br>[jointcoverage.Essential.txt](https://www.dropbox.com/s/y25s6feb140f9zb/jointcoverage.simplexquads_essential.txt?dl=0)
@@ -55,9 +58,15 @@ Joint Coverage by Gene-set for Trio Simplex:
 <br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0)
 
 Markdowns:
-<br>[Comparison of Burden Counters](https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0)
-<br>[Summary of FRACTION Annotations](https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0)
-<br>[Genomic Burden Coverage Plots](https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0)
+<br>[Preliminary, Loading, Filtering, and Subsetting](https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0)
+<br>[Preliminary, Plotting Genomic Coverages and SNV Counts](https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0)
+<br>[Preliminary, Plotting SNV Counts as Hists](https://www.dropbox.com/s/w09g46khn7xazng/prelim_burden_quadsimplex_02b.html?dl=0)
+<br>[Preliminary, Plotting Allele Frequencies](https://www.dropbox.com/s/29z48y39rflny96/prelim_burden_quadsimplex_03.html?dl=0)
+<br>[Preliminary, Updated Loading, Filtering, and Subsetting](https://www.dropbox.com/s/3ne6r98f4o1n3hi/prelim_burden_quadsimplex_04a.html?dl=0)
+<br>[Preliminary, Updated Genomic Coverages and SNV Counts](https://www.dropbox.com/s/nytxd9qmoq882se/prelim_burden_quadsimplex_04b.html?dl=0)
+<br>[Testing, Comparison of Burden Counters](https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0)
+<br>[Testing, Summary of FRACTION Annotations](https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0)
+<br>[Testing, Genomic Burden Coverage Plots](https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0)
 
 The data is first filtered with loose criteria that will not be changed: there must be 8 reads at the location for the samples, the population allele frequencies must be less than 0.001, the variant is called less than four times across the families in the list, it must have at least 3 variant reads, and it must have an exonic refseq annotation. The data is then filtered again with stricter criteria (testfilter). These criteria were developed for the older lists, might not be as appropriate for these lists, and may change eventually. These stricter criteria are: five variant reads, greater than 0.03 AF, called by at least two callers (mpup, lofreq, or varscan), has an upper 90% confidence intervals via Agresti-Coull method above or equal to 5%, MISMATCH_XM_ALT_MEDIAN <= 3, and SCORE_400_RB3 > 0.518. I then filtered it down to toss out the numerous germline parental calls that won't be of use to us for looking at mosaics. The data here is unlikely to change but will certainly get filtered down further in the future.
 
