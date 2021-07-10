@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "SC TBR1 ChromVAR"
+date:   2021-07-09
+tags: tbr1
+---
+
+Dir: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar`
+<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar/chromvar.Rscript`
+
+ChromVAR was run with R v4.0.0 using the JASPAR 2020 motif database for mm10. This was performed on the data filtered at the TSS 2.7 threshold.
+Here are the variabilities plotted in order where the motifs NEUROD1 and NEUROG2 show considerably greater variation: [Variability Figure](https://www.dropbox.com/s/2aplfvnqe35mlxk/blog_tmp1_chromVARvariability.png?dl=0)
+
+Here is the UMAP with the deviation scores of NEUROD1 overlaid: [NEUROD1 Deviations UMAP](https://www.dropbox.com/s/0r46yntageg2gny/blog_tmp1_chromVAR_NEUROD1.png?dl=0)
+
+Here is another high variability motif, LHX9, that is found with a somewhat opposite distribution across the cells: [LHX9 Deviations UMAP](https://www.dropbox.com/s/apb4wdw2mhxv8qj/blog_tmp1_chromVAR_LHX9.png?dl=0)
