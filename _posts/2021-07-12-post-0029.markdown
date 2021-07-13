@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Single Cell TBR1 ChromVAR with TSS > 2.7"
-date:   2021-07-09
+title:  "Single Cell TBR1 ChromVAR with TSS > 1.5"
+date:   2021-07-12
 tags: tbr1
 ---
 
