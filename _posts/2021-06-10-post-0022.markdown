@@ -20,4 +20,4 @@ Pseudotimes projected onto UMAP made within Cicero/Monocle3. [FIGURE-1](https://
 
 Pseudotimes projected onto UMAP we made. [FIGURE-2](https://www.dropbox.com/s/c8axbywevhklpas/blog_tmp1_pseudo_umap.png?dl=0)
 
-Two well defined peaks significantly changing over pseudotime. [FIGURE-3](https://www.dropbox.com/s/8s4x5rikbbr728q/blog_tmp1_pseudo_peakexs.png?dl=0)
+Two well defined peaks significantly changing over pseudotime. [FIGURE-3](https://www.dropbox.com/s/f72foapl3gbvtxw/blog_tmp1_pseudo_peakexs.png?dl=0)

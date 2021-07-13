@@ -7,15 +7,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Single Cell TBR1 ChromVAR with TSS &gt; 1.5" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar/chromvar.Rscript" />
-<meta property="og:description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar/chromvar.Rscript" />
+<meta name="description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar/chromvar.Rscript" />
+<meta property="og:description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar/chromvar.Rscript" />
 <link rel="canonical" href="http://localhost:4000/2021/07/12/post-0029.html" />
 <meta property="og:url" content="http://localhost:4000/2021/07/12/post-0029.html" />
 <meta property="og:site_name" content="ARSN Lab Notebook" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-12T00:00:00-07:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2021/07/12/post-0029.html","headline":"Single Cell TBR1 ChromVAR with TSS &gt; 1.5","dateModified":"2021-07-12T00:00:00-07:00","datePublished":"2021-07-12T00:00:00-07:00","description":"Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar/chromvar.Rscript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/07/12/post-0029.html"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/2021/07/12/post-0029.html","headline":"Single Cell TBR1 ChromVAR with TSS &gt; 1.5","dateModified":"2021-07-12T00:00:00-07:00","datePublished":"2021-07-12T00:00:00-07:00","description":"Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar/chromvar.Rscript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/07/12/post-0029.html"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
 <body><header class="site-header" role="banner">
@@ -45,16 +45,16 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar</code>
-<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/chromvar/chromvar.Rscript</code></p>
+    <p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/chromvar/chromvar.Rscript</code></p>
 
-<p>ChromVAR was run with R v4.0.0 using the JASPAR 2020 motif database for mm10. This was performed on the data filtered at the TSS 2.7 threshold.</p>
+<p>ChromVAR was run with R v4.0.0 using the JASPAR 2020 motif database for mm10. This was performed on the data filtered at the TSS 1.5 threshold.</p>
 
-<p>Here are the variabilities plotted in order where the motifs NEUROD1 and NEUROG2 show considerably greater variation: <a href="https://www.dropbox.com/s/2aplfvnqe35mlxk/blog_tmp1_chromVARvariability.png?dl=0">Variability Figure</a></p>
+<p>Here are the variabilities plotted in order where the motifs are slightly different from the 1.5 thresholded version: <a href="https://www.dropbox.com/s/kcz824kl28c21wc/blog_tmp1_chromVAR1p5_variability.png?dl=0">Variability FIgure</a></p>
 
-<p>Here is the UMAP with the deviation scores of NEUROD1 overlaid: <a href="https://www.dropbox.com/s/0r46yntageg2gny/blog_tmp1_chromVAR_NEUROD1.png?dl=0">NEUROD1 Deviations UMAP</a></p>
+<p>Motifs like <a href="https://www.dropbox.com/s/3jdm5st6kcjttic/blog_tmp1_chromVAR1p5_NEUROD1.png?dl=0">NEUROD1 (Deviations UMAP)</a> and <a href="https://www.dropbox.com/s/9plgj38wfd0cb1b/blog_tmp1_chromVAR1p5_LHX9.png?dl=0">LHX9 (Deviations UMAP)</a> remain top hits with similar distributions as the 2.7 versions.</p>
 
-<p>Here is another high variability motif, LHX9, that is found with a somewhat opposite distribution across the cells: <a href="https://www.dropbox.com/s/apb4wdw2mhxv8qj/blog_tmp1_chromVAR_LHX9.png?dl=0">LHX9 Deviations UMAP</a></p>
+<p>We get enrichment of <a href="https://www.dropbox.com/s/af88qnznirb5iya/blog_tmp1_chromVAR1p5_KLF9.png?dl=0">KLF9 (Deviations UMAP)</a> motifs as well but it follows a similar distribution of motifs like <a href="https://www.dropbox.com/s/3ap8ek6p7ecw4c0/blog_tmp1_chromVAR1p5_CTCF.png?dl=0">CTCF (Deviations UMAP)</a>. These show enrichment in the high TSS enriched cells relative to low TSS enriched cells so I’m not convinced these are representative of anything interesting. We would really want to find a motif with the opposite distribution (high enrichment for a motif in the low TSS cells and low motif enrichment in the high TSS cells) to say those lower TSS cells had something worthwhile.</p>
 
   </div><a class="u-url" href="/2021/07/12/post-0029.html" hidden></a>
 </article>
