@@ -1,0 +1,26 @@
+I"¡<p>This is a final pass through the data for the purposes of filtering, collapsing, and relabeling for the quad simplex files.</p>
+
+<p>Here are the thresholds used to filter each category for the quad simplex calls.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mosaic_c        45x 5%, adjusted &gt;=10 calls
+germline_c      45x 5%, adjusted &gt;=12 calls
+mosaic_nontrans 45x 5%, adjusted &gt;=14 calls
+mosaic_trans    45x 5%, adjusted &gt;= 6 calls
+</code></pre></div></div>
+<p>This eliminates the following four families: SF0087337, SF0035804, SF0054730, SF0081797.</p>
+
+<p>Complex events were addressed by hand. Events occuring in the same codon were run with their combined alternative genotype in VEP. Rows in the table were chosen by the following criteria:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IF variants are multi-allelic:
+	* choose variant with more severe effect (NSS &gt; MIS &gt; TRANSVERSION_SYN &gt; TRANSITION_SYN)
+IF variants potentially in the same codon (w/in 3bp):
+	* keep variant with left-most coordinate
+	* combine genotype
+	* update functional annotation to reflect VEP annotation run on the combined effect
+IF variants are nearby in different codons (w/in 100bp):
+	* choose variant with more severe effect (NSS &gt; MIS &gt; SYN)
+		* if same effect, keep nearest to a splice junction
+			* if same splice junction distance, keep left-most
+</code></pre></div></div>
+
+<p>Link to markdown:
+<br /><a href="https://www.dropbox.com/s/se5uhqkcxmqocmx/prelim_burden_quadsimplex_05.html?dl=0">Filtering and Collapsing Quad Simplex Calls, part 5</a></p>
+:ET

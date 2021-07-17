@@ -1,0 +1,14 @@
+I"�<p>This is a first pass through the data for the simplex trio families for the purposes of outlier detection.</p>
+
+<p>Link to markdown:
+<br /><a href="https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0">Preliminary Outlier Analysis for Trio Simplex Calls, part 6a</a>
+<br /><a href="">Preliminary Outlier Analysis for Trio Simplex Calls, part 6b</a></p>
+
+<p>Notes per section from 6b:
+<br />4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn’t a tail. No filtering recommended again.
+<br />5.2 - Plot Genomic Coverage, Autosomal - Also similarily expected. To note, joint family coverages here for trios are going to be larger than simplex quad family coverages since there are fewer family members.
+<br />5.8 - Plot SNV Counts Jitter, Mosaic Child - There’s a single, clear outlier that would get filtered out with the same simplex quad threshold of &gt;= 10.
+<br />6.3 - Plot SNV Counts Jitter, Germline Child - No outliers. Nothing would be removed with the same simplex quad threshold of &gt;= 12.
+<br />7.3 - Plot SNV Counts Jitter, Mosaic Parental Non-Trans - There are a few clear outliers and a few ambiguous cases like in the simplex quads. 2 families are clear outliers and 5 are near the threshold but still fall above the simplex quad threshold of &gt;= 14.
+<br />8.3 - Plot SNV Counts Jitter, Mosaic Parental Trans - No outliers. Nothing would be removed with the same simplex quad threshold of &gt;= 6.</p>
+:ET

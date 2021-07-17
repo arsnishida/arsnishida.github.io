@@ -1,56 +1,9 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>SPARK Mosaic Index | ARSN Lab Notebook</title>
-<meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="SPARK Mosaic Index" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project." />
-<meta property="og:description" content="This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project." />
-<link rel="canonical" href="http://localhost:4000/2021/06/03/post-0020.html" />
-<meta property="og:url" content="http://localhost:4000/2021/06/03/post-0020.html" />
-<meta property="og:site_name" content="ARSN Lab Notebook" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-06-03T00:00:00-07:00" />
-<script type="application/ld+json">
-{"url":"http://localhost:4000/2021/06/03/post-0020.html","headline":"SPARK Mosaic Index","dateModified":"2021-06-03T00:00:00-07:00","datePublished":"2021-06-03T00:00:00-07:00","description":"This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/06/03/post-0020.html"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">ARSN Lab Notebook</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">SPARK Mosaic Index</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2021-06-03T00:00:00-07:00" itemprop="datePublished">Jun 3, 2021
-      </time></p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <p><em>This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.</em></p>
+I"�6<p><em>This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.</em></p>
 
 <p>Final Mosaic Lists (July 17th):
-<br /><a href="https://www.dropbox.com/s/iou03kyskzstkyh/quadsimplex.finaltable.txt?dl=0">Simplex Quads w/ Loose Filter</a>
-<br /><a href="">Multiplex Quads w/ Loose Filter, PENDING</a>
-<br /><a href="">Simplex Trios w/ Loose Filter, PENDING</a></p>
+<br /><a href="">Simplex Quads w/ Loose Filter</a>
+<br /><a href="">Multiplex Quads w/ Loose Filter</a>
+<br /><a href="">Simplex Trios w/ Loose Filter</a></p>
 
 <p>Mosaic Lists (June):
 <br /><a href="https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0">Simplex Quads w/ Loose Filter</a>
@@ -110,10 +63,8 @@
 <br /><a href="https://www.dropbox.com/s/3ne6r98f4o1n3hi/prelim_burden_quadsimplex_04a.html?dl=0">Preliminary, Updated Loading, Filtering, and Subsetting, Simplex Quad</a>
 <br /><a href="https://www.dropbox.com/s/nytxd9qmoq882se/prelim_burden_quadsimplex_04b.html?dl=0">Preliminary, Updated Genomic Coverages and SNV Counts, Simplex Quad</a>
 <br /><a href="https://www.dropbox.com/s/se5uhqkcxmqocmx/prelim_burden_quadsimplex_05.html?dl=0">Preliminary, Final Table Creation, Simplex Quad</a>
-<br /><a href="https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0">Preliminary, Loading, Filtering, and Subsetting, Simplex Trio</a>
-<br /><a href="https://www.dropbox.com/s/jls73uleobac7o5/prelim_burden_triosimplex_06b.html?dl=0">Preliminary, Genomic Coverages, SNV Counts, and Allele Frequencies, Simplex Trio</a>
-<br /><a href="">Preliminary, Loading, Filtering, and Subsetting, Multiplex Quad</a>
-<br /><a href="">Preliminary, Genomic Coverages, SNV Counts, and Allele Frequencies, Multiplex Quad</a>
+<br /><a href="">Preliminary, Loading, Filtering, and Subsetting, Simplex Trio</a>
+<br /><a href="">Preliminary, Genomic Coverages, SNV Counts, and Allele Frequencies, Simplex Trio</a>
 <br /><a href="https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0">Testing, Comparison of Burden Counters</a>
 <br /><a href="https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0">Testing, Summary of FRACTION Annotations</a>
 <br /><a href="https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0">Testing, Genomic Burden Coverage Plots</a></p>
@@ -151,17 +102,7 @@
 <br />74/AF_L90CI_AC_MAIN, 75/AF_U90CI_AC_MAIN - upper and lower 90% confidence intervals via Agresti-Coull method
 <br />76/FRACTION_ORIGINAL - old, erroneous annotations of the site for posterity, see May 9 update
 <br />77/FRACTION_MORE - a subset of column 8, FRACTION, with further granularity, see June 3 update
-<br />78/PSAME_FAxPRO, 79/PSAME_FAxSIB, 80/PSAME_MOxPRO, 81/PSAME_MOxSIB - Fisher’s exact test comparing depths and alt reads from parents versus children for the purposes of testing a transmission event.
-Final tables also contain:
-<br />82/MIN_DP - The minimum depth of all family members.
-<br />83/ACC_DIST, 84/DON_DIST, 85/ACC_TRANSCRIPT, 86/DON_TRANSCRIPT - The distances in basepairs to an acceptor or donor site and which transcript from which this distance is derived.
-<br />87/COMPLEX_EVENT - All FALSE in final tables representing collapsed complex events.</p>
-
-<p>###</p>
-
-<p>*Update for July 17, 2021</p>
-
-<p>Tables are modified for July 17. Final tables have been added with final filters applied and collapsing of duplicate entries and complex events. Five new columns have been added. One for minimum depth, four for the donor and acceptor distances and transcripts, and one for whether or not the row represents a complex event.</p>
+<br />78/PSAME_FAxPRO, 79/PSAME_FAxSIB, 80/PSAME_MOxPRO, 81/PSAME_MOxSIB - Fisher’s exact test comparing depths and alt reads from parents versus children for the purposes of testing a transmission event.</p>
 
 <p>###</p>
 
@@ -175,35 +116,4 @@ Final tables also contain:
 
 <p>Tables are modified for May 9. I updated the “FRACTION” annotation column adjusting an error in the later files. There is one new column at the end called, “FRACTION_ORIGINAL”. This contains the first call of the fraction that should be ignored but I’m keeping it in the file as a record.</p>
 
-
-  </div><a class="u-url" href="/2021/06/03/post-0020.html" hidden></a>
-</article>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">ARSN Lab Notebook</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">ARSN Lab Notebook</li><li><a class="u-email" href="mailto:nishidaa@ohsu.edu">nishidaa@ohsu.edu</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/arsnishida"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">arsnishida</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>ARSN Lab notebook.</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-</body>
-
-</html>
+:ET

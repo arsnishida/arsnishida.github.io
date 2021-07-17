@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "SPARK Preliminary Pass 7a and 7b, Multiplex Quad Coverages, SNV Counts, and AFs"
+date:   2021-07-17
+tags: SPARK
+---
+
+This is a first pass through the data for the multiplex quad families for the purposes of outlier detection.
+
+Link to markdown:
+<br>[Preliminary Outlier Analysis for Quad Multiplex Calls, part 6a]()
+<br>[Preliminary Outlier Analysis for Quad Multiplex Calls, part 6b]()
+
+Notes per section from 7a:
+<br>4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn't a tail. No filtering recommended again.
+Notes per section from 7b:
+<br>4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn't a tail. No filtering recommended again.

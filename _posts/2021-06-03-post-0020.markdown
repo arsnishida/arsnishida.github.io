@@ -7,7 +7,12 @@ tags: SPARK INDEX
 
 *This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.*
 
-Mosaic Lists:
+Final Mosaic Lists (July 17th):
+<br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/iou03kyskzstkyh/quadsimplex.finaltable.txt?dl=0)
+<br>[Multiplex Quads w/ Loose Filter, PENDING]()
+<br>[Simplex Trios w/ Loose Filter, PENDING]()
+
+Mosaic Lists (June):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)
 <br>[Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/407gqs049ukcdcf/quadmultiplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)
 <br>[Simplex Trios w/ Loose Filter](https://www.dropbox.com/s/2rs72k69tkepcrz/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)
@@ -58,12 +63,17 @@ Joint Coverage by Gene-set for Trio Simplex:
 <br>[jointcoverage.FUSIL.txt](https://www.dropbox.com/s/se7qcaaulzihpec/jointcoverage.simplextrios_fusil.txt?dl=0)
 
 Markdowns:
-<br>[Preliminary, Loading, Filtering, and Subsetting](https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0)
-<br>[Preliminary, Plotting Genomic Coverages and SNV Counts](https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0)
-<br>[Preliminary, Plotting SNV Counts as Hists](https://www.dropbox.com/s/w09g46khn7xazng/prelim_burden_quadsimplex_02b.html?dl=0)
-<br>[Preliminary, Plotting Allele Frequencies](https://www.dropbox.com/s/29z48y39rflny96/prelim_burden_quadsimplex_03.html?dl=0)
-<br>[Preliminary, Updated Loading, Filtering, and Subsetting](https://www.dropbox.com/s/3ne6r98f4o1n3hi/prelim_burden_quadsimplex_04a.html?dl=0)
-<br>[Preliminary, Updated Genomic Coverages and SNV Counts](https://www.dropbox.com/s/nytxd9qmoq882se/prelim_burden_quadsimplex_04b.html?dl=0)
+<br>[Preliminary, Loading, Filtering, and Subsetting, Simplex Quad](https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0)
+<br>[Preliminary, Plotting Genomic Coverages and SNV Counts, Simplex Quad](https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0)
+<br>[Preliminary, Plotting SNV Counts as Hists, Simplex Quad](https://www.dropbox.com/s/w09g46khn7xazng/prelim_burden_quadsimplex_02b.html?dl=0)
+<br>[Preliminary, Plotting Allele Frequencies, Simplex Quad](https://www.dropbox.com/s/29z48y39rflny96/prelim_burden_quadsimplex_03.html?dl=0)
+<br>[Preliminary, Updated Loading, Filtering, and Subsetting, Simplex Quad](https://www.dropbox.com/s/3ne6r98f4o1n3hi/prelim_burden_quadsimplex_04a.html?dl=0)
+<br>[Preliminary, Updated Genomic Coverages and SNV Counts, Simplex Quad](https://www.dropbox.com/s/nytxd9qmoq882se/prelim_burden_quadsimplex_04b.html?dl=0)
+<br>[Preliminary, Final Table Creation, Simplex Quad](https://www.dropbox.com/s/se5uhqkcxmqocmx/prelim_burden_quadsimplex_05.html?dl=0)
+<br>[Preliminary, Loading, Filtering, and Subsetting, Simplex Trio](https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0)
+<br>[Preliminary, Genomic Coverages, SNV Counts, and Allele Frequencies, Simplex Trio](https://www.dropbox.com/s/jls73uleobac7o5/prelim_burden_triosimplex_06b.html?dl=0)
+<br>[Preliminary, Loading, Filtering, and Subsetting, Multiplex Quad]()
+<br>[Preliminary, Genomic Coverages, SNV Counts, and Allele Frequencies, Multiplex Quad]()
 <br>[Testing, Comparison of Burden Counters](https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0)
 <br>[Testing, Summary of FRACTION Annotations](https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0)
 <br>[Testing, Genomic Burden Coverage Plots](https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0)
@@ -102,6 +112,16 @@ Here are descriptions of all the columns in the table:
 <br>76/FRACTION_ORIGINAL - old, erroneous annotations of the site for posterity, see May 9 update
 <br>77/FRACTION_MORE - a subset of column 8, FRACTION, with further granularity, see June 3 update
 <br>78/PSAME_FAxPRO, 79/PSAME_FAxSIB, 80/PSAME_MOxPRO, 81/PSAME_MOxSIB - Fisher's exact test comparing depths and alt reads from parents versus children for the purposes of testing a transmission event.
+Final tables also contain:
+<br>82/MIN_DP - The minimum depth of all family members.
+<br>83/ACC_DIST, 84/DON_DIST, 85/ACC_TRANSCRIPT, 86/DON_TRANSCRIPT - The distances in basepairs to an acceptor or donor site and which transcript from which this distance is derived.
+<br>87/COMPLEX_EVENT - All FALSE in final tables representing collapsed complex events.
+
+###
+
+*Update for July 17, 2021
+
+Tables are modified for July 17. Final tables have been added with final filters applied and collapsing of duplicate entries and complex events. Five new columns have been added. One for minimum depth, four for the donor and acceptor distances and transcripts, and one for whether or not the row represents a complex event.
 
 ###
 
