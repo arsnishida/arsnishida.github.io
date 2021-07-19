@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-18T12:14:38-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Preliminary Pass 7a and 7b, Multiplex Quad Coverages, SNV Counts, and AFs</title><link href="http://localhost:4000/2021/07/17/post-0032.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 7a and 7b, Multiplex Quad Coverages, SNV Counts, and AFs" /><published>2021-07-17T00:00:00-07:00</published><updated>2021-07-17T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/17/post-0032</id><content type="html" xml:base="http://localhost:4000/2021/07/17/post-0032.html">&lt;p&gt;This is a first pass through the data for the multiplex quad families for the purposes of outlier detection.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-18T23:22:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Single Cell TBR1 Misc Figures - ChromVAR Compare, FDR Hists, 3D</title><link href="http://localhost:4000/2021/07/18/post-0034.html" rel="alternate" type="text/html" title="Single Cell TBR1 Misc Figures - ChromVAR Compare, FDR Hists, 3D" /><published>2021-07-18T00:00:00-07:00</published><updated>2021-07-18T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/18/post-0034</id><content type="html" xml:base="http://localhost:4000/2021/07/18/post-0034.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7&lt;/code&gt;
+Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run_3D_plot.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some of the UMAPs and how they were plot in 3d. They look as expected, similar to the 2D versions. The Bio Cluster one might indicate that one of the pg’s labeled as excitatory should be better labeled as undetermined.
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2x0fzhw1kws4zv3/blog_tmp1_3DUMAP_tss.png?dl=0&quot;&gt;UMAP in 3D w/ TSS Enrichment&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4jhcbnvp68uhfob/blog_tmp1_3DUMAP_pseudotime.png?dl=0&quot;&gt;UMAP in 3D w/ Pseudotime&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/e2rhe4oa7ny6r7a/blog_tmp1_3DUMAP_bioclust.png?dl=0&quot;&gt;UMAP in 3D w/ Bio Cluster&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0re6w255skq2dr0/blog_tmp1_3DUMAP_treat.png?dl=0&quot;&gt;UMAP in 3D w/ Treatment&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This markdown contains two parts for various figures. The first part shows the DA results from comparing pg 1 and pg 12 in the data filtered at TSS &amp;gt; 1.5. The second part contains a comparison of the results from running ChromVAR on the two TSS &amp;gt; 1.5 and 2.7 datasets.&lt;/p&gt;
+
+&lt;p&gt;Link to Markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/y8di4csk1meql5g/sc_tmp1_misc_figs_01.html?dl=0&quot;&gt;DA P-val/FDR Distributions and ChromVAR Comparisons&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown Notes:
+&lt;br /&gt;1.2 - Plot PVALS - These are terribly skewed suggesting the test itself is not a good choice.
+&lt;br /&gt;1.3 - Plot FDRS - These end up all as 1 due to the issue above.
+&lt;br /&gt;2.3 - Plot Variability, Spearman - The overall variabilities are well correlated with a few outliers from the KLF family.
+&lt;br /&gt;2.4 - Show KLF9 and CTCF Score Correlations - The deviation scores from ChromVAR run on the TSS &amp;gt; 1.5 dataset are compared for KLF9 and CTCF. KLF9 is a variable motif under the 1.5 dataset but not the 2.7 dataset. It has a similar pattern and distribution to CTCF but this show the scores aren’t well correlated suggesting it isn’t simply an indication of quality like CTCF usually indicates.&lt;/p&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7 Run: run_3D_plot.txt</summary></entry><entry><title type="html">Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7</title><link href="http://localhost:4000/2021/07/18/post-0033.html" rel="alternate" type="text/html" title="Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7" /><published>2021-07-18T00:00:00-07:00</published><updated>2021-07-18T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/18/post-0033</id><content type="html" xml:base="http://localhost:4000/2021/07/18/post-0033.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA&lt;/code&gt;
+Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The DA information of where and what was run is left here for posterity. None of the comparisons yielded significant results using the raw p-value. The DA was performed after TF normalization using the Wilcoxon rank sum test.&lt;/p&gt;
+
+&lt;p&gt;The following tests were performed:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# comparing genotypes within bioclusters
+excit_het vs excit_hom vs excit_wt
+inhibit_het vs inhibit_hom vs inhibit_wt
+prog_het vs prog_hom vs prog_wt
+
+# comparing lines within bioclusters
+excit_a136pft vs excit_tbr1ko
+inhibit_a136pft vs inhibit_tbr1ko
+prog_a136pft vs prog_tbr1ko
+
+# comparing progression from prog to excitatory
+progenitor_E12.5_a136pfs_het vs excitatory_E16.5_a136pfs_het
+progenitor_E12.5_a136pfs_hom vs excitatory_E16.5_a136pfs_hom
+progenitor_E12.5_a136pfs_wt vs excitatory_E16.5_a136pfs_wt
+progenitor_E12.5_tbr1_ko_het vs excitatory_E16.5_tbr1_ko_het
+progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
+progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is a complete breakdown of cell numbers:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    177 excitatory_E12.5_a136pfs_het
+     42 excitatory_E12.5_a136pfs_hom
+     16 excitatory_E12.5_a136pfs_wt
+     31 excitatory_E12.5_tbr1_ko_het
+      9 excitatory_E12.5_tbr1_ko_hom
+     26 excitatory_E12.5_tbr1_ko_wt
+   1044 excitatory_E16.5_a136pfs_het
+    962 excitatory_E16.5_a136pfs_hom
+    902 excitatory_E16.5_a136pfs_wt
+    655 excitatory_E16.5_tbr1_ko_het
+    183 excitatory_E16.5_tbr1_ko_hom
+    354 excitatory_E16.5_tbr1_ko_wt
+     30 inhibitory_E12.5_a136pfs_het
+     31 inhibitory_E12.5_a136pfs_hom
+     11 inhibitory_E12.5_a136pfs_wt
+      4 inhibitory_E12.5_tbr1_ko_het
+      8 inhibitory_E12.5_tbr1_ko_hom
+      6 inhibitory_E12.5_tbr1_ko_wt
+     19 inhibitory_E16.5_a136pfs_het
+     21 inhibitory_E16.5_a136pfs_hom
+     37 inhibitory_E16.5_a136pfs_wt
+     15 inhibitory_E16.5_tbr1_ko_het
+      5 inhibitory_E16.5_tbr1_ko_hom
+     10 inhibitory_E16.5_tbr1_ko_wt
+    649 progenitor_E12.5_a136pfs_het
+    205 progenitor_E12.5_a136pfs_hom
+    117 progenitor_E12.5_a136pfs_wt
+    177 progenitor_E12.5_tbr1_ko_het
+     70 progenitor_E12.5_tbr1_ko_hom
+    102 progenitor_E12.5_tbr1_ko_wt
+    232 progenitor_E16.5_a136pfs_het
+    271 progenitor_E16.5_a136pfs_hom
+    365 progenitor_E16.5_a136pfs_wt
+    148 progenitor_E16.5_tbr1_ko_het
+     52 progenitor_E16.5_tbr1_ko_hom
+    115 progenitor_E16.5_tbr1_ko_wt
+    155 undetermined_E12.5_a136pfs_het
+    222 undetermined_E12.5_a136pfs_hom
+    138 undetermined_E12.5_a136pfs_wt
+     60 undetermined_E12.5_tbr1_ko_het
+     77 undetermined_E12.5_tbr1_ko_hom
+     40 undetermined_E12.5_tbr1_ko_wt
+    482 undetermined_E16.5_a136pfs_het
+    514 undetermined_E16.5_a136pfs_hom
+    467 undetermined_E16.5_a136pfs_wt
+    162 undetermined_E16.5_tbr1_ko_het
+    192 undetermined_E16.5_tbr1_ko_hom
+    293 undetermined_E16.5_tbr1_ko_wt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt</summary></entry><entry><title type="html">SPARK Preliminary Pass 6a and 6b, Simplex Trio Coverages, SNV Counts, and AFs</title><link href="http://localhost:4000/2021/07/17/post-0031.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 6a and 6b, Simplex Trio Coverages, SNV Counts, and AFs" /><published>2021-07-17T00:00:00-07:00</published><updated>2021-07-17T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/17/post-0031</id><content type="html" xml:base="http://localhost:4000/2021/07/17/post-0031.html">&lt;p&gt;This is a first pass through the data for the simplex trio families for the purposes of outlier detection.&lt;/p&gt;
+
+&lt;p&gt;Link to markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0&quot;&gt;Preliminary Outlier Analysis for Trio Simplex Calls, part 6a&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jls73uleobac7o5/prelim_burden_triosimplex_06b.html?dl=0&quot;&gt;Preliminary Outlier Analysis for Trio Simplex Calls, part 6b&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Notes per section from 6b:
+&lt;br /&gt;4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn’t a tail. No filtering recommended again.
+&lt;br /&gt;5.2 - Plot Genomic Coverage, Autosomal - Also similarily expected. To note, joint family coverages here for trios are going to be larger than simplex quad family coverages since there are fewer family members.
+&lt;br /&gt;5.8 - Plot SNV Counts Jitter, Mosaic Child - There’s a single, clear outlier that would get filtered out with the same simplex quad threshold of &amp;gt;= 10.
+&lt;br /&gt;6.3 - Plot SNV Counts Jitter, Germline Child - No outliers. Nothing would be removed with the same simplex quad threshold of &amp;gt;= 12.
+&lt;br /&gt;7.3 - Plot SNV Counts Jitter, Mosaic Parental Non-Trans - There are a few clear outliers and a few ambiguous cases like in the simplex quads. 2 families are clear outliers and 5 are near the threshold but still fall above the simplex quad threshold of &amp;gt;= 14.
+&lt;br /&gt;8.3 - Plot SNV Counts Jitter, Mosaic Parental Trans - No outliers. Nothing would be removed with the same simplex quad threshold of &amp;gt;= 6.
+&lt;br /&gt;11.1 - Plot All Allele Fraction Densities - Looks as expected. The remainder of AF plots also look as expected and in line with the simplex quads.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is a first pass through the data for the simplex trio families for the purposes of outlier detection.</summary></entry><entry><title type="html">SPARK Preliminary Pass 7a and 7b, Multiplex Quad Coverages, SNV Counts, and AFs</title><link href="http://localhost:4000/2021/07/17/post-0032.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 7a and 7b, Multiplex Quad Coverages, SNV Counts, and AFs" /><published>2021-07-17T00:00:00-07:00</published><updated>2021-07-17T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/17/post-0032</id><content type="html" xml:base="http://localhost:4000/2021/07/17/post-0032.html">&lt;p&gt;This is a first pass through the data for the multiplex quad families for the purposes of outlier detection.&lt;/p&gt;
 
 &lt;p&gt;Link to markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1wvlhs0bzrw2pwn/prelim_burden_quadmultiplex_07a.html?dl=0&quot;&gt;Preliminary Outlier Analysis for Quad Multiplex Calls, part 7a&lt;/a&gt;
@@ -12,20 +117,7 @@
 &lt;br /&gt;7.4 - Plot SNV Counts Jitter, Germline Child Zoomed - There is still one more family just above our threshold of &amp;gt;= 12 when we zoom in and ignore the extreme outliers.
 &lt;br /&gt;8.3 - Plot SNV Counts Jitter, Mosaic Parental Non-Trans - There are two families just above the threshold of &amp;gt;= 14.
 &lt;br /&gt;9.3 - Plot SNV Counts Jitter, Mosaic Parental Trans - No outliers, the max raw count is 2. There is a family near the threshold of &amp;gt;= 6 but it is just below and still only have 2 raw counts.
-&lt;br /&gt;12.3 - Allele Fraction Densities, Mosaic Child - There is a bit of a bump in the AF distributions for mosaic sibling calls. This may go away with the above filtering of families but also is likely just due to the low number of calls.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is a first pass through the data for the multiplex quad families for the purposes of outlier detection.</summary></entry><entry><title type="html">SPARK Preliminary Pass 6a and 6b, Simplex Trio Coverages, SNV Counts, and AFs</title><link href="http://localhost:4000/2021/07/17/post-0031.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 6a and 6b, Simplex Trio Coverages, SNV Counts, and AFs" /><published>2021-07-17T00:00:00-07:00</published><updated>2021-07-17T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/17/post-0031</id><content type="html" xml:base="http://localhost:4000/2021/07/17/post-0031.html">&lt;p&gt;This is a first pass through the data for the simplex trio families for the purposes of outlier detection.&lt;/p&gt;
-
-&lt;p&gt;Link to markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0&quot;&gt;Preliminary Outlier Analysis for Trio Simplex Calls, part 6a&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jls73uleobac7o5/prelim_burden_triosimplex_06b.html?dl=0&quot;&gt;Preliminary Outlier Analysis for Trio Simplex Calls, part 6b&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Notes per section from 6b:
-&lt;br /&gt;4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn’t a tail. No filtering recommended again.
-&lt;br /&gt;5.2 - Plot Genomic Coverage, Autosomal - Also similarily expected. To note, joint family coverages here for trios are going to be larger than simplex quad family coverages since there are fewer family members.
-&lt;br /&gt;5.8 - Plot SNV Counts Jitter, Mosaic Child - There’s a single, clear outlier that would get filtered out with the same simplex quad threshold of &amp;gt;= 10.
-&lt;br /&gt;6.3 - Plot SNV Counts Jitter, Germline Child - No outliers. Nothing would be removed with the same simplex quad threshold of &amp;gt;= 12.
-&lt;br /&gt;7.3 - Plot SNV Counts Jitter, Mosaic Parental Non-Trans - There are a few clear outliers and a few ambiguous cases like in the simplex quads. 2 families are clear outliers and 5 are near the threshold but still fall above the simplex quad threshold of &amp;gt;= 14.
-&lt;br /&gt;8.3 - Plot SNV Counts Jitter, Mosaic Parental Trans - No outliers. Nothing would be removed with the same simplex quad threshold of &amp;gt;= 6.
-&lt;br /&gt;11.1 - Plot All Allele Fraction Densities - Looks as expected. The remainder of AF plots also look as expected and in line with the simplex quads.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is a first pass through the data for the simplex trio families for the purposes of outlier detection.</summary></entry><entry><title type="html">SPARK Preliminary Pass 5, Final Filtering</title><link href="http://localhost:4000/2021/07/14/post-0030.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 5, Final Filtering" /><published>2021-07-14T00:00:00-07:00</published><updated>2021-07-14T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/14/post-0030</id><content type="html" xml:base="http://localhost:4000/2021/07/14/post-0030.html">&lt;p&gt;This is a final pass through the data for the purposes of filtering, collapsing, and relabeling for the quad simplex files.&lt;/p&gt;
+&lt;br /&gt;12.3 - Allele Fraction Densities, Mosaic Child - There is a bit of a bump in the AF distributions for mosaic sibling calls. This may go away with the above filtering of families but also is likely just due to the low number of calls.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is a first pass through the data for the multiplex quad families for the purposes of outlier detection.</summary></entry><entry><title type="html">SPARK Preliminary Pass 5, Final Filtering</title><link href="http://localhost:4000/2021/07/14/post-0030.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 5, Final Filtering" /><published>2021-07-14T00:00:00-07:00</published><updated>2021-07-14T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/14/post-0030</id><content type="html" xml:base="http://localhost:4000/2021/07/14/post-0030.html">&lt;p&gt;This is a final pass through the data for the purposes of filtering, collapsing, and relabeling for the quad simplex files.&lt;/p&gt;
 
 &lt;p&gt;Here are the thresholds used to filter each category for the quad simplex calls.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mosaic_c        45x 5%, adjusted &amp;gt;=10 calls
@@ -109,24 +201,4 @@ mosaic_trans    45x 5%, adjusted &amp;gt;= 6 calls
 &lt;br /&gt;4.4 - Plot / Mosaic Child - There is a single Proband from a family with 12 counts which is a clear outlier with every other family having less than 5 counts.
 &lt;br /&gt;4.7 - Plot / Germline Child - There is a single Sibling from a family with 8 counts where every other family has 5 or less.
 &lt;br /&gt;4.10 - Plot / Mosaic Parental Non-Trans - There are two Mothers from families with 8 and 9 counts with every other family having 5 or less.
-&lt;br /&gt;4.13 - Plot / Mosaic Parental Trans - There are no families with higher than 5 counts.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. This is just on the quad simplex files.</summary></entry><entry><title type="html">SPARK Preliminary Pass 01, Filtering and Classifications</title><link href="http://localhost:4000/2021/06/22/post-0023.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 01, Filtering and Classifications" /><published>2021-06-22T00:00:00-07:00</published><updated>2021-06-22T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/22/post-0023</id><content type="html" xml:base="http://localhost:4000/2021/06/22/post-0023.html">&lt;p&gt;This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am going through the loading and reorganizing of the data. This includes preliminary filtering, collapsing of certain rows, and reclassifying some specific names. This is just on the quad simplex files.&lt;/p&gt;
-
-&lt;p&gt;Link to markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/q758yakdp5bm6de/prelim_burden_quadsimplex_01.html?dl=0&quot;&gt;Preliminary Burden, part 1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Notes per section:
-&lt;br /&gt;2.6 - Load/Masterlist Subset - I should bring in the full master-table down instead of this subset eventually.
-&lt;br /&gt;2.7 - Load/Coverage Denominators - Move this to a loadable file eventually.
-&lt;br /&gt;3.1 - Filter and Subset/Variant Filter - Right now not filtering families, add those here.
-&lt;br /&gt;3.2 - Filter and Subset/Duplicate Variant Entries - This describes and collapses the situations where multiple variants for the same family are occuring (usually due to transmission). There are 5 mosaic child calls that are borderline that we are dropping here which should be fine (the full numbers for these are printed out so you can see why they are at the border). There are also many instances where a variant is called in the child but found to be mosaic in the parent who does not have an original call. I am currently dropping these on the basis of the fact that no original variant call was made for these.
-&lt;br /&gt;3.3 - Filter and Subset/Collapse Complex Events - Currently not marking or collapsing complex events.
-&lt;br /&gt;3.4 - Filter and Subset/Variant Reclassification to Germline - Hard reclassification of any mosaic with AF_U90_CI_AC_MAIN &amp;gt;= 0.4 as “MOSAIC_TO_GERMLINE”. Check AF plots before and after down the road.
-&lt;br /&gt;3.5 - Filter and Subset/Function Reclassifications - The current categories are: nonsynonymous SNV, stopgain, stoploss, synonymous SNV, unknown. We may want to group these or add splicing information into these column.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am going through the loading and reorganizing of the data. This includes preliminary filtering, collapsing of certain rows, and reclassifying some specific names. This is just on the quad simplex files.</summary></entry><entry><title type="html">SPARK Preliminary Pass 02, Loading for Coverage and SNV Count Plots</title><link href="http://localhost:4000/2021/06/22/post-0024.html" rel="alternate" type="text/html" title="SPARK Preliminary Pass 02, Loading for Coverage and SNV Count Plots" /><published>2021-06-22T00:00:00-07:00</published><updated>2021-06-22T00:00:00-07:00</updated><id>http://localhost:4000/2021/06/22/post-0024</id><content type="html" xml:base="http://localhost:4000/2021/06/22/post-0024.html">&lt;p&gt;This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. Counting and pasting coverages per family should probably be done outside of R to actually work quickly. This is just on the quad simplex files.&lt;/p&gt;
-
-&lt;p&gt;Link to markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nco21ui46vgv0xt/prelim_burden_quadsimplex_02.html?dl=0&quot;&gt;Preliminary Burden, part 2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Notes per section:
-&lt;br /&gt;4.1 - Generate Count Tables/Count Table Creation for All Variants - This takes too long in R. Just count them up outside of R.
-&lt;br /&gt;5.2/5.3 - Plot/Decile Plot, All Deciles - Just choose one of percent bases or # bases going forward, doens’t matter. There’s not a dramatic tail at the bottom fifthtile but its reasonably lower than everything to just drop. Splitting out by FA, MO, PRO, and SIB shows they’re all the same.
-&lt;br /&gt;5.9/5.10 - Plot/Plot SNV Counts, Mosaic Child, Boxplots using # SNVs and # SNVs / EXOME COVERAGE - The boxplots don’t work that well since most of the families have 0 counts in the discrete categories. These would probably be better as histograms. I wanted to plot out just the raw number of counts to see if there were outlying families with too many calls. There are a few and the ones I spot checked also have low exome coverage. Plot # of calls by Exome Coverage really quick.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. Counting and pasting coverages per family should probably be done outside of R to actually work quickly. This is just on the quad simplex files.</summary></entry></feed>
+&lt;br /&gt;4.13 - Plot / Mosaic Parental Trans - There are no families with higher than 5 counts.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. This is just on the quad simplex files.</summary></entry></feed>
