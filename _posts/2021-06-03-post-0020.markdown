@@ -77,6 +77,13 @@ Markdowns:
 <br>[Testing, Comparison of Burden Counters](https://www.dropbox.com/s/wu9t8w7lnv6uw7c/compare_burden_counter.html?dl=0)
 <br>[Testing, Summary of FRACTION Annotations](https://www.dropbox.com/s/bon4m7zfee6yagp/summary_fractions.html?dl=0)
 <br>[Testing, Genomic Burden Coverage Plots](https://www.dropbox.com/s/xevia29rbrw8uab/burden_coverage_plots.html?dl=0)
+<br>[Simplex Quad Synonymous SNV Splice Distances](https://www.dropbox.com/s/8vwd6t3ap2g8t0n/firstpass_simplexquads_splicedist_08.html?dl=0)
+<br>[Outlier Detection Prep, Simplex Quads](https://www.dropbox.com/s/p2rghqq58an52jf/prelim_burden_quadsimplex_09a.html?dl=0)
+<br>[Outlier Detection Figures, Simplex Quads](https://www.dropbox.com/s/bz3ovlqfk1l2t5j/prelim_burden_quadsimplex_09b.html?dl=0)
+<br>[Outlier Detection Prep, Simplex Trios](https://www.dropbox.com/s/tkptvw9v740dnn1/prelim_burden_triosimplex_10a.html?dl=0)
+<br>[Outlier Detection Figures, Simplex Trios](https://www.dropbox.com/s/hscrmzueyqk0h5p/prelim_burden_triosimplex_10b.html?dl=0)
+<br>[Outlier Detection Prep, Multiplex Quads](https://www.dropbox.com/s/pvke3s22tkxojzq/prelim_burden_quadmultiplex_11a.html?dl=0)
+<br>[Outlier Detection Figures, Multiplex Quads](https://www.dropbox.com/s/x1tcpf9beovlk69/prelim_burden_quadmultiplex_11b.html?dl=0)
 
 The data is first filtered with loose criteria that will not be changed: there must be 8 reads at the location for the samples, the population allele frequencies must be less than 0.001, the variant is called less than four times across the families in the list, it must have at least 3 variant reads, and it must have an exonic refseq annotation. The data is then filtered again with stricter criteria (testfilter). These criteria were developed for the older lists, might not be as appropriate for these lists, and may change eventually. These stricter criteria are: five variant reads, greater than 0.03 AF, called by at least two callers (mpup, lofreq, or varscan), has an upper 90% confidence intervals via Agresti-Coull method above or equal to 5%, MISMATCH_XM_ALT_MEDIAN <= 3, and SCORE_400_RB3 > 0.518. I then filtered it down to toss out the numerous germline parental calls that won't be of use to us for looking at mosaics. The data here is unlikely to change but will certainly get filtered down further in the future.
 

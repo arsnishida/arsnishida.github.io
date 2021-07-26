@@ -1,0 +1,11 @@
+I"�<p>What I did.</p>
+
+<p>Link to Markdown:
+<br /><a href="https://www.dropbox.com/s/y8di4csk1meql5g/sc_tmp1_misc_figs_01.html?dl=0">DA P-val/FDR Distributions and ChromVAR Comparisons</a></p>
+
+<p>Markdown Notes:
+<br />1.2 - Plot PVALS - These are terribly skewed suggesting the test itself is not a good choice.
+<br />1.3 - Plot FDRS - These end up all as 1 due to the issue above.
+<br />2.3 - Plot Variability, Spearman - The overall variabilities are well correlated with a few outliers from the KLF family.
+<br />2.4 - Show KLF9 and CTCF Score Correlations - The deviation scores from ChromVAR run on the TSS &gt; 1.5 dataset are compared for KLF9 and CTCF. KLF9 is a variable motif under the 1.5 dataset but not the 2.7 dataset. It has a similar pattern and distribution to CTCF but this show the scores aren’t well correlated suggesting it isn’t simply an indication of quality like CTCF usually indicates.</p>
+:ET

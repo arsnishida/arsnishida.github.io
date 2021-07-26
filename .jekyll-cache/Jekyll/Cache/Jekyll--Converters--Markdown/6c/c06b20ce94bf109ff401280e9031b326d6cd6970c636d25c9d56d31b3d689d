@@ -1,8 +1,0 @@
-I"<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/cicero/</code>
-<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/cicero/cicero.Rscript</code></p>
-
-<p>The Cicero instruction was taken from the Monocle3 guide (not the default guide) <a href="https://cole-trapnell-lab.github.io/cicero-release/docs_m3/#single-cell-accessibility-trajectories">here.</a></p>
-
-<p><code class="language-plaintext highlighter-rouge">cicero.conns.txt</code> - three column file with pairwise comparisons of two peaks and their connectivity score, -1 to 1
-<code class="language-plaintext highlighter-rouge">cicero.CCAN.txt</code> - two column file with the peak name and its CCAN group membership</p>
-:ET
