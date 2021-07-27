@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Preliminary Outlier Detection, Final Pass"
+title:  "SPARK Preliminary Outlier Detection, Secondary Pass"
 date:   2021-07-26
 tags: SPARK
 ---

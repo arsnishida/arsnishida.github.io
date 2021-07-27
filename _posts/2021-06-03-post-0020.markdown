@@ -8,9 +8,7 @@ tags: SPARK INDEX
 *This serves as a separate accessible copy of the README.txt for the SPARK Mosaic project.*
 
 Final Mosaic Lists (July 17th):
-<br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/iou03kyskzstkyh/quadsimplex.finaltable.txt?dl=0)
-<br>[Multiplex Quads w/ Loose Filter, PENDING]()
-<br>[Simplex Trios w/ Loose Filter, PENDING]()
+<br>[Simplex Quads w/ Loose Filter DISCONTINUED BUT HERE FOR POSTERITY](https://www.dropbox.com/s/iou03kyskzstkyh/quadsimplex.finaltable.txt?dl=0)
 
 Mosaic Lists (June):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)

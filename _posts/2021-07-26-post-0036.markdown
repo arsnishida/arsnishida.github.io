@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First Pass, Synonymous SNV Splice Distances"
+title:  "SPARK First Pass, Synonymous SNV Splice Distances"
 date:   2021-07-26
 tags: SPARK
 ---
