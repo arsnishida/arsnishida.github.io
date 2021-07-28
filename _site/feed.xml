@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-27T15:33:41-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Mosaic Index, July 27</title><link href="http://localhost:4000/2021/07/27/post-0039.html" rel="alternate" type="text/html" title="SPARK Mosaic Index, July 27" /><published>2021-07-27T00:00:00-07:00</published><updated>2021-07-27T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/27/post-0039</id><content type="html" xml:base="http://localhost:4000/2021/07/27/post-0039.html">&lt;p&gt;Final Mosaic Lists (July 27th):
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-07-28T13:32:28-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Mosaic Index, July 27</title><link href="http://localhost:4000/2021/07/27/post-0039.html" rel="alternate" type="text/html" title="SPARK Mosaic Index, July 27" /><published>2021-07-27T00:00:00-07:00</published><updated>2021-07-27T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/27/post-0039</id><content type="html" xml:base="http://localhost:4000/2021/07/27/post-0039.html">&lt;p&gt;Final Mosaic Lists (July 27th):
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2v0su9gdz25yv5w/quadsimplex.burden.txt?dl=0&quot;&gt;Simplex Quads, for Burden Analysis&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/dphpofhrh7xa84z/quadsimplex.highconfidence.txt?dl=0&quot;&gt;Simplex Quads, High Confidence Calls&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8rlzsphugatls37/triosimplex.burden.txt?dl=0&quot;&gt;Simplex Trios, for Burden Analysis&lt;/a&gt;
@@ -86,10 +86,15 @@ Final tables also contain:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8vwd6t3ap2g8t0n/firstpass_simplexquads_splicedist_08.html?dl=0&quot;&gt;Simplex Quad Synonymous SNV Splice Distances&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Markdown Notes:
-&lt;br /&gt;3.2 - Plot Densities, Match Fig 5 - The splice distances here show the opposite of what was observed before, they are further from splice sites. They are nonetheless different in distribution.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This replicates Figure 5 from original paper using the now defunct final simplex quad list looking at synonymous SNVs and their distances from splice sites.</summary></entry><entry><title type="html">Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7, Filtering Ambiguous Groups</title><link href="http://localhost:4000/2021/07/26/post-0035.html" rel="alternate" type="text/html" title="Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7, Filtering Ambiguous Groups" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0035</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0035.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA&lt;/code&gt;
-Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt&lt;/code&gt;&lt;/p&gt;
+&lt;br /&gt;3.2 - Plot Densities, Match Fig 5 - The splice distances here show the opposite of what was observed before, they are further from splice sites. They are nonetheless different in distribution.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This replicates Figure 5 from original paper using the now defunct final simplex quad list looking at synonymous SNVs and their distances from splice sites.</summary></entry><entry><title type="html">Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7, Filtering Ambiguous Groups</title><link href="http://localhost:4000/2021/07/26/post-0035.html" rel="alternate" type="text/html" title="Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7, Filtering Ambiguous Groups" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0035</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0035.html">&lt;p&gt;Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP.
+&lt;br /&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The DA information of where and what was run is left here for posterity. None of the comparisons yielded significant results using the raw p-value. The DA was performed after TF normalization using the Wilcoxon rank sum test.&lt;/p&gt;
+&lt;p&gt;Here’s the DA performed using the same groups but using the novel peaks called with macs3 on the data.
+&lt;br /&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA/run.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The DA was performed after TF normalization using the Wilcoxon rank sum test.&lt;/p&gt;
 
 &lt;p&gt;The following tests were performed:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# comparing genotypes within bioclusters
@@ -111,19 +116,19 @@ progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
 progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here is a complete breakdown of cell numbers:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    177 excitatory_E12.5_a136pfs_het
-     42 excitatory_E12.5_a136pfs_hom
-     16 excitatory_E12.5_a136pfs_wt
-     31 excitatory_E12.5_tbr1_ko_het
-      9 excitatory_E12.5_tbr1_ko_hom
-     26 excitatory_E12.5_tbr1_ko_wt
-   1044 excitatory_E16.5_a136pfs_het
-    962 excitatory_E16.5_a136pfs_hom
-    902 excitatory_E16.5_a136pfs_wt
-    655 excitatory_E16.5_tbr1_ko_het
-    183 excitatory_E16.5_tbr1_ko_hom
-    354 excitatory_E16.5_tbr1_ko_wt
+&lt;p&gt;Here is a complete breakdown of cell numbers with the:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    154 excitatory_E12.5_a136pfs_het
+     29 excitatory_E12.5_a136pfs_hom
+     11 excitatory_E12.5_a136pfs_wt
+     23 excitatory_E12.5_tbr1_ko_het
+      4 excitatory_E12.5_tbr1_ko_hom
+     22 excitatory_E12.5_tbr1_ko_wt
+    722 excitatory_E16.5_a136pfs_het
+    655 excitatory_E16.5_a136pfs_hom
+    674 excitatory_E16.5_a136pfs_wt
+    519 excitatory_E16.5_tbr1_ko_het
+     82 excitatory_E16.5_tbr1_ko_hom
+    208 excitatory_E16.5_tbr1_ko_wt
      30 inhibitory_E12.5_a136pfs_het
      31 inhibitory_E12.5_a136pfs_hom
      11 inhibitory_E12.5_a136pfs_wt
@@ -148,19 +153,19 @@ progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
     148 progenitor_E16.5_tbr1_ko_het
      52 progenitor_E16.5_tbr1_ko_hom
     115 progenitor_E16.5_tbr1_ko_wt
-    155 undetermined_E12.5_a136pfs_het
-    222 undetermined_E12.5_a136pfs_hom
-    138 undetermined_E12.5_a136pfs_wt
-     60 undetermined_E12.5_tbr1_ko_het
-     77 undetermined_E12.5_tbr1_ko_hom
-     40 undetermined_E12.5_tbr1_ko_wt
-    482 undetermined_E16.5_a136pfs_het
-    514 undetermined_E16.5_a136pfs_hom
-    467 undetermined_E16.5_a136pfs_wt
-    162 undetermined_E16.5_tbr1_ko_het
-    192 undetermined_E16.5_tbr1_ko_hom
-    293 undetermined_E16.5_tbr1_ko_wt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt</summary></entry><entry><title type="html">SPARK Final Table Creation</title><link href="http://localhost:4000/2021/07/26/post-0038.html" rel="alternate" type="text/html" title="SPARK Final Table Creation" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0038</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0038.html">&lt;p&gt;This describes the full extent of outlier detection and final filtering of all three lists.&lt;/p&gt;
+    178 undetermined_E12.5_a136pfs_het
+    235 undetermined_E12.5_a136pfs_hom
+    143 undetermined_E12.5_a136pfs_wt
+     68 undetermined_E12.5_tbr1_ko_het
+     82 undetermined_E12.5_tbr1_ko_hom
+     44 undetermined_E12.5_tbr1_ko_wt
+    804 undetermined_E16.5_a136pfs_het
+    821 undetermined_E16.5_a136pfs_hom
+    695 undetermined_E16.5_a136pfs_wt
+    298 undetermined_E16.5_tbr1_ko_het
+    293 undetermined_E16.5_tbr1_ko_hom
+    439 undetermined_E16.5_tbr1_ko_wt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt</summary></entry><entry><title type="html">SPARK Final Table Creation</title><link href="http://localhost:4000/2021/07/26/post-0038.html" rel="alternate" type="text/html" title="SPARK Final Table Creation" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0038</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0038.html">&lt;p&gt;This describes the full extent of outlier detection and final filtering of all three lists.&lt;/p&gt;
 
 &lt;p&gt;Representative figure showing outliers and thresholds used:
 &lt;a href=&quot;https://www.dropbox.com/s/p0bx47kpp0y7o7u/outlier_detection_autosomal_final.pdf?dl=0&quot;&gt;Final Outlier Detection Figures and Thresholds&lt;/a&gt;&lt;/p&gt;

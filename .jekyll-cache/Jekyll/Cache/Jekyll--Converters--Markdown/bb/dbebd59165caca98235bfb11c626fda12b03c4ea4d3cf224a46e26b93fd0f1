@@ -1,23 +1,15 @@
----
-layout: post
-title:  "Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS > 2.7, Filtering Ambiguous Groups"
-date:   2021-07-26
-tags: tbr1
----
+I"�<p>Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP.
+Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA</code>
+Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt</code></p>
 
-Here's the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP.
-<br>Dir: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA`
-<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt`
+<p>Here’s the DA performed using the same groups but using the novel peaks called with macs3 on the data.
+Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA</code>
+Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA/run.txt</code></p>
 
-Here's the DA performed using the same groups but using the novel peaks called with macs3 on the data.
-<br>Dir: `/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA`
-<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA/run.txt`
+<p>The DA was performed after TF normalization using the Wilcoxon rank sum test.</p>
 
-The DA was performed after TF normalization using the Wilcoxon rank sum test.
-
-The following tests were performed:
-```
-# comparing genotypes within bioclusters
+<p>The following tests were performed:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># comparing genotypes within bioclusters
 excit_het vs excit_hom vs excit_wt
 inhibit_het vs inhibit_hom vs inhibit_wt
 prog_het vs prog_hom vs prog_wt
@@ -34,11 +26,10 @@ progenitor_E12.5_a136pfs_wt vs excitatory_E16.5_a136pfs_wt
 progenitor_E12.5_tbr1_ko_het vs excitatory_E16.5_tbr1_ko_het
 progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
 progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
-```
+</code></pre></div></div>
 
-Here is a complete breakdown of cell numbers with the:
-```
-    154 excitatory_E12.5_a136pfs_het
+<p>Here is a complete breakdown of cell numbers with the:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    154 excitatory_E12.5_a136pfs_het
      29 excitatory_E12.5_a136pfs_hom
      11 excitatory_E12.5_a136pfs_wt
      23 excitatory_E12.5_tbr1_ko_het
@@ -86,4 +77,5 @@ Here is a complete breakdown of cell numbers with the:
     298 undetermined_E16.5_tbr1_ko_het
     293 undetermined_E16.5_tbr1_ko_hom
     439 undetermined_E16.5_tbr1_ko_wt
-```
+</code></pre></div></div>
+:ET

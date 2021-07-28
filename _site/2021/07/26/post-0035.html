@@ -7,15 +7,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &gt; 2.7, Filtering Ambiguous Groups" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt" />
-<meta property="og:description" content="Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt" />
+<meta name="description" content="Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt" />
+<meta property="og:description" content="Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt" />
 <link rel="canonical" href="http://localhost:4000/2021/07/26/post-0035.html" />
 <meta property="og:url" content="http://localhost:4000/2021/07/26/post-0035.html" />
 <meta property="og:site_name" content="ARSN Lab Notebook" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-26T00:00:00-07:00" />
 <script type="application/ld+json">
-{"headline":"Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &gt; 2.7, Filtering Ambiguous Groups","dateModified":"2021-07-26T00:00:00-07:00","datePublished":"2021-07-26T00:00:00-07:00","url":"http://localhost:4000/2021/07/26/post-0035.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/07/26/post-0035.html"},"description":"Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &gt; 2.7, Filtering Ambiguous Groups","dateModified":"2021-07-26T00:00:00-07:00","datePublished":"2021-07-26T00:00:00-07:00","url":"http://localhost:4000/2021/07/26/post-0035.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/07/26/post-0035.html"},"description":"Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
 <body><header class="site-header" role="banner">
@@ -45,10 +45,15 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA</code>
-Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt</code></p>
+    <p>Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP.
+<br />Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt</code></p>
 
-<p>The DA information of where and what was run is left here for posterity. None of the comparisons yielded significant results using the raw p-value. The DA was performed after TF normalization using the Wilcoxon rank sum test.</p>
+<p>Here’s the DA performed using the same groups but using the novel peaks called with macs3 on the data.
+<br />Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/novel_peaks/DA/run.txt</code></p>
+
+<p>The DA was performed after TF normalization using the Wilcoxon rank sum test.</p>
 
 <p>The following tests were performed:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># comparing genotypes within bioclusters
@@ -70,19 +75,19 @@ progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
 progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
 </code></pre></div></div>
 
-<p>Here is a complete breakdown of cell numbers:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    177 excitatory_E12.5_a136pfs_het
-     42 excitatory_E12.5_a136pfs_hom
-     16 excitatory_E12.5_a136pfs_wt
-     31 excitatory_E12.5_tbr1_ko_het
-      9 excitatory_E12.5_tbr1_ko_hom
-     26 excitatory_E12.5_tbr1_ko_wt
-   1044 excitatory_E16.5_a136pfs_het
-    962 excitatory_E16.5_a136pfs_hom
-    902 excitatory_E16.5_a136pfs_wt
-    655 excitatory_E16.5_tbr1_ko_het
-    183 excitatory_E16.5_tbr1_ko_hom
-    354 excitatory_E16.5_tbr1_ko_wt
+<p>Here is a complete breakdown of cell numbers with the:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    154 excitatory_E12.5_a136pfs_het
+     29 excitatory_E12.5_a136pfs_hom
+     11 excitatory_E12.5_a136pfs_wt
+     23 excitatory_E12.5_tbr1_ko_het
+      4 excitatory_E12.5_tbr1_ko_hom
+     22 excitatory_E12.5_tbr1_ko_wt
+    722 excitatory_E16.5_a136pfs_het
+    655 excitatory_E16.5_a136pfs_hom
+    674 excitatory_E16.5_a136pfs_wt
+    519 excitatory_E16.5_tbr1_ko_het
+     82 excitatory_E16.5_tbr1_ko_hom
+    208 excitatory_E16.5_tbr1_ko_wt
      30 inhibitory_E12.5_a136pfs_het
      31 inhibitory_E12.5_a136pfs_hom
      11 inhibitory_E12.5_a136pfs_wt
@@ -107,18 +112,18 @@ progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
     148 progenitor_E16.5_tbr1_ko_het
      52 progenitor_E16.5_tbr1_ko_hom
     115 progenitor_E16.5_tbr1_ko_wt
-    155 undetermined_E12.5_a136pfs_het
-    222 undetermined_E12.5_a136pfs_hom
-    138 undetermined_E12.5_a136pfs_wt
-     60 undetermined_E12.5_tbr1_ko_het
-     77 undetermined_E12.5_tbr1_ko_hom
-     40 undetermined_E12.5_tbr1_ko_wt
-    482 undetermined_E16.5_a136pfs_het
-    514 undetermined_E16.5_a136pfs_hom
-    467 undetermined_E16.5_a136pfs_wt
-    162 undetermined_E16.5_tbr1_ko_het
-    192 undetermined_E16.5_tbr1_ko_hom
-    293 undetermined_E16.5_tbr1_ko_wt
+    178 undetermined_E12.5_a136pfs_het
+    235 undetermined_E12.5_a136pfs_hom
+    143 undetermined_E12.5_a136pfs_wt
+     68 undetermined_E12.5_tbr1_ko_het
+     82 undetermined_E12.5_tbr1_ko_hom
+     44 undetermined_E12.5_tbr1_ko_wt
+    804 undetermined_E16.5_a136pfs_het
+    821 undetermined_E16.5_a136pfs_hom
+    695 undetermined_E16.5_a136pfs_wt
+    298 undetermined_E16.5_tbr1_ko_het
+    293 undetermined_E16.5_tbr1_ko_hom
+    439 undetermined_E16.5_tbr1_ko_wt
 </code></pre></div></div>
 
   </div><a class="u-url" href="/2021/07/26/post-0035.html" hidden></a>
