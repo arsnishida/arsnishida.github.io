@@ -23,6 +23,10 @@ Markdowns:
 <br>[03_QS, Final Table](https://www.dropbox.com/s/vqx366c95usmanb/03_qs.final_tables.html?dl=0)
 <br>[03_TS, Final Table](https://www.dropbox.com/s/06esgmqu3fux0h7/03_ts.final_tables.html?dl=0)
 <br>[03_QM, Final Table](https://www.dropbox.com/s/tn6njzth0v7v11u/03_qm.final_tables.html?dl=0)
+<br>[04, High Confidence Simplex Quad Allele Frequencies](https://www.dropbox.com/s/6s5dhposyznatnl/04_qs_highconf_allelefreqs_01.html?dl=0)
+<br>[05 High Confidence Simplex Quad Splice Distances](https://www.dropbox.com/s/mbcztsj0j9th4yx/05_highconf_splicedist_01.html?dl=0)
+<br>[05 High Confidence All Lists Splice Distances](https://www.dropbox.com/s/zzd6ikgyh4g8bzp/05_highconf_splicedist_02.html?dl=0)
+<br>[06 Burden Tables Autosomal](https://www.dropbox.com/s/5l34qb95m88tuvt/06_burden_autosomal_01.html?dl=0)
 
 Mosaic Lists, Full Non-Analysis Sets (June):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)

@@ -1,0 +1,6 @@
+I"Þ<p>This is the analysis of the synonymous SNVâ€™s and their splice distances split by FRACTION group. The first uses just the simplex quad data and the second combines all three lists. These both contain comparable figures to Figure 5D from the Krupp paper. By the same Wilcoxon rank sum test, we do not find any significant differences in splice site distances either using just simplex quads or using all the variants.</p>
+
+<p>Markdown:
+<br /><a href="https://www.dropbox.com/s/mbcztsj0j9th4yx/05_highconf_splicedist_01.html?dl=0">05 High Confidence Simplex Quad Splice Distances</a>
+<br /><a href="https://www.dropbox.com/s/zzd6ikgyh4g8bzp/05_highconf_splicedist_02.html?dl=0">05 High Confidence All Lists Splice Distances</a></p>
+:ET
