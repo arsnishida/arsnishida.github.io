@@ -1,0 +1,9 @@
+I"Ù<p>This is the gene set burden analysis using just the simplex quad burden table. We probably wonâ€™t use the 65/10% threshold but I thought it helped with just plotting the figures out for perspective for now. The same two-sided Wilcoxon rank sum test is performed and finds no evidence of burden.</p>
+
+<p>Markdown:
+<br /><a href="https://www.dropbox.com/s/5l34qb95m88tuvt/06_burden_autosomal_01.html?dl=0">06 Burden Tables Autosomal</a></p>
+
+<p>Notes per section:
+<br />6.3 - Print Table of Wilcoxon Rank Sums - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br />6.5 - Barplot SNV Counts, Normalized Mosaic Child per Functions - This is meant to match Figure 2 from the Krupp paper.</p>
+:ET

@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-04T09:19:31-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK High Confidence Synonymous Splice Distances 01</title><link href="http://localhost:4000/2021/08/03/post-0042.html" rel="alternate" type="text/html" title="SPARK High Confidence Synonymous Splice Distances 01" /><published>2021-08-03T00:00:00-07:00</published><updated>2021-08-03T00:00:00-07:00</updated><id>http://localhost:4000/2021/08/03/post-0042</id><content type="html" xml:base="http://localhost:4000/2021/08/03/post-0042.html">&lt;p&gt;This is the analysis of the synonymous SNV’s and their splice distances split by FRACTION group. The first uses just the simplex quad data and the second combines all three lists. These both contain comparable figures to Figure 5D from the Krupp paper. By the same Wilcoxon rank sum test, we do not find any significant differences in splice site distances either using just simplex quads or using all the variants.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-09T20:08:55-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Burden Tables Gene Sets 01</title><link href="http://localhost:4000/2021/08/09/post-0044.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets 01" /><published>2021-08-09T00:00:00-07:00</published><updated>2021-08-09T00:00:00-07:00</updated><id>http://localhost:4000/2021/08/09/post-0044</id><content type="html" xml:base="http://localhost:4000/2021/08/09/post-0044.html">&lt;p&gt;This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.&lt;/p&gt;
+
+&lt;p&gt;Markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/879g61jul2vnryi/07_burden_genesets_01.html?dl=0&quot;&gt;07 Burden Gene Sets&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Notes per section:
+&lt;br /&gt;7.4 - Print Table of Wilcoxon Rank Sums for All Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+&lt;br /&gt;7.6 - Plot for All Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+&lt;br /&gt;8.4 - Print Table of Wilcoxon Rank Sums for Essential Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+&lt;br /&gt;8.6 - Plot for Essential Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+&lt;br /&gt;9.4 - Print Table of Wilcoxon Rank Sums for Intolerant Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+&lt;br /&gt;9.6 - Plot for Intolerant Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.</summary></entry><entry><title type="html">SPARK High Confidence Synonymous Splice Distances 01</title><link href="http://localhost:4000/2021/08/03/post-0042.html" rel="alternate" type="text/html" title="SPARK High Confidence Synonymous Splice Distances 01" /><published>2021-08-03T00:00:00-07:00</published><updated>2021-08-03T00:00:00-07:00</updated><id>http://localhost:4000/2021/08/03/post-0042</id><content type="html" xml:base="http://localhost:4000/2021/08/03/post-0042.html">&lt;p&gt;This is the analysis of the synonymous SNV’s and their splice distances split by FRACTION group. The first uses just the simplex quad data and the second combines all three lists. These both contain comparable figures to Figure 5D from the Krupp paper. By the same Wilcoxon rank sum test, we do not find any significant differences in splice site distances either using just simplex quads or using all the variants.&lt;/p&gt;
 
 &lt;p&gt;Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/mbcztsj0j9th4yx/05_highconf_splicedist_01.html?dl=0&quot;&gt;05 High Confidence Simplex Quad Splice Distances&lt;/a&gt;
@@ -113,7 +124,16 @@ Final tables also contain:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bxvqbgd8adjlwj2/02_qm.outlier_detection.html?dl=0&quot;&gt;02_QM, Outlier Detection&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/vqx366c95usmanb/03_qs.final_tables.html?dl=0&quot;&gt;03_QS, Final Table&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/06esgmqu3fux0h7/03_ts.final_tables.html?dl=0&quot;&gt;03_TS, Final Table&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tn6njzth0v7v11u/03_qm.final_tables.html?dl=0&quot;&gt;03_QM, Final Table&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This describes the full extent of outlier detection and final filtering of all three lists.</summary></entry><entry><title type="html">SPARK First Pass, Synonymous SNV Splice Distances</title><link href="http://localhost:4000/2021/07/26/post-0036.html" rel="alternate" type="text/html" title="SPARK First Pass, Synonymous SNV Splice Distances" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0036</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0036.html">&lt;p&gt;This replicates Figure 5 from original paper using the now defunct final simplex quad list looking at synonymous SNVs and their distances from splice sites.&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tn6njzth0v7v11u/03_qm.final_tables.html?dl=0&quot;&gt;03_QM, Final Table&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This describes the full extent of outlier detection and final filtering of all three lists.</summary></entry><entry><title type="html">SPARK Preliminary Outlier Detection, Secondary Pass</title><link href="http://localhost:4000/2021/07/26/post-0037.html" rel="alternate" type="text/html" title="SPARK Preliminary Outlier Detection, Secondary Pass" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0037</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0037.html">&lt;p&gt;Figure showing the thresholds used before and currently with representative figures from all lists together.
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/mdradtin1uprrzb/outlier_detection_autosomal.pdf?dl=0&quot;&gt;Outliers and Thresholds Side by Side&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Link to Markdowns:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p2rghqq58an52jf/prelim_burden_quadsimplex_09a.html?dl=0&quot;&gt;Outlier Detection Prep, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bz3ovlqfk1l2t5j/prelim_burden_quadsimplex_09b.html?dl=0&quot;&gt;Outlier Detection Figures, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tkptvw9v740dnn1/prelim_burden_triosimplex_10a.html?dl=0&quot;&gt;Outlier Detection Prep, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hscrmzueyqk0h5p/prelim_burden_triosimplex_10b.html?dl=0&quot;&gt;Outlier Detection Figures, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/pvke3s22tkxojzq/prelim_burden_quadmultiplex_11a.html?dl=0&quot;&gt;Outlier Detection Prep, Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/x1tcpf9beovlk69/prelim_burden_quadmultiplex_11b.html?dl=0&quot;&gt;Outlier Detection Figures, Multiplex Quads&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Figure showing the thresholds used before and currently with representative figures from all lists together. Outliers and Thresholds Side by Side</summary></entry><entry><title type="html">SPARK First Pass, Synonymous SNV Splice Distances</title><link href="http://localhost:4000/2021/07/26/post-0036.html" rel="alternate" type="text/html" title="SPARK First Pass, Synonymous SNV Splice Distances" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0036</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0036.html">&lt;p&gt;This replicates Figure 5 from original paper using the now defunct final simplex quad list looking at synonymous SNVs and their distances from splice sites.&lt;/p&gt;
 
 &lt;p&gt;Link to Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8vwd6t3ap2g8t0n/firstpass_simplexquads_splicedist_08.html?dl=0&quot;&gt;Simplex Quad Synonymous SNV Splice Distances&lt;/a&gt;&lt;/p&gt;
@@ -198,87 +218,4 @@ progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
     298 undetermined_E16.5_tbr1_ko_het
     293 undetermined_E16.5_tbr1_ko_hom
     439 undetermined_E16.5_tbr1_ko_wt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt</summary></entry><entry><title type="html">SPARK Preliminary Outlier Detection, Secondary Pass</title><link href="http://localhost:4000/2021/07/26/post-0037.html" rel="alternate" type="text/html" title="SPARK Preliminary Outlier Detection, Secondary Pass" /><published>2021-07-26T00:00:00-07:00</published><updated>2021-07-26T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/26/post-0037</id><content type="html" xml:base="http://localhost:4000/2021/07/26/post-0037.html">&lt;p&gt;Figure showing the thresholds used before and currently with representative figures from all lists together.
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/mdradtin1uprrzb/outlier_detection_autosomal.pdf?dl=0&quot;&gt;Outliers and Thresholds Side by Side&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Link to Markdowns:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p2rghqq58an52jf/prelim_burden_quadsimplex_09a.html?dl=0&quot;&gt;Outlier Detection Prep, Simplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bz3ovlqfk1l2t5j/prelim_burden_quadsimplex_09b.html?dl=0&quot;&gt;Outlier Detection Figures, Simplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tkptvw9v740dnn1/prelim_burden_triosimplex_10a.html?dl=0&quot;&gt;Outlier Detection Prep, Simplex Trios&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hscrmzueyqk0h5p/prelim_burden_triosimplex_10b.html?dl=0&quot;&gt;Outlier Detection Figures, Simplex Trios&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/pvke3s22tkxojzq/prelim_burden_quadmultiplex_11a.html?dl=0&quot;&gt;Outlier Detection Prep, Multiplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/x1tcpf9beovlk69/prelim_burden_quadmultiplex_11b.html?dl=0&quot;&gt;Outlier Detection Figures, Multiplex Quads&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Figure showing the thresholds used before and currently with representative figures from all lists together. Outliers and Thresholds Side by Side</summary></entry><entry><title type="html">Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7</title><link href="http://localhost:4000/2021/07/18/post-0033.html" rel="alternate" type="text/html" title="Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS &amp;gt; 2.7" /><published>2021-07-18T00:00:00-07:00</published><updated>2021-07-18T00:00:00-07:00</updated><id>http://localhost:4000/2021/07/18/post-0033</id><content type="html" xml:base="http://localhost:4000/2021/07/18/post-0033.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA&lt;/code&gt;
-Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The DA information of where and what was run is left here for posterity. None of the comparisons yielded significant results using the raw p-value. The DA was performed after TF normalization using the Wilcoxon rank sum test.&lt;/p&gt;
-
-&lt;p&gt;The following tests were performed:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# comparing genotypes within bioclusters
-excit_het vs excit_hom vs excit_wt
-inhibit_het vs inhibit_hom vs inhibit_wt
-prog_het vs prog_hom vs prog_wt
-
-# comparing lines within bioclusters
-excit_a136pft vs excit_tbr1ko
-inhibit_a136pft vs inhibit_tbr1ko
-prog_a136pft vs prog_tbr1ko
-
-# comparing progression from prog to excitatory
-progenitor_E12.5_a136pfs_het vs excitatory_E16.5_a136pfs_het
-progenitor_E12.5_a136pfs_hom vs excitatory_E16.5_a136pfs_hom
-progenitor_E12.5_a136pfs_wt vs excitatory_E16.5_a136pfs_wt
-progenitor_E12.5_tbr1_ko_het vs excitatory_E16.5_tbr1_ko_het
-progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
-progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is a complete breakdown of cell numbers:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    177 excitatory_E12.5_a136pfs_het
-     42 excitatory_E12.5_a136pfs_hom
-     16 excitatory_E12.5_a136pfs_wt
-     31 excitatory_E12.5_tbr1_ko_het
-      9 excitatory_E12.5_tbr1_ko_hom
-     26 excitatory_E12.5_tbr1_ko_wt
-   1044 excitatory_E16.5_a136pfs_het
-    962 excitatory_E16.5_a136pfs_hom
-    902 excitatory_E16.5_a136pfs_wt
-    655 excitatory_E16.5_tbr1_ko_het
-    183 excitatory_E16.5_tbr1_ko_hom
-    354 excitatory_E16.5_tbr1_ko_wt
-     30 inhibitory_E12.5_a136pfs_het
-     31 inhibitory_E12.5_a136pfs_hom
-     11 inhibitory_E12.5_a136pfs_wt
-      4 inhibitory_E12.5_tbr1_ko_het
-      8 inhibitory_E12.5_tbr1_ko_hom
-      6 inhibitory_E12.5_tbr1_ko_wt
-     19 inhibitory_E16.5_a136pfs_het
-     21 inhibitory_E16.5_a136pfs_hom
-     37 inhibitory_E16.5_a136pfs_wt
-     15 inhibitory_E16.5_tbr1_ko_het
-      5 inhibitory_E16.5_tbr1_ko_hom
-     10 inhibitory_E16.5_tbr1_ko_wt
-    649 progenitor_E12.5_a136pfs_het
-    205 progenitor_E12.5_a136pfs_hom
-    117 progenitor_E12.5_a136pfs_wt
-    177 progenitor_E12.5_tbr1_ko_het
-     70 progenitor_E12.5_tbr1_ko_hom
-    102 progenitor_E12.5_tbr1_ko_wt
-    232 progenitor_E16.5_a136pfs_het
-    271 progenitor_E16.5_a136pfs_hom
-    365 progenitor_E16.5_a136pfs_wt
-    148 progenitor_E16.5_tbr1_ko_het
-     52 progenitor_E16.5_tbr1_ko_hom
-    115 progenitor_E16.5_tbr1_ko_wt
-    155 undetermined_E12.5_a136pfs_het
-    222 undetermined_E12.5_a136pfs_hom
-    138 undetermined_E12.5_a136pfs_wt
-     60 undetermined_E12.5_tbr1_ko_het
-     77 undetermined_E12.5_tbr1_ko_hom
-     40 undetermined_E12.5_tbr1_ko_wt
-    482 undetermined_E16.5_a136pfs_het
-    514 undetermined_E16.5_a136pfs_hom
-    467 undetermined_E16.5_a136pfs_wt
-    162 undetermined_E16.5_tbr1_ko_het
-    192 undetermined_E16.5_tbr1_ko_hom
-    293 undetermined_E16.5_tbr1_ko_wt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Here’s the DA performed with removing the phenograph clusters 8 and 9 which are ambiguously between excitatory neurons and unidentified, low-TSS areas on the 3D UMAP. Dir: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA Run: /home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA_v2_removeLowTSSFromDA/run.txt</summary></entry></feed>
