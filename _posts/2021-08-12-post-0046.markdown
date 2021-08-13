@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Single Cell TBR1 ChIP-Seq Peak DA"
+date:   2021-08-12
+tags: tbr1
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/chip_peaks/DA`
+<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/chip_peaks/DA/run.txt`
+
+This takes the peaks called from a ChIP-seq study of TBR1 and does the same differential accessibility tests as before with these peaks. The DA was performed after TF normalization using the Wilcoxon rank sum test with the same groups and tests as here:
+[link](https://arsnishida.github.io/2021/07/26/post-0035.html)
+
+Peaks are taken from ChIP-seq study here:
+```
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+https://pubmed.ncbi.nlm.nih.gov/27325115/
+```
