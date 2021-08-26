@@ -1,6 +1,0 @@
-I"J<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7</code>
-Run: <code class="language-plaintext highlighter-rouge">run_3D_plot.txt</code></p>
-
-<p>Here are some of the UMAPs and how they were plot in 3d. They look as expected, similar to the 2D versions. The Bio Cluster one might indicate that one of the pg’s labeled as excitatory should be better labeled as undetermined.
-<br /><a href="https://www.dropbox.com/s/2x0fzhw1kws4zv3/blog_tmp1_3DUMAP_tss.png?dl=0">UMAP in 3D w/ TSS Enrichment</a></p>
-:ET

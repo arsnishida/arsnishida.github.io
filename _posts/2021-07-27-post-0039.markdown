@@ -54,6 +54,9 @@ Joint Coverage:
 <br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/dm5ppo3fn2q0vrv/jointcoverage.2.multiplexquads.txt?dl=0)
 <br>[Genomic Joint Coverage, Simplex Trios](https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0)
 
+IGV Shots:
+<br>[IGV Shots of High Confidence Sites](https://www.dropbox.com/sh/nj8wglswrxj7lik/AADvVXrVXapW3lukFMppeuLAa?dl=0)
+
 Here are descriptions of all the columns in the table:
 <br>1/CHR, 2/START, 3/STOP, 4/REF, 5/ALT - general variant information
 <br>6/FAMILY, 7/SAMPLE, 8/FRACTION - SF family ID, SP sample ID, putative mosaic annotation

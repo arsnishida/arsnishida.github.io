@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "SPARK IGV Shots of High Confident Calls"
+date:   2021-08-26
+tags: SPARK
+---
+
+Directory: `/home/groups/oroaklab/nishida/spark_mosaic/IGV`
+<br>Run: `/home/groups/oroaklab/nishida/spark_mosaic/IGV/run.txt`
+
+IGV shots were taken with version 2.10.3. The update to the version and subsequent change to the creation of sessions and batch scripts is due to the use of CRAMs. Shots were made of all sites in the high confident call for all three lists (simplex quad, simplex trio, multiplex quad). Tracks are always in the order of: FATHER, MOTHER, PROBAND, SIBLING. Multiplex shots with divergent labels for children are listed in alphabetically order. Simplex trio shots include four tracks. This last real track comes from a random simplex quad family which can function as an additional reference for looking at sequencing error in the area.
+
+The shots are located [here](https://www.dropbox.com/sh/nj8wglswrxj7lik/AADvVXrVXapW3lukFMppeuLAa?dl=0). There are also three spreadsheets for each of the list for hand-annotations and notes from looking at the IGV shots. I have looked at all of the MOSAIC_CHILD calls and will gradually parse through the other mosaic types over time.
+
+For the hand-annotation of the MOSAIC_CHILD calls only five shots were missing information and given an annotation of 'NA'. The remaining shots all looked like true "MOSAIC_CHILD" calls and were given that annotation. While all of them look like mosaics, the following additional notes were made to explain potential issues with the region or call in general. In the column for notes the following notes were made depending on the shot with some shots receiving multiple notes. The common issues have a representative example of the issue.
+<br><b>'mismatch in all'</b> - there visually apperas to be more mismatches than normal across all samples in the family, [example](https://www.dropbox.com/s/kgdpfdu2rbt0ll1/mismatch_in_all.png?dl=0)
+<br><b>'mismatch in sample'</b> - there visually appears to be more mismatches in this sample relative to other members of the family, [example](https://www.dropbox.com/s/2b6vi2i1s0ys3aq/mismatch_in_sample.png?dl=0)
+<br><b>'mismatch in reads'</b> - there visually appears to be more mismatches in the specific reads with the variant, [example](https://www.dropbox.com/s/td7ulkuke5uy0bu/mismatch_in_reads.png?dl=0)
+<br><b>'indel'</b> - this SNV is actually an INDEL or adjacent to an INDEL, [example](https://www.dropbox.com/s/n8vb86pvzkphvfc/indel.png?dl=0)
+<br><b>'multi-base'</b> - the variant is correlated to another variant found only in the sample, the other nearby variants may not be reported due to the collapsing of complex events choosing the most deleterious variant, [example](https://www.dropbox.com/s/92wj8euphhxjk2h/multi_base.png?dl=0)
+<br><b>'correlated to other variants'</b> - this variant is found alongside an upstream or downstream variant found in other members of the family, [example](https://www.dropbox.com/s/3nckx8brd9d59er/correlated_to_other_variants.png?dl=0)
+<br><b>'edge of read'</b> - all variant reads are at the edge of reads, these generally have additional issues, [example](https://www.dropbox.com/s/cgvp21uhiih7got/edge_of_read.png?dl=0)
+<br><b>'repetitive region'</b> - this falls in what visually looks like repetitive region, these generally have additional issues
+<br><b>'cohort count issue'</b> - this shows technical issues repeatedly at the same position across multiple families
+
+These issues appear in a relatively minor number of variants and filtering them further on these issues would likely not change any other downstream analyses. I believe mismatches across the region are fine and we already are filtering on this across the family. We do not filter by mismatches per individual however and looking at individual mismatches relative to the family would help clean up some calls. Clear indels could be removed (and could be removed easily if we had a more full INDEL list). And we can probably recall the cohort counter with these final lists across all three lists to find regions of routine technical issue.
