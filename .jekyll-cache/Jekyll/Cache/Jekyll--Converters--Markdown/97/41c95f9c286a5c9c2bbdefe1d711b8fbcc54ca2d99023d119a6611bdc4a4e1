@@ -1,18 +1,0 @@
-I"/<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/IGV</code>
-<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/IGV/run.txt</code></p>
-
-<p>IGV shots were taken with version 2.10.3. The update to the version and subsequent change to the creation of sessions and batch scripts is due to the use of CRAMs. Shots were made of all sites in the high confident call for all three lists (simplex quad, simplex trio, multiplex quad). Simplex trio shots include four tracks. This last real track comes from a random simplex quad family which can function as an additional reference for looking at sequencing error in the area.</p>
-
-<p>The shots are located <a href="https://www.dropbox.com/sh/nj8wglswrxj7lik/AADvVXrVXapW3lukFMppeuLAa?dl=0">here</a>. There are also three spreadsheets for each of the list for hand-annotations and notes from looking at the IGV shots. I have looked at all of the MOSAIC_CHILD calls and will gradually parse through the other mosaic types over time.</p>
-
-<p>For the hand-annotation of the MOSAIC_CHILD calls only five shots were missing information and given an annotation of ‘NA’. The remaining shots all looked like true “MOSAIC_CHILD” calls and were given that annotation. While all of them look like mosaics, the following additional notes were made to explain potential issues with the region or call in general. In the column for notes the following notes were made depending on the shot with some shots receiving multiple notes. Each one has a representative example of the issue.
-<br /><b>‘mismatch in all’</b> - there visually apperas to be more mismatches than normal across all samples in the family
-<br /><b>‘mismatch in sample’</b> - there visually appears to be more mismatches in this sample relative to other members of the family
-<br /><b>‘mismatch in reads’</b> - there visually appears to be more mismatches in the specific reads with the variant
-<br /><b>‘indel’</b> - this SNV is actually an INDEL or adjacent to an INDEL
-<br /><b>‘multi-base’</b> - the variant is correlated to another variant found only in the sample, the other nearby variants may not be reported due to the collapsing of complex events choosing the most deleterious variant
-<br /><b>‘correlated to other variants’</b> - this variant is found alongside an upstream or downstream variant found in other members of the family
-<br /><b>‘edge of read’</b> - all variant reads are at the edge of reads, these generally have additional issues
-<br /><b>‘cohort count issue’</b> - this shows technical issues repeatedly at the same position across multiple families
-<br /><b>‘repetitive region’</b> - this falls in what visually looks like repetitive region, these generally have additional issues</p>
-:ET

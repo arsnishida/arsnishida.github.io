@@ -27,6 +27,8 @@ Markdowns:
 <br>[05 High Confidence Simplex Quad Splice Distances](https://www.dropbox.com/s/mbcztsj0j9th4yx/05_highconf_splicedist_01.html?dl=0)
 <br>[05 High Confidence All Lists Splice Distances](https://www.dropbox.com/s/zzd6ikgyh4g8bzp/05_highconf_splicedist_02.html?dl=0)
 <br>[06 Burden Tables Autosomal](https://www.dropbox.com/s/5l34qb95m88tuvt/06_burden_autosomal_01.html?dl=0)
+<br>[07_01 Burden Gene Sets](https://www.dropbox.com/s/879g61jul2vnryi/07_burden_genesets_01.html?dl=0)
+<br>[07_02 Burden Gene Sets](https://www.dropbox.com/s/zwvp4yolro6gdvp/07_burden_genesets_02.html?dl=0)
 
 Mosaic Lists, Full Non-Analysis Sets (June):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)
