@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>SPARK Burden Tables Gene Sets 03 | ARSN Lab Notebook</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="SPARK Burden Tables Gene Sets 03" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets." />
+<meta property="og:description" content="This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets." />
+<link rel="canonical" href="http://localhost:4000/2021/09/14/post-0049.html" />
+<meta property="og:url" content="http://localhost:4000/2021/09/14/post-0049.html" />
+<meta property="og:site_name" content="ARSN Lab Notebook" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-14T00:00:00-07:00" />
+<script type="application/ld+json">
+{"headline":"SPARK Burden Tables Gene Sets 03","dateModified":"2021-09-14T00:00:00-07:00","datePublished":"2021-09-14T00:00:00-07:00","url":"http://localhost:4000/2021/09/14/post-0049.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/09/14/post-0049.html"},"description":"This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">ARSN Lab Notebook</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SPARK Burden Tables Gene Sets 03</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-09-14T00:00:00-07:00" itemprop="datePublished">Sep 14, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.</p>
+
+<p>This differs from “SPARK Burden Tables Gene Sets 02” by using the most final non-hg19 version of the DNV call list, applying a filter for sites called as indels in IGV screenshots, and recategorizing the calls into the LGD and NS groups. The burden results are roughly the same as before, with maybe a slight but non-significant enrichment for burden in Probands relative to Siblings for the YES_NS category when looking at all the calls. There is a quick comparison of our lists and theirs at the end and a technical comparisons of the Proband vs. Sibling stats.</p>
+
+<p>Markdown:
+<br /><a href="https://www.dropbox.com/s/a2sr4qp1pfwip3q/07_burden_genesets_03.html?dl=0">07_03 Burden Gene Sets</a></p>
+
+<p>Notes per section:
+<br />7.4 - Print Table of Wilcoxon Rank Sums for All Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br />7.6 - Plot for All Genes - Barplots for all genes. The Probands show minor hints of enrichment in the “YES_NS” category. None of them are significant at 0.05.
+<br />8.4 - Print Table of Wilcoxon Rank Sums for Essential Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br />8.6 - Plot for Essential Genes - Barplots for essential genes. None of them are significant at 0.05.
+<br />9.4 - Print Table of Wilcoxon Rank Sums for Intolerant Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br />9.6 - Plot for Intolerant Genes - Barplots for intolerant genes. None of them are significant at 0.05.
+<br />11.1 - Comparison of Lists, Mosaics - There are 82 DNV calls that we flag as mosaics. DNV calls that we call as mosaic are higher in AF than our mosaic child calls.
+<br />11.2 - Comparisons of Lists, Germline - 97% of our Germline calls in the high confidence list are also found in the DNV list. The ones that are unique in our list are slightly lower in depth.
+<br />12 - Comparisons of Proband and Sibling calls Used - Siblings have slightly lower allele frequencies and perhaps a tiny bit more error relative to probands.</p>
+
+  </div><a class="u-url" href="/2021/09/14/post-0049.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">ARSN Lab Notebook</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">ARSN Lab Notebook</li><li><a class="u-email" href="mailto:nishidaa@ohsu.edu">nishidaa@ohsu.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/arsnishida"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">arsnishida</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>ARSN Lab notebook.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
