@@ -1,0 +1,21 @@
+I"E<p>Here is a list of the final SP ID’s and their family that are ultimately used in our analysis.
+<br /><a href="https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0">Final Sample List</a></p>
+
+<p>These are the total number of families used in the analysis and where they disappear during our filtering. The first round of filtering is technical – either the variant calls failed or the family was missing a member to continue. The second round of filtering is based on the figure in this post based on read depths and variant call numbers, https://arsnishida.github.io/2021/07/26/post-0038.html.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Simplex Quads:
+    2623 families on the list
+    2618 after first round of filtering: SF0096166, SF0096198, SF0096218, SF0137614, SF0136205
+    2616 after second round of filtering: SF0087337, SF0035804
+
+Multiplex Quads:
+    559 families on the list
+    558 after first round of filtering: SF0139094
+    554 after second round of filtering: SF0096657, SF0113816, SF0086926, SF0132432
+
+Simplex Trios:
+    2200 families on the list
+    2196 after first round of filtering: SF0128793, SF0130451, SF0136742, SF0138832
+    2192 after second round of filtering: SF0026651, SF0017418, SF0020602, SF0083949
+</code></pre></div></div>
+:ET
