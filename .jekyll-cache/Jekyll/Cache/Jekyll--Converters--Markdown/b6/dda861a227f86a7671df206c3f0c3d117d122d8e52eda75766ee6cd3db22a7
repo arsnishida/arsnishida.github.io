@@ -1,0 +1,13 @@
+I"Â<p>This describes the generation of the LGD and NS family lists based on</p>
+
+<p>Manual annotation of the mosaic child IGV sh
+ots indicated a few sites with complex indel regions we arenâ€™t prepared to deal with or general 
+technical issues in the region. We also merged the simplex quad, simplex trio, and multiple quad lists to
+gether to get a full table to count appearances at locations across the entirety. The following is a list of the 
+sites removed and if they were removed via IGV screenshot annotation, the full cohort count, or if they fell in both categories.</p>
+
+<p>Markdown: <a href="https://www.dropbox.com/s/p70jk08tzvqgb10/09_lgd_ns_lists.html?dl=0https://www.dropbox.com/s/p70jk08tzvqgb10/09_lgd_ns_lists.html?dl=0">Generation of LGD and NS Lists</a></p>
+
+<p><a href="https://www.dropbox.com/s/y061oxm1pw4eykx/lgd_family_list.txt?dl=0">LGD List</a>
+<a href="https://www.dropbox.com/s/a8bbg0konbpuppw/ns_family_list.txt?dl=0">NS List</a></p>
+:ET

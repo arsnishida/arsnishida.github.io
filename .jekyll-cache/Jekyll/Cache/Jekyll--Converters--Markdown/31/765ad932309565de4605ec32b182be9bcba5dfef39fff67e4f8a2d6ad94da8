@@ -1,0 +1,11 @@
+I"9<p>Manual annotation of the mosaic child IGV shots indicated a few sites with complex indel regions we aren’t prepared to deal with or gener
+al technical issues in the region. We also merged the simplex quad, simplex trio, and multiple quad lists together to get a full table to c
+ount appearances at locations across the entirety. The following is a list of the sites removed and if they were removed via IGV screenshot an
+notation, the full cohort count, or if they fell in both categories.</p>
+
+<p><br /><a href="https://www.dropbox.com/s/pjrsx5sgete3fzr/07_burden_genesets_04.html?dl=0">07_04 Burden Gene Sets</a></p>
+
+<p>Quick copy of same text:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7_87515256_A_C_SF0117039	IGV_and_COHORT
+</code></pre></div></div>
+:ET
