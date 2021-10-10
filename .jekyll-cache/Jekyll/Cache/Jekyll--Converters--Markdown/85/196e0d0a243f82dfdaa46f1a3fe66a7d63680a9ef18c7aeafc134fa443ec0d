@@ -1,0 +1,5 @@
+I"Ð<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_oct7</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_oct7/run.txt</code></p>
+
+<p>There are 135 conditions so it is impossible to do pairwise comparisons between everything. Cluster comparisons were made between C_1 to C_9. And then for each of the individual 9 clusters, I did the treatments within time (same day but different strain) and between time (same strain but different day). This ignores cross strain and cross day comparisons (like CS_5 vs. WT_CS_30). The DA was performed after TF normalization using the Wilcoxon rank sum test.</p>
+:ET
