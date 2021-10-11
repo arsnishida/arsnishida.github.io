@@ -1,0 +1,2 @@
+I"5<p>This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don’t have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.</p>
+:ET
