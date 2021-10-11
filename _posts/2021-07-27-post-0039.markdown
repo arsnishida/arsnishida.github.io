@@ -37,6 +37,12 @@ Markdowns:
 <br>[11 High Confidence AF Dists, QS](https://www.dropbox.com/s/arsi93z6a5eoy6b/11_hc_AF_quadsimplex.html?dl=0)
 <br>[11 High Confidence AF Dists, QS and TS](https://www.dropbox.com/s/odjqybqtzlmqjgx/11_hc_AF_qs_ts.html?dl=0)
 <br>[11 High Confidence AF Dists, QS, TS, and QM](https://www.dropbox.com/s/p1nkifu6mav4sw5/11_hc_AF_quads_quadm_trios.html?dl=0)
+<br>[12 Burden Genesets, QS and missense](https://www.dropbox.com/s/on76d3l9d1eeik6/12_burden_genesets_qs_missense.html?dl=0)
+<br>[12 Burden Genesets, QS and synonymous](https://www.dropbox.com/s/f2851pssx17xx3b/12_burden_genesets_qs_synonymous.html?dl=0)
+<br>[12 Burden Genesets, QS and nonsense-splicing](https://www.dropbox.com/s/xq4dvz2ldufxuxw/12_burden_genesets_qs_nonsensesplicing.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and missense](https://www.dropbox.com/s/9lmslrhbmdpme90/12_burden_genesets_qsts_missense.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and synonymous](https://www.dropbox.com/s/xbrpxcz9csittcc/12_burden_genesets_qsts_synonymous.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and nonsense-splicing](https://www.dropbox.com/s/eiy44nj7scnvl2w/12_burden_genesets_qsts_nonsensesplicing.html?dl=0)
 
 Family Lists:
 <br>[Final Sample List](https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0)

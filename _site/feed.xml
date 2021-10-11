@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-11T08:09:59-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Burden Tables Gene Sets, Final 01</title><link href="http://localhost:4000/2021/10/11/post-0059.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets, Final 01" /><published>2021-10-11T00:00:00-07:00</published><updated>2021-10-11T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/11/post-0059</id><content type="html" xml:base="http://localhost:4000/2021/10/11/post-0059.html">&lt;p&gt;This is the gene set burden analysis using the final burdens table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-11T09:50:14-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Burden Tables Gene Sets, Final 01</title><link href="http://localhost:4000/2021/10/11/post-0059.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets, Final 01" /><published>2021-10-11T00:00:00-07:00</published><updated>2021-10-11T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/11/post-0059</id><content type="html" xml:base="http://localhost:4000/2021/10/11/post-0059.html">&lt;p&gt;This is the gene set burden analysis using the final burdens table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.&lt;/p&gt;
 
 &lt;p&gt;This differs from previous passes in that I am using the complete final list and am plotting all categories of mutations for quad simplex lists alone and the quad simplex list with the trio simplex list like in the Krupp paper. When stacking the trio simplex probands onto the rest of the data like it is in the paper we do see a significant enrichment of burden in the probands.&lt;/p&gt;
 
@@ -35,69 +35,69 @@ Multiplex:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hbkj3lsf8bcrj4a/10_summarize_final_lists.html?dl=0&quot;&gt;10 Summarize Final Lists&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;High Confidence&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex	Quad Pro	212	558	40	810
-Simplex	Quad Sib	238	576	26	840
-Multiplex Quad Pro	72	154	7	233
-Multiplex Quad Sib	61	167	5	233
-Simplex	Trio Pro	244	634	43	921
-Total Pro	528	1346	90	1964
-Total Sib	299	743	31	1073
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro           26       66                 5    97
+## Simplex Quad Sib           28       73                 4   105
+## Multiplex Quad Pro         10       16                 2    28
+## Multiplex Quad Sib          7       29                 1    37
+## Simplex Trio Pro          244      634                43   921
+## Total Pro                 280      716                50  1046
+## Total Sib                  35      102                 5   142
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Burden, 15% and 45x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex Quad Pro	209	553	39	801
-Simplex Quad Sib	234	576	26	836
-Multiplex Quad Pro	72	154	7	233
-Multiplex Quad Sib	60	166	5	231
-Simplex	Trio Pro	236	624	43	903
-Total Pro	517	1331	89	1937
-Total Sib	294	742	31	1067
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro           25       65                 4    94
+## Simplex Quad Sib           26       73                 4   103
+## Multiplex Quad Pro         10       16                 2    28
+## Multiplex Quad Sib          7       29                 1    37
+## Simplex Trio Pro           21       61                 1    83
+## Total Pro                  56      142                 7   205
+## Total Sib                  33      102                 5   140
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Burden, 12.5% and 50x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex	Quad Pro	154	419	28	601
-Simplex	Quad Sib	172	425	18	615
-Multiplex Quad Pro	54	112	5	171
-Multiplex Quad Sib	41	133	4	178
-Simplex Trio Pro	180	485	32	697
-Total Pro	388	1016	65	1469
-Total Sib	213	558	22	793
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro           20       54                 4    78
+## Simplex Quad Sib           18       63                 3    84
+## Multiplex Quad Pro          8       12                 2    22
+## Multiplex Quad Sib          5       25                 1    31
+## Simplex Trio Pro           19       53                 1    73
+## Total Pro                  47      119                 7   173
+## Total Sib                  23       88                 4   115
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Burden, 10% and 65x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex Quad Pro	66	154	8	228
-Simplex Quad Sib	77	146	4	227
-Multiplex Quad Pro	22	40	4	66
-Multiplex Quad Sib	14	45	2	61
-Simplex	Trio Pro	83	205	14	302
-Total Pro	171	399	26	596
-Total Sib	91	191	6	288
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro            8       24                 2    34
+## Simplex Quad Sib           10       20                 1    31
+## Multiplex Quad Pro          2        7                 1    10
+## Multiplex Quad Sib          2        7                 0     9
+## Simplex Trio Pro           10       27                 1    38
+## Total Pro                  20       58                 4    82
+## Total Sib                  12       27                 1    40
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Burden, 7.5% and 85x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex Quad Pro	22	31	0	53
-Simplex Quad Sib	17	31	0	48
-Multiplex Quad Pro	5	7	1	13
-Multiplex Quad Sib	2	13	0	15
-Simplex Trio Pro	21	51	1	73
-Total Pro	48	89	2	139
-Total Sib	19	44	0	63
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro            2        5                 0     7
+## Simplex Quad Sib            3        3                 0     6
+## Multiplex Quad Pro          1        1                 0     2
+## Multiplex Quad Sib          1        5                 0     6
+## Simplex Trio Pro            2        4                 0     6
+## Total Pro                   5       10                 0    15
+## Total Sib                   4        8                 0    12
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Burden, 5% and 130x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name	synonymous	missense	nonsense_splicing	total
-Simplex Quad Pro	1	1	0	2
-Simplex Quad Sib	0	0	0	0
-Multiplex Quad Pro	1	1	0	2
-Multiplex Quad Sib	0	0	0	0
-Simplex Trio Pro	2	1	0	3
-Total Pro	4	3	0	7
-Total Sib	0	0	0	0
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                    synonymous missense nonsense_splicing total
+## Simplex Quad Pro            0        1                 0     1
+## Simplex Quad Sib            0        0                 0     0
+## Multiplex Quad Pro          0        1                 0     1
+## Multiplex Quad Sib          0        0                 0     0
+## Simplex Trio Pro            0        0                 0     0
+## Total Pro                   0        2                 0     2
+## Total Sib                   0        0                 0     0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don’t have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.</summary></entry><entry><title type="html">Drosophilia Tau Preliminary DA</title><link href="http://localhost:4000/2021/10/07/post-0055.html" rel="alternate" type="text/html" title="Drosophilia Tau Preliminary DA" /><published>2021-10-07T00:00:00-07:00</published><updated>2021-10-07T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/07/post-0055</id><content type="html" xml:base="http://localhost:4000/2021/10/07/post-0055.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_oct7&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_oct7/run.txt&lt;/code&gt;&lt;/p&gt;
 
