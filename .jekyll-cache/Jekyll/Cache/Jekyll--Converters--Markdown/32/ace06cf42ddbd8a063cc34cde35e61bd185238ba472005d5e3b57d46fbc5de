@@ -1,22 +1,14 @@
----
-layout: post
-title:  "SPARK Summary of Final Lists"
-date:   2021-10-10
-tags: SPARK
----
+I"<p><em>UPDATE</em> Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.</p>
 
-*UPDATE* Oct 12 - Modified labels and counting by affected status rather than 'PRO' and 'SIB' designations.
+<p>This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don’t have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.</p>
 
-This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don't have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.
+<p>The final output is copy+pasted below in tab-delineated format for ease of use.</p>
 
-The final output is copy+pasted below in tab-delineated format for ease of use.
+<p>Markdown:
+<br /><a href="https://www.dropbox.com/s/hbkj3lsf8bcrj4a/10_summarize_final_lists.html?dl=0">10 Summarize Final Lists</a></p>
 
-Markdown:
-<br>[10 Summarize Final Lists](https://www.dropbox.com/s/hbkj3lsf8bcrj4a/10_summarize_final_lists.html?dl=0)
-
-High Confidence
-```
-##                      synonymous missense nonsense_splicing total
+<p>High Confidence</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff             26       66                 5    97
 ## Simplex Quad Unaff           27       73                 4   104
 ## Multiplex Quad Aff           17       38                 3    58
@@ -24,11 +16,10 @@ High Confidence
 ## Simplex Trio Aff             22       63                 1    86
 ## Total Aff                    65      167                 9   241
 ## Total Unaff                  27       80                 4   111
-```
+</code></pre></div></div>
 
-Burden, 15% and 45x
-```
-##                      synonymous missense nonsense_splicing total
+<p>Burden, 15% and 45x</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff             25       65                 4    94
 ## Simplex Quad Unaff           26       73                 4   103
 ## Multiplex Quad Aff           17       38                 3    58
@@ -36,11 +27,10 @@ Burden, 15% and 45x
 ## Simplex Trio Aff             21       61                 1    83
 ## Total Aff                    63      164                 8   235
 ## Total Unaff                  26       80                 4   110
-```
+</code></pre></div></div>
 
-Burden, 12.5% and 50x
-```
-##                      synonymous missense nonsense_splicing total
+<p>Burden, 12.5% and 50x</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff             20       54                 4    78
 ## Simplex Quad Unaff           18       63                 3    84
 ## Multiplex Quad Aff           13       31                 3    47
@@ -48,11 +38,10 @@ Burden, 12.5% and 50x
 ## Simplex Trio Aff             19       53                 1    73
 ## Total Aff                    52      138                 8   198
 ## Total Unaff                  18       69                 3    90
-```
+</code></pre></div></div>
 
-Burden, 10% and 65x
-```
-##                      synonymous missense nonsense_splicing total
+<p>Burden, 10% and 65x</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff              8       24                 2    34
 ## Simplex Quad Unaff           10       20                 1    31
 ## Multiplex Quad Aff            4       12                 1    17
@@ -60,11 +49,10 @@ Burden, 10% and 65x
 ## Simplex Trio Aff             10       27                 1    38
 ## Total Aff                    22       63                 4    89
 ## Total Unaff                  10       22                 1    33
-```
+</code></pre></div></div>
 
-Burden, 7.5% and 85x
-```
-##                      synonymous missense nonsense_splicing total
+<p>Burden, 7.5% and 85x</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff              2        5                 0     7
 ## Simplex Quad Unaff            3        3                 0     6
 ## Multiplex Quad Aff            2        4                 0     6
@@ -72,11 +60,10 @@ Burden, 7.5% and 85x
 ## Simplex Trio Aff              2        4                 0     6
 ## Total Aff                     6       13                 0    19
 ## Total Unaff                   3        5                 0     8
-```
+</code></pre></div></div>
 
-Burden, 5% and 130x
-```
-##                      synonymous missense nonsense_splicing total
+<p>Burden, 5% and 130x</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
 ## Simplex Quad Aff              0        1                 0     1
 ## Simplex Quad Unaff            0        0                 0     0
 ## Multiplex Quad Aff            0        1                 0     1
@@ -84,4 +71,5 @@ Burden, 5% and 130x
 ## Simplex Trio Aff              0        0                 0     0
 ## Total Aff                     0        2                 0     2
 ## Total Unaff                   0        0                 0     0
-```
+</code></pre></div></div>
+:ET
