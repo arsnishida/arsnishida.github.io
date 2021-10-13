@@ -1,8 +1,0 @@
-name	synonymous	missense	nonsense_splicing	total
-Simplex	Quad Pro	212	558	40	810
-Simplex	Quad Sib	238	576	26	840
-Multiplex Quad Pro	72	154	7	233
-Multiplex Quad Sib	61	167	5	233
-Simplex Trio Pro	244	634	43	921
-Total Pro	528	1346	90	1964
-Total Sib	299	743	31	1073
