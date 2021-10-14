@@ -1,0 +1,21 @@
+I"�
+<p><em>Update Oct 13</em>. Updated to add 0 counts for families with absent calls.</p>
+
+<p><em>Update Oct 12</em>. The following was changed and this completely replaces the older results. Here are the main differences.
+<br />- A big issue I had was that I had empty placeholder values for siblings for the trios that shouldn’t have been used in the statistical test. These are easily removed. The pvals were ultimately insignificant in all iterations so it doesn’t change any of our interpretations.
+<br />- The summary of n’s now splits the family counts by proband and sibling. This is only relevant for trios.
+<br />- Plotting of the SNV’s per Exome Base is now no longer additive but uses the average rates. This makes the plots look more reasonable and the y-axis closer to expectations.
+<br />- SNV’s per Exome Base is now calculated as (# counts / 2*autosomal_bases_covered). I wasn’t use the 2 before. This doesn’t affect the test because it is ranked, it just changes the axis’ magnitude.</p>
+
+<p>This is the gene set burden analysis using the final burdens table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.</p>
+
+<p>This differs from previous passes in that I am using the complete final list and am plotting all categories of mutations for quad simplex lists alone and the quad simplex list with the trio simplex list like in the Krupp paper. When stacking the trio simplex probands onto the rest of the data like it is in the paper we do see a significant enrichment of burden in the probands.</p>
+
+<p>Markdown:
+<br /><a href="https://www.dropbox.com/s/on76d3l9d1eeik6/12_burden_genesets_qs_missense.html?dl=0">12 Burden Genesets, QS and missense</a>
+<br /><a href="https://www.dropbox.com/s/bww75i48qwxyl7f/12_burden_genesets_qs_synonymous.html?dl=0">12 Burden Genesets, QS and synonymous</a>
+<br /><a href="https://www.dropbox.com/s/9sglvog8nkacxi9/12_burden_genesets_qs_nonsensesplicing.html?dl=0">12 Burden Genesets, QS and nonsense-splicing</a>
+<br /><a href="https://www.dropbox.com/s/19obpuviidgkncb/12_burden_genesets_qsts_missense.html?dl=0">12 Burden Genesets, QS and TS and missense</a>
+<br /><a href="https://www.dropbox.com/s/cbg14hg27jurzjq/12_burden_genesets_qsts_synonymous.html?dl=0">12 Burden Genesets, QS and TS and synonymous</a>
+<br /><a href="https://www.dropbox.com/s/uxw9y1evp7qrar6/12_burden_genesets_qsts_nonsensesplicing.html?dl=0">12 Burden Genesets, QS and TS and nonsense-splicing</a></p>
+:ET

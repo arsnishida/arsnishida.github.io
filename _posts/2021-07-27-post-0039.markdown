@@ -37,15 +37,16 @@ Markdowns:
 <br>[11 High Confidence AF Dists, QS](https://www.dropbox.com/s/arsi93z6a5eoy6b/11_hc_AF_quadsimplex.html?dl=0)
 <br>[11 High Confidence AF Dists, QS and TS](https://www.dropbox.com/s/odjqybqtzlmqjgx/11_hc_AF_qs_ts.html?dl=0)
 <br>[11 High Confidence AF Dists, QS, TS, and QM](https://www.dropbox.com/s/p1nkifu6mav4sw5/11_hc_AF_quads_quadm_trios.html?dl=0)
-<br>[12 Burden Genesets, QS and missense](https://www.dropbox.com/s/on76d3l9d1eeik6/12_burden_genesets_qs_missense.html?dl=0)
-<br>[12 Burden Genesets, QS and synonymous](https://www.dropbox.com/s/f2851pssx17xx3b/12_burden_genesets_qs_synonymous.html?dl=0)
-<br>[12 Burden Genesets, QS and nonsense-splicing](https://www.dropbox.com/s/xq4dvz2ldufxuxw/12_burden_genesets_qs_nonsensesplicing.html?dl=0)
-<br>[12 Burden Genesets, QS and TS and missense](https://www.dropbox.com/s/9lmslrhbmdpme90/12_burden_genesets_qsts_missense.html?dl=0)
-<br>[12 Burden Genesets, QS and TS and synonymous](https://www.dropbox.com/s/xbrpxcz9csittcc/12_burden_genesets_qsts_synonymous.html?dl=0)
-<br>[12 Burden Genesets, QS and TS and nonsense-splicing](https://www.dropbox.com/s/eiy44nj7scnvl2w/12_burden_genesets_qsts_nonsensesplicing.html?dl=0)
-<br>[13 Burden REVEL, QS and missense](https://www.dropbox.com/s/zhe5e5k7lnb59ad/13_burden_revel_qs_missense.html?dl=0)
-<br>[13 Burden REVEL, QS+TS and missense](https://www.dropbox.com/s/xylsswtnf652p86/13_burden_revel_qsts_missense.html?dl=0)
+<br>[12 Burden Genesets, QS and missense](https://www.dropbox.com/s/p7xp30rzsszzd5p/12_burden_genesets_qs_missense.html?dl=0)
+<br>[12 Burden Genesets, QS and synonymous](https://www.dropbox.com/s/bww75i48qwxyl7f/12_burden_genesets_qs_synonymous.html?dl=0)
+<br>[12 Burden Genesets, QS and nonsense-splicing](https://www.dropbox.com/s/9sglvog8nkacxi9/12_burden_genesets_qs_nonsensesplicing.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and missense](https://www.dropbox.com/s/19obpuviidgkncb/12_burden_genesets_qsts_missense.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and synonymous](https://www.dropbox.com/s/cbg14hg27jurzjq/12_burden_genesets_qsts_synonymous.html?dl=0)
+<br>[12 Burden Genesets, QS and TS and nonsense-splicing](https://www.dropbox.com/s/uxw9y1evp7qrar6/12_burden_genesets_qsts_nonsensesplicing.html?dl=0)
+<br>[13 Burden REVEL, QS and missense](https://www.dropbox.com/s/ag58qxihyjcc3pk/13_burden_revel_qs_missense.html?dl=0)
+<br>[13 Burden REVEL, QS+TS and missense](https://www.dropbox.com/s/ng86fbx2o4ap3sw/13_burden_revel_qsts_missense.html?dl=0)
 <br>[14 Parental Transmission Breakdown](https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0)
+<br>[15 SPARK 167 Intersection](https://www.dropbox.com/s/5v9xiutv72g4tj1/15_spark_167_list_01.html?dl=0)
 
 Family Lists:
 <br>[Final Sample List](https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0)
@@ -79,6 +80,8 @@ Supplemental Annotations:
 <br>[Supplemental Annotations, REVEL, trio simplex](https://www.dropbox.com/s/4aaak22tpx5r1kl/revel.triosimplex.txt?dl=0)
 <br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/svr5kdpds11chqq/revel.quadsimplex.txt?dl=0)
 <br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/n5ahznpustist5b/revel.quadmultiplex.txt?dl=0)
+<br>[HC list Variants Intersecting w/ SPARK 167, Mosaic Child only](https://www.dropbox.com/s/ivp1z6l7hyqr4my/spark167.mosaic_child.txt?dl=0)
+<br>[HC list Variants Intersecting w/ SPARK 167](https://www.dropbox.com/s/ftzjerfi7ebhw4q/spark167.txt?dl=0)
 
 Joint Coverage:
 <br>[Genomic Joint Coverage, Simplex Quads](https://www.dropbox.com/s/xp96tughn8vhjzu/jointcoverage.2.simplexquads.txt?dl=0)
