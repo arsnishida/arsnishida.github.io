@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-13T18:50:57-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Parental Trans Mosaics Breakdown</title><link href="http://localhost:4000/2021/10/13/post-0061.html" rel="alternate" type="text/html" title="SPARK Parental Trans Mosaics Breakdown" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0061</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0061.html">&lt;p&gt;This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-13T19:33:36-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Parental Trans Mosaics Breakdown</title><link href="http://localhost:4000/2021/10/13/post-0061.html" rel="alternate" type="text/html" title="SPARK Parental Trans Mosaics Breakdown" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0061</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0061.html">&lt;p&gt;This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.&lt;/p&gt;
 
 &lt;p&gt;Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0&quot;&gt;14 Parental Transmission Breakdown&lt;/a&gt;&lt;/p&gt;
@@ -143,18 +143,18 @@ Multiplex:
 
 &lt;p&gt;HC Table Breakdown&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                           variant          mutation quad_simplex trio_simplex	##    quad_multiplex total
-## 1                    MOSAIC_CHILD          missense          141           69	## 1              52   262
-## 2                    MOSAIC_CHILD        synonymous           61           26	## 2              20   107
+## 1                    MOSAIC_CHILD          missense          139           63	## 1              45   247
+## 2                    MOSAIC_CHILD        synonymous           53           22	## 2              17    92
 ## 3                    MOSAIC_CHILD nonsense_splicing            9            1	## 3               3    13
 ## 4                    MOSAIC_CHILD          stoploss            0            0	## 4               0     0
-## 5                    MOSAIC_CHILD           unknown            0            1	## 5               0     1
-## 6        MOSAIC_PARENTAL_NONTRANS          missense          490          935	## 6             169  1594
-## 7        MOSAIC_PARENTAL_NONTRANS        synonymous          276          495	## 7             100   871
-## 8        MOSAIC_PARENTAL_NONTRANS nonsense_splicing           15           48	## 8               6    69
+## 5                    MOSAIC_CHILD           unknown            0            0	## 5               0     0
+## 6        MOSAIC_PARENTAL_NONTRANS          missense          485          928	## 6             167  1580
+## 7        MOSAIC_PARENTAL_NONTRANS        synonymous          274          487	## 7              99   860
+## 8        MOSAIC_PARENTAL_NONTRANS nonsense_splicing           15           47	## 8               6    68
 ## 9        MOSAIC_PARENTAL_NONTRANS          stoploss            2            1	## 9               0     3
 ## 10       MOSAIC_PARENTAL_NONTRANS           unknown            0            0	## 10              1     1
-## 11                 GERMLINE_CHILD          missense          995          565	## 11            276  1836
-## 12                 GERMLINE_CHILD        synonymous          396          218	## 12            116   730
+## 11                 GERMLINE_CHILD          missense          991          563	## 11            275  1829
+## 12                 GERMLINE_CHILD        synonymous          392          215	## 12            115   722
 ## 13                 GERMLINE_CHILD nonsense_splicing           57           42	## 13              9   108
 ## 14                 GERMLINE_CHILD          stoploss            1            0	## 14              0     1
 ## 15                 GERMLINE_CHILD           unknown            0            0	## 15              1     1
