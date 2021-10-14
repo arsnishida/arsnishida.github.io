@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-13T19:33:36-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Parental Trans Mosaics Breakdown</title><link href="http://localhost:4000/2021/10/13/post-0061.html" rel="alternate" type="text/html" title="SPARK Parental Trans Mosaics Breakdown" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0061</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0061.html">&lt;p&gt;This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-13T19:53:07-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK HC Tables Against SPARK 167</title><link href="http://localhost:4000/2021/10/13/post-0062.html" rel="alternate" type="text/html" title="SPARK HC Tables Against SPARK 167" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0062</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0062.html">&lt;p&gt;This intersects our lists with the SPARK 167. We find 20 mosaic child calls intersecting these genes. Breakdowns and the genes are below.&lt;/p&gt;
+
+&lt;p&gt;Links:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ivp1z6l7hyqr4my/spark167.mosaic_child.txt?dl=0&quot;&gt;HC list Variants Intersecting w/ SPARK 167, Mosaic Child only&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ftzjerfi7ebhw4q/spark167.txt?dl=0&quot;&gt;HC list Variants Intersecting w/ SPARK 167&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/5v9xiutv72g4tj1/15_spark_167_list_01.html?dl=0&quot;&gt;15 SPARK 167 Intersection&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Mutation types of the 20 overlapping mosaic child calls:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##          missense nonsense_splicing        synonymous 
+##                16                 1                 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The 20 mosaic hits fell in the following genes:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1 ADNP
+   1 AHDC1
+   1 ANKRD11
+   1 ARID1B
+   1 CASZ1
+   2 CIC
+   1 DNMT3A
+   1 GIGYF1
+   1 GRIN2A
+   1 NRXN2
+   2 PACS1
+   1 PHF3
+   1 POMGNT1
+   1 SETD5
+   1 SHANK3
+   1 SRCAP
+   1 SYNGAP1
+   1 TCF20
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;List of origin for all overlapping calls:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## multiplex_simplex      quad_simplex      trio_simplex 
+##                23                78                65
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Variant types for all overlapping calls:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                 GERMLINE_CHILD                   MOSAIC_CHILD 
+##                             84                             20 
+##       MOSAIC_PARENTAL_NONTRANS MOSAIC_PARENTAL_TRANS_MATERNAL 
+##                             56                              2 
+## MOSAIC_PARENTAL_TRANS_PATERNAL 
+##                              4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This intersects our lists with the SPARK 167. We find 20 mosaic child calls intersecting these genes. Breakdowns and the genes are below.</summary></entry><entry><title type="html">SPARK Burden w/ REVEL Scores Gene Sets, 01</title><link href="http://localhost:4000/2021/10/13/post-0060.html" rel="alternate" type="text/html" title="SPARK Burden w/ REVEL Scores Gene Sets, 01" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0060</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0060.html">&lt;p&gt;This is an extension of the burden analysis but here we are keeping only damaging missense calls by thresholding on REVEL scores &amp;gt;= 0.50. This eliminates many of the calls but does produce a stronger signal in comparing probands to siblings. REVEL scores are available in the supplmental annotation folder.&lt;/p&gt;
+
+&lt;p&gt;Markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zhe5e5k7lnb59ad/13_burden_revel_qs_missense.html?dl=0&quot;&gt;13 Burden REVEL, QS and missense&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xylsswtnf652p86/13_burden_revel_qsts_missense.html?dl=0&quot;&gt;13 Burden REVEL, QS+TS and missense&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Notes:
+&lt;br /&gt;Fig 3.1 - This contains the REVEL distributions which are left-skewed towards 0.&lt;/p&gt;
+
+&lt;p&gt;Annotations:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4aaak22tpx5r1kl/revel.triosimplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, trio simplex&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/svr5kdpds11chqq/revel.quadsimplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, quad simplex&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n5ahznpustist5b/revel.quadmultiplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, quad simplex&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is an extension of the burden analysis but here we are keeping only damaging missense calls by thresholding on REVEL scores &amp;gt;= 0.50. This eliminates many of the calls but does produce a stronger signal in comparing probands to siblings. REVEL scores are available in the supplmental annotation folder.</summary></entry><entry><title type="html">SPARK Parental Trans Mosaics Breakdown</title><link href="http://localhost:4000/2021/10/13/post-0061.html" rel="alternate" type="text/html" title="SPARK Parental Trans Mosaics Breakdown" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0061</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0061.html">&lt;p&gt;This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.&lt;/p&gt;
 
 &lt;p&gt;Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0&quot;&gt;14 Parental Transmission Breakdown&lt;/a&gt;&lt;/p&gt;
@@ -13,19 +72,7 @@
 ## trans to SIB                           24                   22
 ## trans to PRO and SIB                    4                    6
 ## total                                  54                   52
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.</summary></entry><entry><title type="html">SPARK Burden w/ REVEL Scores Gene Sets, 01</title><link href="http://localhost:4000/2021/10/13/post-0060.html" rel="alternate" type="text/html" title="SPARK Burden w/ REVEL Scores Gene Sets, 01" /><published>2021-10-13T00:00:00-07:00</published><updated>2021-10-13T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/13/post-0060</id><content type="html" xml:base="http://localhost:4000/2021/10/13/post-0060.html">&lt;p&gt;This is an extension of the burden analysis but here we are keeping only damaging missense calls by thresholding on REVEL scores &amp;gt;= 0.50. This eliminates many of the calls but does produce a stronger signal in comparing probands to siblings. REVEL scores are available in the supplmental annotation folder.&lt;/p&gt;
-
-&lt;p&gt;Markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zhe5e5k7lnb59ad/13_burden_revel_qs_missense.html?dl=0&quot;&gt;13 Burden REVEL, QS and missense&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xylsswtnf652p86/13_burden_revel_qsts_missense.html?dl=0&quot;&gt;13 Burden REVEL, QS+TS and missense&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Notes:
-&lt;br /&gt;Fig 3.1 - This contains the REVEL distributions which are left-skewed towards 0.&lt;/p&gt;
-
-&lt;p&gt;Annotations:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4aaak22tpx5r1kl/revel.triosimplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, trio simplex&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/svr5kdpds11chqq/revel.quadsimplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, quad simplex&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n5ahznpustist5b/revel.quadmultiplex.txt?dl=0&quot;&gt;Supplemental Annotations, REVEL, quad simplex&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is an extension of the burden analysis but here we are keeping only damaging missense calls by thresholding on REVEL scores &amp;gt;= 0.50. This eliminates many of the calls but does produce a stronger signal in comparing probands to siblings. REVEL scores are available in the supplmental annotation folder.</summary></entry><entry><title type="html">SPARK Burden Tables Gene Sets, Final 01</title><link href="http://localhost:4000/2021/10/11/post-0059.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets, Final 01" /><published>2021-10-11T00:00:00-07:00</published><updated>2021-10-11T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/11/post-0059</id><content type="html" xml:base="http://localhost:4000/2021/10/11/post-0059.html">&lt;p&gt;&lt;em&gt;Update Oct 12&lt;/em&gt;. The following was changed and this completely replaces the older results. Here are the main differences.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.</summary></entry><entry><title type="html">SPARK Burden Tables Gene Sets, Final 01</title><link href="http://localhost:4000/2021/10/11/post-0059.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets, Final 01" /><published>2021-10-11T00:00:00-07:00</published><updated>2021-10-11T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/11/post-0059</id><content type="html" xml:base="http://localhost:4000/2021/10/11/post-0059.html">&lt;p&gt;&lt;em&gt;Update Oct 12&lt;/em&gt;. The following was changed and this completely replaces the older results. Here are the main differences.
 &lt;br /&gt;- A big issue I had was that I had empty placeholder values for siblings for the trios that shouldn’t have been used in the statistical test. These are easily removed. The pvals were ultimately insignificant in all iterations so it doesn’t change any of our interpretations.
 &lt;br /&gt;- The summary of n’s now splits the family counts by proband and sibling. This is only relevant for trios.
 &lt;br /&gt;- Plotting of the SNV’s per Exome Base is now no longer additive but uses the average rates. This makes the plots look more reasonable and the y-axis closer to expectations.
@@ -185,53 +232,4 @@ Multiplex:
 
 &lt;p&gt;Notes per section:
 &lt;br /&gt;10.4 - Print Table of Wilcoxon Rank Sums for Germline Missense - This indicates the statistical significant difference, p &amp;lt; 0.001, with the NS list
-&lt;br /&gt;10.6 - Plot for Germline Missense, All Genes - This shows the germline missense burden from the test above. This is similar for the other gene subsets.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.</summary></entry><entry><title type="html">SPARK Final IGV and Cohort Count Filter</title><link href="http://localhost:4000/2021/10/01/post-0052.html" rel="alternate" type="text/html" title="SPARK Final IGV and Cohort Count Filter" /><published>2021-10-01T00:00:00-07:00</published><updated>2021-10-01T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/01/post-0052</id><content type="html" xml:base="http://localhost:4000/2021/10/01/post-0052.html">&lt;p&gt;Manual annotation of the mosaic child IGV shots indicated a few sites with complex indel regions we aren’t prepared to deal with or general technical issues in the region. We also merged the simplex quad, simplex trio, and multiple quad lists together to get a full table to count appearances at locations across the entirety. The following is a list of the sites removed and if they were removed via IGV screenshot annotation, the full cohort count, or if they fell in both categories.&lt;/p&gt;
-
-&lt;p&gt;Link: &lt;a href=&quot;https://www.dropbox.com/s/lscs9dl6yudj0qn/final_filter_igv_cohort.txt?dl=0&quot;&gt;Final filter list by IGV shots and concatenated cohort count&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Quick copy of same text:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SITE_TO_REMOVE	REASON_FOR_REMOVAL
-11_95778825_T_C_SF0042377	IGV
-19_48286404_C_T_SF0112781	IGV
-4_148081486_A_T_SF0101498	IGV
-17_76574443_C_A_SF0134227	IGV
-14_71589107_T_G_SF0060222	IGV
-1_53459711_C_T_SF0073768	IGV
-20_37179396_A_G_SF0019290	IGV
-2_233198214_A_C_SF0063467	IGV
-12_102958355_C_A_SF0137371	IGV
-17_8797852_TG_CC_SF0016664	IGV
-19_1085852_G_A_SF0097088	IGV
-4_40102620_T_G_SF0117039	IGV
-5_93588053_G_C_SF0034314	IGV
-6_26157023_A_C_SF0104693	IGV
-8_76852146_A_C_SF0086715	IGV
-9_89002090_T_G_SF0045205	IGV
-7_44582167_G_C_SF0048613	IGV
-18_47248089_G_C_SF0137308	IGV
-19_900830_T_C_SF0020554	IGV
-1_89378123_C_G_SF0045249	IGV
-8_64581045_C_G_SF0022876	IGV
-12_57224970_C_A_SF0127928	IGV
-3_49111068_G_A_SF0019861	IGV
-3_50275373_C_T_SF0077956	IGV
-12_122183206_G_T_SF0144774	IGV
-10_46549720_C_G_SF0055321	COHORT
-10_46549720_C_G_SF0107639	COHORT
-10_46549720_C_G_SF0114446	COHORT
-15_41570092_C_G_SF0036574	COHORT
-15_41570092_C_G_SF0064435	COHORT
-15_41570092_C_G_SF0104849	COHORT
-20_4221633_A_C_SF0061515	COHORT
-20_4221633_A_C_SF0011974	COHORT
-20_4221633_A_C_SF0126256	COHORT
-22_30695060_A_C_SF0048393	COHORT
-22_30695060_A_C_SF0043805	IGV_and_COHORT
-22_30695060_A_C_SF0051712	COHORT
-3_43032980_A_C_SF0080202	COHORT
-3_43032980_A_C_SF0026635	COHORT
-3_43032980_A_C_SF0113969	COHORT
-7_87515256_A_C_SF0021487	COHORT
-7_87515256_A_C_SF0086715	IGV_and_COHORT
-7_87515256_A_C_SF0117039	IGV_and_COHORT
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Manual annotation of the mosaic child IGV shots indicated a few sites with complex indel regions we aren’t prepared to deal with or general technical issues in the region. We also merged the simplex quad, simplex trio, and multiple quad lists together to get a full table to count appearances at locations across the entirety. The following is a list of the sites removed and if they were removed via IGV screenshot annotation, the full cohort count, or if they fell in both categories.</summary></entry></feed>
+&lt;br /&gt;10.6 - Plot for Germline Missense, All Genes - This shows the germline missense burden from the test above. This is similar for the other gene subsets.&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.</summary></entry></feed>
