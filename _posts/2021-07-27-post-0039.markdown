@@ -45,6 +45,7 @@ Markdowns:
 <br>[12 Burden Genesets, QS and TS and nonsense-splicing](https://www.dropbox.com/s/eiy44nj7scnvl2w/12_burden_genesets_qsts_nonsensesplicing.html?dl=0)
 <br>[13 Burden REVEL, QS and missense](https://www.dropbox.com/s/zhe5e5k7lnb59ad/13_burden_revel_qs_missense.html?dl=0)
 <br>[13 Burden REVEL, QS+TS and missense](https://www.dropbox.com/s/xylsswtnf652p86/13_burden_revel_qsts_missense.html?dl=0)
+<br>[14 Parental Transmission Breakdown](https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0)
 
 Family Lists:
 <br>[Final Sample List](https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0)

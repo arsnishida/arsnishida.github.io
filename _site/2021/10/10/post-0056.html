@@ -7,15 +7,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="SPARK Summary of Final Lists" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations." />
-<meta property="og:description" content="UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations." />
+<meta name="description" content="UPDATE Oct 13 - Added full HC count tables. UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations." />
+<meta property="og:description" content="UPDATE Oct 13 - Added full HC count tables. UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations." />
 <link rel="canonical" href="http://localhost:4000/2021/10/10/post-0056.html" />
 <meta property="og:url" content="http://localhost:4000/2021/10/10/post-0056.html" />
 <meta property="og:site_name" content="ARSN Lab Notebook" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-10T00:00:00-07:00" />
 <script type="application/ld+json">
-{"headline":"SPARK Summary of Final Lists","dateModified":"2021-10-10T00:00:00-07:00","datePublished":"2021-10-10T00:00:00-07:00","url":"http://localhost:4000/2021/10/10/post-0056.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/10/10/post-0056.html"},"description":"UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"SPARK Summary of Final Lists","dateModified":"2021-10-10T00:00:00-07:00","datePublished":"2021-10-10T00:00:00-07:00","url":"http://localhost:4000/2021/10/10/post-0056.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/10/10/post-0056.html"},"description":"UPDATE Oct 13 - Added full HC count tables. UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
 <body><header class="site-header" role="banner">
@@ -45,7 +45,8 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em>UPDATE</em> Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.</p>
+    <p><em>UPDATE</em> Oct 13 - Added full HC count tables.
+<em>UPDATE</em> Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.</p>
 
 <p>This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don’t have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.</p>
 
@@ -53,6 +54,9 @@
 
 <p>Markdown:
 <br /><a href="https://www.dropbox.com/s/hbkj3lsf8bcrj4a/10_summarize_final_lists.html?dl=0">10 Summarize Final Lists</a></p>
+
+<p>Link:
+<br /><a href="https://www.dropbox.com/s/e2zgb62ahtg2tnt/hc_counts.txt?dl=0">High Confidence Count Table</a></p>
 
 <p>High Confidence</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                      synonymous missense nonsense_splicing total
@@ -118,6 +122,35 @@
 ## Simplex Trio Aff              0        0                 0     0
 ## Total Aff                     0        2                 0     2
 ## Total Unaff                   0        0                 0     0
+</code></pre></div></div>
+
+<p>HC Table Breakdown</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                           variant          mutation quad_simplex trio_simplex	##    quad_multiplex total
+## 1                    MOSAIC_CHILD          missense          141           69	## 1              52   262
+## 2                    MOSAIC_CHILD        synonymous           61           26	## 2              20   107
+## 3                    MOSAIC_CHILD nonsense_splicing            9            1	## 3               3    13
+## 4                    MOSAIC_CHILD          stoploss            0            0	## 4               0     0
+## 5                    MOSAIC_CHILD           unknown            0            1	## 5               0     1
+## 6        MOSAIC_PARENTAL_NONTRANS          missense          490          935	## 6             169  1594
+## 7        MOSAIC_PARENTAL_NONTRANS        synonymous          276          495	## 7             100   871
+## 8        MOSAIC_PARENTAL_NONTRANS nonsense_splicing           15           48	## 8               6    69
+## 9        MOSAIC_PARENTAL_NONTRANS          stoploss            2            1	## 9               0     3
+## 10       MOSAIC_PARENTAL_NONTRANS           unknown            0            0	## 10              1     1
+## 11                 GERMLINE_CHILD          missense          995          565	## 11            276  1836
+## 12                 GERMLINE_CHILD        synonymous          396          218	## 12            116   730
+## 13                 GERMLINE_CHILD nonsense_splicing           57           42	## 13              9   108
+## 14                 GERMLINE_CHILD          stoploss            1            0	## 14              0     1
+## 15                 GERMLINE_CHILD           unknown            0            0	## 15              1     1
+## 16 MOSAIC_PARENTAL_TRANS_MATERNAL          missense           37           19	## 16              8    64
+## 17 MOSAIC_PARENTAL_TRANS_MATERNAL        synonymous           15            8	## 17              4    27
+## 18 MOSAIC_PARENTAL_TRANS_MATERNAL nonsense_splicing            0            0	## 18              2     2
+## 19 MOSAIC_PARENTAL_TRANS_MATERNAL          stoploss            0            0	## 19              0     0
+## 20 MOSAIC_PARENTAL_TRANS_MATERNAL           unknown            0            0	## 20              0     0
+## 21 MOSAIC_PARENTAL_TRANS_PATERNAL          missense           30           21	## 21              9    60
+## 22 MOSAIC_PARENTAL_TRANS_PATERNAL        synonymous           23            9	## 22              7    39
+## 23 MOSAIC_PARENTAL_TRANS_PATERNAL nonsense_splicing            1            1	## 23              0     2
+## 24 MOSAIC_PARENTAL_TRANS_PATERNAL          stoploss            0            0	## 24              0     0
+## 25 MOSAIC_PARENTAL_TRANS_PATERNAL           unknown            0            0	## 25              0     0
 </code></pre></div></div>
 
   </div><a class="u-url" href="/2021/10/10/post-0056.html" hidden></a>
