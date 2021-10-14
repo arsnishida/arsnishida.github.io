@@ -1,0 +1,19 @@
+I""<p>This</p>
+
+<p>Link to Venn Diagrams (scaled and unscaled):
+<br /><a href="https://www.dropbox.com/s/839acl1l4rp5oh8/16_concat_lists_comp_venn.png?dl=0">Venn Diagram of List Comparisons</a></p>
+
+<p>Markdown:
+<br /><a href="">16 Concat Variant Lists to DNV List</a></p>
+
+<p>Notes:
+<br />1.1 - xoxo - 
+<br />1.1 - xoxo -</p>
+
+<p>Breakdown of a Comparison of Our Calls w/ Theirs:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##                       Our Mosaic Child Calls Our Germline Child Calls
+## Total                                    352                     2661
+## Found in DNV List                        145                     2588
+## Not Found in DNV List                    207                       73
+</code></pre></div></div>
+:ET

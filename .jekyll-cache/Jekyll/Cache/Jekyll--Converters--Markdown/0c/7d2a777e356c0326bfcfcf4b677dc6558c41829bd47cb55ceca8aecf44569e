@@ -1,0 +1,2 @@
+I"&<p>This compares our high confidence mosaic lists to the SPARK DNV lists. This shows that nearly all of our germline calls are called in their list (2588/2661 = 97%). The Venn shows there are still many germline calls we are not picking but this isn’t a surprise because we subject everything to harsher filtering while looking for mosaics. A large number of mosaics we call (145/352 = 41%) are flagged as de novo variants in the SPARK list. Boxplots, densities, and histograms of allele frequencies show that these are at intermediate AF’s.</p>
+:ET
