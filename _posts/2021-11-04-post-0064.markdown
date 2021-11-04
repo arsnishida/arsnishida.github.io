@@ -31,3 +31,9 @@ cat align_to_contamination.sam | grep -v "^@" | cut -f 3 | sort | uniq -c
 #6024366 NC_000913.3
 # 769709 NC_004718.3
 ```
+
+List of contamination sequences:
+```
+>NC_000913.3 Escherichia coli str. K-12 substr. MG1655, complete genome
+>NC_004718.3 SARS coronavirus Tor2, complete genome
+```
