@@ -1,0 +1,8 @@
+I"¿<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example/run.txt</code></p>
+
+<p>This gives an example of how to take the single-cell data and transform it to bulk. I then subsampled the full BAM by increments of 5% and called macs3 on each subset. The plot shows a linear increase of the number of peaks called relative to the log number of reads present. This indicates that we are not at saturation of reads for calling peaks and how many we can roughly expect. From my personal experience with DNase data, saturation for peaks called occurs past &gt; 100M reads.</p>
+
+<p>Figure of peaks called from pseudo-bulk data:
+<br /><a href="https://www.dropbox.com/s/ch1iq5sodb6eoia/blog_tmp1.reads_v_macs3peaks.png?dl=0">Number of Macs 3 peaks and Log Read Depth</a></p>
+:ET
