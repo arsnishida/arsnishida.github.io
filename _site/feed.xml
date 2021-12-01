@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T11:12:15-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Single Cell TBR1 Pseudo-Bulk Depth Tests</title><link href="http://localhost:4000/2021/11/28/post-0065.html" rel="alternate" type="text/html" title="Single Cell TBR1 Pseudo-Bulk Depth Tests" /><published>2021-11-28T00:00:00-08:00</published><updated>2021-11-28T00:00:00-08:00</updated><id>http://localhost:4000/2021/11/28/post-0065</id><content type="html" xml:base="http://localhost:4000/2021/11/28/post-0065.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-30T19:41:29-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK SSC List Formatting to Current SPARK</title><link href="http://localhost:4000/2021/11/30/post-0066.html" rel="alternate" type="text/html" title="SPARK SSC List Formatting to Current SPARK" /><published>2021-11-30T00:00:00-08:00</published><updated>2021-11-30T00:00:00-08:00</updated><id>http://localhost:4000/2021/11/30/post-0066</id><content type="html" xml:base="http://localhost:4000/2021/11/30/post-0066.html">&lt;p&gt;The SSC variant calls are taken from this Box file, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://ohsu.box.com/s/dqm3garunt0xobvgdz41onpexi87yqin&lt;/code&gt;, on this path, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;All Files/kruppd/Writing/SSC somatic pilot/data/Data Used for Mosaic Paper/High Confidence Variants/HighConfidence Variants Collapsed_2.csv&lt;/code&gt;. This appears to be a similar version of Table S5 from the Krupp 2017 paper with the columns with the statistics which are excluded from the paper. Unlike the table in the paper, this also collapses sites in overlapping genes into a single entry which is more in line with the SPARK lists where genes are combined in one entry separated by commas. All SSC columns are transformed to match the columns for the SPARK list.&lt;/p&gt;
+
+&lt;p&gt;Here is the transformed SSC list. It has the same columns as the SPARK lists and has extra columns representing the SSC specific entries. The two important extra columns to consider that are unique to the SSC list are column 90 and 91 which are the ‘FILTER’ and ‘OLD_TYPE’ respectively. ‘FILTER’ is TRUE or FALSE. TRUE entries should be filtered from the analysis and their designation is explained below. In general they are calls that do not meet our criteria after reannotation in hg38 versus hg19. ‘OLD_TYPE’ designates whether the call comes from a quad or trio family which may or may not be important for us.&lt;/p&gt;
+
+&lt;p&gt;SSC list in SPARK list format:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0&quot;&gt;SSC List in SPARK List Format&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown showing how the list was modified:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j1flcekwsrp6s03/17_ssc_list.html?dl=0&quot;&gt;17 SSC List Formatting to Current SPARK&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The column ‘FILTER’ designates calls to remove from downstream analysis. ‘TRUE’ calls should be removed and are given if:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- there are no FRACTION calls made (not labeled GERMLINE or MOSAIC, labeled 'NA')
+- the variant falls in a region that is annotated in either a non-exonic, super duplicate, or trf region
+- the variant does not have a predicted functional mutation type
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following columns were modified in the transformation:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Coordinates were changed via LiftOver with 100% of the sites found going from hg19 to hg38.
+All genomic and functional annotations were redone with AnnoVAR for hg38.
+FRACTION_MORE is derived from FRACTION with name changes to match the SPARK list (&quot;GERMLINE_C&quot; is changed to &quot;GERMLINE_CHILD&quot;).
+ACC_DIST and DON_DIST are the same value. The SSC list keeps only the closest wheras the SPARK list keeps both separate.
+COMPLEX_EVENT is descriptive in the SSC list and binary in the SPARK list.
+NUM_FAMILY_FOUND and filteredCohortCount represent cohort counts before and after filtering. In the SSC list, only the final count is kept so these are the same for the SSC list.
+HGNCsymbol_to_ENSID and RefSeq_to_ENSID are the ENSEMBL ID's determined from the hg38 annotations.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following columns were dropped and all set to ‘NA’:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;There are no numerical sample IDs in the SSC list.
+SSC uses combined family stats from the variant callers whereas the SPARK list keeps them by individual so these are dropped.
+Mismatch stats for raw mismatch counts, 'other' read counts, and the means are not present in the SSC list.
+gnomAD allele fractions are not present in the earlier SSC table.
+The only error columns in the SSC list are the calculated rates.
+FRACTION_OLD is a legacy column in the SPARK list and does not have meaning in the SSC list.
+The splice site transcript IDs are not present just the distances.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following extra columns specific to the SSC list were added at the end. These are potentially important for analysis:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FILTER - TRUE or FALSE and represent variants that should be filtered out after the transformation of hg19 to hg38
+OLD_TYPE - TRIO or QUAD
+OLD_SEGDUP, OLD_RMSK, OLD_TRF, OLD_FUNC_TYPE, OLD_TRANS_REF, OLD_CLASS_REF, OLD_GENE_REF - these are the original hg19 AnnoVAR annotations
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following SSC specific columns were kept and added at the end. These can likely be ignored. I’ve tried to describe them as best as possible without knowing their exact provenance:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OLD_STUDY - COHORT or PILOT24 or PILOT400
+OLD_PUBLISHED - IOSSIFOV_2014 or KRUMM_2015
+OLD_AF_ESP, OLD_AF_1KG - allele fractions from other databases
+OLD_PCTILE_CDS_AUTO_45X - 5% percentiles of CDS AUTO 45x
+OLD_FORMAT_VARSCAN, OLD_FORMAT_LOFREQ, OLD_FORMAT_SMOC, OLD_VARSCAN_232_FA, OLD_LOFREQ_211_FA, OLD_SMOC_FA, OLD_VARSCAN_232_MO, OLD_LOFREQ_211_MO, OLD_SMOC_MO, OLD_VARSCAN_232_PRO, OLD_LOFREQ_211_PRO, OLD_SMOC_PRO, OLD_VARSCAN_232_SIB, OLD_LOFREQ_211_SIB, OLD_SMOC_SIB - family-based variant calling output
+OLD_DIST_TO_PREV, OLD_DIST_TO_NEXT, OLD_PERSON_PREV, OLD_PERSON_NEXT - closest call and person	
+OLD_QC_STATUS - at this stage they are all 'PASS', unknown criteria
+OLD_COHORT_DP, OLD_COHORT_DPALT, OLD_P400_COUNT_MOS, OLD_P400_COUNT_GERM, OLD_COHORT_COUNT_MOS, OLD_COHORT_COUNT_GERM, OLD_COHORT_MAX_AD, OLD_P400_COUNT_ALL - various counts within the cohort subsets
+OLD_AF_FA, OLD_AF_MO, OLD_AF_PRO, OLD_AF_SIB, OLD_CALLED_FA, OLD_CALLED_MO, OLD_CALLED_PRO, OLD_CALLED_SIB, OLD_DETECT_FA, OLD_DETECT_MO, OLD_DETECT_PRO, OLD_DETECT_SIB, OLD_PHET_MAIN, OLD_SITE_KEY, OLD_PARENTAL, OLD_GONADAL, OLD_CALLED_VARSCAN, OLD_CALLED_LOFREQ, OLD_CALLED_SMOC - these are all redundant derived columns
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">The SSC variant calls are taken from this Box file, https://ohsu.box.com/s/dqm3garunt0xobvgdz41onpexi87yqin, on this path, All Files/kruppd/Writing/SSC somatic pilot/data/Data Used for Mosaic Paper/High Confidence Variants/HighConfidence Variants Collapsed_2.csv. This appears to be a similar version of Table S5 from the Krupp 2017 paper with the columns with the statistics which are excluded from the paper. Unlike the table in the paper, this also collapses sites in overlapping genes into a single entry which is more in line with the SPARK lists where genes are combined in one entry separated by commas. All SSC columns are transformed to match the columns for the SPARK list.</summary></entry><entry><title type="html">Single Cell TBR1 Pseudo-Bulk Depth Tests</title><link href="http://localhost:4000/2021/11/28/post-0065.html" rel="alternate" type="text/html" title="Single Cell TBR1 Pseudo-Bulk Depth Tests" /><published>2021-11-28T00:00:00-08:00</published><updated>2021-11-28T00:00:00-08:00</updated><id>http://localhost:4000/2021/11/28/post-0065</id><content type="html" xml:base="http://localhost:4000/2021/11/28/post-0065.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example/run.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This gives an example of how to take the single-cell data and transform it to bulk. I then subsampled the full BAM by increments of 5% and called macs3 on each subset. The plot shows a linear increase of the number of peaks called relative to the log number of reads present. This indicates that we are not at saturation of reads for calling peaks and gives a rough approximation of what we can expect. From my personal experience with bulk DNase data, saturation for peaks called needs ~500M reads. With single-cell data you get a lot more repetition of common open sites from each individual cell.&lt;/p&gt;
@@ -170,110 +222,4 @@ Multiplex:
 &lt;p&gt;Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/arsi93z6a5eoy6b/11_hc_AF_quadsimplex.html?dl=0&quot;&gt;11 High Confidence AF Dists, QS&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/odjqybqtzlmqjgx/11_hc_AF_qs_ts.html?dl=0&quot;&gt;11 High Confidence AF Dists, QS and TS&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p1nkifu6mav4sw5/11_hc_AF_quads_quadm_trios.html?dl=0&quot;&gt;11 High Confidence AF Dists, QS, TS, and QM&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">UPDATE Oct 12 - Nothing changed but as a note, the multiplex quad labels are left as ‘PRO’ and ‘SIB’ despite being both affected for these plots since they are looking at the technical labels and details.</summary></entry><entry><title type="html">SPARK Summary of Final Lists</title><link href="http://localhost:4000/2021/10/10/post-0056.html" rel="alternate" type="text/html" title="SPARK Summary of Final Lists" /><published>2021-10-10T00:00:00-07:00</published><updated>2021-10-10T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/10/post-0056</id><content type="html" xml:base="http://localhost:4000/2021/10/10/post-0056.html">&lt;p&gt;&lt;em&gt;UPDATE&lt;/em&gt; Oct 13 - Added full HC count tables.
-&lt;em&gt;UPDATE&lt;/em&gt; Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.&lt;/p&gt;
-
-&lt;p&gt;This takes the high confidence and burden tables and summarizes them relative to Table 1 in the Krupp paper. Because we don’t have representation of mosaics at lower allele fractions the differences between the high confidence and burden tables is minimal until you begin thresholding on read depth.&lt;/p&gt;
-
-&lt;p&gt;The final output is copy+pasted below in tab-delineated format for ease of use.&lt;/p&gt;
-
-&lt;p&gt;Markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hbkj3lsf8bcrj4a/10_summarize_final_lists.html?dl=0&quot;&gt;10 Summarize Final Lists&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Link:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/e2zgb62ahtg2tnt/hc_counts.txt?dl=0&quot;&gt;High Confidence Count Table&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;High Confidence&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff             26       66                 5    97
-## Simplex Quad Unaff           27       73                 4   104
-## Multiplex Quad Aff           17       38                 3    58
-## Multiplex Quad Unaff          0        7                 0     7
-## Simplex Trio Aff             22       63                 1    86
-## Total Aff                    65      167                 9   241
-## Total Unaff                  27       80                 4   111
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Burden, 15% and 45x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff             25       65                 4    94
-## Simplex Quad Unaff           26       73                 4   103
-## Multiplex Quad Aff           17       38                 3    58
-## Multiplex Quad Unaff          0        7                 0     7
-## Simplex Trio Aff             21       61                 1    83
-## Total Aff                    63      164                 8   235
-## Total Unaff                  26       80                 4   110
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Burden, 12.5% and 50x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff             20       54                 4    78
-## Simplex Quad Unaff           18       63                 3    84
-## Multiplex Quad Aff           13       31                 3    47
-## Multiplex Quad Unaff          0        6                 0     6
-## Simplex Trio Aff             19       53                 1    73
-## Total Aff                    52      138                 8   198
-## Total Unaff                  18       69                 3    90
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Burden, 10% and 65x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff              8       24                 2    34
-## Simplex Quad Unaff           10       20                 1    31
-## Multiplex Quad Aff            4       12                 1    17
-## Multiplex Quad Unaff          0        2                 0     2
-## Simplex Trio Aff             10       27                 1    38
-## Total Aff                    22       63                 4    89
-## Total Unaff                  10       22                 1    33
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Burden, 7.5% and 85x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff              2        5                 0     7
-## Simplex Quad Unaff            3        3                 0     6
-## Multiplex Quad Aff            2        4                 0     6
-## Multiplex Quad Unaff          0        2                 0     2
-## Simplex Trio Aff              2        4                 0     6
-## Total Aff                     6       13                 0    19
-## Total Unaff                   3        5                 0     8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Burden, 5% and 130x&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                      synonymous missense nonsense_splicing total
-## Simplex Quad Aff              0        1                 0     1
-## Simplex Quad Unaff            0        0                 0     0
-## Multiplex Quad Aff            0        1                 0     1
-## Multiplex Quad Unaff          0        0                 0     0
-## Simplex Trio Aff              0        0                 0     0
-## Total Aff                     0        2                 0     2
-## Total Unaff                   0        0                 0     0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;HC Table Breakdown&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                           variant          mutation quad_simplex trio_simplex	##    quad_multiplex total
-## 1                    MOSAIC_CHILD          missense          139           63	## 1              45   247
-## 2                    MOSAIC_CHILD        synonymous           53           22	## 2              17    92
-## 3                    MOSAIC_CHILD nonsense_splicing            9            1	## 3               3    13
-## 4                    MOSAIC_CHILD          stoploss            0            0	## 4               0     0
-## 5                    MOSAIC_CHILD           unknown            0            0	## 5               0     0
-## 6        MOSAIC_PARENTAL_NONTRANS          missense          485          928	## 6             167  1580
-## 7        MOSAIC_PARENTAL_NONTRANS        synonymous          274          487	## 7              99   860
-## 8        MOSAIC_PARENTAL_NONTRANS nonsense_splicing           15           47	## 8               6    68
-## 9        MOSAIC_PARENTAL_NONTRANS          stoploss            2            1	## 9               0     3
-## 10       MOSAIC_PARENTAL_NONTRANS           unknown            0            0	## 10              1     1
-## 11                 GERMLINE_CHILD          missense          991          563	## 11            275  1829
-## 12                 GERMLINE_CHILD        synonymous          392          215	## 12            115   722
-## 13                 GERMLINE_CHILD nonsense_splicing           57           42	## 13              9   108
-## 14                 GERMLINE_CHILD          stoploss            1            0	## 14              0     1
-## 15                 GERMLINE_CHILD           unknown            0            0	## 15              1     1
-## 16 MOSAIC_PARENTAL_TRANS_MATERNAL          missense           37           19	## 16              8    64
-## 17 MOSAIC_PARENTAL_TRANS_MATERNAL        synonymous           15            8	## 17              4    27
-## 18 MOSAIC_PARENTAL_TRANS_MATERNAL nonsense_splicing            0            0	## 18              2     2
-## 19 MOSAIC_PARENTAL_TRANS_MATERNAL          stoploss            0            0	## 19              0     0
-## 20 MOSAIC_PARENTAL_TRANS_MATERNAL           unknown            0            0	## 20              0     0
-## 21 MOSAIC_PARENTAL_TRANS_PATERNAL          missense           30           21	## 21              9    60
-## 22 MOSAIC_PARENTAL_TRANS_PATERNAL        synonymous           23            9	## 22              7    39
-## 23 MOSAIC_PARENTAL_TRANS_PATERNAL nonsense_splicing            1            1	## 23              0     2
-## 24 MOSAIC_PARENTAL_TRANS_PATERNAL          stoploss            0            0	## 24              0     0
-## 25 MOSAIC_PARENTAL_TRANS_PATERNAL           unknown            0            0	## 25              0     0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">UPDATE Oct 13 - Added full HC count tables. UPDATE Oct 12 - Modified labels and counting by affected status rather than ‘PRO’ and ‘SIB’ designations.</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/p1nkifu6mav4sw5/11_hc_AF_quads_quadm_trios.html?dl=0&quot;&gt;11 High Confidence AF Dists, QS, TS, and QM&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">UPDATE Oct 12 - Nothing changed but as a note, the multiplex quad labels are left as ‘PRO’ and ‘SIB’ despite being both affected for these plots since they are looking at the technical labels and details.</summary></entry></feed>

@@ -12,6 +12,7 @@ Final Mosaic Lists (July 27th):
 <br>[Simplex Trios, High Confidence Calls](https://www.dropbox.com/s/lrdb5trc75ohgx8/triosimplex.highconfidence.txt?dl=0)
 <br>[Multiplex Quads, for Burden Analysis](https://www.dropbox.com/s/luyljm77ci1hu1k/quadmultiplex.burden.txt?dl=0)
 <br>[Multiplex Quads, High Confidence Calls](https://www.dropbox.com/s/cn3x5sfm30eq04a/quadmultiplex.highconfidence.txt?dl=0)
+<br>[SSC List in SPARK List Format](https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0)
 
 Markdowns:
 <br>[01_QS, Organizing and Prefiltering](https://www.dropbox.com/s/o2qqos8qembl586/01_qs.organize_prefilter.html?dl=0)
@@ -47,6 +48,8 @@ Markdowns:
 <br>[13 Burden REVEL, QS+TS and missense](https://www.dropbox.com/s/ng86fbx2o4ap3sw/13_burden_revel_qsts_missense.html?dl=0)
 <br>[14 Parental Transmission Breakdown](https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0)
 <br>[15 SPARK 167 Intersection](https://www.dropbox.com/s/5v9xiutv72g4tj1/15_spark_167_list_01.html?dl=0)
+<br>[16 Concat Variant Lists to DNV List](https://www.dropbox.com/s/v0mzdm4jevtaq4x/16_concat_lists_02.html?dl=0)
+<br>[17 SSC List Formatting to Current SPARK](https://www.dropbox.com/s/j1flcekwsrp6s03/17_ssc_list.html?dl=0)
 
 Family Lists:
 <br>[Final Sample List](https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0)
