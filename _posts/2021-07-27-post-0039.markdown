@@ -90,6 +90,7 @@ Joint Coverage:
 <br>[Genomic Joint Coverage, Simplex Quads](https://www.dropbox.com/s/xp96tughn8vhjzu/jointcoverage.2.simplexquads.txt?dl=0)
 <br>[Genomic Joint Coverage, Multiplex Quads](https://www.dropbox.com/s/dm5ppo3fn2q0vrv/jointcoverage.2.multiplexquads.txt?dl=0)
 <br>[Genomic Joint Coverage, Simplex Trios](https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0)
+<br>[Genomic Joint Coverage, SSC Joint Coverage](https://www.dropbox.com/s/72p5sfqhwmbiqsz/transformed.jointcov_ssc.all.txt?dl=0)
 
 IGV Shots:
 <br>[IGV Shots of High Confidence Sites](https://www.dropbox.com/sh/nj8wglswrxj7lik/AADvVXrVXapW3lukFMppeuLAa?dl=0)
