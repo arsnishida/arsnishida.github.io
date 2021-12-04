@@ -17,6 +17,7 @@ Notes:
 <br>Fig 3.1 - This contains the REVEL distributions which are left-skewed towards 0.
 
 Annotations:
+<br>*OUTDATED. Use full annotations on index page.*
 <br>[Supplemental Annotations, REVEL, trio simplex](https://www.dropbox.com/s/4aaak22tpx5r1kl/revel.triosimplex.txt?dl=0)
 <br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/svr5kdpds11chqq/revel.quadsimplex.txt?dl=0)
 <br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/n5ahznpustist5b/revel.quadmultiplex.txt?dl=0)

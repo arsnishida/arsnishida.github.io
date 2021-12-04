@@ -1,0 +1,18 @@
+I"ã<p>VEP was used to annotate the high confidence lists. The following databases were used. There are redundant scores between the databases but they might possibly differ slightly due to the different versions of references each uses.</p>
+<ul>
+  <li>dbNSFP v4.1a from ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip</li>
+  <li>gnomAD v3.0.1 from https://storage.googleapis.com/gcp-public-dataâ€“gnomad/release/3.0.1/coverage/genomes/gnomad.genomes.r3.0.1.coverage.summary.tsv.bgz</li>
+  <li>REVEL v1.3 from https://sites.google.com/site/revelgenomics/downloads</li>
+  <li>LoFtool scores (no version) from https://github.com/Ensembl/VEP_plugins</li>
+  <li>ExACpLI scores (no version) from https://github.com/Ensembl/VEP_plugins</li>
+</ul>
+
+<p>I am keeping this separate from the high confidence lists as they currently exist but these columns can be directly added to the highconfidence lists without any reordering (the rows are the same).
+These are available here. 
+<br /><a href="https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0">Simplex Quad, Added Annotations</a>
+<br /><a href="https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0">Multiplex Quad, Added Annotations</a>
+<br /><a href="https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0">Simplex Trio, Added Annotations</a></p>
+
+<p>Full column descriptions are here.
+<br /><a href="https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0">Added Annotation Column Descriptions</a></p>
+:ET
