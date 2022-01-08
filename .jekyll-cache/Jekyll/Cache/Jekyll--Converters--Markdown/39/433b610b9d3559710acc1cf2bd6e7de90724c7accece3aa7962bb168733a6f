@@ -1,4 +1,4 @@
-I"6<p>Final Mosaic Lists (July 27th):
+I"ñ8<p>Final Mosaic Lists (July 27th):
 <br /><a href="https://www.dropbox.com/s/2v0su9gdz25yv5w/quadsimplex.burden.txt?dl=0">Simplex Quads, for Burden Analysis</a>
 <br /><a href="https://www.dropbox.com/s/dphpofhrh7xa84z/quadsimplex.highconfidence.txt?dl=0">Simplex Quads, High Confidence Calls</a>
 <br /><a href="https://www.dropbox.com/s/8rlzsphugatls37/triosimplex.burden.txt?dl=0">Simplex Trios, for Burden Analysis</a>
@@ -62,6 +62,9 @@
 <br /><a href="https://www.dropbox.com/s/vmhwb1a307p92gs/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0">Simplex Trios w/ Strict Test Filter, no Germline Parental</a></p>
 
 <p>SPARK Annotations Used, 20190820:
+<br /><a href="https://www.dropbox.com/s/bjwj52ibth2rytw/quadsimplex.highconfidence.add_annot.txt?dl=0">Simplex Quad, Added Annotations</a>
+<br /><a href="https://www.dropbox.com/s/fgr8kt3mt98juq5/quadmultiplex.highconfidence.add_annot.txt?dl=0">Multiplex Quad, Added Annotations</a>
+<br /><a href="https://www.dropbox.com/s/ntn4cr1jmh44q70/triosimplex.highconfidence.add_annot.txt?dl=0">Simplex Trio, Added Annotations</a>
 <br /><a href="https://www.dropbox.com/s/gg5ewe0bbqhjimw/SPARK.27K.mastertable.20190820.txt?dl=0">SPARK Annotations</a></p>
 
 <p>Links to List of Gene Names with Alternate Names:
@@ -82,7 +85,8 @@
 <p>Joint Coverage:
 <br /><a href="https://www.dropbox.com/s/xp96tughn8vhjzu/jointcoverage.2.simplexquads.txt?dl=0">Genomic Joint Coverage, Simplex Quads</a>
 <br /><a href="https://www.dropbox.com/s/dm5ppo3fn2q0vrv/jointcoverage.2.multiplexquads.txt?dl=0">Genomic Joint Coverage, Multiplex Quads</a>
-<br /><a href="https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0">Genomic Joint Coverage, Simplex Trios</a></p>
+<br /><a href="https://www.dropbox.com/s/pfkw1v3z7rs4ugy/jointcoverage.2.simplextrios.txt?dl=0">Genomic Joint Coverage, Simplex Trios</a>
+<br /><a href="https://www.dropbox.com/s/72p5sfqhwmbiqsz/transformed.jointcov_ssc.all.txt?dl=0">Genomic Joint Coverage, SSC Joint Coverage</a></p>
 
 <p>IGV Shots:
 <br /><a href="https://www.dropbox.com/sh/nj8wglswrxj7lik/AADvVXrVXapW3lukFMppeuLAa?dl=0">IGV Shots of High Confidence Sites</a></p>
@@ -116,4 +120,7 @@ Final tables also contain:
 <br />83/ACC_DIST, 84/DON_DIST, 85/ACC_TRANSCRIPT, 86/DON_TRANSCRIPT - The distances in basepairs to an acceptor or donor site and which transcript from which this distance is derived.
 <br />87/COMPLEX_EVENT - All FALSE in final tables representing collapsed complex events.
 <br />88/HGNCsymbol_to_ENSID, 89/RefSeq_to_ENSID - ENSEMBL IDs derived from both HGNC symbosl and RefSeq</p>
+
+<p>dbNSFP Column Descriptions:
+<br /><a href="https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0">Added dbNSFP Annotation Column Descriptions</a></p>
 :ET

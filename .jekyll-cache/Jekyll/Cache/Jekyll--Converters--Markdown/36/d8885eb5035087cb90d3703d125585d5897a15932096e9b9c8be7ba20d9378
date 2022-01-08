@@ -1,0 +1,16 @@
+I"�<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/run.txt</code></p>
+
+<p>The DA was performed after TF normalization using the Wilcoxon rank sum test and creates the comparisons in ‘210712_DA_Comparisons.txt’. Mild name changes were made in the comparisons such as ‘Photoreceptor’ to ‘Photoreceptors’ to match the annotation file and using the correct annotation column for the biologically split subsets.</p>
+
+<p>The following comparisons are nonexistant because they have no cells with the annotation:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Glia_WT_CS_5_C13 has no cells so all 6 comparisons are missing in 3_Glia_d5.
+- Glia_KI_CS_30_C21, Glia_dTaudel_30_C13, Glia_KI_CS_30_C13 in 3_Glia_d30.
+</code></pre></div></div>
+
+<p>The following comparisons are deliberately empty because they have too few cells:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- DA.Glia_WT_CS_30_C11_Glia_PL_CS_30_C11.txt, DA.Glia_WT_CS_30_C13_Glia_CS_30_C13.txt
+- DA.Neuron_WT_CS_30_C14_Neuron_dTaudel_30_C14.txt, DA.Neuron_WT_CS_30_C14_Neuron_PL_CS_30_C14.txt
+- DA.Photoreceptors_WT_CS_30_C1_Photoreceptors_PL_CS_30_C1.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_dTaudel_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_KI_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_PL_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_VM_CS_30_C3.txt
+</code></pre></div></div>
+:ET

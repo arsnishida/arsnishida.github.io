@@ -1,4 +1,4 @@
-I"D<p><strong>Project List</strong>:</p>
+I"»<p><strong>Project List</strong>:</p>
 
 <h3>general</h3>
 <ul>
@@ -80,6 +80,12 @@
 
 <h3>SPARK</h3>
 <ul>
+    
+      <li><a href="/2021/12/03/post-0068.html">SPARK VEP Annotations</a></li>
+    
+      <li><a href="/2021/11/30/post-0067.html">SPARK Burden Tables Gene Sets, SPARK+SSC</a></li>
+    
+      <li><a href="/2021/11/30/post-0066.html">SPARK SSC List Formatting to Current SPARK</a></li>
     
       <li><a href="/2021/10/14/post-0063.html">SPARK Concat Variant Lists to DNV List Comparison</a></li>
     
@@ -174,6 +180,8 @@
 
 <h3>dm6_tau</h3>
 <ul>
+    
+      <li><a href="/2022/01/08/post-0069.html">Drosophilia Tau Final DA</a></li>
     
       <li><a href="/2021/10/07/post-0055.html">Drosophilia Tau Preliminary DA</a></li>
     

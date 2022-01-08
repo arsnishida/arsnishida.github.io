@@ -69,6 +69,9 @@ Mosaic Lists, Full Non-Analysis Sets (June):
 <br>[Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/vmhwb1a307p92gs/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0)
 
 SPARK Annotations Used, 20190820:
+<br>[Simplex Quad, Added Annotations](https://www.dropbox.com/s/bjwj52ibth2rytw/quadsimplex.highconfidence.add_annot.txt?dl=0)
+<br>[Multiplex Quad, Added Annotations](https://www.dropbox.com/s/fgr8kt3mt98juq5/quadmultiplex.highconfidence.add_annot.txt?dl=0)
+<br>[Simplex Trio, Added Annotations](https://www.dropbox.com/s/ntn4cr1jmh44q70/triosimplex.highconfidence.add_annot.txt?dl=0)
 <br>[SPARK Annotations](https://www.dropbox.com/s/gg5ewe0bbqhjimw/SPARK.27K.mastertable.20190820.txt?dl=0)
 
 Links to List of Gene Names with Alternate Names:
@@ -124,3 +127,6 @@ Final tables also contain:
 <br>83/ACC_DIST, 84/DON_DIST, 85/ACC_TRANSCRIPT, 86/DON_TRANSCRIPT - The distances in basepairs to an acceptor or donor site and which transcript from which this distance is derived.
 <br>87/COMPLEX_EVENT - All FALSE in final tables representing collapsed complex events.
 <br>88/HGNCsymbol_to_ENSID, 89/RefSeq_to_ENSID - ENSEMBL IDs derived from both HGNC symbosl and RefSeq
+
+dbNSFP Column Descriptions:
+<br>[Added dbNSFP Annotation Column Descriptions](https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0)
