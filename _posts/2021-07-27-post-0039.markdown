@@ -5,6 +5,12 @@ date:   2021-07-27
 tags: SPARK INDEX
 ---
 
+Compiled Writing and Figures:
+<br>[Google Doc](https://docs.google.com/document/d/1q82t5ll2yVP9Fyrwq7jdnZU2bgDnZEgXCu-Tl0VnDDc/edit?usp=sharing)
+<br>[Figures 1, Filtering](https://www.dropbox.com/s/0pdmukd8jp5pq7p/figures_01_filter.zip?dl=0)
+<br>[Figures 2, HC List Metrics](https://www.dropbox.com/s/reg9z0jluwkvx1g/figures_02_metrics.zip?dl=0)
+<br>[Figures 3, Burden](https://www.dropbox.com/s/9lpiv5djf2stod3/figures_03_burden.zip?dl=0)
+
 Final Mosaic Lists (July 27th):
 <br>[Simplex Quads, for Burden Analysis](https://www.dropbox.com/s/2v0su9gdz25yv5w/quadsimplex.burden.txt?dl=0)
 <br>[Simplex Quads, High Confidence Calls](https://www.dropbox.com/s/dphpofhrh7xa84z/quadsimplex.highconfidence.txt?dl=0)
@@ -50,6 +56,7 @@ Markdowns:
 <br>[15 SPARK 167 Intersection](https://www.dropbox.com/s/5v9xiutv72g4tj1/15_spark_167_list_01.html?dl=0)
 <br>[16 Concat Variant Lists to DNV List](https://www.dropbox.com/s/v0mzdm4jevtaq4x/16_concat_lists_02.html?dl=0)
 <br>[17 SSC List Formatting to Current SPARK](https://www.dropbox.com/s/j1flcekwsrp6s03/17_ssc_list.html?dl=0)
+<br>[19 SSC Solo Burden Markdown](https://www.dropbox.com/s/0pv9gk7cxk24v9j/19_burden_genesets_ssc_missense.html?dl=0)
 
 Family Lists:
 <br>[Final Sample List](https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0)
