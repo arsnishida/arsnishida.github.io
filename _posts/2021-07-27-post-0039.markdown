@@ -63,6 +63,7 @@ Family Lists:
 <br>[Final filter list by IGV shots and concatenated cohort count](https://www.dropbox.com/s/lscs9dl6yudj0qn/final_filter_igv_cohort.txt?dl=0)
 <br>[LGD List](https://www.dropbox.com/s/y061oxm1pw4eykx/lgd_family_list.txt?dl=0)
 <br>[NS List](https://www.dropbox.com/s/a8bbg0konbpuppw/ns_family_list.txt?dl=0)
+<br>[SSC Family and LGD/NS List](https://www.dropbox.com/s/naugav6a3labpab/SSC_families_lgd_ns.txt?dl=0)
 
 Mosaic Lists, Full Non-Analysis Sets (June):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0)
