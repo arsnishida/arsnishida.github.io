@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Drosophilia Tau DA Results Test Analysis"
+date:   2022-1-21
+tags: dm6_tau
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis`
+<br>Run: `/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt`
+
+This is an example rough pass through analyzing the results of the DA test. This focuses on the '3_Parent_d5' comparisons as the example. Clusters are combined across treatments but kept separate. Thresholds for 'significantly changing' sites are < 0.01 raw p-value and > 1.5 Log2 FC. The significant results could be annotated by their motifs and nearest genes.
+
+5.2-5.7 - P-value distributions are left-skewed. FDR does not work except maybe with WT_to_KI_KI. Volcano plots suggest global opening and closing in some conditions (WT_to_KI_KI shows a global decrease in accessibility across many sites).
+8.8 - Heatmap shows groups of sites that are specific to the strains trending in the same direction. The most notable is the group for WT to KI_KI which shows large decreases specific to the biological cluster 3 (in yellow on the left).
+
+Markdown links:
+<br>[R Markdown HTML](https://www.dropbox.com/s/2vbwjy5j27zohi0/dm6_test_da.html?dl=0)
+<br>[R Markdown](https://www.dropbox.com/s/an2v1ngucr8nqlt/dm6_test_da.Rmd?dl=0)

@@ -1,0 +1,12 @@
+I"a<p>Directory: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt</code></p>
+
+<p>This is an example rough pass through analyzing the results of the DA test. This focuses on the ‘3_Parent_d5’ comparisons as the example. Clusters are combined across treatments but kept separate. Thresholds for ‘significantly changing’ sites are &lt; 0.01 raw p-value and &gt; 1.5 Log2 FC. The significant results could be annotated by their motifs and nearest genes.</p>
+
+<p>5.2-5.7 - P-value distributions are left-skewed. FDR does not work except maybe with WT_to_KI_KI. Volcano plots suggest global opening and closing in some conditions (WT_to_KI_KI shows a global decrease in accessibility across many sites).
+8.8 - Heatmap shows groups of sites that are specific to the strains trending in the same direction. The most notable is the group for WT to KI_KI which shows large decreases specific to the biological cluster 3 (in yellow on the left).</p>
+
+<p>Markdown links;
+<br /><a href="https://www.dropbox.com/s/2vbwjy5j27zohi0/dm6_test_da.html?dl=0">R Markdown HTML</a>
+<br /><a href="https://www.dropbox.com/s/an2v1ngucr8nqlt/dm6_test_da.Rmd?dl=0">R Markdown</a></p>
+:ET
