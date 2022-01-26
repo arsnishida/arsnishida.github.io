@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-21T17:57:20-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Drosophilia Tau DA Results Test Analysis</title><link href="http://localhost:4000/2022/01/21/post-0072.html" rel="alternate" type="text/html" title="Drosophilia Tau DA Results Test Analysis" /><published>2022-01-21T00:00:00-08:00</published><updated>2022-01-21T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/21/post-0072</id><content type="html" xml:base="http://localhost:4000/2022/01/21/post-0072.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-25T18:14:39-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Dropbox Upload and Download with Curl and API Key</title><link href="http://localhost:4000/2022/01/25/post-0073.html" rel="alternate" type="text/html" title="Dropbox Upload and Download with Curl and API Key" /><published>2022-01-25T00:00:00-08:00</published><updated>2022-01-25T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/25/post-0073</id><content type="html" xml:base="http://localhost:4000/2022/01/25/post-0073.html">&lt;p&gt;These are the step to upload and download from the console to and from Dropbox.
+&lt;br /&gt;1. Go to: https://www.dropbox.com/developers/apps
+&lt;br /&gt;2. Create an App. Name is whatever you like but probably something like “Dropbox Access”.
+&lt;br /&gt;3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read.
+&lt;br /&gt;4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.&lt;/p&gt;
+
+&lt;p&gt;Upload Instructions. This will upload file, ‘test.txt’, into your Dropbox folder ‘temp_upload’ under the name ‘uploaded_test_file.txt’.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# create test file
+echo &quot;TEST THIS&quot; &amp;gt; test.txt
+
+# fill these variables in
+API_KEY=&quot;keep your API key secret&quot;
+INPUT_PATH=&quot;test.txt&quot;
+DROPBOX_FILE_PATH=&quot;/temp_upload/uploaded_test_file.txt&quot;
+
+# run
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header &quot;Authorization: Bearer ${API_KEY}&quot; \
+    --header &quot;Dropbox-API-Arg: {\&quot;path\&quot;: \&quot;${DROPBOX_FILE_PATH}\&quot;}&quot; \
+    --header &quot;Content-Type: application/octet-stream&quot; \
+    --data-binary @${INPUT_PATH}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Download Instructions. This will download ‘uploaded_test_file.txt’ in Dropbox directory ‘temp_upload’ as ‘downloaded_test_file.txt&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# fill these variables in
+API_KEY=&quot;keep your API key secret&quot;
+DROPBOX_FILE_PATH=&quot;/temp_upload/uploaded_test_file.txt&quot;
+OUTPUT_PATH=&quot;downloaded_test_file.txt&quot;
+
+# run
+curl -X POST https://content.dropboxapi.com/2/files/download \
+    --header &quot;Authorization: Bearer ${API_KEY}&quot; \
+    --header &quot;Dropbox-API-Arg: {\&quot;path\&quot;: \&quot;${DROPBOX_FILE_PATH}\&quot;}&quot; \
+    -o &quot;${OUTPUT_PATH}&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="seq" /><summary type="html">These are the step to upload and download from the console to and from Dropbox. 1. Go to: https://www.dropbox.com/developers/apps 2. Create an App. Name is whatever you like but probably something like “Dropbox Access”. 3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read. 4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.</summary></entry><entry><title type="html">Drosophilia Tau DA Results Test Analysis</title><link href="http://localhost:4000/2022/01/21/post-0072.html" rel="alternate" type="text/html" title="Drosophilia Tau DA Results Test Analysis" /><published>2022-01-21T00:00:00-08:00</published><updated>2022-01-21T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/21/post-0072</id><content type="html" xml:base="http://localhost:4000/2022/01/21/post-0072.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This is an example rough pass through analyzing the results of the DA test. This focuses on the ‘3_Parent_d5’ comparisons as the example. Clusters are combined across treatments but kept separate. Thresholds for ‘significantly changing’ sites are &amp;lt; 0.01 raw p-value and &amp;gt; 1.5 Log2 FC. The significant results could be annotated by their motifs and nearest genes.&lt;/p&gt;
@@ -149,26 +183,4 @@ cat align_to_contamination.sam | grep -v &quot;^@&quot; | cut -f 3 | sort | uniq
 &lt;p&gt;List of contamination sequences:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;NC_000913.3 Escherichia coli str. K-12 substr. MG1655, complete genome
 &amp;gt;NC_004718.3 SARS coronavirus Tor2, complete genome
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="seq" /><summary type="html">This describes the maintence of O’Roak and Adey lab contamination references.</summary></entry><entry><title type="html">SPARK Concat Variant Lists to DNV List Comparison</title><link href="http://localhost:4000/2021/10/14/post-0063.html" rel="alternate" type="text/html" title="SPARK Concat Variant Lists to DNV List Comparison" /><published>2021-10-14T00:00:00-07:00</published><updated>2021-10-14T00:00:00-07:00</updated><id>http://localhost:4000/2021/10/14/post-0063</id><content type="html" xml:base="http://localhost:4000/2021/10/14/post-0063.html">&lt;p&gt;This compares our high confidence mosaic lists to the SPARK DNV lists. This shows that nearly all of our germline calls are called in their list (2588/2661 = 97%). The Venn shows there are still many germline calls we are not picking but this isn’t a surprise because we subject everything to harsher filtering while looking for mosaics. A large number of mosaics we call (145/352 = 41%) are flagged as de novo variants in the SPARK list. Boxplots, densities, and histograms of allele frequencies show that these are at intermediate AF’s.&lt;/p&gt;
-
-&lt;p&gt;Link to Venn Diagrams (scaled and unscaled):
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/839acl1l4rp5oh8/16_concat_lists_comp_venn.png?dl=0&quot;&gt;Venn Diagram of List Comparisons&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Markdown:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/v0mzdm4jevtaq4x/16_concat_lists_02.html?dl=0&quot;&gt;16 Concat Variant Lists to DNV List&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Notes:
-&lt;br /&gt;5.3 - Their DNV Calls Flagged as Mosaic Child in Our List - This shows their DNV calls that we call as mosaic are of expected higher AF.
-&lt;br /&gt;5.4 - Their DNV Calls Flagged as Germline Child in Our List - This shows the Germline calls that make uniquely are at lower read depth.
-&lt;br /&gt;5.5 - Combined Boxplot of AF’s - This is a more complete and non-overlapping way of looking at the AF distributions across all partitions.
-&lt;br /&gt;6.2 - Densities with All 4 Groups - density plots of AF’s
-&lt;br /&gt;6.3 - Hists with All 4 Groups - hists of AF’s
-&lt;br /&gt;6.4 - Densities with 3 Relevant Groups - same as above but without germline calls specific to our list
-&lt;br /&gt;6.5 - Hists with 3 Relevant Groups - same as above but without germline calls specific to our list&lt;/p&gt;
-
-&lt;p&gt;Breakdown of a Comparison of Our Calls w/ Theirs:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;##                       Our Mosaic Child Calls Our Germline Child Calls
-## Total                                    352                     2661
-## Found in DNV List                        145                     2588
-## Not Found in DNV List                    207                       73
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This compares our high confidence mosaic lists to the SPARK DNV lists. This shows that nearly all of our germline calls are called in their list (2588/2661 = 97%). The Venn shows there are still many germline calls we are not picking but this isn’t a surprise because we subject everything to harsher filtering while looking for mosaics. A large number of mosaics we call (145/352 = 41%) are flagged as de novo variants in the SPARK list. Boxplots, densities, and histograms of allele frequencies show that these are at intermediate AF’s.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="seq" /><summary type="html">This describes the maintence of O’Roak and Adey lab contamination references.</summary></entry></feed>

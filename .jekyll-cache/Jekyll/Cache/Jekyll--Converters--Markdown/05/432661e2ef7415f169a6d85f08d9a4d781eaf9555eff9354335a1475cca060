@@ -1,0 +1,6 @@
+I"<<p>These are the step to upload and download from the console to and from Dropbox.
+<br />1. Go to: https://www.dropbox.com/developers/apps
+<br />2. Create an App.
+<br />3. Navigate to Permissions on the top tab. Check, account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read.
+<br />4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can access anything you have.</p>
+:ET
