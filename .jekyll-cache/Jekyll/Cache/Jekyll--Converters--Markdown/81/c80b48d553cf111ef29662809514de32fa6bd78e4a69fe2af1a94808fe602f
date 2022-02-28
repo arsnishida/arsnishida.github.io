@@ -1,9 +1,0 @@
-I"(<p>This markdown takes the pre-filtered data and plots out the metrics that are used for scoring by the logistic model. All variants are plotted and then just the subset of mosaic child calls.</p>
-
-<p>This data represents the simplex quads only. It uses the broad filter and removes parental germline calls.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A broad filter to reduce computational load is used. Frequent variants appearing 5 or more times are removed from further analysis. Common variant allele frequencies determined from ExAC and gnomAD annotations must be less than 0.005. Variants require at least 3 non-reference reads and at least 8 reads in all four family members. Variants must also fall within exonic or splicing regions from RefSeq annotations.
-</code></pre></div></div>
-
-<p>Markdown showing the error model metrics of the pre-filtered data:
-<br /><a href="https://www.dropbox.com/s/md88g4ahmmwuer9/20_logistic_model_params.html?dl=0">20 Logistic Model Metrics Pre-Filter</a></p>
-:ET

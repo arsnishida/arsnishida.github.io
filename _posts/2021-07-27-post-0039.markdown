@@ -75,6 +75,15 @@ Mosaic Lists, Full Non-Analysis Sets (June):
 <br>[Simplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/fjuuw3q7cekci7f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0)
 <br>[Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/vev0qhne7n0gmx4/quadmultiplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0)
 <br>[Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/vmhwb1a307p92gs/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0)
+<br>[WES2, Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/ih2gauu9cx0z8z4/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/hlgtjahbqn18k8h/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
+<br>[WES2, Simplex Trios w/ Loose Filter](https://www.dropbox.com/s/fvncosmegwswo36/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
+<br>[WES2, Simplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/35fwzog99dy5s91/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/rfz19dt7wi6vga5/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
+<br>[WES2, Simplex Trios w/ Strict Test Filter](https://www.dropbox.com/s/1hfc09k0s0qm5pb/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
+<br>[WES2, Simplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/j3xow8h6dquigon/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/eqlgrvkc2xskh7g/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
+<br>[WES2, Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/xxjvlvcc26iphoh/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
 
 SPARK Annotations Used, 20190820:
 <br>[Simplex Quad, Added Annotations](https://www.dropbox.com/s/bjwj52ibth2rytw/quadsimplex.highconfidence.add_annot.txt?dl=0)

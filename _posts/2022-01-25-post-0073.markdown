@@ -2,7 +2,7 @@
 layout: post
 title:  "Dropbox Upload and Download with Curl and API Key"
 date:   2022-1-25
-tags: seq
+tags: ref
 ---
 
 These are the step to upload and download from the console to and from Dropbox.
@@ -49,4 +49,6 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 
 ###
 
-<b>For files > 150 Mb using upload sessions... coming soon.</b>
+<b>For files > 150 Mb using upload sessions.</b>
+
+https://github.com/andreafabrizi/Dropbox-Uploader

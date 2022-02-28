@@ -1,4 +1,4 @@
-I"i;<p>Compiled Writing and Figures:
+I"9B<p>Compiled Writing and Figures:
 <br /><a href="https://docs.google.com/document/d/1q82t5ll2yVP9Fyrwq7jdnZU2bgDnZEgXCu-Tl0VnDDc/edit?usp=sharing">Google Doc</a>
 <br /><a href="https://www.dropbox.com/s/0pdmukd8jp5pq7p/figures_01_filter.zip?dl=0">Figures 1, Filtering</a>
 <br /><a href="https://www.dropbox.com/s/reg9z0jluwkvx1g/figures_02_metrics.zip?dl=0">Figures 2, HC List Metrics</a>
@@ -55,7 +55,8 @@
 <br /><a href="https://www.dropbox.com/s/awrb72bkxcxgmix/final_sample_list.txt?dl=0">Final Sample List</a>
 <br /><a href="https://www.dropbox.com/s/lscs9dl6yudj0qn/final_filter_igv_cohort.txt?dl=0">Final filter list by IGV shots and concatenated cohort count</a>
 <br /><a href="https://www.dropbox.com/s/y061oxm1pw4eykx/lgd_family_list.txt?dl=0">LGD List</a>
-<br /><a href="https://www.dropbox.com/s/a8bbg0konbpuppw/ns_family_list.txt?dl=0">NS List</a></p>
+<br /><a href="https://www.dropbox.com/s/a8bbg0konbpuppw/ns_family_list.txt?dl=0">NS List</a>
+<br /><a href="https://www.dropbox.com/s/naugav6a3labpab/SSC_families_lgd_ns.txt?dl=0">SSC Family and LGD/NS List</a></p>
 
 <p>Mosaic Lists, Full Non-Analysis Sets (June):
 <br /><a href="https://www.dropbox.com/s/tyczipwxkch4a1f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.jun3.txt?dl=0">Simplex Quads w/ Loose Filter</a>
@@ -66,7 +67,16 @@
 <br /><a href="https://www.dropbox.com/s/dv4ajax8bqbwfcu/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.jun3.txt?dl=0">Simplex Trios w/ Strict Test Filter</a>
 <br /><a href="https://www.dropbox.com/s/fjuuw3q7cekci7f/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0">Simplex Quads w/ Strict Test Filter, no Germline Parental</a>
 <br /><a href="https://www.dropbox.com/s/vev0qhne7n0gmx4/quadmultiplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0">Multiplex Quads w/ Strict Test Filter, no Germline Parental</a>
-<br /><a href="https://www.dropbox.com/s/vmhwb1a307p92gs/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0">Simplex Trios w/ Strict Test Filter, no Germline Parental</a></p>
+<br /><a href="https://www.dropbox.com/s/vmhwb1a307p92gs/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.jun3.txt?dl=0">Simplex Trios w/ Strict Test Filter, no Germline Parental</a>
+<br /><a href="https://www.dropbox.com/s/ih2gauu9cx0z8z4/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0">Simplex Quads w/ Loose Filter</a>
+<br /><a href="https://www.dropbox.com/s/hlgtjahbqn18k8h/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0">Multiplex Quads w/ Loose Filter</a>
+<br /><a href="https://www.dropbox.com/s/fvncosmegwswo36/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0">Simplex Trios w/ Loose Filter</a>
+<br /><a href="https://www.dropbox.com/s/35fwzog99dy5s91/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0">Simplex Quads w/ Strict Test Filter</a>
+<br /><a href="https://www.dropbox.com/s/rfz19dt7wi6vga5/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0">Multiplex Quads w/ Strict Test Filter</a>
+<br /><a href="https://www.dropbox.com/s/1hfc09k0s0qm5pb/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0">Simplex Trios w/ Strict Test Filter</a>
+<br /><a href="https://www.dropbox.com/s/j3xow8h6dquigon/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0">Simplex Quads w/ Strict Test Filter, no Germline Parental</a>
+<br /><a href="https://www.dropbox.com/s/eqlgrvkc2xskh7g/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0">Multiplex Quads w/ Strict Test Filter, no Germline Parental</a>
+<br /><a href="https://www.dropbox.com/s/xxjvlvcc26iphoh/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0">Simplex Trios w/ Strict Test Filter, no Germline Parental</a></p>
 
 <p>SPARK Annotations Used, 20190820:
 <br /><a href="https://www.dropbox.com/s/bjwj52ibth2rytw/quadsimplex.highconfidence.add_annot.txt?dl=0">Simplex Quad, Added Annotations</a>

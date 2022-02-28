@@ -1,4 +1,4 @@
-I"�<p>These are the step to upload and download from the console to and from Dropbox.
+I"�<p>These are the step to upload and download from the console to and from Dropbox.
 <br />1. Go to: https://www.dropbox.com/developers/apps
 <br />2. Create an App. Name is whatever you like but probably something like “Dropbox Access”.
 <br />3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read.
@@ -6,7 +6,7 @@
 
 <p>###</p>
 
-<p>For files &lt; 150 Mb using the “2/files/upload” endpoint.</p>
+<p><b>For files &lt; 150 Mb using the “2/files/upload” endpoint.</b></p>
 
 <p>Upload Instructions. This will upload file, ‘test.txt’, into your Dropbox folder ‘temp_upload’ under the name ‘uploaded_test_file.txt’.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># create test file
@@ -40,5 +40,7 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 
 <p>###</p>
 
-<p>For files &gt; 150 Mb using upload sessions… coming soon.</p>
+<p><b>For files &gt; 150 Mb using upload sessions.</b></p>
+
+<p>https://github.com/andreafabrizi/Dropbox-Uploader</p>
 :ET

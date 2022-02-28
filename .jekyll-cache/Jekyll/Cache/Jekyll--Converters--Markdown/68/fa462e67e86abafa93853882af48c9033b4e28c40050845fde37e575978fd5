@@ -1,13 +1,0 @@
-I"<p>The SSC list was transformed from hg19 to hg38 as described <a href="https://arsnishida.github.io/2021/11/30/post-0066.html">here</a>.</p>
-
-<p>20 sites removed for no original FRACTION assignment
-172 sites removed for falling into a SDTRF region
-9 sites with no functional mutation type
-Show the 7 Mosaic Child lost sites. 6 are in super duplicate regions and 1 has no mutation type (and never had an original one assigned either so was also not used). 3 are in the same region and would be collapsed as a complex event.</p>
-
-<p>I am keeping this separated from the high confidence lists but these columns can be directly added to the highconfidence lists without any reordering (the rows are the same). These are available here. 
-<br /><a href="">19 SSC Solo Burden Markdown</a></p>
-
-<p>The dbNSFP columns are described here and then are followed by the other scores from the other annotation databases:
-<br /><a href="https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0">Added Annotation Column Descriptions</a></p>
-:ET
