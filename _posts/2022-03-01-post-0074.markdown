@@ -7,7 +7,7 @@ tags: ref
 
 Here's instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.
 
-1. Download rclone on your personal home computer.
+1. Download rclone on your personal home computer, https://rclone.org/downloads/.
 2. Go to mays/mccovey/bonds and load the rclone modules, `module load rclone`.
 3. Setup rclone on mays/mccovey/bonds, `rclone config`.
 4. Inside rclone's configuration, setup the following:
