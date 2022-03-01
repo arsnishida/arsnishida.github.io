@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "OneDrive Upload and Download with Rclone"
+date:   2022-3-01
+tags: ref
+---
+
+Here's instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.
+
+1. Download rclone on your personal home computer.
+2. Go to mays/mccovey/bonds and load the rclone modules, `module load rclone`.
+3. Setup rclone on mays/mccovey/bonds, `rclone config`.
+4. Inside rclone's configuration, setup the following:
+	- 'n' for new remote at the 'n/s/q' prompt
+	- a shortcut name for the storage at the 'name' prompt, I am just calling it ONEDRIVE
+	- 'onedrive' for the 'Storage' prompt
+	- press enter to skip the prompt 'client_id'
+	- press enter to skip the prompt 'client_secret'
+	- 'global' for the prompt 'region'
+	- 'n' to not edit the advanced configurations at 'y/n'
+	- 'n' to setup on the headless node at 'y/n'
+	- leave this open for a moment
+5. On your personal home computer run `rclone authorize "onedrive"`. This will open your web browser and ask you to log into your OneDrive account. This then returns a long configuration string to copy.
+6. Paste the configuration key back on the config in mays/mccovey/bonds.
+7. Finish configuration:
+	- confirm the configuration as 'onedrive' at the prompt 'config_type'
+	- confirm 'y' at the URL confirmation of 'y/n'
+	- confirm 'y' for setup at the last prompt 'y/n'
+	- 'q' to quit out and you should be set up
+8. Send a test file. This should send the test file to your OneDrive account setup with the name "ONEDRIVE" to the directory Documents/
+```
+echo "THIS IS A TEST FILE" > test.txt
+rclone copy test.txt ONEDRIVE:Documents/
+```

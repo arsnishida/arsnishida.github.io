@@ -1,0 +1,36 @@
+I"�<p>Here’s instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.</p>
+
+<ol>
+  <li>Download rclone on your personal home computer.</li>
+  <li>Go to mays/mccovey/bonds and load the rclone modules, <code class="language-plaintext highlighter-rouge">module load rclone</code>.</li>
+  <li>Setup rclone on mays/mccovey/bonds, <code class="language-plaintext highlighter-rouge">rclone config</code>.</li>
+  <li>Inside rclone’s configuration, setup the following:
+    <ul>
+      <li>‘n’ for new remote at the ‘n/s/q’ prompt</li>
+      <li>a shortcut name for the storage at the ‘name’ prompt, I am just calling it ONEDRIVE</li>
+      <li>‘onedrive’ for the ‘Storage’ prompt</li>
+      <li>press enter to skip the prompt ‘client_id’</li>
+      <li>press enter to skip the prompt ‘client_secret’</li>
+      <li>‘global’ for the prompt ‘region’</li>
+      <li>‘n’ to not edit the advanced configurations at ‘y/n’</li>
+      <li>‘n’ to setup on the headless node at ‘y/n’</li>
+      <li>leave this open for a moment</li>
+    </ul>
+  </li>
+  <li>On your personal home computer run <code class="language-plaintext highlighter-rouge">rclone authorize "onedrive"</code>. This will open your web browser and ask you to log into your OneDrive account. This then returns a long configuration string to copy.</li>
+  <li>Paste the configuration key back on the config in mays/mccovey/bonds.</li>
+  <li>Finish configuration:
+    <ul>
+      <li>confirm the configuration as ‘onedrive’ at the prompt ‘config_type’</li>
+      <li>confirm ‘y’ at the URL confirmation of ‘y/n’</li>
+      <li>confirm ‘y’ for setup at the last prompt ‘y/n’</li>
+      <li>‘q’ to quit out and you should be set up</li>
+    </ul>
+  </li>
+  <li>Send a test file. This should send the test file to your OneDrive account setup with the name “ONEDRIVE” to the directory Documents/
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "THIS IS A TEST FILE" &gt; test.txt
+rclone copy test.txt ONEDRIVE:Documents/
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET
