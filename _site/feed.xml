@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-07T17:02:34-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220305</title><link href="http://localhost:4000/2022/03/07/post-0075.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220305" /><published>2022-03-07T00:00:00-08:00</published><updated>2022-03-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/03/07/post-0075</id><content type="html" xml:base="http://localhost:4000/2022/03/07/post-0075.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220305&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-07T18:01:31-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220305</title><link href="http://localhost:4000/2022/03/07/post-0075.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220305" /><published>2022-03-07T00:00:00-08:00</published><updated>2022-03-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/03/07/post-0075</id><content type="html" xml:base="http://localhost:4000/2022/03/07/post-0075.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220305&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220305/run.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.&lt;/p&gt;
@@ -17,7 +17,7 @@ edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
   &lt;li&gt;SAMPLE - Sample ID.&lt;/li&gt;
   &lt;li&gt;EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.&lt;/li&gt;
   &lt;li&gt;DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
-  &lt;li&gt;ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
+  &lt;li&gt;REF_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
   &lt;li&gt;EDIT_FREQ - ALT_DEPTH / DEPTH&lt;/li&gt;
   &lt;li&gt;NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.&lt;/li&gt;
   &lt;li&gt;NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).&lt;/li&gt;
@@ -27,7 +27,7 @@ edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
 &lt;/ul&gt;
 
 &lt;p&gt;This output is copy+pasted below here. This indicates the edit was found in 62 of the 156 samples. It was also found in the NTC3 sample which I am assuming is a control so there might be issues.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#SAMPLE	EDIT_T_OR_F	DEPTH	REF_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
 100	FALSE	NA	NA	NA	1	0	1	1	10296
 101	FALSE	NA	NA	NA	1	0	1	1	6196
 102	TRUE	2782	1874	0.673616103522646	0	0	0	0	6618

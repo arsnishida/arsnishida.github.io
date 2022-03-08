@@ -24,7 +24,7 @@ For each sample, the following output is provided:
 - SAMPLE - Sample ID.
 - EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.
 - DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.
-- ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.
+- REF_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.
 - EDIT_FREQ - ALT_DEPTH / DEPTH
 - NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.
 - NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).
@@ -34,7 +34,7 @@ For each sample, the following output is provided:
 
 This output is copy+pasted below here. This indicates the edit was found in 62 of the 156 samples. It was also found in the NTC3 sample which I am assuming is a control so there might be issues.
 ```
-#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
+#SAMPLE	EDIT_T_OR_F	DEPTH	REF_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
 100	FALSE	NA	NA	NA	1	0	1	1	10296
 101	FALSE	NA	NA	NA	1	0	1	1	6196
 102	TRUE	2782	1874	0.673616103522646	0	0	0	0	6618
