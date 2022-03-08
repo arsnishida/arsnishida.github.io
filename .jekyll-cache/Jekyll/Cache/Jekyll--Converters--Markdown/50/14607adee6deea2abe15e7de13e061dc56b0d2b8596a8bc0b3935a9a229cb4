@@ -1,0 +1,30 @@
+I"“<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305/run.txt</code></p>
+
+<p>This describes how to find our desired edit from shotgun seqeuencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATKâ€™s Haplotype Caller to identify the change. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.</p>
+
+<p>Since this is being done relative to hg38 and not a specific amplicon sequence we have to identify what we are looking for relative to the genome. The region of interest in TBR1 is here:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># with the desired editing being designated with a '-'
+# and the NHEJ region from G4 defined by '*'
+&gt;chr2:161,416,779-161,416,834
+ref  - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCACCCCGCCTTCTCCATCGGCAGCC
+edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
+</code></pre></div></div>
+<p>This makes 161,416,811 the site where ACCCC becomes ACCC which will show up as AC to A in the VCFs from Haplotype Caller.</p>
+
+<p>For each sample, the following output is provided:</p>
+<ul>
+  <li>Sample Name - Sample ID.</li>
+  <li>EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.</li>
+  <li>DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>EDIT_FREQ - ALT_DEPTH / DEPTH</li>
+  <li>NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.</li>
+  <li>NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811, 161416801-161416821.</li>
+  <li>NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811, 161416786-161416836.</li>
+  <li>NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811, 161416761-161416861.</li>
+</ul>
+
+<p>Results</p>
+
+:ET

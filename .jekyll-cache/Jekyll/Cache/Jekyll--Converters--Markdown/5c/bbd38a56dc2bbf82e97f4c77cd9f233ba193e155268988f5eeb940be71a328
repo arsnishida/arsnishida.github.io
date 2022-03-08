@@ -1,0 +1,13 @@
+I"<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305/run.txt</code></p>
+
+<p>This describes how to find our desired edit from shotgun seqeuencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the change. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.</p>
+
+<p>Since this is being done relative to hg38 and not a specific amplicon sequence we have to identify what we are looking for relative to the genome. The region of interest in TBR1 is here:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># with the desired editing being designated with a '-' and the NHEJ region from G4 defined by '*'
+&gt;chr2:161,416,779-161,416,834
+ref  - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCACCCCGCCTTCTCCATCGGCAGCC
+edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
+</code></pre></div></div>
+<p>This makes 161,416,811 the site where ACCCC becomes ACCC which will show up as AC to A in the VCFs from Haplotype Caller.</p>
+:ET
