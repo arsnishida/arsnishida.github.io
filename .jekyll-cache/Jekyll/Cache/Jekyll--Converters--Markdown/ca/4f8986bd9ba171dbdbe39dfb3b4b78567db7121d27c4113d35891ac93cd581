@@ -1,40 +1,33 @@
----
-layout: post
-title:  "Shotgun Sequencing of Amplicon Sequence, 220305"
-date:   2022-3-07
-tags: amplicon
----
+I"/&<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220305/run.txt</code></p>
 
-Dir: `/home/groups/oroaklab/nishida/amplicon_220305`
-<br>Run: `/home/groups/oroaklab/nishida/amplicon_220305/run.txt`
+<p>This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.</p>
 
-This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK's Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.
-
-Since this is being done relative to hg38 and not a specific amplicon sequence we have to identify what we are looking for relative to the genome. The region of interest in TBR1 is here:
-```
-# with the desired editing being designated with a '-'
+<p>Since this is being done relative to hg38 and not a specific amplicon sequence we have to identify what we are looking for relative to the genome. The region of interest in TBR1 is here:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># with the desired editing being designated with a '-'
 # and the NHEJ region from G4 defined by '*'
->chr2:161,416,779-161,416,834
+&gt;chr2:161,416,779-161,416,834
 ref  - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCACCCCGCCTTCTCCATCGGCAGCC
 edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
-```
-This makes 161,416,811 the site where ACCCC becomes ACCC which will show up as AC to A in the VCFs from Haplotype Caller.
+</code></pre></div></div>
+<p>This makes 161,416,811 the site where ACCCC becomes ACCC which will show up as AC to A in the VCFs from Haplotype Caller.</p>
 
-For each sample, the following output is provided:
-- SAMPLE - Sample ID.
-- EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.
-- DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.
-- ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.
-- EDIT_FREQ - ALT_DEPTH / DEPTH
-- NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.
-- NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).
-- NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).
-- NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).
-- READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)
+<p>For each sample, the following output is provided:</p>
+<ul>
+  <li>SAMPLE - Sample ID.</li>
+  <li>EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.</li>
+  <li>DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>EDIT_FREQ - ALT_DEPTH / DEPTH</li>
+  <li>NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.</li>
+  <li>NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).</li>
+  <li>NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).</li>
+  <li>NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).</li>
+  <li>READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)</li>
+</ul>
 
-This output is copy+pasted below here. This indicates the edit was found in 62 of the 156 samples. It was also found in the NTC3 sample which I am assuming is a control so there might be issues.
-```
-#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
+<p>This output is copy+pasted below here. This indicates the edit was found in 62 of the 156 samples. It was also found in the NTC3 sample which I am assuming is a control so there might be issues.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
 100	FALSE	NA	NA	NA	1	0	1	1	10296
 101	FALSE	NA	NA	NA	1	0	1	1	6196
 102	TRUE	2782	908	0.326383896477354	0	0	0	0	6618
@@ -191,11 +184,10 @@ CIRM87	FALSE	NA	NA	NA	0	0	0	0	850
 NTC1	FALSE	NA	NA	NA	0	0	0	0	0
 NTC2	FALSE	NA	NA	NA	0	0	0	0	1
 NTC3	TRUE	94	10	0.106382978723404	0	0	0	0	85
-```
+</code></pre></div></div>
 
-Here is a list of all the variants/edit appearing more than once and their count.
-```
-     62 chr2	161416811	AC	A
+<p>Here is a list of all the variants/edit appearing more than once and their count.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     62 chr2	161416811	AC	A
      61 chr2	161416756	GCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCA	G
      43 chr2	161416799	ACGGACCGGCGCAC	*,A
      17 chr2	161416582	G	T
@@ -216,4 +208,5 @@ Here is a list of all the variants/edit appearing more than once and their count
       2 chr2	161416990	T	TC
       2 chr2	161416988	C	CTCCACGGTCATAG
       2 chr2	161416799	ACGGACCGGCGCAC	A,CCGGACCGGCGCAC
-```
+</code></pre></div></div>
+:ET
