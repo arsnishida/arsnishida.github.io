@@ -1,0 +1,36 @@
+I"�<p>I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.</p>
+
+<p>Here is a list of the problems I found across all lists and what I am did and/or will do with them. There are issues in all the lists but the only ones that will require redoing are the MQ lists.</p>
+
+<p>The following families appeared labeled correctly but were ultimately missing files. They were dropped from the analysis and will remained dropped.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_ST - SF0190153
+WES3_ST - SF0253552
+</code></pre></div></div>
+
+<p>The following families were labeled Simplex Trio but they have no ASD status. They were dropped and will remained dropped.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES3_ST - SF0358078, SF0351957, SF0344946, SF0321531, SF0283195, SF0253518, SF0200056, SF0171179, SF0171139, SF0166437, SF0148696, SF0141603, SF0122929, SF0120746, SF0084012, SF0067409
+</code></pre></div></div>
+
+<p>The following families were labeled Simplex Quad but their ASD status has both children labeled with ASD suggesting they are Multiplex Quad. This is a direct inconsistency so I dropped them from the analysis and they will remain dropped.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES3_SQ - SF0350957, SF0348964, SF0340130, SF0166951, SF0143732
+</code></pre></div></div>
+
+<p>The following families were labeled as Multiplex Quad but they have different and missing parents. I originally attempted to run them in the analysis but they obviously were not in any correct order due to missing parents so they will now be dropped.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_MQ - SF0053074, SF0073546, SF0164478, SP0167673, SF0205284, SF0213830, SF0241143, SF0176436
+WES3_MQ - SF0300521, SF0305993, SF0319527, SF0320184, SF0332525, SF0341237, SF0353370, SF0356342, SF0358008, SF0360603, SF0360758, SF0370516
+</code></pre></div></div>
+
+<p>The following families were labeled as Multiplex Quad but there is only a single member of the family with ASD. These likely seem to be truly multiplex at one time but now appear simplex due to samples being withdrawn (in many cases the family is named after a proband that is now not in the sample list). I attempted to run them in the analysis originally but their absent ASD status made me use the same sample for PROBAND and SIBLING so these need to be redone and will remain in the MQ lists.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_MQ - SF0098597, SF0098964, SF0106001, SF0130318, SF0130371, SF0149268, SF0152204, SF0159371, SF0161279, SF0188795, SF0199871, SF0214031, SF0226577, SF0237413, SF0242905
+WES3_MQ - SF0074135, SF0074515, SF0155097, SF0193489, SF0207524, SF0258739, SF0272438, SF0275179, SF0283627, SF0299378, SF0302698, SF0305333, SF0319187, SF0326812, SF0331244, SF0334339, SF0335377, SF0335741, SF0336045, SF0337997, SF0342038, SF0344737, SF0348492, SF0352528, SF0353104, SF0356933, SF0359024, SF0364215
+</code></pre></div></div>
+
+<p>The following families were labeled as Multiplex Quad with a single child and one parent being ASD. My code was not looking for these cases explicitly so they did not work. They will be redone and included with the MQ lists.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_MQ - SF0133991, SF0162300, SF0165487, SF0166107, SF0170398, SF0181224
+WES3_MQ - SF0015593, SF0255352, SF0256311, SF0270752, SF0271749, SF0290684, SF0301815, SF0301902, SF0323745, SF0332469, SF0335332, SF0352810, SF0367074
+</code></pre></div></div>
+
+<p>There were two 6+ member families that are now labeled “Multiplex Quad”. Presumably these were grandparent samples that were withdrawn bringing them back down to quads but the labels are all different due to the original presence of the grandparent samples. These were attempted but also not put in the correct order. They will be redone.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES3_MQ - SF0301871, SF0356076
+</code></pre></div></div>
+:ET
