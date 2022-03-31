@@ -65,7 +65,7 @@ Family Lists:
 <br>[NS List](https://www.dropbox.com/s/a8bbg0konbpuppw/ns_family_list.txt?dl=0)
 <br>[SSC Family and LGD/NS List](https://www.dropbox.com/s/naugav6a3labpab/SSC_families_lgd_ns.txt?dl=0)
 
-Mosaic Lists, Full Non-Analysis Sets (March 11th, 2022):
+Mosaic Lists, Full Non-Analysis Sets (March 30th, 2022):
 <br>[Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/jbimhfc6pk55797/quadsimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.220216.txt?dl=0)
 <br>[Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/8h0054xbllpk266/quadmultiplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.220216.txt?dl=0)
 <br>[Simplex Trios w/ Loose Filter](https://www.dropbox.com/s/xjhnyvq1kjaapzf/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.220216.txt?dl=0)
@@ -76,22 +76,22 @@ Mosaic Lists, Full Non-Analysis Sets (March 11th, 2022):
 <br>[Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/6x11s3lne639m0a/quadmultiplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.220216.testfilter_noGermlineParental.txt?dl=0)
 <br>[Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/qc8ugca2am346xf/triosimplex_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.220216.testfilter_noGermlineParental.txt?dl=0)
 <br>[WES2, Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/ih2gauu9cx0z8z4/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
-<br>[WES2, Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/hlgtjahbqn18k8h/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/p1okjyv51nm0r4r/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
 <br>[WES2, Simplex Trios w/ Loose Filter](https://www.dropbox.com/s/fvncosmegwswo36/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
 <br>[WES2, Simplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/35fwzog99dy5s91/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
-<br>[WES2, Multiplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/rfz19dt7wi6vga5/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/2pjx9f18ukllm4a/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
 <br>[WES2, Simplex Trios w/ Strict Test Filter](https://www.dropbox.com/s/1hfc09k0s0qm5pb/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
 <br>[WES2, Simplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/j3xow8h6dquigon/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
-<br>[WES2, Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/eqlgrvkc2xskh7g/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
+<br>[WES2, Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/o2ezyac3ym2qd0k/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
 <br>[WES2, Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/xxjvlvcc26iphoh/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
 <br>[WES3, Simplex Quads w/ Loose Filter](https://www.dropbox.com/s/yyf5qqezqxecwsc/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
-<br>[WES3, Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/8vb4k0mwgze661u/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
+<br>[WES3, Multiplex Quads w/ Loose Filter](https://www.dropbox.com/s/9etpnzii52tcwfp/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
 <br>[WES3, Simplex Trios w/ Loose Filter](https://www.dropbox.com/s/kwjxnpgxnqme5w0/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0)
 <br>[WES3, Simplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/lrnyzlrif996nrh/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
-<br>[WES3, Multiplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/oq58xb4d20urc81/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
+<br>[WES3, Multiplex Quads w/ Strict Test Filter](https://www.dropbox.com/s/xgucq5ehg9vk5wr/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
 <br>[WES3, Simplex Trios w/ Strict Test Filter](https://www.dropbox.com/s/ml502vfm2p38sgs/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0)
 <br>[WES3, Simplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/ciwh5a231vx8qpk/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
-<br>[WES3, Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/kbhalz5horkuvhj/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
+<br>[WES3, Multiplex Quads w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/gej5edq7sd5kelt/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
 <br>[WES3, Simplex Trios w/ Strict Test Filter, no Germline Parental](https://www.dropbox.com/s/i5jvhew8r0co244/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0)
 
 SPARK Annotations Used, 20190820:

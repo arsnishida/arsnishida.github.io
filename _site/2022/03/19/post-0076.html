@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>WES2 and WES3 List Inconsistencies | ARSN Lab Notebook</title>
+<title>SPARK WES2 and WES3 List Inconsistencies | ARSN Lab Notebook</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="WES2 and WES3 List Inconsistencies" />
+<meta property="og:title" content="SPARK WES2 and WES3 List Inconsistencies" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end." />
 <meta property="og:description" content="I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end." />
@@ -15,7 +15,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-03-19T00:00:00-07:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/03/19/post-0076.html"},"url":"http://localhost:4000/2022/03/19/post-0076.html","description":"I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.","dateModified":"2022-03-19T00:00:00-07:00","datePublished":"2022-03-19T00:00:00-07:00","headline":"WES2 and WES3 List Inconsistencies","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/03/19/post-0076.html"},"url":"http://localhost:4000/2022/03/19/post-0076.html","description":"I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.","dateModified":"2022-03-19T00:00:00-07:00","datePublished":"2022-03-19T00:00:00-07:00","headline":"SPARK WES2 and WES3 List Inconsistencies","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
 <body><header class="site-header" role="banner">
@@ -38,7 +38,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">WES2 and WES3 List Inconsistencies</h1>
+    <h1 class="post-title p-name" itemprop="name headline">SPARK WES2 and WES3 List Inconsistencies</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2022-03-19T00:00:00-07:00" itemprop="datePublished">Mar 19, 2022
       </time></p>
@@ -63,7 +63,7 @@ WES3_ST - SF0253552
 </code></pre></div></div>
 
 <p>The following families were labeled as Multiplex Quad but they have different and missing parents. I originally attempted to run them in the analysis but they obviously were not in any correct order due to missing parents so they will now be dropped.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_MQ - SF0053074, SF0073546, SF0164478, SP0167673, SF0205284, SF0213830, SF0241143, SF0176436
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WES2_MQ - SF0053074, SF0073546, SF0164478, SF0167673, SF0205284, SF0213830, SF0241143, SF0176436
 WES3_MQ - SF0300521, SF0305993, SF0319527, SF0320184, SF0332525, SF0341237, SF0353370, SF0356342, SF0358008, SF0360603, SF0360758, SF0370516
 </code></pre></div></div>
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "WES2 and WES3 List Inconsistencies"
+title:  "SPARK WES2 and WES3 List Inconsistencies"
 date:   2022-3-19
 tags: SPARK
 ---
@@ -27,7 +27,7 @@ WES3_SQ - SF0350957, SF0348964, SF0340130, SF0166951, SF0143732
 
 The following families were labeled as Multiplex Quad but they have different and missing parents. I originally attempted to run them in the analysis but they obviously were not in any correct order due to missing parents so they will now be dropped.
 ```
-WES2_MQ - SF0053074, SF0073546, SF0164478, SP0167673, SF0205284, SF0213830, SF0241143, SF0176436
+WES2_MQ - SF0053074, SF0073546, SF0164478, SF0167673, SF0205284, SF0213830, SF0241143, SF0176436
 WES3_MQ - SF0300521, SF0305993, SF0319527, SF0320184, SF0332525, SF0341237, SF0353370, SF0356342, SF0358008, SF0360603, SF0360758, SF0370516
 ```
 
