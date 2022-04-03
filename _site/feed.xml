@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-30T23:23:39-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK WES2 and WES3 List Inconsistencies</title><link href="http://localhost:4000/2022/03/19/post-0076.html" rel="alternate" type="text/html" title="SPARK WES2 and WES3 List Inconsistencies" /><published>2022-03-19T00:00:00-07:00</published><updated>2022-03-19T00:00:00-07:00</updated><id>http://localhost:4000/2022/03/19/post-0076</id><content type="html" xml:base="http://localhost:4000/2022/03/19/post-0076.html">&lt;p&gt;I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-03T15:51:06-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/03/post-0077.html" rel="alternate" type="text/html" title="scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-03T00:00:00-07:00</published><updated>2022-04-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/03/post-0077</id><content type="html" xml:base="http://localhost:4000/2022/04/03/post-0077.html">&lt;p&gt;Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.&lt;/p&gt;
+
+&lt;p&gt;Here are some issues with the technical side of the pipeline.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The barcodes are saved in the BC tag and the UMIs are saved in the XU tag. These are appropriate, standardized tags but there are various other standardized tags that conceivably these can go under.&lt;/li&gt;
+  &lt;li&gt;Deduplication technically does what it is supposed to do, it looks at the combination of barcode+umi+annotatedGene and keeps only unique results. It is written in with just bash sort and uniq commands parsing the BAM. This is a nice shortcut but it is likely we will want to save an entirely new BAM for the purposes of visualization.&lt;/li&gt;
+  &lt;li&gt;In this one test pass I am not filtering for alignment quality but this would be simple to add in with the samtools view command.&lt;/li&gt;
+  &lt;li&gt;I ran deduplication with scitools rmdup and picard MarkDuplicates. There is a part of me that thinks scitools rmdup should just work for this but I would need to dig into why or why not more specifically. To get picard MarkDuplicates to be barcode and UMI aware I believe we would need to make a new tag that combines the two together. It’s worth testing this out and comparing but the existing solution works for now.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pipeline:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# setup
+cd /home/groups/oroaklab/nishida/test_scrna/test_scrna_mar29/
+module load picard/2.26.2
+module load STAR/2.7.9a
+module load subread/2.0.3
+
+# link file
+ln -s /home/groups/oroaklab/demultiplex/220324_VH00711_12_AAAV7VKM5/220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz .
+FASTQ_FILE=&quot;220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz&quot;
+
+# transform FASTQs to unaligned single-read BAMS
+picard FastqToSam F1=$FASTQ_FILE OUTPUT=$FASTQ_FILE.bam SM=$FASTQ_FILE
+
+# move bc to BC tag and umi to XU tag
+samtools view -h $FASTQ_FILE.bam | awk '/^@/ {print;next} {N=split($1,n,&quot;:&quot;); O=split(n[2],o,&quot;=&quot;); print $0 &quot;\tBC:Z:&quot; n[1] &quot;\tXU:Z:&quot; o[2]}' | samtools view -bS - &amp;gt; temp.bam
+
+# STAR alignment of unaligned BAM to reference
+STAR --runThreadN 24 --genomeDir /home/groups/oroaklab/refs/STAR/hg38 --readFilesCommand samtools view -h --readFilesType SAM SE --readFilesIn temp.bam --outSAMtype BAM Unsorted --outFilterScoreMinOverLread 0 --outFilterMatchNminOverLread 0 --outFileNamePrefix aligned
+
+# sort
+samtools sort alignedAligned.out.bam -o alignedAligned.out.sort.bam
+
+# use subread's featurecounts to add in 'XT' tags
+featureCounts -a /home/groups/oroaklab/refs/STAR/Homo_sapiens.GRCh38.104.gtf -R BAM -g gene_id -Q 30 -s 0 -T 24 -o alignedAligned.out.sort.annot.bam alignedAligned.out.sort.bam
+
+# make sparse
+# open SAM, pull out columns, use only uniquely mapping annotated reads, strip labels, keep only unique combinations, remove UMI info, count, format to sparse
+samtools view alignedAligned.out.sort.bam.featureCounts.bam | cut -f 12,17,18,21 | awk '$1 == &quot;NH:i:1&quot; &amp;amp;&amp;amp; $4 != &quot;&quot;' | sed -e 's/..:Z://g' | sort | uniq | cut -f 2,4 | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $3,$2,$1}' | tr ' ' '\t' &amp;gt; z.hg38.txt
+cat z.hg38.txt | cut -f 1 | sort -n | uniq &amp;gt; sparse.hg38.rows
+cat z.hg38.txt | cut -f 2 | sort -n | uniq &amp;gt; sparse.hg38.cols
+perl make_sparse.pl sparse.hg38.rows sparse.hg38.cols z.hg38.txt | sort -n -k 1,2 &amp;gt; sparse.hg38.values
+
+# make fake rows with BED positions and not gene names to trick cistopics
+# cistopics on sparse matrix and plot
+scitools matrix-cistopic3 -X 220324_HB_Coassay_RNA.sparseMatrix.values
+scitools matrix-umap 220324_HB_Coassay_RNA.cistopic.50.matrix
+scitools matrix-pg 220324_HB_Coassay_RNA.cistopic.50.matrix
+scitools plot-dims -A 220324_HB_Coassay_RNA.cistopic.50.k50.pg.annot 220324_HB_Coassay_RNA.cistopic.50.UMAP.dims
+
+# for future reference...
+#scitools bam-rmdup -t 24 temp_tag.hg38Aligned.sorted.out.bam
+#picard MarkDuplicates I=temp_tag.hg38Aligned.sorted.out.bam REMOVE_DUPLICATES=true O=temp_tag.hg38Aligned.sorted.rmdup.out.bam M=rmdup_metrics.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here are some metrics with the output which might identify some problems. In general, the amount of usable data at the end seems too low but I also don’t know all the expectations.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Uniquely aligning reads is high at ~80%&lt;/li&gt;
+  &lt;li&gt;The number of reads that were even annotated was low. ~10M reads which is ~18% of the total. This includes every read too so also multi-mapping reads. The annotation currently does not include rRNA which might be where all the reads are going?&lt;/li&gt;
+  &lt;li&gt;The number of annotated, uniquely mapping, and deduplicated reads is similarly low at less than 1 million reads.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# number of initial reads
+$ zcat 220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz | wc -l | awk '{print $1/4}'
+55,896,785
+
+# alignment percentages
+$ cat alignedLog.final.out | grep &quot;%&quot;
+                        Uniquely mapped reads % |	79.59%
+                      Mismatch rate per base, % |	1.41%
+                         Deletion rate per base |	0.02%
+                        Insertion rate per base |	0.03%
+             % of reads mapped to multiple loci |	18.33%
+             % of reads mapped to too many loci |	1.80%
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	0.00%
+                     % of reads unmapped: other |	0.28%
+                            % of chimeric reads |	0.00%
+
+# number of annotated reads
+$ cat alignedAligned.out.sort.annot.bam.summary | grep &quot;Assigned&quot;
+Assigned	9926854
+
+# number of de-deduplicated annotated reads
+$ cat 220324_HB_Coassay_RNA.sparseMatrix.values | awk '{sum+=$3}END{print sum}'
+603194
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And here is a shot of the data gone through dimensionality reduction with cistopics. There’s structure but a lot of messy, diverse clusters. I think the messiness makes sense given the extra sparseness of the matrix.
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rby6ltxidup3oag/blog_scrna.220324_HB_Coassay_RNA.cistopic.50.UMAP.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.</summary></entry><entry><title type="html">SPARK WES2 and WES3 List Inconsistencies</title><link href="http://localhost:4000/2022/03/19/post-0076.html" rel="alternate" type="text/html" title="SPARK WES2 and WES3 List Inconsistencies" /><published>2022-03-19T00:00:00-07:00</published><updated>2022-03-19T00:00:00-07:00</updated><id>http://localhost:4000/2022/03/19/post-0076</id><content type="html" xml:base="http://localhost:4000/2022/03/19/post-0076.html">&lt;p&gt;I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.&lt;/p&gt;
 
 &lt;p&gt;Here is a list of the problems I found across all lists and what I am did and/or will do with them. There are issues in all the lists but the only ones that will require redoing are the MQ lists.&lt;/p&gt;
 
@@ -379,9 +468,4 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ntn4cr1jmh44q70/triosimplex.highconfidence.add_annot.txt?dl=0&quot;&gt;Simplex Trio, Added Annotations&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The dbNSFP columns are described here and then are followed by the other scores from the other annotation databases:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0&quot;&gt;Added Annotation Column Descriptions&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">VEP was used to annotate the high confidence lists. The following databases were used. There are redundant scores between the databases but they might possibly differ slightly due to the different versions of references each uses. dbNSFP v4.1a from ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip gnomAD v3.0.1 from https://storage.googleapis.com/gcp-public-data–gnomad/release/3.0.1/coverage/genomes/gnomad.genomes.r3.0.1.coverage.summary.tsv.bgz REVEL v1.3 from https://sites.google.com/site/revelgenomics/downloads LoFtool scores (no version) from https://github.com/Ensembl/VEP_plugins ExACpLI scores (no version) from https://github.com/Ensembl/VEP_plugins blosum62 scores (no version)</summary></entry><entry><title type="html">SPARK Burden Tables Gene Sets, SPARK+SSC</title><link href="http://localhost:4000/2021/11/30/post-0067.html" rel="alternate" type="text/html" title="SPARK Burden Tables Gene Sets, SPARK+SSC" /><published>2021-11-30T00:00:00-08:00</published><updated>2021-11-30T00:00:00-08:00</updated><id>http://localhost:4000/2021/11/30/post-0067</id><content type="html" xml:base="http://localhost:4000/2021/11/30/post-0067.html">&lt;p&gt;This performs the burden analysis across the genesets using the combined and harmonized Spark and SSC lists. The SSC is transformed to hg38 but the joint coverages remain in hg19. Joint coverages were manually filtered for duplicate entries for two families, 13431 and 12839.&lt;/p&gt;
-
-&lt;p&gt;Markdowns:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/9j19yvd2bc66lyi/18_burden_genesets_qsts_ssc_missense.html?dl=0&quot;&gt;18 Burden Genesets, SPARK+SSC and missense&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nh5cqxu9qosk6aj/18_burden_genesets_qsts_ssc_synonymous.html?dl=0&quot;&gt;18 Burden Genesets, SPARK+SSC and synonymous&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/lu5b5ruetw526jr/18_burden_genesets_qsts_ssc_nonsensesplicing.html?dl=0&quot;&gt;18 Burden Genesets, SPARK+SSC and nonsense-splicing&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This performs the burden analysis across the genesets using the combined and harmonized Spark and SSC lists. The SSC is transformed to hg38 but the joint coverages remain in hg19. Joint coverages were manually filtered for duplicate entries for two families, 13431 and 12839.</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0&quot;&gt;Added Annotation Column Descriptions&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">VEP was used to annotate the high confidence lists. The following databases were used. There are redundant scores between the databases but they might possibly differ slightly due to the different versions of references each uses. dbNSFP v4.1a from ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip gnomAD v3.0.1 from https://storage.googleapis.com/gcp-public-data–gnomad/release/3.0.1/coverage/genomes/gnomad.genomes.r3.0.1.coverage.summary.tsv.bgz REVEL v1.3 from https://sites.google.com/site/revelgenomics/downloads LoFtool scores (no version) from https://github.com/Ensembl/VEP_plugins ExACpLI scores (no version) from https://github.com/Ensembl/VEP_plugins blosum62 scores (no version)</summary></entry></feed>
