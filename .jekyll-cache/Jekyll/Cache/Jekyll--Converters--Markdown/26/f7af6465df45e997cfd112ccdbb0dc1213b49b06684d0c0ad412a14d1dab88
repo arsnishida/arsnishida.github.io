@@ -1,0 +1,65 @@
+I"<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220406</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/amplicon_220406/run.txt</code></p>
+
+<p>This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.</p>
+
+<p>The description of the reference creation, interpretation, and format of the summary is described here: <a href="https://arsnishida.github.io/2022/03/07/post-0075.html">first amplicon sequencing results</a>.</p>
+
+<p>For each sample, the following output is provided:</p>
+<ul>
+  <li>SAMPLE - Sample ID.</li>
+  <li>EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.</li>
+  <li>DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.</li>
+  <li>EDIT_FREQ - ALT_DEPTH / DEPTH</li>
+  <li>NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.</li>
+  <li>NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).</li>
+  <li>NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).</li>
+  <li>NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).</li>
+  <li>READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)</li>
+</ul>
+
+<p>This output is copy+pasted below here. The edit was found in the A136P controls and all the other non-control samples with at least 1000 reads of coverage. It was also found in the HDR7_NTC control but it and the HDR6_NTC sample only had 30 reads.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
+HDR6_A136P_Control	TRUE	2648	1280	0.483383685800604	0	0	0	0	5652
+HDR6_CIRM87	FALSE	NA	NA	NA	0	0	0	0	6117
+HDR6_NTC	FALSE	NA	NA	NA	0	0	0	0	16
+HDR6_sg4_SYN88_1	TRUE	2721	1004	0.368981991914737	1	0	1	1	6791
+HDR6_sg4_SYN88_2	TRUE	2772	1038	0.374458874458874	1	0	1	1	6219
+HDR6_sg4_SYN88_3	TRUE	2708	974	0.359675036927622	1	0	1	1	5567
+HDR6_sg4_WT88_1	TRUE	2794	1128	0.403722261989979	0	0	0	0	7411
+HDR6_sg4_WT88_2	TRUE	2841	1019	0.358676522351285	0	0	0	0	6783
+HDR6_sg4_WT88_3	TRUE	2798	959	0.342744817726948	0	0	0	0	6720
+HDR7_A136P_Control	TRUE	2768	1299	0.469291907514451	0	0	0	0	7322
+HDR7_CIRM87	FALSE	NA	NA	NA	0	0	0	0	5979
+HDR7_NTC	TRUE	49	27	0.551020408163265	0	0	0	0	30
+HDR7_sg4M_SYN88_1	TRUE	2798	1245	0.444960686204432	0	0	0	0	7936
+HDR7_sg4M_SYN88_2	TRUE	2795	1229	0.439713774597496	0	0	0	0	7049
+HDR7_sg4M_SYN88_3	TRUE	2797	1256	0.449052556310332	0	0	0	0	7418
+HDR7_sg4M_SYN88_4	TRUE	2814	1187	0.42181947405828	0	0	0	0	8328
+HDR7_sg4M_WT88_1	TRUE	2760	1315	0.476449275362319	0	0	0	0	6757
+HDR7_sg4M_WT88_2	TRUE	2706	1189	0.439393939393939	0	0	0	0	6162
+HDR7_sg4M_WT88_3	TRUE	2708	1206	0.445347119645495	0	0	0	0	6155
+HDR7_sg4M_WT88_4	TRUE	2758	1292	0.468455402465555	0	0	0	0	6581
+HDR7_sg4_SYN88_1	TRUE	2813	1230	0.437255599004621	0	0	0	0	7298
+HDR7_sg4_SYN88_2	TRUE	2735	1294	0.473126142595978	0	0	0	0	6037
+HDR7_sg4_SYN88_3	TRUE	2682	1159	0.43214019388516	0	0	0	0	6421
+HDR7_sg4_SYN88_4	TRUE	2790	1198	0.429390681003584	0	0	0	0	6627
+HDR7_sg4_WT88_1	TRUE	2758	1237	0.448513415518492	0	0	0	0	8276
+HDR7_sg4_WT88_2	TRUE	2853	1251	0.438485804416404	0	0	0	0	7712
+HDR7_sg4_WT88_3	TRUE	1572	637	0.405216284987277	0	0	0	0	1715
+HDR7_sg4_WT88_4	TRUE	2767	1310	0.473436935308999	0	0	0	0	7281
+
+</code></pre></div></div>
+
+<p>Here is a list of all the variants/edit appearing more than once and their count.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     25 chr2    161416811       AC      A
+      5 chr2    161416993       ACCCAGC A
+      5 chr2    161416990       TC      T
+      5 chr2    161416582       G       T
+      3 chr2    161416794       C       A
+      3 chr2    161416581       G       T
+      2 chr2    161417380       G       A
+      2 chr2    161416993       A       AGGT
+</code></pre></div></div>
+:ET

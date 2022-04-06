@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-03T15:51:06-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/03/post-0077.html" rel="alternate" type="text/html" title="scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-03T00:00:00-07:00</published><updated>2022-04-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/03/post-0077</id><content type="html" xml:base="http://localhost:4000/2022/04/03/post-0077.html">&lt;p&gt;Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T12:15:01-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220406</title><link href="http://localhost:4000/2022/04/06/post-0078.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220406" /><published>2022-04-06T00:00:00-07:00</published><updated>2022-04-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/06/post-0078</id><content type="html" xml:base="http://localhost:4000/2022/04/06/post-0078.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406/run.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.&lt;/p&gt;
+
+&lt;p&gt;The description of the reference creation, interpretation, and format of the summary is described here: &lt;a href=&quot;https://arsnishida.github.io/2022/03/07/post-0075.html&quot;&gt;first amplicon sequencing results&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For each sample, the following output is provided:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SAMPLE - Sample ID.&lt;/li&gt;
+  &lt;li&gt;EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.&lt;/li&gt;
+  &lt;li&gt;DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
+  &lt;li&gt;ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
+  &lt;li&gt;EDIT_FREQ - ALT_DEPTH / DEPTH&lt;/li&gt;
+  &lt;li&gt;NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.&lt;/li&gt;
+  &lt;li&gt;NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).&lt;/li&gt;
+  &lt;li&gt;NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).&lt;/li&gt;
+  &lt;li&gt;NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).&lt;/li&gt;
+  &lt;li&gt;READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This output is copy+pasted below here. The edit was found in the A136P controls and all the other non-control samples with at least 1000 reads of coverage. It was also found in the HDR7_NTC control but it and the HDR6_NTC control had nearly no reads.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
+HDR6_A136P_Control	TRUE	2648	1280	0.483383685800604	0	0	0	0	5652
+HDR6_CIRM87	FALSE	NA	NA	NA	0	0	0	0	6117
+HDR6_NTC	FALSE	NA	NA	NA	0	0	0	0	16
+HDR6_sg4_SYN88_1	TRUE	2721	1004	0.368981991914737	1	0	1	1	6791
+HDR6_sg4_SYN88_2	TRUE	2772	1038	0.374458874458874	1	0	1	1	6219
+HDR6_sg4_SYN88_3	TRUE	2708	974	0.359675036927622	1	0	1	1	5567
+HDR6_sg4_WT88_1	TRUE	2794	1128	0.403722261989979	0	0	0	0	7411
+HDR6_sg4_WT88_2	TRUE	2841	1019	0.358676522351285	0	0	0	0	6783
+HDR6_sg4_WT88_3	TRUE	2798	959	0.342744817726948	0	0	0	0	6720
+HDR7_A136P_Control	TRUE	2768	1299	0.469291907514451	0	0	0	0	7322
+HDR7_CIRM87	FALSE	NA	NA	NA	0	0	0	0	5979
+HDR7_NTC	TRUE	49	27	0.551020408163265	0	0	0	0	30
+HDR7_sg4M_SYN88_1	TRUE	2798	1245	0.444960686204432	0	0	0	0	7936
+HDR7_sg4M_SYN88_2	TRUE	2795	1229	0.439713774597496	0	0	0	0	7049
+HDR7_sg4M_SYN88_3	TRUE	2797	1256	0.449052556310332	0	0	0	0	7418
+HDR7_sg4M_SYN88_4	TRUE	2814	1187	0.42181947405828	0	0	0	0	8328
+HDR7_sg4M_WT88_1	TRUE	2760	1315	0.476449275362319	0	0	0	0	6757
+HDR7_sg4M_WT88_2	TRUE	2706	1189	0.439393939393939	0	0	0	0	6162
+HDR7_sg4M_WT88_3	TRUE	2708	1206	0.445347119645495	0	0	0	0	6155
+HDR7_sg4M_WT88_4	TRUE	2758	1292	0.468455402465555	0	0	0	0	6581
+HDR7_sg4_SYN88_1	TRUE	2813	1230	0.437255599004621	0	0	0	0	7298
+HDR7_sg4_SYN88_2	TRUE	2735	1294	0.473126142595978	0	0	0	0	6037
+HDR7_sg4_SYN88_3	TRUE	2682	1159	0.43214019388516	0	0	0	0	6421
+HDR7_sg4_SYN88_4	TRUE	2790	1198	0.429390681003584	0	0	0	0	6627
+HDR7_sg4_WT88_1	TRUE	2758	1237	0.448513415518492	0	0	0	0	8276
+HDR7_sg4_WT88_2	TRUE	2853	1251	0.438485804416404	0	0	0	0	7712
+HDR7_sg4_WT88_3	TRUE	1572	637	0.405216284987277	0	0	0	0	1715
+HDR7_sg4_WT88_4	TRUE	2767	1310	0.473436935308999	0	0	0	0	7281
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is a list of all the variants/edit appearing more than once and their count.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     25 chr2    161416811       AC      A
+      5 chr2    161416993       ACCCAGC A
+      5 chr2    161416990       TC      T
+      5 chr2    161416582       G       T
+      3 chr2    161416794       C       A
+      3 chr2    161416581       G       T
+      2 chr2    161417380       G       A
+      2 chr2    161416993       A       AGGT
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/amplicon_220406 Run: /home/groups/oroaklab/nishida/amplicon_220406/run.txt</summary></entry><entry><title type="html">scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/03/post-0077.html" rel="alternate" type="text/html" title="scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-03T00:00:00-07:00</published><updated>2022-04-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/03/post-0077</id><content type="html" xml:base="http://localhost:4000/2022/04/03/post-0077.html">&lt;p&gt;Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.&lt;/p&gt;
 
 &lt;p&gt;Here are some issues with the technical side of the pipeline.&lt;/p&gt;
 &lt;ul&gt;
@@ -452,20 +514,4 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- DA.Glia_WT_CS_30_C11_Glia_PL_CS_30_C11.txt, DA.Glia_WT_CS_30_C13_Glia_CS_30_C13.txt
 - DA.Neuron_WT_CS_30_C14_Neuron_dTaudel_30_C14.txt, DA.Neuron_WT_CS_30_C14_Neuron_PL_CS_30_C14.txt
 - DA.Photoreceptors_WT_CS_30_C1_Photoreceptors_PL_CS_30_C1.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_dTaudel_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_KI_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_PL_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_VM_CS_30_C3.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022 Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/run.txt</summary></entry><entry><title type="html">SPARK VEP Annotations</title><link href="http://localhost:4000/2021/12/03/post-0068.html" rel="alternate" type="text/html" title="SPARK VEP Annotations" /><published>2021-12-03T00:00:00-08:00</published><updated>2021-12-03T00:00:00-08:00</updated><id>http://localhost:4000/2021/12/03/post-0068</id><content type="html" xml:base="http://localhost:4000/2021/12/03/post-0068.html">&lt;p&gt;VEP was used to annotate the high confidence lists. The following databases were used. There are redundant scores between the databases but they might possibly differ slightly due to the different versions of references each uses.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;dbNSFP v4.1a from ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip&lt;/li&gt;
-  &lt;li&gt;gnomAD v3.0.1 from https://storage.googleapis.com/gcp-public-data–gnomad/release/3.0.1/coverage/genomes/gnomad.genomes.r3.0.1.coverage.summary.tsv.bgz&lt;/li&gt;
-  &lt;li&gt;REVEL v1.3 from https://sites.google.com/site/revelgenomics/downloads&lt;/li&gt;
-  &lt;li&gt;LoFtool scores (no version) from https://github.com/Ensembl/VEP_plugins&lt;/li&gt;
-  &lt;li&gt;ExACpLI scores (no version) from https://github.com/Ensembl/VEP_plugins&lt;/li&gt;
-  &lt;li&gt;blosum62 scores (no version)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I am keeping this separated from the high confidence lists but these columns can be directly added to the highconfidence lists without any reordering (the rows are the same). These are available here. 
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bjwj52ibth2rytw/quadsimplex.highconfidence.add_annot.txt?dl=0&quot;&gt;Simplex Quad, Added Annotations&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/fgr8kt3mt98juq5/quadmultiplex.highconfidence.add_annot.txt?dl=0&quot;&gt;Multiplex Quad, Added Annotations&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ntn4cr1jmh44q70/triosimplex.highconfidence.add_annot.txt?dl=0&quot;&gt;Simplex Trio, Added Annotations&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The dbNSFP columns are described here and then are followed by the other scores from the other annotation databases:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j95lkv05al56kcp/dbNSFP_columns.txt?dl=0&quot;&gt;Added Annotation Column Descriptions&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">VEP was used to annotate the high confidence lists. The following databases were used. There are redundant scores between the databases but they might possibly differ slightly due to the different versions of references each uses. dbNSFP v4.1a from ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip gnomAD v3.0.1 from https://storage.googleapis.com/gcp-public-data–gnomad/release/3.0.1/coverage/genomes/gnomad.genomes.r3.0.1.coverage.summary.tsv.bgz REVEL v1.3 from https://sites.google.com/site/revelgenomics/downloads LoFtool scores (no version) from https://github.com/Ensembl/VEP_plugins ExACpLI scores (no version) from https://github.com/Ensembl/VEP_plugins blosum62 scores (no version)</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022 Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/run.txt</summary></entry></feed>
