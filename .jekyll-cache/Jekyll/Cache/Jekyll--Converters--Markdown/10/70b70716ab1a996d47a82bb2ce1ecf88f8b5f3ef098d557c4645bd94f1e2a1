@@ -1,41 +1,32 @@
----
-layout: post
-title:  "SPARK WES2 and WES3 Outliers by Counts and Coverage"
-date:   2022-4-8
-tags: SPARK
----
+I"ï<p>These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.</p>
 
-These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.
+<p>Markdowns:
+<br /><a href="https://www.dropbox.com/s/thbr9vgqibvbobj/01_WES2_SQ.html?dl=0">WES2_SQ Prep</a>
+<br /><a href="https://www.dropbox.com/s/we6ixqoi5iedtfn/01_WES2_MQ.html?dl=0">WES2_MQ Prep</a>
+<br /><a href="https://www.dropbox.com/s/2lt3iohpemotvew/01_WES2_ST.html?dl=0">WES2_ST Prep</a>
+<br /><a href="https://www.dropbox.com/s/cpwikcnv1hrjx34/01_WES3_SQ.html?dl=0">WES3_SQ Prep</a>
+<br /><a href="https://www.dropbox.com/s/q7eahh0vj743377/01_WES3_MQ.html?dl=0">WES3_MQ Prep</a>
+<br /><a href="https://www.dropbox.com/s/j0aqujobwvemu0a/01_WES3_ST.html?dl=0">WES3_ST Prep</a>
+<br /><a href="https://www.dropbox.com/s/5ytjk71msu8xe21/02_WES2_SQ.html?dl=0">WES2_SQ Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/ldlqrday2v6cpq7/02_WES2_MQ.html?dl=0">WES2_MQ Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/8meafdj3kj3ec10/02_WES2_ST.html?dl=0">WES2_ST Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/gw650phhs3db3xx/02_WES3_SQ.html?dl=0">WES3_SQ Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/6mfpzw4pl8996e3/02_WES3_MQ.html?dl=0">WES3_MQ Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/jeeqfj7bcdrhfxn/02_WES3_ST.html?dl=0">WES3_ST Outlier Plots</a>
+<br /><a href="https://www.dropbox.com/s/7gcqbxsjhtdy7nd/02_WES2_WES3_combined.html?dl=0">WES2 and WES3 Combined Coverage Plots</a></p>
 
-Markdowns:
-<br>[WES2_SQ Prep](https://www.dropbox.com/s/thbr9vgqibvbobj/01_WES2_SQ.html?dl=0)
-<br>[WES2_MQ Prep](https://www.dropbox.com/s/we6ixqoi5iedtfn/01_WES2_MQ.html?dl=0)
-<br>[WES2_ST Prep](https://www.dropbox.com/s/2lt3iohpemotvew/01_WES2_ST.html?dl=0)
-<br>[WES3_SQ Prep](https://www.dropbox.com/s/cpwikcnv1hrjx34/01_WES3_SQ.html?dl=0)
-<br>[WES3_MQ Prep](https://www.dropbox.com/s/q7eahh0vj743377/01_WES3_MQ.html?dl=0)
-<br>[WES3_ST Prep](https://www.dropbox.com/s/j0aqujobwvemu0a/01_WES3_ST.html?dl=0)
-<br>[WES2_SQ Outlier Plots](https://www.dropbox.com/s/5ytjk71msu8xe21/02_WES2_SQ.html?dl=0)
-<br>[WES2_MQ Outlier Plots](https://www.dropbox.com/s/ldlqrday2v6cpq7/02_WES2_MQ.html?dl=0)
-<br>[WES2_ST Outlier Plots](https://www.dropbox.com/s/8meafdj3kj3ec10/02_WES2_ST.html?dl=0)
-<br>[WES3_SQ Outlier Plots](https://www.dropbox.com/s/gw650phhs3db3xx/02_WES3_SQ.html?dl=0)
-<br>[WES3_MQ Outlier Plots](https://www.dropbox.com/s/6mfpzw4pl8996e3/02_WES3_MQ.html?dl=0)
-<br>[WES3_ST Outlier Plots](https://www.dropbox.com/s/jeeqfj7bcdrhfxn/02_WES3_ST.html?dl=0)
-<br>[WES2 and WES3 Combined Coverage Plots](https://www.dropbox.com/s/7gcqbxsjhtdy7nd/02_WES2_WES3_combined.html?dl=0)
+<p>Relevant plots for outlier detection here: <a href="https://www.dropbox.com/s/ixc4lo7a0uh7irh/wes2_wes3_outlier_cov.pdf?dl=0">outlier figures</a>.</p>
 
-Relevant plots for outlier detection here: [outlier figures](https://www.dropbox.com/s/ixc4lo7a0uh7irh/wes2_wes3_outlier_cov.pdf?dl=0).
-
-From the combination of the coverages, the lowest 0-5% of families in coverage came from the following lists showing the worse coverages in WES3:
-```
-# Num Families in Lowest Fifth-Tile by List
+<p>From the combination of the coverages, the lowest 0-5% of families in coverage came from the following lists showing the worse coverages in WES3:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Num Families in Lowest Fifth-Tile by List
 WES2_MQ - 4, WES2_SQ - 2, WES2_ST - 9
 WES3_MQ - 19, WES3_SQ - 52, WES3_ST - 38
-```
+</code></pre></div></div>
 
-There were 32 outliers calls using the same count thresholds as the WES1 list. As contrast, the WES1 lists had only 10 outlying calls with ~33% more families.
+<p>There were 32 outliers calls using the same count thresholds as the WES1 list. As contrast, the WES1 lists had only 10 outlying calls with ~33% more families.</p>
 
-All family outliers by list and FRACTION annotation:
-```
-6, MOSAIC_CHILD, WES2.MQ
+<p>All family outliers by list and FRACTION annotation:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6, MOSAIC_CHILD, WES2.MQ
 ##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
 ## 72  SF0158322    SIB               0.3928909     6           15.27141
 ## 183 SF0075609    PRO               0.5239183    14           26.72173
@@ -98,4 +89,5 @@ All family outliers by list and FRACTION annotation:
 1, MOSAIC_PARENTAL_TRANS, WES3.MQ
 ##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
 ## 57 SF0369960     FA               0.3092882     2           6.466462
-```
+</code></pre></div></div>
+:ET
