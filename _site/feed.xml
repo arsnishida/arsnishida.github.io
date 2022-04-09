@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-06T12:15:01-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220406</title><link href="http://localhost:4000/2022/04/06/post-0078.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220406" /><published>2022-04-06T00:00:00-07:00</published><updated>2022-04-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/06/post-0078</id><content type="html" xml:base="http://localhost:4000/2022/04/06/post-0078.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-08T19:18:21-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK WES2 and WES3 Outliers by Counts and Coverage</title><link href="http://localhost:4000/2022/04/08/post-0079.html" rel="alternate" type="text/html" title="SPARK WES2 and WES3 Outliers by Counts and Coverage" /><published>2022-04-08T00:00:00-07:00</published><updated>2022-04-08T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/08/post-0079</id><content type="html" xml:base="http://localhost:4000/2022/04/08/post-0079.html">&lt;p&gt;These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.&lt;/p&gt;
+
+&lt;p&gt;Markdowns
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/thbr9vgqibvbobj/01_WES2_SQ.html?dl=0&quot;&gt;WES2_SQ Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/we6ixqoi5iedtfn/01_WES2_MQ.html?dl=0&quot;&gt;WES2_MQ Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2lt3iohpemotvew/01_WES2_ST.html?dl=0&quot;&gt;WES2_ST Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/cpwikcnv1hrjx34/01_WES3_SQ.html?dl=0&quot;&gt;WES3_SQ Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/q7eahh0vj743377/01_WES3_MQ.html?dl=0&quot;&gt;WES3_MQ Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j0aqujobwvemu0a/01_WES3_ST.html?dl=0&quot;&gt;WES3_ST Prep&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/5ytjk71msu8xe21/02_WES2_SQ.html?dl=0&quot;&gt;WES2_SQ Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ldlqrday2v6cpq7/02_WES2_MQ.html?dl=0&quot;&gt;WES2_MQ Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8meafdj3kj3ec10/02_WES2_ST.html?dl=0&quot;&gt;WES2_ST Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/gw650phhs3db3xx/02_WES3_SQ.html?dl=0&quot;&gt;WES3_SQ Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6mfpzw4pl8996e3/02_WES3_MQ.html?dl=0&quot;&gt;WES3_MQ Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jeeqfj7bcdrhfxn/02_WES3_ST.html?dl=0&quot;&gt;WES3_ST Outlier Plots&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7gcqbxsjhtdy7nd/02_WES2_WES3_combined.html?dl=0&quot;&gt;WES2 and WES3 Combined Coverage Plots&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From the combination of the coverages, the lowest 0-5% of families in coverage came from the following lists showing the worse coverages in WES3:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Num Families in Lowest Fifth-Tile by List
+WES2_MQ - 4, WES2_SQ - 2, WES2_ST - 9
+WES3_MQ - 19, WES3_SQ - 52, WES3_ST - 38
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There were 32 outliers calls using the same count thresholds as the WES1 list. As contrast, the WES1 lists had only 10 outlying calls with ~33% more families.&lt;/p&gt;
+
+&lt;p&gt;All family outliers by list and FRACTION annotation:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6, MOSAIC_CHILD, WES2.MQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 72  SF0158322    SIB               0.3928909     6           15.27141
+## 183 SF0075609    PRO               0.5239183    14           26.72173
+## 265 SF0151665    PRO               0.5931233     6           10.11594
+## 376 SF0202052    SIB               0.7676529     9           11.72405
+
+1, MOSAIC_CHILD, WES3.ST
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 357 SF0323152    PRO               0.7481966    74           98.90449
+
+3, GERMLINE_CHILD, WES2.MQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 4   SF0149123    SIB               0.1322793     2           15.11953
+## 6   SF0163256    SIB               0.1918058    10           52.13608
+## 342 SF0223942    SIB               0.7000389    77          109.99389
+
+2, GERMLINE_CHILD, WES3.MQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 2   SF0358698    SIB               0.0892429     5           56.02686
+## 230 SF0283718    SIB               0.6034980    59           97.76337
+
+3, MOSAIC_PARENTAL_NONTRANS, WES2.SQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 3   SF0170260     FA               0.2105921     3           14.24555
+## 29  SF0228054     FA               0.3018997     9           29.81122
+## 129 SF0153456     FA               0.6423237    27           42.03488
+
+1, MOSAIC_PARENTAL_NONTRANS, WES2.MQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 204 SF0181472     MO               0.5424785    39           71.89225
+
+5, MOSAIC_PARENTAL_NONTRANS, WES2.ST
+##         FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 11   SF0149922     FA               0.2254580     9           39.91874
+## 313  SF0199636     FA               0.4987807    82          164.40092
+## 580  SF0245361     MO               0.5896181     8           13.56810
+## 601  SF0161221     FA               0.5944195     8           13.45851
+## 1164 SF0151784     MO               0.7809484    57           72.98818
+## 1201 SF0042891     FA               0.7965546    23           28.87436
+
+3, MOSAIC_PARENTAL_NONTRANS, WES3.SQ
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 63  SF0336708     FA               0.2639459     4           15.15462
+## 78  SF0342265     MO               0.2768700     4           14.44721
+## 159 SF0324757     FA               0.3945041  2808         7117.79595
+
+2, MOSAIC_PARENTAL_NONTRANS, WES2.MQ
+##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 12 SF0350442     MO               0.1662686     2           12.02873
+## 20 SF0319187     MO               0.1995900     3           15.03081
+
+5, MOSAIC_PARENTAL_NONTRANS, WES3.ST
+##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 4   SF0360546     MO               0.1294841     7           54.06067
+## 28  SF0288445     MO               0.2055009     3           14.59847
+## 59  SF0197166     FA               0.2550314   100          392.10863
+## 104 SF0364547     MO               0.3277593     9           27.45917
+## 157 SF0363100     FA               0.3803137     7           18.40586
+
+1, MOSAIC_PARENTAL_TRANS, WES3.MQ
+##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
+## 57 SF0369960     FA               0.3092882     2           6.466462
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.</summary></entry><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220406</title><link href="http://localhost:4000/2022/04/06/post-0078.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220406" /><published>2022-04-06T00:00:00-07:00</published><updated>2022-04-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/06/post-0078</id><content type="html" xml:base="http://localhost:4000/2022/04/06/post-0078.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406/run.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.&lt;/p&gt;
@@ -500,18 +589,4 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 &lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/All Files/kruppd/Writing/SSC somatic pilot/data/Data Used for Mosaic Paper/High Confidence Variants/&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Markdown showing the SSC solo burden analysis:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0pv9gk7cxk24v9j/19_burden_genesets_ssc_missense.html?dl=0&quot;&gt;19 SSC Solo Burden Markdown&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">The SSC list was transformed from hg19 to hg38 as described here.</summary></entry><entry><title type="html">Drosophilia Tau Final DA</title><link href="http://localhost:4000/2022/01/08/post-0069.html" rel="alternate" type="text/html" title="Drosophilia Tau Final DA" /><published>2022-01-08T00:00:00-08:00</published><updated>2022-01-08T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/08/post-0069</id><content type="html" xml:base="http://localhost:4000/2022/01/08/post-0069.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022&lt;/code&gt;
-&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/run.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The DA was performed after TF normalization using the Wilcoxon rank sum test and creates the comparisons in ‘210712_DA_Comparisons.txt’. Mild name changes were made in the comparisons such as ‘Photoreceptor’ to ‘Photoreceptors’ to match the annotation file and using the correct annotation column for the biologically split subsets.&lt;/p&gt;
-
-&lt;p&gt;The following comparisons are nonexistant because they have no cells with the annotation:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- Glia_WT_CS_5_C13 has no cells so all 6 comparisons are missing in 3_Glia_d5.
-- Glia_KI_CS_30_C21, Glia_dTaudel_30_C13, Glia_KI_CS_30_C13 in 3_Glia_d30.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following comparisons are deliberately empty because they have too few cells:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- DA.Glia_WT_CS_30_C11_Glia_PL_CS_30_C11.txt, DA.Glia_WT_CS_30_C13_Glia_CS_30_C13.txt
-- DA.Neuron_WT_CS_30_C14_Neuron_dTaudel_30_C14.txt, DA.Neuron_WT_CS_30_C14_Neuron_PL_CS_30_C14.txt
-- DA.Photoreceptors_WT_CS_30_C1_Photoreceptors_PL_CS_30_C1.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_dTaudel_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_KI_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_PL_CS_30_C3.txt, DA.Photoreceptors_WT_CS_30_C3_Photoreceptors_VM_CS_30_C3.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022 Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/run.txt</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0pv9gk7cxk24v9j/19_burden_genesets_ssc_missense.html?dl=0&quot;&gt;19 SSC Solo Burden Markdown&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">The SSC list was transformed from hg19 to hg38 as described here.</summary></entry></feed>
