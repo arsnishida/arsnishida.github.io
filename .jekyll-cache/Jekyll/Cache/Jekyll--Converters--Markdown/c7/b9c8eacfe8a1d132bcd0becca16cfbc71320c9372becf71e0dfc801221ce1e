@@ -1,0 +1,83 @@
+I"4<p>This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this, https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf.</p>
+<ul>
+  <li>built around snakemake paired with SLURM jobs</li>
+  <li>uses condaenvs instead of modules	since they are on exacloud</li>
+  <li>uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags</li>
+  <li>performs read adapter trimming</li>
+  <li>uses cellbender for background removal</li>
+  <li>uses something for cell calling (using some method to choose cell filtering thresholds rather than setting arbitrary thresholds)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># setup
+cd /home/groups/oroaklab/nishida/test_scrna/test_scrna_mar29/
+module load picard/2.26.2
+module load STAR/2.7.9a
+module load subread/2.0.3
+
+# link file
+ln -s /home/groups/oroaklab/demultiplex/220324_VH00711_12_AAAV7VKM5/220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz .
+FASTQ_FILE="220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz"
+
+# transform FASTQs to unaligned single-read BAMS
+time picard FastqToSam F1=$FASTQ_FILE OUTPUT=$FASTQ_FILE.bam SM=$FASTQ_FILE
+#real    9m41.929s
+
+# move bc to XC tag and umi to XM tag
+time samtools view -h $FASTQ_FILE.bam | awk '/^@/ {print;next} {N=split($1,n,":"); O=split(n[2],o,"="); print $0 "\tXC:Z:" n[1] "\tXM:Z:" o[2]}' | samtools view -bS - &gt; temp.bam
+#real    7m11.938s
+
+# STAR alignment of unaligned BAM to reference
+time STAR --runThreadN 24 --genomeDir /home/groups/oroaklab/refs/STAR/hg38 --readFilesCommand samtools view -h --readFilesType SAM SE --readFilesIn temp.bam --outSAMtype BAM Unsorted --outFilterScoreMinOverLread 0 --outFilterMatchNminOverLread 0 --outFileNamePrefix aligned
+#real    7m16.440s
+
+# sort
+time samtools sort alignedAligned.out.bam -o alignedAligned.out.sort.bam
+#real    15m23.468s
+
+# use subread's featurecounts to add in 'XT' tags
+time featureCounts -a /home/groups/oroaklab/refs/STAR/Homo_sapiens.GRCh38.104.gtf -R BAM -g gene_id -Q 30 -s 0 -T 24 -o alignedAligned.out.sort.annot.bam alignedAligned.out.sort.bam
+#real    0m28.182s
+
+# open SAM, filter for Q, pull out columns, use only uniquely mapping annotated reads, strip labels
+QFILTER="20"
+samtools view -q ${QFILTER} alignedAligned.out.sort.bam.featureCounts.bam | cut -f 12,17,18,21 | awk '$1 == "NH:i:1" &amp;&amp; $4 != ""' | awk '$1 == "NH:i:1" &amp;&amp; $4 != ""' | sed -e 's/..:Z://g' &gt; TEMP
+#real	2m21.242s
+
+# count cell info from TEMP file
+time perl count_cell_info.pl TEMP &gt; metrics_cell_counts.txt
+#real	0m15.108s
+
+# example header of output
+# CELL	TOTAL_READS	UNIQUE_UMIS	UNIQUE_UMIS_ANNOTS	PERCENT_UNIQ
+# CCGGTATCGTGGTACCGGCTAAGAGACT	7	7	7	100
+# CCGGTATCGTCCAATTCCATGGTTCAGC	5142	328	352	6.84558537534033
+# CCGGTATCGTATAATCGCGGTCATATAG	1354	163	165	12.1861152141802
+
+# make sparse, keep only unique combinations, remove UMI info, count, format to sparse
+time cat TEMP | sort | uniq | cut -f 2,4 | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $3,$2,$1}' | tr ' ' '\t' &gt; TEMP2
+#real	1m54.927s
+cat TEMP2 | cut -f 1 | sort -n | uniq &gt; 220324_HB_Coassay_RNA.sparseMatrix.rows
+
+# make list of cells to use
+UMI_PER_CELL_CUTOFF=100
+UNIQ_PER_CUTOFF=10
+cat metrics_cell_counts.txt | awk -v umicut=$UMI_PER_CELL_CUTOFF -v uniqcut=$UNIQ_PER_CUTOFF '$3 &gt; umicut &amp;&amp; $5 &lt; uniqcut' | cut -f 1 | sort -n &gt; 220324_HB_Coassay_RNA.sparseMatrix.cols
+
+# make sparse
+perl make_sparse.pl 220324_HB_Coassay_RNA.sparseMatrix.rows 220324_HB_Coassay_RNA.sparseMatrix.cols TEMP2 | sort -n -k 1,2 &gt; 220324_HB_Coassay_RNA.sparseMatrix.values
+
+# make fake rows with BED positions not gene names to trick cistopics
+mv 220324_HB_Coassay_RNA.sparseMatrix.rows 220324_HB_Coassay_RNA.sparseMatrix.rows_save
+cat /home/groups/oroaklab/refs/hg38/masterlistDHS/DHS_Index_and_Vocabulary_hg38_WM20190703.non_overlap.bed | head -n 20446 &gt; 220324_HB_Coassay_RNA.sparseMatrix.rows
+
+# cistopics on sparse matrix and plot
+scitools matrix-cistopic3 -X 220324_HB_Coassay_RNA.sparseMatrix.values
+scitools matrix-umap 220324_HB_Coassay_RNA.cistopic.50.matrix
+scitools matrix-pg 220324_HB_Coassay_RNA.cistopic.50.matrix
+scitools plot-dims -A 220324_HB_Coassay_RNA.cistopic.50.k50.pg.annot 220324_HB_Coassay_RNA.cistopic.50.UMAP.dims
+</code></pre></div></div>
+
+<p>And here is a shot of the data gone through dimensionality reduction with cistopics. There’s structure but a lot of messy, diverse clusters. I think the messiness makes sense given the extra sparseness of the matrix.
+<br /><a href="https://www.dropbox.com/s/rby6ltxidup3oag/blog_scrna.220324_HB_Coassay_RNA.cistopic.50.UMAP.plot.png?dl=0">UMAP of scRNA-seq</a></p>
+
+:ET

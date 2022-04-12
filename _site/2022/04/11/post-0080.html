@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA | ARSN Lab Notebook</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this link to DropSeq PDF. built around snakemake paired with SLURM jobs uses condaenvs instead of modules since they are on exacloud uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags performs read adapter trimming uses cellbender(?) for background removal uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)" />
+<meta property="og:description" content="This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this link to DropSeq PDF. built around snakemake paired with SLURM jobs uses condaenvs instead of modules since they are on exacloud uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags performs read adapter trimming uses cellbender(?) for background removal uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)" />
+<link rel="canonical" href="http://localhost:4000/2022/04/11/post-0080.html" />
+<meta property="og:url" content="http://localhost:4000/2022/04/11/post-0080.html" />
+<meta property="og:site_name" content="ARSN Lab Notebook" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-11T00:00:00-07:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/04/11/post-0080.html"},"url":"http://localhost:4000/2022/04/11/post-0080.html","description":"This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this link to DropSeq PDF. built around snakemake paired with SLURM jobs uses condaenvs instead of modules since they are on exacloud uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags performs read adapter trimming uses cellbender(?) for background removal uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)","dateModified":"2022-04-11T00:00:00-07:00","datePublished":"2022-04-11T00:00:00-07:00","headline":"scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ARSN Lab Notebook" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">ARSN Lab Notebook</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-04-11T00:00:00-07:00" itemprop="datePublished">Apr 11, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this <a href="https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf">link to DropSeq PDF</a>.</p>
+<ul>
+  <li>built around snakemake paired with SLURM jobs</li>
+  <li>uses condaenvs instead of modules	since they are on exacloud</li>
+  <li>uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags</li>
+  <li>performs read adapter trimming</li>
+  <li>uses cellbender(?) for background removal</li>
+  <li>uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># setup
+cd /home/groups/oroaklab/nishida/test_scrna/test_scrna_mar29/
+module load picard/2.26.2
+module load STAR/2.7.9a
+module load subread/2.0.3
+
+# link file
+ln -s /home/groups/oroaklab/demultiplex/220324_VH00711_12_AAAV7VKM5/220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz .
+FASTQ_FILE="220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz"
+
+# transform FASTQs to unaligned single-read BAMS
+time picard FastqToSam F1=$FASTQ_FILE OUTPUT=$FASTQ_FILE.bam SM=$FASTQ_FILE
+#real    9m41.929s
+
+# move bc to XC tag and umi to XM tag
+time samtools view -h $FASTQ_FILE.bam | awk '/^@/ {print;next} {N=split($1,n,":"); O=split(n[2],o,"="); print $0 "\tXC:Z:" n[1] "\tXM:Z:" o[2]}' | samtools view -bS - &gt; temp.bam
+#real    7m11.938s
+
+# STAR alignment of unaligned BAM to reference
+time STAR --runThreadN 24 --genomeDir /home/groups/oroaklab/refs/STAR/hg38 --readFilesCommand samtools view -h --readFilesType SAM SE --readFilesIn temp.bam --outSAMtype BAM Unsorted --outFilterScoreMinOverLread 0 --outFilterMatchNminOverLread 0 --outFileNamePrefix aligned
+#real    7m16.440s
+
+# sort
+time samtools sort alignedAligned.out.bam -o alignedAligned.out.sort.bam
+#real    15m23.468s
+
+# use subread's featurecounts to add in 'XT' tags
+time featureCounts -a /home/groups/oroaklab/refs/STAR/Homo_sapiens.GRCh38.104.gtf -R BAM -g gene_id -Q 30 -s 0 -T 24 -o alignedAligned.out.sort.annot.bam alignedAligned.out.sort.bam
+#real    0m28.182s
+
+# open SAM, filter for Q, pull out columns, use only uniquely mapping annotated reads, strip labels
+QFILTER="20"
+samtools view -q ${QFILTER} alignedAligned.out.sort.bam.featureCounts.bam | cut -f 12,17,18,21 | awk '$1 == "NH:i:1" &amp;&amp; $4 != ""' | awk '$1 == "NH:i:1" &amp;&amp; $4 != ""' | sed -e 's/..:Z://g' &gt; TEMP
+#real	2m21.242s
+
+# count cell info from TEMP file
+time perl count_cell_info.pl TEMP &gt; metrics_cell_counts.txt
+#real	0m15.108s
+
+# example header of output
+# CELL	TOTAL_READS	UNIQUE_UMIS	UNIQUE_UMIS_ANNOTS	PERCENT_UNIQ
+# CCGGTATCGTGGTACCGGCTAAGAGACT	7	7	7	100
+# CCGGTATCGTCCAATTCCATGGTTCAGC	5142	328	352	6.84558537534033
+# CCGGTATCGTATAATCGCGGTCATATAG	1354	163	165	12.1861152141802
+
+# make sparse, keep only unique combinations, remove UMI info, count, format to sparse
+time cat TEMP | sort | uniq | cut -f 2,4 | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $3,$2,$1}' | tr ' ' '\t' &gt; TEMP2
+#real	1m54.927s
+cat TEMP2 | cut -f 1 | sort -n | uniq &gt; 220324_HB_Coassay_RNA.sparseMatrix.rows
+
+# make list of cells to use
+UMI_PER_CELL_CUTOFF=100
+UNIQ_PER_CUTOFF=10
+cat metrics_cell_counts.txt | awk -v umicut=$UMI_PER_CELL_CUTOFF -v uniqcut=$UNIQ_PER_CUTOFF '$3 &gt; umicut &amp;&amp; $5 &lt; uniqcut' | cut -f 1 | sort -n &gt; 220324_HB_Coassay_RNA.sparseMatrix.cols
+
+# make sparse
+perl make_sparse.pl 220324_HB_Coassay_RNA.sparseMatrix.rows 220324_HB_Coassay_RNA.sparseMatrix.cols TEMP2 | sort -n -k 1,2 &gt; 220324_HB_Coassay_RNA.sparseMatrix.values
+
+# make fake rows with BED positions not gene names to trick cistopics
+mv 220324_HB_Coassay_RNA.sparseMatrix.rows 220324_HB_Coassay_RNA.sparseMatrix.rows_save
+cat /home/groups/oroaklab/refs/hg38/masterlistDHS/DHS_Index_and_Vocabulary_hg38_WM20190703.non_overlap.bed | head -n 20446 &gt; 220324_HB_Coassay_RNA.sparseMatrix.rows
+
+# cistopics on sparse matrix and plot
+scitools matrix-cistopic3 -X 220324_HB_Coassay_RNA.sparseMatrix.values
+scitools matrix-umap 220324_HB_Coassay_RNA.cistopic.30.matrix
+scitools matrix-pg 220324_HB_Coassay_RNA.cistopic.30.matrix
+scitools plot-dims -A 220324_HB_Coassay_RNA.cistopic.30.k50.pg.annot 220324_HB_Coassay_RNA.cistopic.30.UMAP.dims 
+</code></pre></div></div>
+
+<p>And here is a shot of the data gone through dimensionality reduction with cistopics. Relatively cleaned up despite very few reads being used.
+<br /><a href="https://www.dropbox.com/s/utobouaeouw3nqr/blog_scrna.220324_HB_Coassay_RNA.cistopic.30.UMAP_pass2.plot.png?dl=0">UMAP of scRNA-seq</a></p>
+
+
+  </div><a class="u-url" href="/2022/04/11/post-0080.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">ARSN Lab Notebook</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">ARSN Lab Notebook</li><li><a class="u-email" href="mailto:nishidaa@ohsu.edu">nishidaa@ohsu.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/arsnishida"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">arsnishida</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>ARSN Lab notebook.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
