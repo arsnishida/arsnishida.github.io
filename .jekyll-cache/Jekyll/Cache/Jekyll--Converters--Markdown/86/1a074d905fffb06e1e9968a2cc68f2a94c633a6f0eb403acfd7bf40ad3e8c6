@@ -1,0 +1,63 @@
+I"$<p>Program Versions:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>macs2 v2.1.1.20160309
+samtools v1.10
+bedtools v2.22.0
+python v2.7.9
+perl v5.16.3
+R v3.5.1
+</code></pre></div></div>
+
+<p>R Packages:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; sessionInfo()
+R version 3.5.1 (2018-07-02)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: CentOS Linux 7 (Core)
+
+Matrix products: default
+BLAS: /home/groups/oroaklab/src/R/R-3.5.1/lib/libRblas.so
+LAPACK: /home/groups/oroaklab/src/R/R-3.5.1/lib/libRlapack.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+[1] ComplexHeatmap_1.20.0 Matrix_1.2-18         cisTopic_0.3.0       
+[4] Rphenograph_0.99.1    igraph_1.2.4.2        ggplot2_3.2.1 
+</code></pre></div></div>
+
+<p>###</p>
+
+<p>alias macs2=’/home/groups/oroaklab/src/pyenv/shims/macs2’
+module load python/2.7.9
+time macs2 callpeak –keep-dup all -t full_dataset.bam -n test</p>
+
+<p>real    8m37.638s
+user    8m30.649s
+sys     0m10.417s</p>
+
+<p>###</p>
+
+<p>time scitools atac_count full_dataset.bam test.500.bed</p>
+
+<p>real    10m30.886s
+user    15m17.051s
+sys     0m26.715s</p>
+
+<p>###</p>
+
+<p>time scitools matrix_cistopic3 -X test.500.counts.sparseMatrix.values.gz</p>
+
+<p>real    114m23.048s
+user    112m13.306s
+sys     0m57.124s</p>
+
+:ET

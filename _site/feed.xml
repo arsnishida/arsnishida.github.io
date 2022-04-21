@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-12T11:33:49-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/11/post-0080.html" rel="alternate" type="text/html" title="scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-11T00:00:00-07:00</published><updated>2022-04-11T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/11/post-0080</id><content type="html" xml:base="http://localhost:4000/2022/04/11/post-0080.html">&lt;p&gt;This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this &lt;a href=&quot;https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf&quot;&gt;link to DropSeq PDF&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-21T12:24:56-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation</title><link href="http://localhost:4000/2022/04/21/post-0081.html" rel="alternate" type="text/html" title="scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation" /><published>2022-04-21T00:00:00-07:00</published><updated>2022-04-21T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/21/post-0081</id><content type="html" xml:base="http://localhost:4000/2022/04/21/post-0081.html">&lt;p&gt;Program Versions:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;macs2 v2.1.1.20160309
+samtools v1.10
+bedtools v2.22.0
+python v2.7.9
+perl v5.16.3
+R v3.5.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;R Packages:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; sessionInfo()
+R version 3.5.1 (2018-07-02)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: CentOS Linux 7 (Core)
+
+Matrix products: default
+BLAS: /home/groups/oroaklab/src/R/R-3.5.1/lib/libRblas.so
+LAPACK: /home/groups/oroaklab/src/R/R-3.5.1/lib/libRlapack.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+[1] ComplexHeatmap_1.20.0 Matrix_1.2-18         cisTopic_0.3.0       
+[4] Rphenograph_0.99.1    igraph_1.2.4.2        ggplot2_3.2.1 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;STEP 1 - CALLING PEAKS
+&lt;br /&gt;INPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;full_dataset.bam&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.bam&lt;/code&gt;
+&lt;br /&gt;OUTPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;full_dataset.peaks.bed&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.peaks.bed&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# call peaks, full
+$ time macs2 callpeak --keep-dup all -t full_dataset.bam -n test1
+real    8m37.638s
+user    8m30.649s
+sys     0m10.417s
+
+# merge and filter peaks, full
+$ perl 01_filter_peaks.pl test1_peaks.narrowPeak test1 500
+
+# call peaks, downsampled
+$ time macs2 callpeak --keep-dup all -t downsampled_40.bam -n test2
+real    6m16.453s
+user    5m54.677s
+sys     0m7.381s
+
+# merge and filter peaks, downsampled
+$ perl 01.filter_peaks.pl test2_peaks.narrowPeak test2 500
+
+$ md5sum *bed
+c18d03f4d22e6938202e9578b2086dad  downsampled_40.500.bed
+018e2e40df7f998d19df2f340bbb207c  full_dataset.peaks.bed
+018e2e40df7f998d19df2f340bbb207c  test1.500.bed
+c18d03f4d22e6938202e9578b2086dad  test2.500.bed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;STEP 2 - MATRIX GENERATION
+&lt;br /&gt;INPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.bam&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.bed&lt;/code&gt;
+&lt;br /&gt;OUTPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.sparseMatrix.cols.gz&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.sparseMatrix.rows.gz&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.sparseMatrix.values.gz&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;time perl 02.make_count_matrix.pl downsampled_40.bam downsampled_40.500.bed test2
+real    3m25.788s
+user    5m30.598s
+sys     0m8.572s
+
+$ zcat downsampled_40.500.counts.sparseMatrix.values.gz &amp;gt; temp1
+$ zcat test2.counts.sparseMatrix.values.gz &amp;gt; temp2
+$ md5sum temp*
+708ad4f6aabbbfed78771e3bc29fd5da  temp1
+708ad4f6aabbbfed78771e3bc29fd5da  temp2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;STEP 3 - DIMENSIONALITY REDUCTION WITH CISTOPICS3
+&lt;br /&gt;INPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.sparseMatrix.values.gz&lt;/code&gt;
+&lt;br /&gt;OUTPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.15.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.20.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.25.matrix&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ time Rscript downsampled_40.500.counts.cistopic.r
+real    29m28.503s
+user    29m16.418s
+sys     0m9.162s
+
+# not similar by md5sum
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;STEP 4 - CISTOPIC3 MATRIX TO UMAP DIMS
+&lt;br /&gt;INPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.15.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.20.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.25.matrix&lt;/code&gt;
+&lt;br /&gt;OUTPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.15.UMAP.dims&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.20.UMAP.dims&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.25.UMAP.dims&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ time Rscript downsampled_40.500.counts.cistopic.15.UMAP.R
+real    1m1.257s
+user    0m59.971s
+sys     0m1.055s
+
+$ time Rscript downsampled_40.500.counts.cistopic.20.UMAP.R
+real    1m0.584s
+user    0m59.771s
+sys     0m0.673s
+
+$ time Rscript downsampled_40.500.counts.cistopic.25.UMAP.R
+real    1m5.051s
+user    1m3.943s
+sys     0m0.939s
+
+# not similar by md5sum
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;STEP 5 - CLUSTERING WITH PHENOGRAPHS
+&lt;br /&gt;INPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.15.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.20.matrix&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.25.matrix&lt;/code&gt;
+&lt;br /&gt;OUTPUT FILE(s): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.15.k50.pg.annot&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.20.k50.pg.annot&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;downsampled_40.500.counts.cistopic.25.k50.pg.annot&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ time Rscript test2.15.k50.phenograph.R
+real	0m24.443s
+user	0m23.771s
+sys	0m0.549s
+
+$ time Rscript test2.20.k50.phenograph.R
+real	0m26.302s
+user	0m25.649s
+sys	0m0.594s
+
+$ time Rscript test2.25.k50.phenograph.R
+real	0m25.757s
+user	0m25.171s
+sys	0m0.504s
+
+$ md5sum *annot
+af37ea4bec6586681b1c814c93a256ce  downsampled_40.500.counts.cistopic.15.k50.pg.annot
+bedc6d7799fc618654e63450691cc9b7  downsampled_40.500.counts.cistopic.20.k50.pg.annot
+4915ad625b38b70ac7d3f969c4159a97  downsampled_40.500.counts.cistopic.25.k50.pg.annot
+af37ea4bec6586681b1c814c93a256ce  test2.15.k50.pg.annot
+bedc6d7799fc618654e63450691cc9b7  test2.20.k50.pg.annot
+4915ad625b38b70ac7d3f969c4159a97  test2.25.k50.pg.annot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="dream" /><summary type="html">Program Versions: macs2 v2.1.1.20160309 samtools v1.10 bedtools v2.22.0 python v2.7.9 perl v5.16.3 R v3.5.1</summary></entry><entry><title type="html">scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/11/post-0080.html" rel="alternate" type="text/html" title="scRNA-seq Second Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-11T00:00:00-07:00</published><updated>2022-04-11T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/11/post-0080</id><content type="html" xml:base="http://localhost:4000/2022/04/11/post-0080.html">&lt;p&gt;This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this &lt;a href=&quot;https://github.com/broadinstitute/Drop-seq/blob/master/doc/Drop-seq_Alignment_Cookbook.pdf&quot;&gt;link to DropSeq PDF&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;built around snakemake paired with SLURM jobs&lt;/li&gt;
   &lt;li&gt;uses condaenvs instead of modules	since they are on exacloud&lt;/li&gt;
@@ -652,15 +793,4 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 
 &lt;p&gt;Markdown links:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2vbwjy5j27zohi0/dm6_test_da.html?dl=0&quot;&gt;R Markdown HTML&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/an2v1ngucr8nqlt/dm6_test_da.Rmd?dl=0&quot;&gt;R Markdown&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt</summary></entry><entry><title type="html">SPARK Pre Best Practices Filter, Model Scores</title><link href="http://localhost:4000/2022/01/19/post-0071.html" rel="alternate" type="text/html" title="SPARK Pre Best Practices Filter, Model Scores" /><published>2022-01-19T00:00:00-08:00</published><updated>2022-01-19T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/19/post-0071</id><content type="html" xml:base="http://localhost:4000/2022/01/19/post-0071.html">&lt;p&gt;This markdown takes the pre-filtered data and plots out the metrics that are used for scoring by the logistic model. All variants are plotted and then just the subset of mosaic child calls.&lt;/p&gt;
-
-&lt;p&gt;This data represents the simplex quads only. It uses the broad filter and removes parental germline calls.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A broad filter to reduce computational load is used.
-- Frequent variants appearing 5 or more times are removed from further analysis.
-- Common variant allele frequencies determined from ExAC and gnomAD annotations must be less than 0.005.
-- Variants require at least 3 non-reference reads and at least 8 reads in all four family members.
-- Variants must also fall within exonic or splicing regions from RefSeq annotations.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Markdown showing the error model metrics of the pre-filtered data:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/md88g4ahmmwuer9/20_logistic_model_params.html?dl=0&quot;&gt;20 Logistic Model Metrics Pre-Filter&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">This markdown takes the pre-filtered data and plots out the metrics that are used for scoring by the logistic model. All variants are plotted and then just the subset of mosaic child calls.</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/an2v1ngucr8nqlt/dm6_test_da.Rmd?dl=0&quot;&gt;R Markdown&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt</summary></entry></feed>
