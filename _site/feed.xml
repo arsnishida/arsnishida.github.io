@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-21T12:24:56-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation</title><link href="http://localhost:4000/2022/04/21/post-0081.html" rel="alternate" type="text/html" title="scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation" /><published>2022-04-21T00:00:00-07:00</published><updated>2022-04-21T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/21/post-0081</id><content type="html" xml:base="http://localhost:4000/2022/04/21/post-0081.html">&lt;p&gt;Program Versions:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-29T10:20:44-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Mosaic Index, 22-04-28</title><link href="http://localhost:4000/2022/04/28/post-0082.html" rel="alternate" type="text/html" title="SPARK Mosaic Index, 22-04-28" /><published>2022-04-28T00:00:00-07:00</published><updated>2022-04-28T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/28/post-0082</id><content type="html" xml:base="http://localhost:4000/2022/04/28/post-0082.html">&lt;p&gt;Compiled Writing and Figures:
+&lt;br /&gt;&lt;a href=&quot;https://docs.google.com/document/d/1q82t5ll2yVP9Fyrwq7jdnZU2bgDnZEgXCu-Tl0VnDDc/edit?usp=sharing&quot;&gt;Google Doc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;High Confidence Lists:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/dxaae3ehyr7629h/WES1_MQ.highconfidence.txt?dl=0&quot;&gt;WES1, Mutliplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1zmp22l4c4fmmee/WES1_SQ.highconfidence.txt?dl=0&quot;&gt;WES1, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ak42uwc15cnd9fo/WES1_ST.highconfidence.txt?dl=0&quot;&gt;WES1, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0upte7upfszbymc/WES2_MQ.highconfidence.txt?dl=0&quot;&gt;WES2, Mutliplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/inijsgyi798thgq/WES2_SQ.highconfidence.txt?dl=0&quot;&gt;WES2, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6nk4u6orq5kwrc5/WES2_ST.highconfidence.txt?dl=0&quot;&gt;WES2, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ddxbgvlnrxbng5o/WES3_MQ.highconfidence.txt?dl=0&quot;&gt;WES3, Mutliplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ahvdwpzu3n9n200/WES3_SQ.highconfidence.txt?dl=0&quot;&gt;WES3, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/o70g7kf895qcfr9/WES3_ST.highconfidence.txt?dl=0&quot;&gt;WES3, Simplex Trios, High Confidence Calls&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Burden Lists:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/f6fpkuxl58hw19c/WES1_MQ.burden.txt?dl=0&quot;&gt;WES1, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/xtwny8uspd7rfqc/WES1_SQ.burden.txt?dl=0&quot;&gt;WES1, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/5h9fsgj4f393z7l/WES1_ST.burden.txt?dl=0&quot;&gt;WES1, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jzmnog6ahy88a7p/WES2_MQ.burden.txt?dl=0&quot;&gt;WES2, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nr8fxgxlvqy5q9o/WES2_SQ.burden.txt?dl=0&quot;&gt;WES2, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/98xfdz17b5do0x8/WES2_ST.burden.txt?dl=0&quot;&gt;WES2, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zmjkj8qf07080oq/WES3_MQ.burden.txt?dl=0&quot;&gt;WES3, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/cixj5vwdrdv2b43/WES3_SQ.burden.txt?dl=0&quot;&gt;WES3, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/w7frsoyzzfqnsj4/WES3_ST.burden.txt?dl=0&quot;&gt;WES3, Simplex Trios, High Confidence Calls&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Full Lists:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/srpxn2lz9rzl5bh/WES1.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES1, Multiplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/a3rva3qx9tohqqn/WES1.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES1, Simplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/nzljlw8c9t3mox0/WES1.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES1, Simplex Trios w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/yis33v5xt6fa327/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES2, Multiplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/19ah15iu3ugn6oi/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES2, Simplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/dfo7pbrxn2qpshr/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES2, Simplex Trios w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/cnz4o9febb4ldag/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES3, Multiplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jj9k78aa7nb9lr3/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES3, Simplex Quads w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8bwivz2eyo6o02j/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter_noGermlineParental.txt?dl=0&quot;&gt;WES3, Simplex Trios w/ Strict Test Filter, no Germline Parental&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/97h0nrfdzqlzz0v/WES1.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES1, Multiplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4ugsef33shvsy0x/WES1.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES1, Simplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/fpnng461st4cn52/WES1.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES1, Simplex Trios w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0mgba3b4ayrzn92/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES2, Multiplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/q556he25jasy1rt/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES2, Simplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/3rsdzaft00ot4fx/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES2, Simplex Trios w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0ixrpcxfx4lfp5b/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES3, Multiplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hw46orbl9pc4lae/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES3, Simplex Quads w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/i1sr8o39p84egda/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.testfilter.txt?dl=0&quot;&gt;WES3, Simplex Trios w/ Strict Test Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/un4c7j3w6wdk0nl/WES1.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES1, Multiplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/h5kk5y4a2fqq995/WES1.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES1, Simplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7nonw2adwrkigse/WES1.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES1, Simplex Trios w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/eud1v4v89z3fuxw/WES2.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES2, Multiplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/x1z4f68snms5qjk/WES2.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES2, Simplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/5kwhnjgfafyr8yi/WES2.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES2, Simplex Trios w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/wvabiebeyiduggp/WES3.MQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES3, Multiplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/vu38rku8u07kgxr/WES3.SQ_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES3, Simplex Quads w/ Loose Filter&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/sx7emixq31carxd/WES3.ST_mosaics.8reads_0.001popAF_4cohort_3alt_exonic.txt?dl=0&quot;&gt;WES3, Simplex Trios w/ Loose Filter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdowns:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/svlsuepuxb5iu1h/00_coverage_outliers.html?dl=0&quot;&gt;00, Report Coverage Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/col92638myx5um0/01_WES1_MQ.prefilt.html?dl=0&quot;&gt;01, WES1, Multiplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/99f1htx17fb8sve/01_WES1_SQ.prefilt.html?dl=0&quot;&gt;01, WES1, Simplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ljydbrehutzgel5/01_WES1_ST.prefilt.html?dl=0&quot;&gt;01, WES1, Simplex Trio Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4c1q23nlepil5hv/01_WES2_MQ.prefilt.html?dl=0&quot;&gt;01, WES2, Multiplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1cxh9bibpaxwu9s/01_WES2_SQ.prefilt.html?dl=0&quot;&gt;01, WES2, Simplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/9eo69neh022bzen/01_WES2_ST.prefilt.html?dl=0&quot;&gt;01, WES2, Simplex Trio Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ydjoi4zdf92b95o/01_WES3_MQ.prefilt.html?dl=0&quot;&gt;01, WES3, Multiplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/blir9lgbso14ix7/01_WES3_SQ.prefilt.html?dl=0&quot;&gt;01, WES3, Simplex Quad Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/g2srho8t0p6nb7c/01_WES3_ST.prefilt.html?dl=0&quot;&gt;01, WES3, Simplex Trio Pre-Filtering&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/vgvcxi7ui6hxndo/02_WES1_MQ.outliercount.html?dl=0&quot;&gt;02, WES1, Multiplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/hrirz5hbf5epico/02_WES1_SQ.outliercount.html?dl=0&quot;&gt;02, WES1, Simplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ba1658i4xnz0yla/02_WES1_ST.outliercount.html?dl=0&quot;&gt;02, WES1, Simplex Trio Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/d90v6u1l3inm6wc/02_WES2_MQ.outliercount.html?dl=0&quot;&gt;02, WES2, Multiplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qgln3y33fjn4c8o/02_WES2_SQ.outliercount.html?dl=0&quot;&gt;02, WES2, Simplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rjv89t4oebus1sa/02_WES2_ST.outliercount.html?dl=0&quot;&gt;02, WES2, Simplex Trio Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/w6ozs3viwc83uqs/02_WES3_MQ.outliercount.html?dl=0&quot;&gt;02, WES3, Multiplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qt7zgfbouk75235/02_WES3_SQ.outliercount.html?dl=0&quot;&gt;02, WES3, Simplex Quad Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/lxii8g7ltd0dv7j/02_WES3_ST.outliercount.html?dl=0&quot;&gt;02, WES3, Simplex Trio Variant Count Outliers&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/vow5hhio1mrrww5/03_WES1_MQ.hcburdentable.html?dl=0&quot;&gt;03, WES1, Multiplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jhkcs5v08lvj3xw/03_WES1_SQ.hcburdentable.html?dl=0&quot;&gt;03, WES1, Simplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jjrmo1umtwmqv38/03_WES1_ST.hcburdentable.html?dl=0&quot;&gt;03, WES1, Simplex Trio HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/njol77niyus4afn/03_WES2_MQ.hcburdentable.html?dl=0&quot;&gt;03, WES2, Multiplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/l6dlpj36qv6snqv/03_WES2_SQ.hcburdentable.html?dl=0&quot;&gt;03, WES2, Simplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/lwwbpfdxzqkaum2/03_WES2_ST.hcburdentable.html?dl=0&quot;&gt;03, WES2, Simplex Trio HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1b337bb2o79b7jq/03_WES3_MQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Multiplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Quad HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Trio HC and Burden Tables&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Joint Coverages:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/l3731hncx2fcmun/jointcov.WES1.MQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES1 Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2xtzs29xo0g4owa/jointcov.WES1.SQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES1 Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4kthhvk58spea82/jointcov.WES1.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES1 Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/57wkgj0cgrh4v2b/jointcov.WES2.MQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES2 Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/f4hgv5i8pninzn3/jointcov.WES2.SQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES2 Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n9bbnmm6jtlde8d/jointcov.WES2.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES2 Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tvs3pj7c4tkpa3e/jointcov.WES3.MQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Multiplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/gn6znkoylpgn6f0/jointcov.WES3.SQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8048eoc8j4t68gg/jointcov.WES3.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Simplex Trios&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Splice Distances:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2uvhvd7ki6lvp9d/splice_distances.WES1_MQ.txt?dl=0&quot;&gt;WES1, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/3sf9eim1su24jed/splice_distances.WES1_SQ.txt?dl=0&quot;&gt;WES1, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ylca4v3z3gnfc8n/splice_distances.WES1_ST.txt?dl=0&quot;&gt;WES1, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/k07bqimxqryzomm/splice_distances.WES2_MQ.txt?dl=0&quot;&gt;WES2, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/wer0cih4icsjs0n/splice_distances.WES2_SQ.txt?dl=0&quot;&gt;WES2, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rvvhf4kaecgxfsn/splice_distances.WES2_ST.txt?dl=0&quot;&gt;WES2, Simplex Trios, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/aoh20vxqvwkhkr7/splice_distances.WES3_MQ.txt?dl=0&quot;&gt;WES3, Multiplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4l2vsgiyvyfge6b/splice_distances.WES3_SQ.txt?dl=0&quot;&gt;WES3, Simplex Quads, High Confidence Calls&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bic5g0k3bwrylqn/splice_distances.WES3_ST.txt?dl=0&quot;&gt;WES3, Simplex Trios, High Confidence Calls&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><category term="INDEX" /><summary type="html">Compiled Writing and Figures: Google Doc</summary></entry><entry><title type="html">scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation</title><link href="http://localhost:4000/2022/04/21/post-0081.html" rel="alternate" type="text/html" title="scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation" /><published>2022-04-21T00:00:00-07:00</published><updated>2022-04-21T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/21/post-0081</id><content type="html" xml:base="http://localhost:4000/2022/04/21/post-0081.html">&lt;p&gt;Program Versions:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;macs2 v2.1.1.20160309
 samtools v1.10
 bedtools v2.22.0
@@ -783,14 +887,4 @@ curl -X POST https://content.dropboxapi.com/2/files/download \
 
 &lt;p&gt;&lt;b&gt;For files &amp;gt; 150 Mb using upload sessions.&lt;/b&gt;&lt;/p&gt;
 
-&lt;p&gt;https://github.com/andreafabrizi/Dropbox-Uploader&lt;/p&gt;</content><author><name></name></author><category term="ref" /><summary type="html">These are the step to upload and download from the console to and from Dropbox. 1. Go to: https://www.dropbox.com/developers/apps 2. Create an App. Name is whatever you like but probably something like “Dropbox Access”. 3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read. 4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.</summary></entry><entry><title type="html">Drosophilia Tau DA Results Test Analysis</title><link href="http://localhost:4000/2022/01/21/post-0072.html" rel="alternate" type="text/html" title="Drosophilia Tau DA Results Test Analysis" /><published>2022-01-21T00:00:00-08:00</published><updated>2022-01-21T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/21/post-0072</id><content type="html" xml:base="http://localhost:4000/2022/01/21/post-0072.html">&lt;p&gt;Directory: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis&lt;/code&gt;
-&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;This is an example rough pass through analyzing the results of the DA test. This focuses on the ‘3_Parent_d5’ comparisons as the example. Clusters are combined across treatments but kept separate. Thresholds for ‘significantly changing’ sites are &amp;lt; 0.01 raw p-value and &amp;gt; 1.5 Log2 FC. The significant results could be annotated by their motifs and nearest genes.&lt;/p&gt;
-
-&lt;p&gt;5.2-5.7 - P-value distributions are left-skewed. FDR does not work except maybe with WT_to_KI_KI. Volcano plots suggest global opening and closing in some conditions (WT_to_KI_KI shows a global decrease in accessibility across many sites).
-8.8 - Heatmap shows groups of sites that are specific to the strains trending in the same direction. The most notable is the group for WT to KI_KI which shows large decreases specific to the biological cluster 3 (in yellow on the left).&lt;/p&gt;
-
-&lt;p&gt;Markdown links:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2vbwjy5j27zohi0/dm6_test_da.html?dl=0&quot;&gt;R Markdown HTML&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/an2v1ngucr8nqlt/dm6_test_da.Rmd?dl=0&quot;&gt;R Markdown&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="dm6_tau" /><summary type="html">Directory: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis Run: /home/groups/oroaklab/nishida/sc_dm6_tau/DA_jan7_2022/test_analysis/run.txt</summary></entry></feed>
+&lt;p&gt;https://github.com/andreafabrizi/Dropbox-Uploader&lt;/p&gt;</content><author><name></name></author><category term="ref" /><summary type="html">These are the step to upload and download from the console to and from Dropbox. 1. Go to: https://www.dropbox.com/developers/apps 2. Create an App. Name is whatever you like but probably something like “Dropbox Access”. 3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read. 4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.</summary></entry></feed>
