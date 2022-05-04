@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-29T10:20:44-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Mosaic Index, 22-04-28</title><link href="http://localhost:4000/2022/04/28/post-0082.html" rel="alternate" type="text/html" title="SPARK Mosaic Index, 22-04-28" /><published>2022-04-28T00:00:00-07:00</published><updated>2022-04-28T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/28/post-0082</id><content type="html" xml:base="http://localhost:4000/2022/04/28/post-0082.html">&lt;p&gt;Compiled Writing and Figures:
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-03T19:58:41-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.make_batches.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;IGV screenshots for the high-confidence lists across WES1, WES2, and WES3 are here:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/home/SPARK%20Mosaics/final/IGV_screenshots&quot;&gt;AT THIS DROPBOX URL&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/sh/jahriezmyrdnyxu/AABfpi29TMJO_9V8euqBGdaza?dl=0&quot;&gt;AT THIS DROPBOX COPIED LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are nine Numbers spreadsheets in the folder, one for each of the lists. As a refresher to how the original set was manually annotated, we both only annotated the MOSAIC_CHILD calls and you created four specific categories for the ones that were removed. The categories are largely describing instances of indels and where they are found. There’s a slide on the post with examples of the four categories and your specific note added on to it.
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/krajx3160l2gcu8/IGV_annotation_examples.pdf?dl=0&quot;&gt;Examples of Four Annotation Categories&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Dir: /home/groups/oroaklab/nishida/spark_mosaic/IGV_2022 Run: run.make_batches.txt</summary></entry><entry><title type="html">SPARK Mosaic Index, 22-04-28</title><link href="http://localhost:4000/2022/04/28/post-0082.html" rel="alternate" type="text/html" title="SPARK Mosaic Index, 22-04-28" /><published>2022-04-28T00:00:00-07:00</published><updated>2022-04-28T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/28/post-0082</id><content type="html" xml:base="http://localhost:4000/2022/04/28/post-0082.html">&lt;p&gt;Compiled Writing and Figures:
 &lt;br /&gt;&lt;a href=&quot;https://docs.google.com/document/d/1q82t5ll2yVP9Fyrwq7jdnZU2bgDnZEgXCu-Tl0VnDDc/edit?usp=sharing&quot;&gt;Google Doc&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;High Confidence Lists:
@@ -843,48 +851,4 @@ NTC3	TRUE	94	10	0.106382978723404	0	0	0	0	85
 rclone copy test.txt ONEDRIVE:Documents/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Here’s instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.</summary></entry><entry><title type="html">Dropbox Upload and Download with Curl and API Key</title><link href="http://localhost:4000/2022/01/25/post-0073.html" rel="alternate" type="text/html" title="Dropbox Upload and Download with Curl and API Key" /><published>2022-01-25T00:00:00-08:00</published><updated>2022-01-25T00:00:00-08:00</updated><id>http://localhost:4000/2022/01/25/post-0073</id><content type="html" xml:base="http://localhost:4000/2022/01/25/post-0073.html">&lt;p&gt;These are the step to upload and download from the console to and from Dropbox.
-&lt;br /&gt;1. Go to: https://www.dropbox.com/developers/apps
-&lt;br /&gt;2. Create an App. Name is whatever you like but probably something like “Dropbox Access”.
-&lt;br /&gt;3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read.
-&lt;br /&gt;4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.&lt;/p&gt;
-
-&lt;p&gt;###&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;For files &amp;lt; 150 Mb using the “2/files/upload” endpoint.&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;Upload Instructions. This will upload file, ‘test.txt’, into your Dropbox folder ‘temp_upload’ under the name ‘uploaded_test_file.txt’.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# create test file
-echo &quot;TEST THIS&quot; &amp;gt; test.txt
-
-# fill these variables in
-API_KEY=&quot;keep your API key secret&quot;
-INPUT_PATH=&quot;test.txt&quot;
-DROPBOX_FILE_PATH=&quot;/temp_upload/uploaded_test_file.txt&quot;
-
-# run
-curl -X POST https://content.dropboxapi.com/2/files/upload \
-    --header &quot;Authorization: Bearer ${API_KEY}&quot; \
-    --header &quot;Dropbox-API-Arg: {\&quot;path\&quot;: \&quot;${DROPBOX_FILE_PATH}\&quot;}&quot; \
-    --header &quot;Content-Type: application/octet-stream&quot; \
-    --data-binary @${INPUT_PATH}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Download Instructions. This will download ‘uploaded_test_file.txt’ in Dropbox directory ‘temp_upload’ as ‘downloaded_test_file.txt&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# fill these variables in
-API_KEY=&quot;keep your API key secret&quot;
-DROPBOX_FILE_PATH=&quot;/temp_upload/uploaded_test_file.txt&quot;
-OUTPUT_PATH=&quot;downloaded_test_file.txt&quot;
-
-# run
-curl -X POST https://content.dropboxapi.com/2/files/download \
-    --header &quot;Authorization: Bearer ${API_KEY}&quot; \
-    --header &quot;Dropbox-API-Arg: {\&quot;path\&quot;: \&quot;${DROPBOX_FILE_PATH}\&quot;}&quot; \
-    -o &quot;${OUTPUT_PATH}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;###&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;For files &amp;gt; 150 Mb using upload sessions.&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;https://github.com/andreafabrizi/Dropbox-Uploader&lt;/p&gt;</content><author><name></name></author><category term="ref" /><summary type="html">These are the step to upload and download from the console to and from Dropbox. 1. Go to: https://www.dropbox.com/developers/apps 2. Create an App. Name is whatever you like but probably something like “Dropbox Access”. 3. Navigate to Permissions on the top tab. Check account_info.write, account_info.read, files.metadata.write, files.metadata.read, files.content.write, and files.content.read. 4. Navigate to Settings on the top tab. Generate your access token. If you change your permissions you must regenerate your access token. Always keep your API key secret or else anybody can use it to access everything in your Dropbox.</summary></entry></feed>
+&lt;/ol&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Here’s instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.</summary></entry></feed>
