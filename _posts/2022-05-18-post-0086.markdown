@@ -66,3 +66,9 @@ done < obnix.$DATE.check.txt
 # save for now
 #rm obnix.$DATE.check.txt
 ```
+
+The only part that needs to change when someone takes over is just changing this directory to something of one's own. The directory just holds the logs from the cron jobs.
+```
+# move to cron folder
+cd /home/groups/oroaklab/nishida/cron
+```

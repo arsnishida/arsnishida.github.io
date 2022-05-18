@@ -1,0 +1,65 @@
+I"M<p>The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, <code class="language-plaintext highlighter-rouge">/var/spool/cron/</code> and <code class="language-plaintext highlighter-rouge">/etc/cron.allow</code>.</p>
+
+<p>Here is the one cron job scheduled to look for new obnix runs.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHELL=/bin/bash
+0 * * * * source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile; /home/groups/oroaklab/nishida/scripts/check_obnix.sh &gt; /home/groups/oroaklab/nishida/cron/check_obnix.cronlog
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">0 * * * *</code> part signifies to run this at the top of every hour.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile</code> part is needed to find the modules and setup a proper bash environment for the job.</p>
+
+<p>The last part, <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/scripts/check_obnix.sh</code>, is the script being run every hour. The comments should explain everything but it looks for new folders, validates the names, checks for the RTAcomplete.txt file, runs <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/scripts/NextSeq2fastq</code> (this should be identical to what is in the github but not what is hooked up to our module because I don’t have permissions to change the module), and validates it made the output. I had it make a lot of logs but it has been running without errors for months now so you can turn off some of the extra output going forward.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># !/usr/bin/bash
+
+# get date
+DATE=$(date +"%y%m%d_%H_%M")
+
+# move to cron folder
+cd /home/groups/oroaklab/nishida/cron
+
+# check the last 5 directories created with the machine name
+ls -dt /home/groups/oroaklab/seq/obnix/* | head -n 5 | grep "_VH00711_" &gt; obnix.$DATE.check.txt
+
+# for each of the names...
+while read i; do
+
+	# run name
+	run=$(echo $i | sed -e 's/.*\///g')
+
+	# count underscore deliminated parts in name, should be four
+	namecount=$(echo $i | sed -e 's/.*\///g' | tr '_' '\n' | wc -l)
+
+	# second member of the name should be the machine, "VH00711"
+	name=$(echo $i | sed -e 's/.*\///g' | tr '_' '\t' | cut -f 2)
+
+	# if the name is valid...
+	if [[ $name == 'VH00711' &amp;&amp; $namecount == '4' ]]; then
+
+		# check for RTA.complete and absence of FASTQ folder
+		if [[ -f "/home/groups/oroaklab/seq/obnix/$run/RTAComplete.txt" &amp;&amp; ! -d "/home/groups/oroaklab/fastq/$run" ]]; then
+
+			# run
+			sleep 600 # wait in case the RTA complete shows up earlier than it should
+			echo -e "Attempting to run NextSeq2fastq for $run" &gt;&gt; obnix.$DATE.log
+			perl /home/groups/oroaklab/nishida/scripts/NextSeq2fastq -N -R $run
+			echo -e "Finished running NextSeq2fastq for $run" &gt;&gt; obnix.$DATE.log
+
+			# check that backup was made
+			if [[ ! -d "/home/groups/oroakdata/fastq/$run" ]]; then
+				echo -e "Backup FASTQ folder was not made. Check manually." &gt;&gt; obnix.$DATE.err
+			fi
+		fi
+	fi
+
+done &lt; obnix.$DATE.check.txt
+
+# save for now
+#rm obnix.$DATE.check.txt
+</code></pre></div></div>
+
+<p>The only part that needs to change when someone takes over is just changing this directory to something of one’s own. The directory just holds the logs from the cron jobs.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># move to cron folder
+cd /home/groups/oroaklab/nishida/cron
+</code></pre></div></div>
+:ET
