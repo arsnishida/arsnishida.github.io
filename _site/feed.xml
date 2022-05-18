@@ -1,7 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:12:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Celsee and Docker Info</title><link href="http://localhost:4000/2022/05/18/post-0084.html" rel="alternate" type="text/html" title="Celsee and Docker Info" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0084</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0084.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/celsee&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:21:29-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Example of HDR Processing via BWA Alignment</title><link href="http://localhost:4000/2022/05/18/post-0085.html" rel="alternate" type="text/html" title="Example of HDR Processing via BWA Alignment" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0085</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0085.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/example_brooke_amplican&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.&lt;/p&gt;
+
+&lt;p&gt;Here is the copy of the readme of instructions sent to Brooke.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Example of HDR processing via BWA alignment
+
+cd /home/groups/oroaklab/nishida/test_brooke
+
+# array of sample names
+array=(A136P-iPS2_sgRNA-4_Rep1 A136P-iPS2_sgRNA-4_Rep2 A136P-iPS2_sgRNA-4_Rep3 A136P-iPS2_sgRNA-3_Rep1 A136P-iPS2_sgRNA-3_Rep2 A136P-iPS2_sgRNA-3_Rep3 A136P-iPS2_A136P-WT_CON CIRM87_WT-WT_CON)
+
+# 1. Obtain your FASTQs for your samples
+# This directory has the FASTQ files from the sequencing run from 200215 for HDR after demultiplexing with 8 samples making 16 FASTQs 
+fastq_dir=&quot;/home/groups/oroaklab/nishida/test_brooke/1_fastqs&quot;
+
+# 2. Merge paired FASTQs into a single FASTQ with PEAR
+merged_dir=&quot;/home/groups/oroaklab/nishida/test_brooke/2_merged&quot;
+for i in &quot;${array[@]}&quot;
+do
+	/home/groups/oroaklab/src/PEAR/pear-0.9.6/pear -y 20G -j 4 -f $fastq_dir/split.$i.R1.fq.gz -r $fastq_dir/split.$i.R2.fq.gz -o $merged_dir/$i.merge.fq
+done
+
+# 3. Make a BWA index with just the desired reference sequence.
+reference=&quot;/home/groups/oroaklab/nishida/test_brooke/ref/ref_amp.fa&quot;
+bwa index $reference
+
+# 4. Align with BWA
+align_dir=&quot;/home/groups/oroaklab/nishida/test_brooke/3_alignment&quot;
+for i in &quot;${array[@]}&quot;
+do
+bwa mem $reference $merged_dir/$i.merge.fq.assembled.fastq &amp;gt; $align_dir/$i.sam
+done
+
+# I make a little guide like with whitespaces in a text editor for reference and counting.
+AMPLICONREF        GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCA-CCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+EXAMPLE_MERGEDREAD GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCCGCCTTCTGCATCGTCAGCGCTAGCCGCTACATGGC
+EXAMPLE_R1         GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGC
+EXAMPLE_REVCOMP_R2                                                         ATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCCGCCTTCTTCATCCTCAGCGCGAGCCGCTACATGGC
+BADQUALREGION_R2                                                                                                  GCCTTCTTCATCCTCAGCGCGAGCCGCTAC
+GUIDE3                                                               AGTGCCATGTTCCCGTACCC
+GUIDE4   															     	                   GCACGGACCGGCGCACCCCG
+GUIDE3_NHEJ_REGION                                                            TTCCCGTACCCCGGC
+GUIDE4_NHEJ_REGION                                                                         GCCAGCACGGACCGG
+
+# 5. Summarize CIGARS and bin them into groups. The 7 following inputs go into the script and depend on the size of your reads, the guides used, location of the cutsite, etc. and you will want to edit these.
+
+# a. the SAM alignment file, i.e. A136P-iPS2_sgRNA-4_Rep1.sam
+# b. the number of bases that must match at the start, i.e. 20 means the first 20 bases must match for the sequence to be considered
+# c. start bp for a window for NHEJ, i.e. 50 means the window for NHEJ counting starts at 50
+# d. stop bp for a window for NHEJ, i.e. 75 means the window for NHEJ counting ends at 75
+# e. the position of the HDR site, i.e. 92 means the 92nd base is deleted
+# f. the size of deletions to ignore, i.e. 20 means a deletion of 20bp or larger will not be considered
+# g. the full literal pure HDR sequence, i.e. GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+
+# guide 3 parameters
+for i in &quot;${array[@]}&quot;
+do
+perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 50 75 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+done &amp;gt; summary_g3.txt
+
+# guide 4 parameters
+for i in &quot;${array[@]}&quot;
+do
+perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 72 87 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+done &amp;gt; summary_g4.txt
+
+# I personally like to keep header information separate from the data itself so I append it to the file here.
+cat header.txt summary_g3.txt &amp;gt; temp1; mv temp1 summary_g3.txt
+cat header.txt summary_g4.txt &amp;gt; temp2; mv temp2 summary_g4.txt
+
+# The files, 'summary_g3.txt' and 'summary_g4.txt', would be files I would then pass off to you.
+# I run everything with both g3 and g4 parameters because the controls need to be evaluated under both different circumstances.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/example_brooke_amplican Run: README.txt</summary></entry><entry><title type="html">Celsee and Docker Info</title><link href="http://localhost:4000/2022/05/18/post-0084.html" rel="alternate" type="text/html" title="Celsee and Docker Info" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0084</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0084.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/celsee&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;notes.txt&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Here are the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.&lt;/p&gt;
+&lt;p&gt;Here is the copy of the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Celsee Analysis Steps
 
 1. Start Docker
@@ -649,214 +723,4 @@ WES3_MQ - SF0015593, SF0255352, SF0256311, SF0270752, SF0271749, SF0290684, SF03
 
 &lt;p&gt;There were two 6+ member families that are now labeled “Multiplex Quad”. Presumably there were grandparent samples that were withdrawn bringing them back down to quads but the labels are all different due to the original presence of the grandparent samples. These were attempted but also not put in the correct order. They will be redone.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES3_MQ - SF0301871, SF0356076
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.</summary></entry><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220305</title><link href="http://localhost:4000/2022/03/07/post-0075.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220305" /><published>2022-03-07T00:00:00-08:00</published><updated>2022-03-07T00:00:00-08:00</updated><id>http://localhost:4000/2022/03/07/post-0075</id><content type="html" xml:base="http://localhost:4000/2022/03/07/post-0075.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220305&lt;/code&gt;
-&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220305/run.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.&lt;/p&gt;
-
-&lt;p&gt;Since this is being done relative to hg38 and not a specific amplicon sequence we have to identify what we are looking for relative to the genome. The region of interest in TBR1 is here:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# with the desired editing being designated with a '-'
-# and the NHEJ region from G4 defined by '*'
-&amp;gt;chr2:161,416,779-161,416,834
-ref  - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCACCCCGCCTTCTCCATCGGCAGCC
-edit - GTTCCCGTACCCCG*GCCAGCACGGACCGG*CGCA-CCCGCCTTCTCCATCGGCAGCC
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This makes 161,416,811 the site where ACCCC becomes ACCC which will show up as AC to A in the VCFs from Haplotype Caller.&lt;/p&gt;
-
-&lt;p&gt;For each sample, the following output is provided:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;SAMPLE - Sample ID.&lt;/li&gt;
-  &lt;li&gt;EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.&lt;/li&gt;
-  &lt;li&gt;DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
-  &lt;li&gt;ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
-  &lt;li&gt;EDIT_FREQ - ALT_DEPTH / DEPTH&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).&lt;/li&gt;
-  &lt;li&gt;READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This output is copy+pasted below here. This indicates the edit was found in 62 of the 156 samples. It was also found in the NTC3 sample which I am assuming is a control so there might be issues.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
-100	FALSE	NA	NA	NA	1	0	1	1	10296
-101	FALSE	NA	NA	NA	1	0	1	1	6196
-102	TRUE	2782	908	0.326383896477354	0	0	0	0	6618
-103	TRUE	2176	877	0.403033088235294	2	0	2	2	3364
-104	TRUE	2892	1362	0.470954356846473	0	0	0	1	4995
-105	FALSE	NA	NA	NA	2	0	2	2	5074
-106	TRUE	2697	1457	0.540229885057471	0	0	0	0	6571
-107	TRUE	2793	1057	0.378446115288221	0	0	0	0	7373
-108	FALSE	NA	NA	NA	1	0	1	1	5867
-109	TRUE	2738	1123	0.410153396639883	0	0	0	0	6667
-110	FALSE	NA	NA	NA	1	0	1	1	4203
-111	FALSE	NA	NA	NA	1	0	1	1	4760
-112	FALSE	NA	NA	NA	1	0	1	1	3917
-113	TRUE	2827	1168	0.413158825610187	0	0	0	0	9585
-114	FALSE	NA	NA	NA	0	0	0	0	1927
-115	TRUE	2579	1374	0.532764637456378	0	0	0	0	5415
-116	TRUE	3050	914	0.299672131147541	0	0	0	1	8658
-117	TRUE	2793	1314	0.47046186895811	0	0	0	0	7584
-118	FALSE	NA	NA	NA	1	0	1	1	8982
-119	FALSE	NA	NA	NA	1	0	1	1	9123
-120	FALSE	NA	NA	NA	0	0	0	0	0
-121	FALSE	NA	NA	NA	1	0	1	1	7319
-122	TRUE	2806	1297	0.462223806129722	0	0	0	0	7244
-123	TRUE	2802	1235	0.440756602426838	0	0	0	0	7008
-124	TRUE	2191	1994	0.910086718393428	0	0	0	0	3191
-125	TRUE	2794	1191	0.426270579813887	0	0	0	0	7752
-126	TRUE	2648	1064	0.401812688821752	0	0	0	0	5297
-127	TRUE	2757	879	0.318824809575626	0	0	0	0	6590
-128	TRUE	2674	1037	0.387808526551982	0	0	0	0	5252
-129	FALSE	NA	NA	NA	1	0	1	1	6935
-130	TRUE	2614	1936	0.740627390971691	0	0	0	0	5507
-131	TRUE	2638	1099	0.416603487490523	1	0	1	1	8718
-132	FALSE	NA	NA	NA	1	0	1	1	1
-133	FALSE	NA	NA	NA	3	1	3	3	7580
-134	TRUE	2566	913	0.355806703039751	0	0	0	0	4057
-135	FALSE	NA	NA	NA	1	0	1	1	8615
-136	FALSE	NA	NA	NA	1	0	1	1	6476
-137	TRUE	2772	754	0.272005772005772	0	0	0	0	7440
-138	FALSE	NA	NA	NA	1	0	1	1	3651
-139	FALSE	NA	NA	NA	1	0	1	1	6580
-140	FALSE	NA	NA	NA	2	0	2	2	60
-141	FALSE	NA	NA	NA	0	0	0	0	0
-142	TRUE	2541	1668	0.656434474616293	2	0	2	2	6482
-143	TRUE	3159	834	0.264007597340931	0	0	0	0	7610
-144	TRUE	2837	1366	0.4814945364822	0	0	0	1	5891
-145	FALSE	NA	NA	NA	1	0	1	1	7478
-146	FALSE	NA	NA	NA	1	0	1	1	7069
-147	FALSE	NA	NA	NA	3	1	3	3	4833
-148	FALSE	NA	NA	NA	1	0	1	1	4689
-149	FALSE	NA	NA	NA	1	0	1	1	3455
-150	TRUE	2832	1124	0.396892655367232	1	0	1	1	4757
-151	FALSE	NA	NA	NA	1	0	1	1	7004
-152	TRUE	1700	1522	0.895294117647059	2	0	2	2	2767
-153	TRUE	2832	1176	0.415254237288136	0	0	0	0	9232
-154	FALSE	NA	NA	NA	1	0	1	1	8615
-155	FALSE	NA	NA	NA	1	0	1	1	4943
-156	FALSE	NA	NA	NA	1	0	1	1	1483
-157	FALSE	NA	NA	NA	1	0	1	1	8740
-158	FALSE	NA	NA	NA	1	0	1	1	4472
-159	FALSE	NA	NA	NA	0	0	0	0	0
-160	TRUE	143	89	0.622377622377622	0	0	0	0	93
-161	TRUE	2278	2135	0.937225636523266	0	0	0	0	3544
-162	FALSE	NA	NA	NA	1	0	1	1	10034
-163	FALSE	NA	NA	NA	1	0	1	1	8007
-164	FALSE	NA	NA	NA	1	0	1	1	8149
-165	FALSE	NA	NA	NA	1	0	1	1	2059
-166	TRUE	2050	1824	0.889756097560976	2	0	2	2	6024
-167	FALSE	NA	NA	NA	1	0	1	1	8825
-168	FALSE	NA	NA	NA	3	1	3	3	3551
-169	TRUE	1531	398	0.259960809928152	0	0	0	0	1461
-170	FALSE	NA	NA	NA	2	0	2	2	2909
-171	FALSE	NA	NA	NA	1	0	1	1	7104
-172	TRUE	1775	555	0.312676056338028	1	0	1	1	2754
-173	TRUE	2795	1408	0.503756708407871	2	0	2	2	8365
-174	FALSE	NA	NA	NA	1	0	1	1	4731
-175	TRUE	2331	686	0.294294294294294	1	0	1	1	8228
-176	FALSE	NA	NA	NA	0	0	0	0	7518
-177	TRUE	2382	985	0.413518052057095	0	0	0	0	4829
-178	FALSE	NA	NA	NA	3	1	3	3	3881
-179	TRUE	2827	1336	0.472585779978776	0	0	0	0	8273
-180	TRUE	2283	2001	0.876478318002628	2	0	2	2	6998
-181	FALSE	NA	NA	NA	1	0	1	1	5274
-182	FALSE	NA	NA	NA	0	0	0	0	132
-183	FALSE	NA	NA	NA	0	0	0	0	88
-184	FALSE	NA	NA	NA	2	0	2	2	6233
-185	TRUE	2740	1786	0.651824817518248	0	0	0	0	7204
-186	FALSE	NA	NA	NA	3	1	3	3	3485
-187	FALSE	NA	NA	NA	3	1	3	3	5168
-188	TRUE	2789	1109	0.39763356041592	0	0	0	0	8810
-189	FALSE	NA	NA	NA	2	1	3	3	7601
-190	TRUE	2770	1361	0.491335740072202	0	0	0	0	7554
-191	FALSE	NA	NA	NA	1	0	1	1	5427
-192	TRUE	2149	1926	0.896230805025593	0	0	0	0	2857
-193	FALSE	NA	NA	NA	1	0	1	1	596
-194	FALSE	NA	NA	NA	1	0	1	1	39
-195	TRUE	212	92	0.433962264150943	0	0	0	0	153
-196	TRUE	7	5	0.714285714285714	0	0	0	0	7
-197	FALSE	NA	NA	NA	1	0	1	1	32
-198	TRUE	89	44	0.49438202247191	0	0	0	0	75
-199	FALSE	NA	NA	NA	1	0	1	1	250
-200	FALSE	NA	NA	NA	0	0	0	0	117
-201	FALSE	NA	NA	NA	1	0	1	1	39
-202	FALSE	NA	NA	NA	3	1	3	3	324
-203	FALSE	NA	NA	NA	0	0	0	0	0
-204	TRUE	13	9	0.692307692307692	0	0	0	0	11
-205	TRUE	477	125	0.262054507337526	0	0	0	0	314
-206	FALSE	NA	NA	NA	1	0	1	1	398
-207	FALSE	NA	NA	NA	1	0	1	1	258
-208	TRUE	212	154	0.726415094339623	0	0	0	0	156
-209	FALSE	NA	NA	NA	1	0	1	1	12
-210	FALSE	NA	NA	NA	1	0	1	1	383
-211	FALSE	NA	NA	NA	0	0	0	0	1
-212	FALSE	NA	NA	NA	1	0	1	1	130
-213	TRUE	17	10	0.588235294117647	2	1	2	3	16
-214	FALSE	NA	NA	NA	1	0	1	1	494
-215	FALSE	NA	NA	NA	0	0	0	0	107
-216	FALSE	NA	NA	NA	1	0	1	1	294
-217	FALSE	NA	NA	NA	1	0	1	1	105
-218	TRUE	47	43	0.914893617021277	2	0	2	2	39
-219	FALSE	NA	NA	NA	1	0	1	1	150
-220	TRUE	583	166	0.284734133790738	0	0	0	0	474
-221	FALSE	NA	NA	NA	1	0	1	1	200
-222	TRUE	452	230	0.508849557522124	0	0	0	0	400
-223	FALSE	NA	NA	NA	0	0	0	0	394
-224	FALSE	NA	NA	NA	0	0	0	0	162
-225	TRUE	441	398	0.90249433106576	0	0	0	0	347
-226	TRUE	675	220	0.325925925925926	0	0	0	0	571
-227	TRUE	55	39	0.709090909090909	0	0	0	0	38
-228	FALSE	NA	NA	NA	0	0	0	0	0
-229	FALSE	NA	NA	NA	3	1	3	3	19
-230	FALSE	NA	NA	NA	1	0	1	1	6
-231	TRUE	311	142	0.456591639871383	2	0	2	2	226
-232	FALSE	NA	NA	NA	1	0	1	1	220
-233	FALSE	NA	NA	NA	1	0	1	1	194
-234	TRUE	116	17	0.146551724137931	0	0	0	0	86
-235	FALSE	NA	NA	NA	0	0	0	0	0
-236	FALSE	NA	NA	NA	0	0	0	0	286
-237	FALSE	NA	NA	NA	1	0	1	1	281
-238	FALSE	NA	NA	NA	2	0	2	2	425
-239	FALSE	NA	NA	NA	0	0	0	0	0
-240	TRUE	357	125	0.350140056022409	0	0	0	0	266
-241	FALSE	NA	NA	NA	1	0	1	1	123
-242	FALSE	NA	NA	NA	1	0	1	1	543
-243	TRUE	186	155	0.833333333333333	0	0	0	1	169
-244	FALSE	NA	NA	NA	2	0	2	2	739
-245	FALSE	NA	NA	NA	1	0	1	1	256
-246	FALSE	NA	NA	NA	3	1	3	3	289
-247	TRUE	245	60	0.244897959183673	0	0	0	0	163
-97	FALSE	NA	NA	NA	1	0	1	1	7129
-98	FALSE	NA	NA	NA	1	0	1	1	4407
-99	TRUE	2542	526	0.206923682140047	1	0	1	1	7855
-A136P	TRUE	1003	348	0.346959122632104	0	0	0	0	890
-CIRM87	FALSE	NA	NA	NA	0	0	0	0	850
-NTC1	FALSE	NA	NA	NA	0	0	0	0	0
-NTC2	FALSE	NA	NA	NA	0	0	0	0	1
-NTC3	TRUE	94	10	0.106382978723404	0	0	0	0	85
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is a list of all the variants/edit appearing more than once and their count.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     62 chr2	161416811	AC	A
-     61 chr2	161416756	GCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCA	G
-     43 chr2	161416799	ACGGACCGGCGCAC	*,A
-     17 chr2	161416582	G	T
-     12 chr2	161416799	ACGGACCGGCGCAC	A
-     11 chr2	161416796	AGCACGGACCGGC	A
-     10 chr2	161416798	C	CGCCG
-      9 chr2	161416800	CGG	*,C
-      8 chr2	161416803	ACCGGCGCAC	*,A
-      8 chr2	161416799	A	C
-      7 chr2	161416994	C	CGGTCATAG
-      6 chr2	161416796	AGCACGGACCGGCGCAC	A
-      6 chr2	161416581	G	T
-      5 chr2	161416799	ACGGACCGGCGCAC	*,AGGCGCAC
-      5 chr2	161416782	CCCGTACCCCGGCCAGCA	C
-      3 chr2	161416798	CACGG	C
-      2 chr2	161416995	C	T
-      2 chr2	161416994	C	CGG
-      2 chr2	161416990	T	TC
-      2 chr2	161416988	C	CTCCACGGTCATAG
-      2 chr2	161416799	ACGGACCGGCGCAC	A,CCGGACCGGCGCAC
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/amplicon_220305 Run: /home/groups/oroaklab/nishida/amplicon_220305/run.txt</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.</summary></entry></feed>

@@ -1,0 +1,76 @@
+I"Â<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/example_brooke_amplican</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">README.txt</code></p>
+
+<p>This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.</p>
+
+<p>Here is the copy of the readme of instructions sent to Brooke.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Example of HDR processing via BWA alignment
+
+cd /home/groups/oroaklab/nishida/test_brooke
+
+# array of sample names
+array=(A136P-iPS2_sgRNA-4_Rep1 A136P-iPS2_sgRNA-4_Rep2 A136P-iPS2_sgRNA-4_Rep3 A136P-iPS2_sgRNA-3_Rep1 A136P-iPS2_sgRNA-3_Rep2 A136P-iPS2_sgRNA-3_Rep3 A136P-iPS2_A136P-WT_CON CIRM87_WT-WT_CON)
+
+# 1. Obtain your FASTQs for your samples
+# This directory has the FASTQ files from the sequencing run from 200215 for HDR after demultiplexing with 8 samples making 16 FASTQs 
+fastq_dir="/home/groups/oroaklab/nishida/test_brooke/1_fastqs"
+
+# 2. Merge paired FASTQs into a single FASTQ with PEAR
+merged_dir="/home/groups/oroaklab/nishida/test_brooke/2_merged"
+for i in "${array[@]}"
+do
+	/home/groups/oroaklab/src/PEAR/pear-0.9.6/pear -y 20G -j 4 -f $fastq_dir/split.$i.R1.fq.gz -r $fastq_dir/split.$i.R2.fq.gz -o $merged_dir/$i.merge.fq
+done
+
+# 3. Make a BWA index with just the desired reference sequence.
+reference="/home/groups/oroaklab/nishida/test_brooke/ref/ref_amp.fa"
+bwa index $reference
+
+# 4. Align with BWA
+align_dir="/home/groups/oroaklab/nishida/test_brooke/3_alignment"
+for i in "${array[@]}"
+do
+bwa mem $reference $merged_dir/$i.merge.fq.assembled.fastq &gt; $align_dir/$i.sam
+done
+
+# I make a little guide like with whitespaces in a text editor for reference and counting.
+AMPLICONREF        GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCA-CCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+EXAMPLE_MERGEDREAD GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCCGCCTTCTGCATCGTCAGCGCTAGCCGCTACATGGC
+EXAMPLE_R1         GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGC
+EXAMPLE_REVCOMP_R2                                                         ATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCCGCCTTCTTCATCCTCAGCGCGAGCCGCTACATGGC
+BADQUALREGION_R2                                                                                                  GCCTTCTTCATCCTCAGCGCGAGCCGCTAC
+GUIDE3                                                               AGTGCCATGTTCCCGTACCC
+GUIDE4   															     	                   GCACGGACCGGCGCACCCCG
+GUIDE3_NHEJ_REGION                                                            TTCCCGTACCCCGGC
+GUIDE4_NHEJ_REGION                                                                         GCCAGCACGGACCGG
+
+# 5. Summarize CIGARS and bin them into groups. The 7 following inputs go into the script and depend on the size of your reads, the guides used, location of the cutsite, etc. and you will want to edit these.
+
+# a. the SAM alignment file, i.e. A136P-iPS2_sgRNA-4_Rep1.sam
+# b. the number of bases that must match at the start, i.e. 20 means the first 20 bases must match for the sequence to be considered
+# c. start bp for a window for NHEJ, i.e. 50 means the window for NHEJ counting starts at 50
+# d. stop bp for a window for NHEJ, i.e. 75 means the window for NHEJ counting ends at 75
+# e. the position of the HDR site, i.e. 92 means the 92nd base is deleted
+# f. the size of deletions to ignore, i.e. 20 means a deletion of 20bp or larger will not be considered
+# g. the full literal pure HDR sequence, i.e. GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+
+# guide 3 parameters
+for i in "${array[@]}"
+do
+perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 50 75 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+done &gt; summary_g3.txt
+
+# guide 4 parameters
+for i in "${array[@]}"
+do
+perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 72 87 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
+done &gt; summary_g4.txt
+
+# I personally like to keep header information separate from the data itself so I append it to the file here.
+cat header.txt summary_g3.txt &gt; temp1; mv temp1 summary_g3.txt
+cat header.txt summary_g4.txt &gt; temp2; mv temp2 summary_g4.txt
+
+# The files, 'summary_g3.txt' and 'summary_g4.txt', would be files I would then pass off to you.
+# I run everything with both g3 and g4 parameters because the controls need to be evaluated under both different circumstances.
+</code></pre></div></div>
+:ET

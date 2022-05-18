@@ -1,16 +1,8 @@
----
-layout: post
-title:  "Celsee and Docker Info"
-date:   2022-05-18
-tags: ref
----
+I"+	<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/celsee</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">notes.txt</code></p>
 
-Dir: `/home/groups/oroaklab/nishida/celsee`
-<br>Run: `notes.txt`
-
-Here is the copy of the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.
-```
-Celsee Analysis Steps
+<p>Here is the copy of the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Celsee Analysis Steps
 
 1. Start Docker
 I would suggest not normally having Docker running in the background, only bring it up when you want to use it. Installed via convenience scripts.
@@ -45,4 +37,5 @@ $ docker image rm celsee-analysis
 
 8. And then shut down Docker (also needs sudo privileges)
 $ sudo service docker stop
-```
+</code></pre></div></div>
+:ET
