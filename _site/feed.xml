@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-03T19:58:41-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:12:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Celsee and Docker Info</title><link href="http://localhost:4000/2022/05/18/post-0084.html" rel="alternate" type="text/html" title="Celsee and Docker Info" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0084</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0084.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/celsee&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;notes.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Celsee Analysis Steps
+
+1. Start Docker
+I would suggest not normally having Docker running in the background, only bring it up when you want to use it. Installed via convenience scripts.
+Theoretically(?) this is the only step that requires sudo privileges OR a sudo user to grant privileges to run Docker: `sudo usermod -aG docker lowensev`.
+$ sudo service docker start
+
+2. Verify that Docker is running
+$ systemctl status docker
+
+3. Import in the Celsee pipeline as a Docker image
+I have it just living in my directories.
+$ cd /home/groups/oroaklab/nishida/celsee/celsee_analysis
+$ bash import.sh 
+
+4. Verify that the image was imported
+$ docker images
+
+5. Run Celsee pipeline
+- The output location is also used as a temp directory which is a problem.
+- But also Docker requires the drives be mounted into Docker and we can't mount anything in /home/groups/. Instead go to /tmp and copy everything over.
+- You also need sudo privileges to write the output (this is how it is in the manual and I still can't believe this).
+- When running as sudo, acc does weird things to group/user privileges so you need to copy EVERYTHING into the /tmp directory.
+- Copy over the config file, the fastqs, all reference files, and the entirety of the celsee-analysis script folder (I think you only need some of these copied but do everything to be safe).
+- Also, in the config file, the optional fields are actually required to run and FASTQ files MUST end with either '.fastq' or '.fastq.gz'.
+$ # move ALL files to a directory in /tmp
+$ sudo python3 run_celsee.py eve_test.config . output Human_GRCh38_genomeSAsparseD3
+
+6. Copy output folder back to /home/groups and delete the /tmp directory
+
+7. Remove the Celsee analysis pipeline image
+$ docker image rm celsee-analysis
+
+8. And then shut down Docker (also needs sudo privileges)
+$ sudo service docker stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Dir: /home/groups/oroaklab/nishida/celsee Run: notes.txt</summary></entry><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.make_batches.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;IGV screenshots for the high-confidence lists across WES1, WES2, and WES3 are here:
@@ -89,6 +128,9 @@
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1b337bb2o79b7jq/03_WES3_MQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Multiplex Quad HC and Burden Tables&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Quad HC and Burden Tables&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Trio HC and Burden Tables&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;IGV Shots:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/sh/jahriezmyrdnyxu/AABfpi29TMJO_9V8euqBGdaza?dl=0&quot;&gt;IGV Shots of High Confidence Sites&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Joint Coverages:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/l3731hncx2fcmun/jointcov.WES1.MQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES1 Multiplex Quads&lt;/a&gt;
@@ -817,38 +859,4 @@ NTC3	TRUE	94	10	0.106382978723404	0	0	0	0	85
       2 chr2	161416990	T	TC
       2 chr2	161416988	C	CTCCACGGTCATAG
       2 chr2	161416799	ACGGACCGGCGCAC	A,CCGGACCGGCGCAC
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/amplicon_220305 Run: /home/groups/oroaklab/nishida/amplicon_220305/run.txt</summary></entry><entry><title type="html">OneDrive Upload and Download with Rclone</title><link href="http://localhost:4000/2022/03/01/post-0074.html" rel="alternate" type="text/html" title="OneDrive Upload and Download with Rclone" /><published>2022-03-01T00:00:00-08:00</published><updated>2022-03-01T00:00:00-08:00</updated><id>http://localhost:4000/2022/03/01/post-0074</id><content type="html" xml:base="http://localhost:4000/2022/03/01/post-0074.html">&lt;p&gt;Here’s instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Download rclone on your personal home computer, https://rclone.org/downloads/.&lt;/li&gt;
-  &lt;li&gt;Go to mays/mccovey/bonds and load the rclone modules, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;module load rclone&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Setup rclone on mays/mccovey/bonds, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rclone config&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Inside rclone’s configuration, setup the following:
-    &lt;ul&gt;
-      &lt;li&gt;‘n’ for new remote at the ‘n/s/q’ prompt&lt;/li&gt;
-      &lt;li&gt;a shortcut name for the storage at the ‘name’ prompt, I am just calling it ONEDRIVE&lt;/li&gt;
-      &lt;li&gt;‘onedrive’ for the ‘Storage’ prompt&lt;/li&gt;
-      &lt;li&gt;press enter to skip the prompt ‘client_id’&lt;/li&gt;
-      &lt;li&gt;press enter to skip the prompt ‘client_secret’&lt;/li&gt;
-      &lt;li&gt;‘global’ for the prompt ‘region’&lt;/li&gt;
-      &lt;li&gt;‘n’ to not edit the advanced configurations at ‘y/n’&lt;/li&gt;
-      &lt;li&gt;‘n’ to setup on the headless node at ‘y/n’&lt;/li&gt;
-      &lt;li&gt;leave this open for a moment&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;On your personal home computer run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rclone authorize &quot;onedrive&quot;&lt;/code&gt;. This will open your web browser and ask you to log into your OneDrive account. This then returns a long configuration string to copy.&lt;/li&gt;
-  &lt;li&gt;Paste the configuration key back on the config in mays/mccovey/bonds.&lt;/li&gt;
-  &lt;li&gt;Finish configuration:
-    &lt;ul&gt;
-      &lt;li&gt;confirm the configuration as ‘onedrive’ at the prompt ‘config_type’&lt;/li&gt;
-      &lt;li&gt;confirm ‘y’ at the URL confirmation of ‘y/n’&lt;/li&gt;
-      &lt;li&gt;confirm ‘y’ for setup at the last prompt ‘y/n’&lt;/li&gt;
-      &lt;li&gt;‘q’ to quit out and you should be set up&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Send a test file. This should send the test file to your OneDrive account setup with the name “ONEDRIVE” to the directory Documents/
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;THIS IS A TEST FILE&quot; &amp;gt; test.txt
-rclone copy test.txt ONEDRIVE:Documents/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Here’s instructions for using rclone on our clusters specifically using a remote/headless machine. This requires more setup but skips the use of X11.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/amplicon_220305 Run: /home/groups/oroaklab/nishida/amplicon_220305/run.txt</summary></entry></feed>

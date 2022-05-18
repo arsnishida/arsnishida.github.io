@@ -89,6 +89,9 @@ Markdowns:
 <br>[03, WES3, Simplex Quad HC and Burden Tables](https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0)
 <br>[03, WES3, Simplex Trio HC and Burden Tables](https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0)
 
+IGV Shots:
+<br>[IGV Shots of High Confidence Sites](https://www.dropbox.com/sh/jahriezmyrdnyxu/AABfpi29TMJO_9V8euqBGdaza?dl=0)
+
 Joint Coverages:
 <br>[Genomic Joint Coverage, WES1 Multiplex Quads](https://www.dropbox.com/s/l3731hncx2fcmun/jointcov.WES1.MQ.txt?dl=0)
 <br>[Genomic Joint Coverage, WES1 Simplex Quads](https://www.dropbox.com/s/2xtzs29xo0g4owa/jointcov.WES1.SQ.txt?dl=0)
