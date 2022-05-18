@@ -1,0 +1,2 @@
+I"V<p>The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, <code class="language-plaintext highlighter-rouge">/var/spool/cron/</code> and <code class="language-plaintext highlighter-rouge">/etc/cron.allow</code>.</p>
+:ET

@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:21:29-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Example of HDR Processing via BWA Alignment</title><link href="http://localhost:4000/2022/05/18/post-0085.html" rel="alternate" type="text/html" title="Example of HDR Processing via BWA Alignment" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0085</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0085.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/example_brooke_amplican&lt;/code&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:33:55-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Cron Info for Automatically Running bcl2fastq</title><link href="http://localhost:4000/2022/05/18/post-0086.html" rel="alternate" type="text/html" title="Cron Info for Automatically Running bcl2fastq" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0086</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0086.html">&lt;p&gt;The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.allow&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the one cron job scheduled to look for new obnix runs.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SHELL=/bin/bash
+0 * * * * source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile; /home/groups/oroaklab/nishida/scripts/check_obnix.sh &amp;gt; /home/groups/oroaklab/nishida/cron/check_obnix.cronlog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 * * * *&lt;/code&gt; part signifies to run this at the top of every hour.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile&lt;/code&gt; part is needed to find the modules and setup a proper bash environment for the job.&lt;/p&gt;
+
+&lt;p&gt;The last part, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/check_obnix.sh&lt;/code&gt;, is the script being run every hour. The comments should explain everything but it looks for new folders, validates the names, checks for the RTAcomplete.txt file, runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/NextSeq2fastq&lt;/code&gt; (this should be identical to what is in the github but not what is hooked up to our module because I don’t have permissions to change the module), and validates it made the output. I had it make a lot of logs but it has been running without errors for months now so you can turn off some of the extra output going forward.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# !/usr/bin/bash
+
+# get date
+DATE=$(date +&quot;%y%m%d_%H_%M&quot;)
+
+# move to cron folder
+cd /home/groups/oroaklab/nishida/cron
+
+# check the last 5 directories created with the machine name
+ls -dt /home/groups/oroaklab/seq/obnix/* | head -n 5 | grep &quot;_VH00711_&quot; &amp;gt; obnix.$DATE.check.txt
+
+# for each of the names...
+while read i; do
+
+	# run name
+	run=$(echo $i | sed -e 's/.*\///g')
+
+	# count underscore deliminated parts in name, should be four
+	namecount=$(echo $i | sed -e 's/.*\///g' | tr '_' '\n' | wc -l)
+
+	# second member of the name should be the machine, &quot;VH00711&quot;
+	name=$(echo $i | sed -e 's/.*\///g' | tr '_' '\t' | cut -f 2)
+
+	# if the name is valid...
+	if [[ $name == 'VH00711' &amp;amp;&amp;amp; $namecount == '4' ]]; then
+
+		# check for RTA.complete and absence of FASTQ folder
+		if [[ -f &quot;/home/groups/oroaklab/seq/obnix/$run/RTAComplete.txt&quot; &amp;amp;&amp;amp; ! -d &quot;/home/groups/oroaklab/fastq/$run&quot; ]]; then
+
+			# run
+			sleep 600 # wait in case the RTA complete shows up earlier than it should
+			echo -e &quot;Attempting to run NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
+			perl /home/groups/oroaklab/nishida/scripts/NextSeq2fastq -N -R $run
+			echo -e &quot;Finished running NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
+
+			# check that backup was made
+			if [[ ! -d &quot;/home/groups/oroakdata/fastq/$run&quot; ]]; then
+				echo -e &quot;Backup FASTQ folder was not made. Check manually.&quot; &amp;gt;&amp;gt; obnix.$DATE.err
+			fi
+		fi
+	fi
+
+done &amp;lt; obnix.$DATE.check.txt
+
+# save for now
+#rm obnix.$DATE.check.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, /var/spool/cron/ and /etc/cron.allow.</summary></entry><entry><title type="html">Example of HDR Processing via BWA Alignment</title><link href="http://localhost:4000/2022/05/18/post-0085.html" rel="alternate" type="text/html" title="Example of HDR Processing via BWA Alignment" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0085</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0085.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/example_brooke_amplican&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.&lt;/p&gt;
@@ -689,38 +747,4 @@ $ cat 220324_HB_Coassay_RNA.sparseMatrix.values | awk '{sum+=$3}END{print sum}'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And here is a shot of the data gone through dimensionality reduction with cistopics. There’s structure but a lot of messy, diverse clusters. I think the messiness makes sense given the extra sparseness of the matrix.
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rby6ltxidup3oag/blog_scrna.220324_HB_Coassay_RNA.cistopic.50.UMAP.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.</summary></entry><entry><title type="html">SPARK WES2 and WES3 List Inconsistencies</title><link href="http://localhost:4000/2022/03/19/post-0076.html" rel="alternate" type="text/html" title="SPARK WES2 and WES3 List Inconsistencies" /><published>2022-03-19T00:00:00-07:00</published><updated>2022-03-19T00:00:00-07:00</updated><id>http://localhost:4000/2022/03/19/post-0076</id><content type="html" xml:base="http://localhost:4000/2022/03/19/post-0076.html">&lt;p&gt;I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.&lt;/p&gt;
-
-&lt;p&gt;Here is a list of the problems I found across all lists and what I am did and/or will do with them. There are issues in all the lists but the only ones that will require redoing are the MQ lists.&lt;/p&gt;
-
-&lt;p&gt;The following families appeared labeled correctly but were ultimately missing files. They were dropped from the analysis and will remained dropped.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES2_ST - SF0190153
-WES3_ST - SF0253552
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following families were labeled Simplex Trio but none of the samples have ASD status. They were dropped and will remained dropped.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES3_ST - SF0358078, SF0351957, SF0344946, SF0321531, SF0283195, SF0253518, SF0200056, SF0171179, SF0171139, SF0166437, SF0148696, SF0141603, SF0122929, SF0120746, SF0084012, SF0067409
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following families were labeled Simplex Quad but their ASD status has both children labeled with ASD suggesting they are Multiplex Quad. This is a direct inconsistency so I dropped them from the analysis and they will remain dropped.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES3_SQ - SF0350957, SF0348964, SF0340130, SF0166951, SF0143732
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following families were labeled as Multiplex Quad but they have different and missing parents. I originally attempted to run them in the analysis but they obviously were not in any correct order due to missing parents so they will now be dropped.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES2_MQ - SF0053074, SF0073546, SF0164478, SF0167673, SF0205284, SF0213830, SF0241143, SF0176436
-WES3_MQ - SF0300521, SF0305993, SF0319527, SF0320184, SF0332525, SF0341237, SF0353370, SF0356342, SF0358008, SF0360603, SF0360758, SF0370516
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following families were labeled as Multiplex Quad but there is only a single member of the family with ASD. These likely seem to be truly multiplex at one time but now appear simplex due to samples being withdrawn (in many cases the family is named after a proband that is now not in the sample list). I attempted to run them in the analysis originally but their absent ASD status made me use the same sample for PROBAND and SIBLING so these need to be redone and will remain in the MQ lists.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES2_MQ - SF0098597, SF0098964, SF0106001, SF0130318, SF0130371, SF0149268, SF0152204, SF0159371, SF0161279, SF0188795, SF0199871, SF0214031, SF0226577, SF0237413, SF0242905
-WES3_MQ - SF0074135, SF0074515, SF0155097, SF0193489, SF0207524, SF0258739, SF0272438, SF0275179, SF0283627, SF0299378, SF0302698, SF0305333, SF0319187, SF0326812, SF0331244, SF0334339, SF0335377, SF0335741, SF0336045, SF0337997, SF0342038, SF0344737, SF0348492, SF0352528, SF0353104, SF0356933, SF0359024, SF0364215
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The following families were labeled as Multiplex Quad with a single child and one parent being ASD. My code was not looking for these cases explicitly so they did not work. They will be redone and included with the MQ lists.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES2_MQ - SF0133991, SF0162300, SF0165487, SF0166107, SF0170398, SF0181224
-WES3_MQ - SF0015593, SF0255352, SF0256311, SF0270752, SF0271749, SF0290684, SF0301815, SF0301902, SF0323745, SF0332469, SF0335332, SF0352810, SF0367074
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There were two 6+ member families that are now labeled “Multiplex Quad”. Presumably there were grandparent samples that were withdrawn bringing them back down to quads but the labels are all different due to the original presence of the grandparent samples. These were attempted but also not put in the correct order. They will be redone.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;WES3_MQ - SF0301871, SF0356076
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">I have ~50 or so families that need to be redone in the multiplex quad lists which will require regeneration of those lists for both WES2 and WES3. There were two main issues. The first was that SPARK provides a sample file and a family file and there are contradictions between these two files. The second was that the family structures of some multiplex families becomes overly complex. I programatically tried to create the order of samples of FATHER, MOTHER, PROBAND, SIBLING but these more complex families require hand-annotation. This ends up being a problematic bug since there is no technical failure of any of the jobs but they end up in the wrong order and position so it wasn’t apparent that these were wrong until inspection at the end.</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rby6ltxidup3oag/blog_scrna.220324_HB_Coassay_RNA.cistopic.50.UMAP.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.</summary></entry></feed>
