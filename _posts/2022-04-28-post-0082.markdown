@@ -88,6 +88,25 @@ Markdowns:
 <br>[03, WES3, Multiplex Quad HC and Burden Tables](https://www.dropbox.com/s/1b337bb2o79b7jq/03_WES3_MQ.hcburdentable.html?dl=0)
 <br>[03, WES3, Simplex Quad HC and Burden Tables](https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0)
 <br>[03, WES3, Simplex Trio HC and Burden Tables](https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0)
+<br>[04, Post-Hoc Cohort, IGV, and iWES Filter Lists](https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0)
+
+Reference Lists and Files:
+<br>[WES1 Table](https://www.dropbox.com/s/444bqajlndg9qy8/SPARK.27K.mastertable.20190820.txt?dl=0)
+<br>[WES2 Table](https://www.dropbox.com/s/2uw60rpgvhfsp81/SPARK.WES2.mastertable.2021_03.tsv?dl=0)
+<br>[WES2 Table Info](https://www.dropbox.com/s/zupzb4itwe4ehjm/SPARK.WES2.mastertable.2021_03.dictionary.tsv?dl=0)
+<br>[WES2 Family Info](https://www.dropbox.com/s/k2qqbfpgj8hnfc5/SPARK.WES2.mastertable.family.2021_03.tsv?dl=0)
+<br>[WES2 Spreadsheet](https://www.dropbox.com/scl/fi/dvfot2t3pbcr9qu1ig3z6/SPARK.WES2.mastertable.2021_03.xlsx?dl=0&rlkey=ummceaph4mqbn9g6bpj4t8266)
+<br>[WES3 Table](https://www.dropbox.com/s/dt7awtqvdfmqtey/SPARK.WES3.mastertable.2021_04.tsv?dl=0)
+<br>[WES3 Family Info](https://www.dropbox.com/s/laqu37p6d9f5g1d/SPARK.WES3.mastertable.family.2021_04.tsv?dl=0)
+<br>[WES3 Table Spreadsheet](https://www.dropbox.com/scl/fi/60dltkrjaojp7f1ffox4k/SPARK.WES3.mastertable.2021_04.xlsx?dl=0&rlkey=mcf0lg9vrn5nqbau3hnv06bvz)
+<br>[WES3 Family Spreadsheet](https://www.dropbox.com/scl/fi/ebzm92iyczxi019guyfso/SPARK.WES3.mastertable.family.2021_04.xlsx?dl=0&rlkey=5nnbscygbl7j5iuw2de5ojxq8)
+<br>[iWES1 IDs](https://www.dropbox.com/s/kva0jych0m19oa0/iWES1_IDs.tsv?dl=0)
+<br>[Post-hoc Filter Sites](https://www.dropbox.com/s/rfy6mre2dfuy16p/posthoc_filterlist.sites.txt?dl=0)
+<br>[Post-hoc Filter Families](https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0)
+<br>[Probe Targets, Padded 10bp](https://www.dropbox.com/s/1624sz4le8dur2m/xgen_plus_spikein.b38_100bp.bed?dl=0)
+<br>[hg38 Loci Coverages](https://www.dropbox.com/s/ylygg9zbqtsrz1q/hg38loci_coverages.txt?dl=0)
+<br>[Person to Role Ref](https://www.dropbox.com/s/cbp46j8vjz7eeuh/person_to_role.txt?dl=0)
+<br>[SSC Mosaic List](https://www.dropbox.com/s/00gj3amzn7avsyi/HighConfidence%20Variants%20Collapsed_2.csv?dl=0)
 
 IGV Shots:
 <br>[IGV Shots of High Confidence Sites](https://www.dropbox.com/sh/jahriezmyrdnyxu/AABfpi29TMJO_9V8euqBGdaza?dl=0)

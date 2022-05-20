@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-18T11:38:59-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Cron Info for Automatically Running bcl2fastq</title><link href="http://localhost:4000/2022/05/18/post-0086.html" rel="alternate" type="text/html" title="Cron Info for Automatically Running bcl2fastq" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0086</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0086.html">&lt;p&gt;The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.allow&lt;/code&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-20T11:45:43-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists</title><link href="http://localhost:4000/2022/05/20/post-0088.html" rel="alternate" type="text/html" title="SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists" /><published>2022-05-20T00:00:00-07:00</published><updated>2022-05-20T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/20/post-0088</id><content type="html" xml:base="http://localhost:4000/2022/05/20/post-0088.html">&lt;p&gt;Markdown:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0&quot;&gt;04, Post-Hoc Cohort, IGV, and iWES Filter Lists&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This describes the creation of the lists for post-hoc filtering of the high-confidence and burden lists. The criteria for removal include having a combined cohort count 3 or greater, flagged for removal by manual IGV inspection, or an absence of the downstream iWES lists.&lt;/p&gt;
+
+&lt;p&gt;Post-hoc Filter Lists:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rfy6mre2dfuy16p/posthoc_filterlist.sites.txt?dl=0&quot;&gt;Post-hoc Filter Sites&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0&quot;&gt;Post-hoc Filter Families&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Markdown: 04, Post-Hoc Cohort, IGV, and iWES Filter Lists</summary></entry><entry><title type="html">Cron Info for Automatically Running bcl2fastq</title><link href="http://localhost:4000/2022/05/18/post-0086.html" rel="alternate" type="text/html" title="Cron Info for Automatically Running bcl2fastq" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0086</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0086.html">&lt;p&gt;The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.allow&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is the one cron job scheduled to look for new obnix runs.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SHELL=/bin/bash
@@ -174,7 +181,32 @@ $ docker image rm celsee-analysis
 
 8. And then shut down Docker (also needs sudo privileges)
 $ sudo service docker stop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Dir: /home/groups/oroaklab/nishida/celsee Run: notes.txt</summary></entry><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Dir: /home/groups/oroaklab/nishida/celsee Run: notes.txt</summary></entry><entry><title type="html">SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’</title><link href="http://localhost:4000/2022/05/18/post-0087.html" rel="alternate" type="text/html" title="SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0087</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0087.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This is info for snagging some files from SRA/GEO related to TBR1 analysis. Copy of the run file with the references:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra
+
+# download sra dataset
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR2130305
+fastq-dump --split-files SRR2130304
+
+# mm9 bed file is from SRA
+# mm10 bed file is lifted over with 100% fidelity
+
+closest-features --dist --closest --delim '\t' published_coordinates.mm10.bed /home/groups/oroaklab/refs/mm10/ensembl_tss/ensembl.mm10.tss.chr.bed | cut -f 1-4,8-10 &amp;gt; published_coordinates.mm10.annotated.bed
+
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+# https://pubmed.ncbi.nlm.nih.gov/27325115/
+
+#######
+
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR12082772
+fastq-dump --split-files SRR12082773
+fastq-dump --split-files SRR12082774
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/marissa_tbr1_sra Run: run.txt</summary></entry><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.make_batches.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;IGV screenshots for the high-confidence lists across WES1, WES2, and WES3 are here:
@@ -264,7 +296,26 @@ $ sudo service docker stop
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/lwwbpfdxzqkaum2/03_WES2_ST.hcburdentable.html?dl=0&quot;&gt;03, WES2, Simplex Trio HC and Burden Tables&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1b337bb2o79b7jq/03_WES3_MQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Multiplex Quad HC and Burden Tables&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Quad HC and Burden Tables&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Trio HC and Burden Tables&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0&quot;&gt;03, WES3, Simplex Trio HC and Burden Tables&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0&quot;&gt;04, Post-Hoc Cohort, IGV, and iWES Filter Lists&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Reference Lists and Files:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/444bqajlndg9qy8/SPARK.27K.mastertable.20190820.txt?dl=0&quot;&gt;WES1 Table&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2uw60rpgvhfsp81/SPARK.WES2.mastertable.2021_03.tsv?dl=0&quot;&gt;WES2 Table&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/zupzb4itwe4ehjm/SPARK.WES2.mastertable.2021_03.dictionary.tsv?dl=0&quot;&gt;WES2 Table Info&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/k2qqbfpgj8hnfc5/SPARK.WES2.mastertable.family.2021_03.tsv?dl=0&quot;&gt;WES2 Family Info&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/scl/fi/dvfot2t3pbcr9qu1ig3z6/SPARK.WES2.mastertable.2021_03.xlsx?dl=0&amp;amp;rlkey=ummceaph4mqbn9g6bpj4t8266&quot;&gt;WES2 Spreadsheet&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/dt7awtqvdfmqtey/SPARK.WES3.mastertable.2021_04.tsv?dl=0&quot;&gt;WES3 Table&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/laqu37p6d9f5g1d/SPARK.WES3.mastertable.family.2021_04.tsv?dl=0&quot;&gt;WES3 Family Info&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/scl/fi/60dltkrjaojp7f1ffox4k/SPARK.WES3.mastertable.2021_04.xlsx?dl=0&amp;amp;rlkey=mcf0lg9vrn5nqbau3hnv06bvz&quot;&gt;WES3 Table Spreadsheet&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/scl/fi/ebzm92iyczxi019guyfso/SPARK.WES3.mastertable.family.2021_04.xlsx?dl=0&amp;amp;rlkey=5nnbscygbl7j5iuw2de5ojxq8&quot;&gt;WES3 Family Spreadsheet&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/kva0jych0m19oa0/iWES1_IDs.tsv?dl=0&quot;&gt;iWES1 IDs&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rfy6mre2dfuy16p/posthoc_filterlist.sites.txt?dl=0&quot;&gt;Post-hoc Filter Sites&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0&quot;&gt;Post-hoc Filter Families&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/1624sz4le8dur2m/xgen_plus_spikein.b38_100bp.bed?dl=0&quot;&gt;Probe Targets, Padded 10bp&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ylygg9zbqtsrz1q/hg38loci_coverages.txt?dl=0&quot;&gt;hg38 Loci Coverages&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/cbp46j8vjz7eeuh/person_to_role.txt?dl=0&quot;&gt;Person to Role Ref&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/00gj3amzn7avsyi/HighConfidence%20Variants%20Collapsed_2.csv?dl=0&quot;&gt;SSC Mosaic List&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;IGV Shots:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/sh/jahriezmyrdnyxu/AABfpi29TMJO_9V8euqBGdaza?dl=0&quot;&gt;IGV Shots of High Confidence Sites&lt;/a&gt;&lt;/p&gt;
@@ -601,155 +652,4 @@ WES3_MQ - 19, WES3_SQ - 52, WES3_ST - 38
 1, MOSAIC_PARENTAL_TRANS, WES3.MQ
 ##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
 ## 57 SF0369960     FA               0.3092882     2           6.466462
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.</summary></entry><entry><title type="html">Shotgun Sequencing of Amplicon Sequence, 220406</title><link href="http://localhost:4000/2022/04/06/post-0078.html" rel="alternate" type="text/html" title="Shotgun Sequencing of Amplicon Sequence, 220406" /><published>2022-04-06T00:00:00-07:00</published><updated>2022-04-06T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/06/post-0078</id><content type="html" xml:base="http://localhost:4000/2022/04/06/post-0078.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406&lt;/code&gt;
-&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/amplicon_220406/run.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;This describes how to find our desired edit from shotgun sequencing of amplicon sequence. In lieu of standard amplicon input, we are taking the reads, aligning to hg38, and using GATK’s Haplotype Caller to identify the changes. Reads are being treated as paired-end and as a side-note about half the reads can be merged by overlap.&lt;/p&gt;
-
-&lt;p&gt;The description of the reference creation, interpretation, and format of the summary is described here: &lt;a href=&quot;https://arsnishida.github.io/2022/03/07/post-0075.html&quot;&gt;first amplicon sequencing results&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;For each sample, the following output is provided:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;SAMPLE - Sample ID.&lt;/li&gt;
-  &lt;li&gt;EDIT_T_OR_F - True if the variant 161416811 AC to A is called. False if otherwise.&lt;/li&gt;
-  &lt;li&gt;DEPTH - The depth at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
-  &lt;li&gt;ALT_DEPTH - The depth of the edit at 161416811 if EDIT_T_OR_F is True. NA if False.&lt;/li&gt;
-  &lt;li&gt;EDIT_FREQ - ALT_DEPTH / DEPTH&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_IN_NHEJ_REGION - The number of other variants called in the NHEJ region, 161416793-161416808.&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_10_BP - The number of other variants called +/- 10bp from 161416811 (161416801-161416821).&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_25_BP - The number of other variants called +/- 25bp from 161416811 (161416786-161416836).&lt;/li&gt;
-  &lt;li&gt;NUM_VARS_WITHIN_50_BP - The number of other variants called +/- 50bp from 161416811 (161416761-161416861).&lt;/li&gt;
-  &lt;li&gt;READ_DEPTH_AT_161416811 - Number of reads at the site via GATK DepthOfCoverage (not going to be the same as the depths counted via Haplotype Caller due to local alignment)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This output is copy+pasted below here. The edit was found in the A136P controls and all the other non-control samples with at least 1000 reads of coverage. It was also found in the HDR7_NTC control but it and the HDR6_NTC control had nearly no reads.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#SAMPLE	EDIT_T_OR_F	DEPTH	ALT_DEPTH	EDIT_FREQ	NUM_VARS_IN_NHEJ_REGION	NUM_VARS_WITHIN_10_BP	NUM_VARS_WITHIN_25_BP	NUM_VARS_WITHIN_50_BP	READ_DEPTH_AT_161416811
-HDR6_A136P_Control	TRUE	2648	1280	0.483383685800604	0	0	0	0	5652
-HDR6_CIRM87	FALSE	NA	NA	NA	0	0	0	0	6117
-HDR6_NTC	FALSE	NA	NA	NA	0	0	0	0	16
-HDR6_sg4_SYN88_1	TRUE	2721	1004	0.368981991914737	1	0	1	1	6791
-HDR6_sg4_SYN88_2	TRUE	2772	1038	0.374458874458874	1	0	1	1	6219
-HDR6_sg4_SYN88_3	TRUE	2708	974	0.359675036927622	1	0	1	1	5567
-HDR6_sg4_WT88_1	TRUE	2794	1128	0.403722261989979	0	0	0	0	7411
-HDR6_sg4_WT88_2	TRUE	2841	1019	0.358676522351285	0	0	0	0	6783
-HDR6_sg4_WT88_3	TRUE	2798	959	0.342744817726948	0	0	0	0	6720
-HDR7_A136P_Control	TRUE	2768	1299	0.469291907514451	0	0	0	0	7322
-HDR7_CIRM87	FALSE	NA	NA	NA	0	0	0	0	5979
-HDR7_NTC	TRUE	49	27	0.551020408163265	0	0	0	0	30
-HDR7_sg4M_SYN88_1	TRUE	2798	1245	0.444960686204432	0	0	0	0	7936
-HDR7_sg4M_SYN88_2	TRUE	2795	1229	0.439713774597496	0	0	0	0	7049
-HDR7_sg4M_SYN88_3	TRUE	2797	1256	0.449052556310332	0	0	0	0	7418
-HDR7_sg4M_SYN88_4	TRUE	2814	1187	0.42181947405828	0	0	0	0	8328
-HDR7_sg4M_WT88_1	TRUE	2760	1315	0.476449275362319	0	0	0	0	6757
-HDR7_sg4M_WT88_2	TRUE	2706	1189	0.439393939393939	0	0	0	0	6162
-HDR7_sg4M_WT88_3	TRUE	2708	1206	0.445347119645495	0	0	0	0	6155
-HDR7_sg4M_WT88_4	TRUE	2758	1292	0.468455402465555	0	0	0	0	6581
-HDR7_sg4_SYN88_1	TRUE	2813	1230	0.437255599004621	0	0	0	0	7298
-HDR7_sg4_SYN88_2	TRUE	2735	1294	0.473126142595978	0	0	0	0	6037
-HDR7_sg4_SYN88_3	TRUE	2682	1159	0.43214019388516	0	0	0	0	6421
-HDR7_sg4_SYN88_4	TRUE	2790	1198	0.429390681003584	0	0	0	0	6627
-HDR7_sg4_WT88_1	TRUE	2758	1237	0.448513415518492	0	0	0	0	8276
-HDR7_sg4_WT88_2	TRUE	2853	1251	0.438485804416404	0	0	0	0	7712
-HDR7_sg4_WT88_3	TRUE	1572	637	0.405216284987277	0	0	0	0	1715
-HDR7_sg4_WT88_4	TRUE	2767	1310	0.473436935308999	0	0	0	0	7281
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here is a list of all the variants/edit appearing more than once and their count.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     25 chr2    161416811       AC      A
-      5 chr2    161416993       ACCCAGC A
-      5 chr2    161416990       TC      T
-      5 chr2    161416582       G       T
-      3 chr2    161416794       C       A
-      3 chr2    161416581       G       T
-      2 chr2    161417380       G       A
-      2 chr2    161416993       A       AGGT
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/amplicon_220406 Run: /home/groups/oroaklab/nishida/amplicon_220406/run.txt</summary></entry><entry><title type="html">scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA</title><link href="http://localhost:4000/2022/04/03/post-0077.html" rel="alternate" type="text/html" title="scRNA-seq First Pass Pipeline - 220324_HB_Coassay_RNA" /><published>2022-04-03T00:00:00-07:00</published><updated>2022-04-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/03/post-0077</id><content type="html" xml:base="http://localhost:4000/2022/04/03/post-0077.html">&lt;p&gt;Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.&lt;/p&gt;
-
-&lt;p&gt;Here are some issues with the technical side of the pipeline.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The barcodes are saved in the BC tag and the UMIs are saved in the XU tag. These are appropriate, standardized tags but there are various other standardized tags that conceivably these can go under.&lt;/li&gt;
-  &lt;li&gt;Deduplication technically does what it is supposed to do, it looks at the combination of barcode+umi+annotatedGene and keeps only unique results. It is written in with just bash sort and uniq commands parsing the BAM. This is a nice shortcut but it is likely we will want to save an entirely new BAM for the purposes of visualization.&lt;/li&gt;
-  &lt;li&gt;In this one test pass I am not filtering for alignment quality but this would be simple to add in with the samtools view command.&lt;/li&gt;
-  &lt;li&gt;I ran deduplication with scitools rmdup and picard MarkDuplicates. There is a part of me that thinks scitools rmdup should just work for this but I would need to dig into why or why not more specifically. To get picard MarkDuplicates to be barcode and UMI aware I believe we would need to make a new tag that combines the two together. It’s worth testing this out and comparing but the existing solution works for now.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Pipeline:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# setup
-cd /home/groups/oroaklab/nishida/test_scrna/test_scrna_mar29/
-module load picard/2.26.2
-module load STAR/2.7.9a
-module load subread/2.0.3
-
-# link file
-ln -s /home/groups/oroaklab/demultiplex/220324_VH00711_12_AAAV7VKM5/220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz .
-FASTQ_FILE=&quot;220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz&quot;
-
-# transform FASTQs to unaligned single-read BAMS
-picard FastqToSam F1=$FASTQ_FILE OUTPUT=$FASTQ_FILE.bam SM=$FASTQ_FILE
-
-# move bc to BC tag and umi to XU tag
-samtools view -h $FASTQ_FILE.bam | awk '/^@/ {print;next} {N=split($1,n,&quot;:&quot;); O=split(n[2],o,&quot;=&quot;); print $0 &quot;\tBC:Z:&quot; n[1] &quot;\tXU:Z:&quot; o[2]}' | samtools view -bS - &amp;gt; temp.bam
-
-# STAR alignment of unaligned BAM to reference
-STAR --runThreadN 24 --genomeDir /home/groups/oroaklab/refs/STAR/hg38 --readFilesCommand samtools view -h --readFilesType SAM SE --readFilesIn temp.bam --outSAMtype BAM Unsorted --outFilterScoreMinOverLread 0 --outFilterMatchNminOverLread 0 --outFileNamePrefix aligned
-
-# sort
-samtools sort alignedAligned.out.bam -o alignedAligned.out.sort.bam
-
-# use subread's featurecounts to add in 'XT' tags
-featureCounts -a /home/groups/oroaklab/refs/STAR/Homo_sapiens.GRCh38.104.gtf -R BAM -g gene_id -Q 30 -s 0 -T 24 -o alignedAligned.out.sort.annot.bam alignedAligned.out.sort.bam
-
-# make sparse
-# open SAM, pull out columns, use only uniquely mapping annotated reads, strip labels, keep only unique combinations, remove UMI info, count, format to sparse
-samtools view alignedAligned.out.sort.bam.featureCounts.bam | cut -f 12,17,18,21 | awk '$1 == &quot;NH:i:1&quot; &amp;amp;&amp;amp; $4 != &quot;&quot;' | sed -e 's/..:Z://g' | sort | uniq | cut -f 2,4 | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $3,$2,$1}' | tr ' ' '\t' &amp;gt; z.hg38.txt
-cat z.hg38.txt | cut -f 1 | sort -n | uniq &amp;gt; sparse.hg38.rows
-cat z.hg38.txt | cut -f 2 | sort -n | uniq &amp;gt; sparse.hg38.cols
-perl make_sparse.pl sparse.hg38.rows sparse.hg38.cols z.hg38.txt | sort -n -k 1,2 &amp;gt; sparse.hg38.values
-
-# make fake rows with BED positions and not gene names to trick cistopics
-# cistopics on sparse matrix and plot
-scitools matrix-cistopic3 -X 220324_HB_Coassay_RNA.sparseMatrix.values
-scitools matrix-umap 220324_HB_Coassay_RNA.cistopic.50.matrix
-scitools matrix-pg 220324_HB_Coassay_RNA.cistopic.50.matrix
-scitools plot-dims -A 220324_HB_Coassay_RNA.cistopic.50.k50.pg.annot 220324_HB_Coassay_RNA.cistopic.50.UMAP.dims
-
-# for future reference...
-#scitools bam-rmdup -t 24 temp_tag.hg38Aligned.sorted.out.bam
-#picard MarkDuplicates I=temp_tag.hg38Aligned.sorted.out.bam REMOVE_DUPLICATES=true O=temp_tag.hg38Aligned.sorted.rmdup.out.bam M=rmdup_metrics.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here are some metrics with the output which might identify some problems. In general, the amount of usable data at the end seems too low but I also don’t know all the expectations.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Uniquely aligning reads is high at ~80%&lt;/li&gt;
-  &lt;li&gt;The number of reads that were even annotated was low. ~10M reads which is ~18% of the total. This includes every read too so also multi-mapping reads. The annotation currently does not include rRNA which might be where all the reads are going?&lt;/li&gt;
-  &lt;li&gt;The number of annotated, uniquely mapping, and deduplicated reads is similarly low at less than 1 million reads.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# number of initial reads
-$ zcat 220324_VH00711_12_AAAV7VKM5.scRNA.SL.220324_HB_Coassay_RNA.R1.fq.gz | wc -l | awk '{print $1/4}'
-55,896,785
-
-# alignment percentages
-$ cat alignedLog.final.out | grep &quot;%&quot;
-                        Uniquely mapped reads % |	79.59%
-                      Mismatch rate per base, % |	1.41%
-                         Deletion rate per base |	0.02%
-                        Insertion rate per base |	0.03%
-             % of reads mapped to multiple loci |	18.33%
-             % of reads mapped to too many loci |	1.80%
-       % of reads unmapped: too many mismatches |	0.00%
-                 % of reads unmapped: too short |	0.00%
-                     % of reads unmapped: other |	0.28%
-                            % of chimeric reads |	0.00%
-
-# number of annotated reads
-$ cat alignedAligned.out.sort.annot.bam.summary | grep &quot;Assigned&quot;
-Assigned	9926854
-
-# number of de-deduplicated annotated reads
-$ cat 220324_HB_Coassay_RNA.sparseMatrix.values | awk '{sum+=$3}END{print sum}'
-603194
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And here is a shot of the data gone through dimensionality reduction with cistopics. There’s structure but a lot of messy, diverse clusters. I think the messiness makes sense given the extra sparseness of the matrix.
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rby6ltxidup3oag/blog_scrna.220324_HB_Coassay_RNA.cistopic.50.UMAP.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.</summary></entry></feed>

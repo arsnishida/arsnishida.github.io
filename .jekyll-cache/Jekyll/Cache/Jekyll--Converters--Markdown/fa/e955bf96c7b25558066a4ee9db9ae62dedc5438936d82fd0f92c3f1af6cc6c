@@ -1,0 +1,25 @@
+I"j<p>This is info for</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/home/groups/oroaklab/nishida/marissa_tbr1_sra
+
+# download sra dataset
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR2130305
+fastq-dump --split-files SRR2130304
+
+# mm9 bed file is from SRA
+# mm10 bed file is lifted over with 100% fidelity
+
+closest-features --dist --closest --delim '\t' published_coordinates.mm10.bed /home/groups/oroaklab/refs/mm10/ensembl_tss/ensembl.mm10.tss.chr.bed | cut -f 1-4,8-10 &gt; published_coordinates.mm10.annotated.bed
+
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+# https://pubmed.ncbi.nlm.nih.gov/27325115/
+
+#######
+
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR12082772
+fastq-dump --split-files SRR12082773
+fastq-dump --split-files SRR12082774
+</code></pre></div></div>
+:ET
