@@ -1,18 +1,10 @@
----
-layout: post
-title:  "Example of HDR Processing via BWA Alignment"
-date:   2022-05-18
-tags: amplicon
----
+I"‚<p>Dir: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/example_brooke_amplican</code>
+<br />Run: <code class="language-plaintext highlighter-rouge">README.txt</code></p>
 
-Dir: `/home/groups/oroaklab/nishida/example_brooke_amplican`
-<br>Run: `README.txt`
+<p>This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.</p>
 
-This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.
-
-Here is the copy of the readme of instructions sent to Brooke.
-```
-# Example of HDR processing via BWA alignment
+<p>Here is the copy of the readme of instructions sent to Brooke.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Example of HDR processing via BWA alignment
 
 cd /home/groups/oroaklab/nishida/test_brooke
 
@@ -38,7 +30,7 @@ bwa index $reference
 align_dir="/home/groups/oroaklab/nishida/test_brooke/3_alignment"
 for i in "${array[@]}"
 do
-bwa mem $reference $merged_dir/$i.merge.fq.assembled.fastq > $align_dir/$i.sam
+bwa mem $reference $merged_dir/$i.merge.fq.assembled.fastq &gt; $align_dir/$i.sam
 done
 
 # I make a little guide like with whitespaces in a text editor for reference and counting.
@@ -66,20 +58,21 @@ GUIDE4_NHEJ_REGION                                                              
 for i in "${array[@]}"
 do
 perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 50 75 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
-done > summary_g3.txt
+done &gt; summary_g3.txt
 
 # guide 4 parameters
 for i in "${array[@]}"
 do
 perl /home/groups/oroaklab/nishida/test_brooke/hdr_parse_cigar.pl $align_dir/$i.sam 20 72 87 92 20 GCTACCTCCTCTCTCAGTCCAGCCAGCCACAGTCTGCGGCCACTGCTCCCAGTGCCATGTTCCCGTACCCCGGCCAGCACGGACCGGCGCACCCGCCTTCTCCATCGGCAGCCCTAGCCGCTACATGGC
-done > summary_g4.txt
+done &gt; summary_g4.txt
 
 # I personally like to keep header information separate from the data itself so I append it to the file here.
-cat header.txt summary_g3.txt > temp1; mv temp1 summary_g3.txt
-cat header.txt summary_g4.txt > temp2; mv temp2 summary_g4.txt
+cat header.txt summary_g3.txt &gt; temp1; mv temp1 summary_g3.txt
+cat header.txt summary_g4.txt &gt; temp2; mv temp2 summary_g4.txt
 
 # The files, 'summary_g3.txt' and 'summary_g4.txt', would be files I would then pass off to you.
 # I run everything with both g3 and g4 parameters because the controls need to be evaluated under both different circumstances.
-```
+</code></pre></div></div>
 
-Older amplicon sequencing directories with less coherent examples by date are: `/home/groups/oroaklab/nishida/crispr_amplicon`.
+<p>Older amplicon sequencing directories with less coherent examples by date are: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/crispr_amplicon</code>.</p>
+:ET

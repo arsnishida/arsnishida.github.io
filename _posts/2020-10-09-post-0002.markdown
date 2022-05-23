@@ -5,7 +5,8 @@ date:   2020-10-09
 tags: ssc
 ---
 
-Directory: `https://ohsu.app.box.com/folder/81820136345`
+Directory: `/home/groups/oroaklab/nishida/ssc`
+<br>Box Directory: `https://ohsu.app.box.com/folder/81820136345`
 
 Updated the SSC variant tables to include annotations derived from the columns.
 

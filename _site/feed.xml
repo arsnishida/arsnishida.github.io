@@ -1,74 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-20T11:45:43-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists</title><link href="http://localhost:4000/2022/05/20/post-0088.html" rel="alternate" type="text/html" title="SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists" /><published>2022-05-20T00:00:00-07:00</published><updated>2022-05-20T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/20/post-0088</id><content type="html" xml:base="http://localhost:4000/2022/05/20/post-0088.html">&lt;p&gt;Markdown:
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-22T23:42:51-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ARSN Lab Notebook</title><subtitle>ARSN Lab notebook.</subtitle><entry><title type="html">Final O’Roak Lab Data Locations</title><link href="http://localhost:4000/2022/05/20/post-0089.html" rel="alternate" type="text/html" title="Final O’Roak Lab Data Locations" /><published>2022-05-20T00:00:00-07:00</published><updated>2022-05-20T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/20/post-0089</id><content type="html" xml:base="http://localhost:4000/2022/05/20/post-0089.html">&lt;p&gt;There are a few folders left on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/exacloud/gscratch/radpantry&lt;/code&gt;. These are all copies of scripts, software, or empty folders that I do not have permission to delete. There is no data in any of these however and they can be deleted whenever.&lt;/p&gt;
+
+&lt;p&gt;None of my files exist on lustre1. But I took down the sizes of the directories remaining on lustre1: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/dirsizes.lustre1.nov42021.txt&lt;/code&gt;. The only directory copied from lustre1 was the kruppd directory which is copied here: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroakdata/lustre1_kruppd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;No other files of mine exist on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroakdata/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The largest sets of files available for deletion are the intermediate SPARK mosaic files, mpileups and coverages. These can be deleted for space whenever and can always be regenerated from the CRAMs.
+&lt;br /&gt;The WES1 locations are here: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroakdata/TEMP_SPARK&lt;/code&gt;.
+&lt;br /&gt;The WES2/3 locations are here: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/TEMP/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of my files remain solely in: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/&lt;/code&gt;. There should be files with labels like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt; that describe the provenance of the data in that directory.
+Nearly all of them should be represented in blog posts except for older directories that are for defunct projects.
+Here’s some more information about the tags for those remaining directories that do not have blog posts:
+&lt;br /&gt; - environment - These are directories with environments for use for other projects. If people are still using them they should copy or recreate them in their directories. These can eventually be deleted.
+&lt;br /&gt; - libraries - These are libraries I’ve maintained for use by other software. Again, if people are using these they should copy them for themselves but otherwise they can be deleted.
+&lt;br /&gt; - plasmid - An abanonded approach but the tarball of the processing is left there.
+&lt;br /&gt; - paternity - The output should be the Mendellian error tables and I’m pretty sure we finished fixing all the sample mixups. I know I sent Hadley a final summary but the Slack/email is too old to directly find.
+&lt;br /&gt; - ntd - These are all compressed by their sequence date and the last one was done by Sally and is a direct copy of her directory.
+&lt;br /&gt; - spark_validations - There are two folders of data from the NYGC. The output for these are the variant calls and IGV screenshots of the sites.&lt;/p&gt;
+
+&lt;p&gt;Below is the full list of directories:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Directory	Tag	Size	Notes
+amplicon_220305	amplicon	8.8G	amplicon analysis using shotgun approach and variant calling
+amplicon_220406	amplicon	3.6G	amplicon analysis using shotgun approach and variant calling
+ArchR	libraries	251M	complete ArchR libraries with input reading bugfix, likely obsolete now
+celsee	environment	34G	celsee and docker information for celsee analysis by Eve
+crispr_amplicon	amplicon	130G	old runs of amplicon sequencing by date using CRISPresso, parsing BWA CIGARs, amplican
+crispr_capture	crisprcap	69G	final output for crisprcapture paper
+cron	environment	6.5K	location for holding temp logs and environment for cron
+dirsizes.lustre1.nov42021.txt	.	.	sizes of files remaining on lustre1
+dirsizes.oroaklab_nishida.may22_2022.txt	.	.	sizes of files in this directory
+env	environment	1.7G	miscellaneous python environments
+example_brooke_amplican	amplicon	1.6G	tutorial dataset sent to Brooke to describe amplicon processing
+fimo_scans	motif	32G	fimo scans across hg38 and mm10
+github	libraries	2.1M	personal scitools-dev build, anything new has been included in the main scitools-dev branch
+happy	environment	181M	python environment for happy
+jupyter	environment	1.1G	jupyter notebook environment
+marissa_tbr1_sra	tbr1	6.7G	download of fastqs and beds from GEO, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+miniconda3	environment	6.8G	personal miniconda install with nextstrain environments
+mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom	spark_validations	167G	mosaic confirmation project with variant calls and IGV shots
+mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom.2020-01-10	spark_validations	18G	mosaic confirmation project with variant calls and IGV shots
+motifsim	motif	38M	attempt at defining motif families by pwm via motifsim
+nextseq_organization_may4	seq	88K	records of the accounting checking nextseq runs between drives
+ntd	ntd	209G	tarballs of ntd analysis by sequence, last one was copied from Sally’s directories
+paternity_190726	paternity	17G	first sequence run for checking paternity of samples via mendellian error
+paternity_200130	paternity	21G	second and final sequence run for checking paternity of samples via mendellian error
+pilot24.deepmosaic_exacloud_results.tar.gz	deepmosaic	6.7G	tarball of deepmosaic modified source code and results from running on exacloud
+pilot24_deepmosaic_results	deepmosaic	6.9G	results and IGV shots for Anna’s rotation using deepmosaic
+plasmid_assembly.tar.gz	plasmid	131M	tarball of plasmid assembly attempt
+R_4.0.0_arsn	libraries	4.2G	split of the R 4.0.0 libraries for the purposes of monocle3
+sc_dm6_tau	dm6_tau	5.0G	Eve’s DA results run on exacloud
+scitools_env	environment	2.0G	environment for scitools work
+scitools_tests	scitools	254G	misc. tests with scitools
+scripts	seq	104K	misc. personal scripts
+sc_tmp1	tbr1	162G	ArchR and DA results from Marissa’s TBR1 SC data
+spark_mosaic	SPARK	11T	intermediate data from the spark mosaic analysis, the entire size comes solely the temporary mpileups and coverages
+ssc	ssc	123G	ssc MIP processing split by pools
+stamp	motif	14M	attempt at defining motif families by pwm via stamp
+taylor_ashg	crisprcap	80G	preliminary analysis done for Taylor’s presentation at ASHG
+taylor_vars	crisprcap	117G	initial pass at crispr-capture analysis
+test_scrna_mar29	scrna	39G	test scrna pipeline
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">There are a few folders left on /home/exacloud/gscratch/radpantry. These are all copies of scripts, software, or empty folders that I do not have permission to delete. There is no data in any of these however and they can be deleted whenever.</summary></entry><entry><title type="html">SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists</title><link href="http://localhost:4000/2022/05/20/post-0088.html" rel="alternate" type="text/html" title="SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists" /><published>2022-05-20T00:00:00-07:00</published><updated>2022-05-20T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/20/post-0088</id><content type="html" xml:base="http://localhost:4000/2022/05/20/post-0088.html">&lt;p&gt;Markdown:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0&quot;&gt;04, Post-Hoc Cohort, IGV, and iWES Filter Lists&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This describes the creation of the lists for post-hoc filtering of the high-confidence and burden lists. The criteria for removal include having a combined cohort count 3 or greater, flagged for removal by manual IGV inspection, or an absence of the downstream iWES lists.&lt;/p&gt;
 
 &lt;p&gt;Post-hoc Filter Lists:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rfy6mre2dfuy16p/posthoc_filterlist.sites.txt?dl=0&quot;&gt;Post-hoc Filter Sites&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0&quot;&gt;Post-hoc Filter Families&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Markdown: 04, Post-Hoc Cohort, IGV, and iWES Filter Lists</summary></entry><entry><title type="html">Cron Info for Automatically Running bcl2fastq</title><link href="http://localhost:4000/2022/05/18/post-0086.html" rel="alternate" type="text/html" title="Cron Info for Automatically Running bcl2fastq" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0086</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0086.html">&lt;p&gt;The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.allow&lt;/code&gt;.&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0&quot;&gt;Post-hoc Filter Families&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">Markdown: 04, Post-Hoc Cohort, IGV, and iWES Filter Lists</summary></entry><entry><title type="html">SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’</title><link href="http://localhost:4000/2022/05/18/post-0087.html" rel="alternate" type="text/html" title="SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0087</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0087.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra&lt;/code&gt;
+&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Here is the one cron job scheduled to look for new obnix runs.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SHELL=/bin/bash
-0 * * * * source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile; /home/groups/oroaklab/nishida/scripts/check_obnix.sh &amp;gt; /home/groups/oroaklab/nishida/cron/check_obnix.cronlog
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This is info for snagging some files from SRA/GEO related to TBR1 analysis. Copy of the run file with the references:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra
 
-&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 * * * *&lt;/code&gt; part signifies to run this at the top of every hour.&lt;/p&gt;
+# download sra dataset
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR2130305
+fastq-dump --split-files SRR2130304
 
-&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile&lt;/code&gt; part is needed to find the modules and setup a proper bash environment for the job.&lt;/p&gt;
+# mm9 bed file is from SRA
+# mm10 bed file is lifted over with 100% fidelity
 
-&lt;p&gt;The last part, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/check_obnix.sh&lt;/code&gt;, is the script being run every hour. The comments should explain everything but it looks for new folders, validates the names, checks for the RTAcomplete.txt file, runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/NextSeq2fastq&lt;/code&gt; (this should be identical to what is in the github but not what is hooked up to our module because I don’t have permissions to change the module), and validates it made the output. I had it make a lot of logs but it has been running without errors for months now so you can turn off some of the extra output going forward.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# !/usr/bin/bash
+closest-features --dist --closest --delim '\t' published_coordinates.mm10.bed /home/groups/oroaklab/refs/mm10/ensembl_tss/ensembl.mm10.tss.chr.bed | cut -f 1-4,8-10 &amp;gt; published_coordinates.mm10.annotated.bed
 
-# get date
-DATE=$(date +&quot;%y%m%d_%H_%M&quot;)
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+# https://pubmed.ncbi.nlm.nih.gov/27325115/
 
-# move to cron folder
-cd /home/groups/oroaklab/nishida/cron
+#######
 
-# check the last 5 directories created with the machine name
-ls -dt /home/groups/oroaklab/seq/obnix/* | head -n 5 | grep &quot;_VH00711_&quot; &amp;gt; obnix.$DATE.check.txt
-
-# for each of the names...
-while read i; do
-
-	# run name
-	run=$(echo $i | sed -e 's/.*\///g')
-
-	# count underscore deliminated parts in name, should be four
-	namecount=$(echo $i | sed -e 's/.*\///g' | tr '_' '\n' | wc -l)
-
-	# second member of the name should be the machine, &quot;VH00711&quot;
-	name=$(echo $i | sed -e 's/.*\///g' | tr '_' '\t' | cut -f 2)
-
-	# if the name is valid...
-	if [[ $name == 'VH00711' &amp;amp;&amp;amp; $namecount == '4' ]]; then
-
-		# check for RTA.complete and absence of FASTQ folder
-		if [[ -f &quot;/home/groups/oroaklab/seq/obnix/$run/RTAComplete.txt&quot; &amp;amp;&amp;amp; ! -d &quot;/home/groups/oroaklab/fastq/$run&quot; ]]; then
-
-			# run
-			sleep 600 # wait in case the RTA complete shows up earlier than it should
-			echo -e &quot;Attempting to run NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
-			perl /home/groups/oroaklab/nishida/scripts/NextSeq2fastq -N -R $run
-			echo -e &quot;Finished running NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
-
-			# check that backup was made
-			if [[ ! -d &quot;/home/groups/oroakdata/fastq/$run&quot; ]]; then
-				echo -e &quot;Backup FASTQ folder was not made. Check manually.&quot; &amp;gt;&amp;gt; obnix.$DATE.err
-			fi
-		fi
-	fi
-
-done &amp;lt; obnix.$DATE.check.txt
-
-# save for now
-#rm obnix.$DATE.check.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The only part that needs to change when someone takes over is just changing this directory to something of one’s own. The directory just holds the logs from the cron jobs.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# move to cron folder
-cd /home/groups/oroaklab/nishida/cron
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, /var/spool/cron/ and /etc/cron.allow.</summary></entry><entry><title type="html">Example of HDR Processing via BWA Alignment</title><link href="http://localhost:4000/2022/05/18/post-0085.html" rel="alternate" type="text/html" title="Example of HDR Processing via BWA Alignment" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0085</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0085.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/example_brooke_amplican&lt;/code&gt;
+module load sra-toolkit/2.8.2
+fastq-dump --split-files SRR12082772
+fastq-dump --split-files SRR12082773
+fastq-dump --split-files SRR12082774
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/marissa_tbr1_sra Run: run.txt</summary></entry><entry><title type="html">Example of HDR Processing via BWA Alignment</title><link href="http://localhost:4000/2022/05/18/post-0085.html" rel="alternate" type="text/html" title="Example of HDR Processing via BWA Alignment" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0085</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0085.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/example_brooke_amplican&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a small demo sent to Brooke to go over how the amplicon analysis was performed outside of CRISPResso and amplican. CRISPresso was aligning reads improperly and this problem is addressed directly by the program, amplican. But in between the switch of these programs we independently made a few scripts to process the alignment cigars of the amplicons. These were compared to results from amplican and similar results were retrieved. I would suggest using amplican going forward but this goes over what we did in that liminal time.&lt;/p&gt;
@@ -142,7 +165,9 @@ cat header.txt summary_g4.txt &amp;gt; temp2; mv temp2 summary_g4.txt
 
 # The files, 'summary_g3.txt' and 'summary_g4.txt', would be files I would then pass off to you.
 # I run everything with both g3 and g4 parameters because the controls need to be evaluated under both different circumstances.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/example_brooke_amplican Run: README.txt</summary></entry><entry><title type="html">Celsee and Docker Info</title><link href="http://localhost:4000/2022/05/18/post-0084.html" rel="alternate" type="text/html" title="Celsee and Docker Info" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0084</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0084.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/celsee&lt;/code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Older amplicon sequencing directories with less coherent examples by date are: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/crispr_amplicon&lt;/code&gt;.&lt;/p&gt;</content><author><name></name></author><category term="amplicon" /><summary type="html">Dir: /home/groups/oroaklab/nishida/example_brooke_amplican Run: README.txt</summary></entry><entry><title type="html">Celsee and Docker Info</title><link href="http://localhost:4000/2022/05/18/post-0084.html" rel="alternate" type="text/html" title="Celsee and Docker Info" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0084</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0084.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/celsee&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;notes.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is the copy of the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.&lt;/p&gt;
@@ -181,32 +206,70 @@ $ docker image rm celsee-analysis
 
 8. And then shut down Docker (also needs sudo privileges)
 $ sudo service docker stop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Dir: /home/groups/oroaklab/nishida/celsee Run: notes.txt</summary></entry><entry><title type="html">SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’</title><link href="http://localhost:4000/2022/05/18/post-0087.html" rel="alternate" type="text/html" title="SRA Download Info for ‘TBR1 Regulates Autism Risk Genes in the Developing Neocortex’" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0087</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0087.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra&lt;/code&gt;
-&lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.txt&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">Dir: /home/groups/oroaklab/nishida/celsee Run: notes.txt</summary></entry><entry><title type="html">Cron Info for Automatically Running bcl2fastq</title><link href="http://localhost:4000/2022/05/18/post-0086.html" rel="alternate" type="text/html" title="Cron Info for Automatically Running bcl2fastq" /><published>2022-05-18T00:00:00-07:00</published><updated>2022-05-18T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/18/post-0086</id><content type="html" xml:base="http://localhost:4000/2022/05/18/post-0086.html">&lt;p&gt;The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.allow&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;This is info for snagging some files from SRA/GEO related to TBR1 analysis. Copy of the run file with the references:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/home/groups/oroaklab/nishida/marissa_tbr1_sra
+&lt;p&gt;Here is the one cron job scheduled to look for new obnix runs.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SHELL=/bin/bash
+0 * * * * source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile; /home/groups/oroaklab/nishida/scripts/check_obnix.sh &amp;gt; /home/groups/oroaklab/nishida/cron/check_obnix.cronlog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-# download sra dataset
-module load sra-toolkit/2.8.2
-fastq-dump --split-files SRR2130305
-fastq-dump --split-files SRR2130304
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 * * * *&lt;/code&gt; part signifies to run this at the top of every hour.&lt;/p&gt;
 
-# mm9 bed file is from SRA
-# mm10 bed file is lifted over with 100% fidelity
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source /home/groups/oroaklab/Modules/default/init/bash; source /home/groups/oroaklab/nishida/cron/setup/profile&lt;/code&gt; part is needed to find the modules and setup a proper bash environment for the job.&lt;/p&gt;
 
-closest-features --dist --closest --delim '\t' published_coordinates.mm10.bed /home/groups/oroaklab/refs/mm10/ensembl_tss/ensembl.mm10.tss.chr.bed | cut -f 1-4,8-10 &amp;gt; published_coordinates.mm10.annotated.bed
+&lt;p&gt;The last part, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/check_obnix.sh&lt;/code&gt;, is the script being run every hour. The comments should explain everything but it looks for new folders, validates the names, checks for the RTAcomplete.txt file, runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/scripts/NextSeq2fastq&lt;/code&gt; (this should be identical to what is in the github but not what is hooked up to our module because I don’t have permissions to change the module), and validates it made the output. I had it make a lot of logs but it has been running without errors for months now so you can turn off some of the extra output going forward.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# !/usr/bin/bash
 
-# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
-# https://pubmed.ncbi.nlm.nih.gov/27325115/
+# get date
+DATE=$(date +&quot;%y%m%d_%H_%M&quot;)
 
-#######
+# move to cron folder
+cd /home/groups/oroaklab/nishida/cron
 
-module load sra-toolkit/2.8.2
-fastq-dump --split-files SRR12082772
-fastq-dump --split-files SRR12082773
-fastq-dump --split-files SRR12082774
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="tbr1" /><summary type="html">Dir: /home/groups/oroaklab/nishida/marissa_tbr1_sra Run: run.txt</summary></entry><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
+# check the last 5 directories created with the machine name
+ls -dt /home/groups/oroaklab/seq/obnix/* | head -n 5 | grep &quot;_VH00711_&quot; &amp;gt; obnix.$DATE.check.txt
+
+# for each of the names...
+while read i; do
+
+	# run name
+	run=$(echo $i | sed -e 's/.*\///g')
+
+	# count underscore deliminated parts in name, should be four
+	namecount=$(echo $i | sed -e 's/.*\///g' | tr '_' '\n' | wc -l)
+
+	# second member of the name should be the machine, &quot;VH00711&quot;
+	name=$(echo $i | sed -e 's/.*\///g' | tr '_' '\t' | cut -f 2)
+
+	# if the name is valid...
+	if [[ $name == 'VH00711' &amp;amp;&amp;amp; $namecount == '4' ]]; then
+
+		# check for RTA.complete and absence of FASTQ folder
+		if [[ -f &quot;/home/groups/oroaklab/seq/obnix/$run/RTAComplete.txt&quot; &amp;amp;&amp;amp; ! -d &quot;/home/groups/oroaklab/fastq/$run&quot; ]]; then
+
+			# run
+			sleep 600 # wait in case the RTA complete shows up earlier than it should
+			echo -e &quot;Attempting to run NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
+			perl /home/groups/oroaklab/nishida/scripts/NextSeq2fastq -N -R $run
+			echo -e &quot;Finished running NextSeq2fastq for $run&quot; &amp;gt;&amp;gt; obnix.$DATE.log
+
+			# check that backup was made
+			if [[ ! -d &quot;/home/groups/oroakdata/fastq/$run&quot; ]]; then
+				echo -e &quot;Backup FASTQ folder was not made. Check manually.&quot; &amp;gt;&amp;gt; obnix.$DATE.err
+			fi
+		fi
+	fi
+
+done &amp;lt; obnix.$DATE.check.txt
+
+# save for now
+#rm obnix.$DATE.check.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The only part that needs to change when someone takes over is just changing this directory to something of one’s own. The directory just holds the logs from the cron jobs.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# move to cron folder
+cd /home/groups/oroaklab/nishida/cron
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ref" /><summary type="html">The cron job scheduler is currently setup on mccovey only. Sudo permissions would be required to set it up on bonds and mays if desired. This just involves fiddling with the files, /var/spool/cron/ and /etc/cron.allow.</summary></entry><entry><title type="html">SPARK IGV HC List Screenshots, 2022</title><link href="http://localhost:4000/2022/05/03/post-0083.html" rel="alternate" type="text/html" title="SPARK IGV HC List Screenshots, 2022" /><published>2022-05-03T00:00:00-07:00</published><updated>2022-05-03T00:00:00-07:00</updated><id>http://localhost:4000/2022/05/03/post-0083</id><content type="html" xml:base="http://localhost:4000/2022/05/03/post-0083.html">&lt;p&gt;Dir: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/home/groups/oroaklab/nishida/spark_mosaic/IGV_2022&lt;/code&gt;
 &lt;br /&gt;Run: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run.make_batches.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;IGV screenshots for the high-confidence lists across WES1, WES2, and WES3 are here:
@@ -329,7 +392,31 @@ fastq-dump --split-files SRR12082774
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n9bbnmm6jtlde8d/jointcov.WES2.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES2 Simplex Trios&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/tvs3pj7c4tkpa3e/jointcov.WES3.MQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Multiplex Quads&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/gn6znkoylpgn6f0/jointcov.WES3.SQ.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Simplex Quads&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8048eoc8j4t68gg/jointcov.WES3.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Simplex Trios&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8048eoc8j4t68gg/jointcov.WES3.ST.txt?dl=0&quot;&gt;Genomic Joint Coverage, WES3 Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ypwaqkz5rq6jgyg/transformed.jointcov_ssc.all.txt?dl=0&quot;&gt;SSC Transformed Joint Coverage&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ur1p92glb5jw4c3/transformed.jointcov_ssc.ess.txt?dl=0&quot;&gt;SSC Transformed Joint Coverage, ESS&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8iser827txvx1qc/transformed.jointcov_ssc.exint.txt?dl=0&quot;&gt;SCC Transformed Joint Coverage, EXINTOL&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qaykspf1q5vn54s/jointcov.WES1.MQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES1, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/vp6ga13gnzr48gw/jointcov.WES1.SQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES1, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/evwrv3j07gg7jtr/jointcov.WES1.ST.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES1, Simplex Trio&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jz6zrkwgvkj7zvg/jointcov.WES2.MQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES2, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7af9gqm0k5rwud0/jointcov.WES2.SQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES2, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/l51u83bgt9kjxo1/jointcov.WES2.ST.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES2, Simplex Trio&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/qy67j7qqtebu3rb/jointcov.WES3.MQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES3, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/d47voclpg75d0wy/jointcov.WES3.SQ.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES3, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/af2fx0ms4i20i32/jointcov.WES3.ST.exintol.txt?dl=0&quot;&gt;Exintol Joint Coverage, WES3, Simplex Trio&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/51b0jzl1x43xivh/jointcov.WES1.MQ.essential.txt?dl=0&quot;&gt;Essential Joint Coverage, WES1, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/c8s0obkoacxraj8/jointcov.WES1.MQ.exmid.txt?dl=0&quot;&gt;Exmid Joint Coverage, WES1, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/kxs3r9vprephfnm/jointcov.WES1.MQ.extol.txt?dl=0&quot;&gt;Extol Joint Coverage, WES1, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6frn3zsnjxlj645/jointcov.WES1.MQ.fusil.txt?dl=0&quot;&gt;Fusil Joint Coverage, WES1, Mutliplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/9ioy78wvw6u8wv4/jointcov.WES1.SQ.essential.txt?dl=0&quot;&gt;Essential Joint Coverage, WES1, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/npzxorgwcujlaou/jointcov.WES1.SQ.exmid.txt?dl=0&quot;&gt;Exmid Joint Coverage, WES1, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/uy6og49xcsoucvc/jointcov.WES1.SQ.extol.txt?dl=0&quot;&gt;Extol Joint Coverage, WES1, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/9guq42vbs60epc7/jointcov.WES1.SQ.fusil.txt?dl=0&quot;&gt;Fusil Joint Coverage, WES1, Simplex Quads&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/td0a48jlyl8l86y/jointcov.WES1.ST.essential.txt?dl=0&quot;&gt;Essential Joint Coverage, WES1, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/n47twbmkt9tuxo3/jointcov.WES1.ST.exmid.txt?dl=0&quot;&gt;Exmid Joint Coverage, WES1, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/w2nmwhn0gokd7gj/jointcov.WES1.ST.extol.txt?dl=0&quot;&gt;Extol Joint Coverage, WES1, Simplex Trios&lt;/a&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/0h1yn4jcmbr5oco/jointcov.WES1.ST.fusil.txt?dl=0&quot;&gt;Fusil Joint Coverage, WES1, Simplex Trios&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Splice Distances:
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2uvhvd7ki6lvp9d/splice_distances.WES1_MQ.txt?dl=0&quot;&gt;WES1, Multiplex Quads, High Confidence Calls&lt;/a&gt;
@@ -340,7 +427,10 @@ fastq-dump --split-files SRR12082774
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/rvvhf4kaecgxfsn/splice_distances.WES2_ST.txt?dl=0&quot;&gt;WES2, Simplex Trios, High Confidence Calls&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/aoh20vxqvwkhkr7/splice_distances.WES3_MQ.txt?dl=0&quot;&gt;WES3, Multiplex Quads, High Confidence Calls&lt;/a&gt;
 &lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/4l2vsgiyvyfge6b/splice_distances.WES3_SQ.txt?dl=0&quot;&gt;WES3, Simplex Quads, High Confidence Calls&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bic5g0k3bwrylqn/splice_distances.WES3_ST.txt?dl=0&quot;&gt;WES3, Simplex Trios, High Confidence Calls&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><category term="INDEX" /><summary type="html">Compiled Writing and Figures: Google Doc</summary></entry><entry><title type="html">scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation</title><link href="http://localhost:4000/2022/04/21/post-0081.html" rel="alternate" type="text/html" title="scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation" /><published>2022-04-21T00:00:00-07:00</published><updated>2022-04-21T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/21/post-0081</id><content type="html" xml:base="http://localhost:4000/2022/04/21/post-0081.html">&lt;p&gt;Program Versions:&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/bic5g0k3bwrylqn/splice_distances.WES3_ST.txt?dl=0&quot;&gt;WES3, Simplex Trios, High Confidence Calls&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Annotations:
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/yqwdzblesi28rni/dbNSFP_columns.txt?dl=0&quot;&gt;Added dbNSFP Annotation Column Descriptions&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="SPARK" /><category term="INDEX" /><summary type="html">Compiled Writing and Figures: Google Doc</summary></entry><entry><title type="html">scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation</title><link href="http://localhost:4000/2022/04/21/post-0081.html" rel="alternate" type="text/html" title="scRNA-seq and scATAC-seq Data Analysis DREAM Challenge - Dataset 2 Data Generation" /><published>2022-04-21T00:00:00-07:00</published><updated>2022-04-21T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/21/post-0081</id><content type="html" xml:base="http://localhost:4000/2022/04/21/post-0081.html">&lt;p&gt;Program Versions:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;macs2 v2.1.1.20160309
 samtools v1.10
 bedtools v2.22.0
@@ -561,95 +651,4 @@ scitools plot-dims -A 220324_HB_Coassay_RNA.cistopic.30.k50.pg.annot 220324_HB_C
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And here is a shot of the data gone through dimensionality reduction with cistopics. Relatively cleaned up despite very few reads being used.
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/utobouaeouw3nqr/blog_scrna.220324_HB_Coassay_RNA.cistopic.30.UMAP_pass2.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this link to DropSeq PDF. built around snakemake paired with SLURM jobs uses condaenvs instead of modules since they are on exacloud uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags performs read adapter trimming uses cellbender(?) for background removal uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)</summary></entry><entry><title type="html">SPARK WES2 and WES3 Outliers by Counts and Coverage</title><link href="http://localhost:4000/2022/04/08/post-0079.html" rel="alternate" type="text/html" title="SPARK WES2 and WES3 Outliers by Counts and Coverage" /><published>2022-04-08T00:00:00-07:00</published><updated>2022-04-08T00:00:00-07:00</updated><id>http://localhost:4000/2022/04/08/post-0079</id><content type="html" xml:base="http://localhost:4000/2022/04/08/post-0079.html">&lt;p&gt;These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.&lt;/p&gt;
-
-&lt;p&gt;Markdowns:
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/thbr9vgqibvbobj/01_WES2_SQ.html?dl=0&quot;&gt;WES2_SQ Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/we6ixqoi5iedtfn/01_WES2_MQ.html?dl=0&quot;&gt;WES2_MQ Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/2lt3iohpemotvew/01_WES2_ST.html?dl=0&quot;&gt;WES2_ST Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/cpwikcnv1hrjx34/01_WES3_SQ.html?dl=0&quot;&gt;WES3_SQ Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/q7eahh0vj743377/01_WES3_MQ.html?dl=0&quot;&gt;WES3_MQ Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/j0aqujobwvemu0a/01_WES3_ST.html?dl=0&quot;&gt;WES3_ST Prep&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/5ytjk71msu8xe21/02_WES2_SQ.html?dl=0&quot;&gt;WES2_SQ Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/ldlqrday2v6cpq7/02_WES2_MQ.html?dl=0&quot;&gt;WES2_MQ Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/8meafdj3kj3ec10/02_WES2_ST.html?dl=0&quot;&gt;WES2_ST Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/gw650phhs3db3xx/02_WES3_SQ.html?dl=0&quot;&gt;WES3_SQ Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/6mfpzw4pl8996e3/02_WES3_MQ.html?dl=0&quot;&gt;WES3_MQ Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/jeeqfj7bcdrhfxn/02_WES3_ST.html?dl=0&quot;&gt;WES3_ST Outlier Plots&lt;/a&gt;
-&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/7gcqbxsjhtdy7nd/02_WES2_WES3_combined.html?dl=0&quot;&gt;WES2 and WES3 Combined Coverage Plots&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Relevant plots for outlier detection here: &lt;a href=&quot;https://www.dropbox.com/s/ixc4lo7a0uh7irh/wes2_wes3_outlier_cov.pdf?dl=0&quot;&gt;outlier figures&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;From the combination of the coverages, the lowest 0-5% of families in coverage came from the following lists showing the worse coverages in WES3:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Num Families in Lowest Fifth-Tile by List
-WES2_MQ - 4, WES2_SQ - 2, WES2_ST - 9
-WES3_MQ - 19, WES3_SQ - 52, WES3_ST - 38
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;There were 32 outliers calls using the same count thresholds as the WES1 list. As contrast, the WES1 lists had only 10 outlying calls with ~33% more families.&lt;/p&gt;
-
-&lt;p&gt;All family outliers by list and FRACTION annotation:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6, MOSAIC_CHILD, WES2.MQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 72  SF0158322    SIB               0.3928909     6           15.27141
-## 183 SF0075609    PRO               0.5239183    14           26.72173
-## 265 SF0151665    PRO               0.5931233     6           10.11594
-## 376 SF0202052    SIB               0.7676529     9           11.72405
-
-1, MOSAIC_CHILD, WES3.ST
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 357 SF0323152    PRO               0.7481966    74           98.90449
-
-3, GERMLINE_CHILD, WES2.MQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 4   SF0149123    SIB               0.1322793     2           15.11953
-## 6   SF0163256    SIB               0.1918058    10           52.13608
-## 342 SF0223942    SIB               0.7000389    77          109.99389
-
-2, GERMLINE_CHILD, WES3.MQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 2   SF0358698    SIB               0.0892429     5           56.02686
-## 230 SF0283718    SIB               0.6034980    59           97.76337
-
-3, MOSAIC_PARENTAL_NONTRANS, WES2.SQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 3   SF0170260     FA               0.2105921     3           14.24555
-## 29  SF0228054     FA               0.3018997     9           29.81122
-## 129 SF0153456     FA               0.6423237    27           42.03488
-
-1, MOSAIC_PARENTAL_NONTRANS, WES2.MQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 204 SF0181472     MO               0.5424785    39           71.89225
-
-5, MOSAIC_PARENTAL_NONTRANS, WES2.ST
-##         FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 11   SF0149922     FA               0.2254580     9           39.91874
-## 313  SF0199636     FA               0.4987807    82          164.40092
-## 580  SF0245361     MO               0.5896181     8           13.56810
-## 601  SF0161221     FA               0.5944195     8           13.45851
-## 1164 SF0151784     MO               0.7809484    57           72.98818
-## 1201 SF0042891     FA               0.7965546    23           28.87436
-
-3, MOSAIC_PARENTAL_NONTRANS, WES3.SQ
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 63  SF0336708     FA               0.2639459     4           15.15462
-## 78  SF0342265     MO               0.2768700     4           14.44721
-## 159 SF0324757     FA               0.3945041  2808         7117.79595
-
-2, MOSAIC_PARENTAL_NONTRANS, WES2.MQ
-##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 12 SF0350442     MO               0.1662686     2           12.02873
-## 20 SF0319187     MO               0.1995900     3           15.03081
-
-5, MOSAIC_PARENTAL_NONTRANS, WES3.ST
-##        FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 4   SF0360546     MO               0.1294841     7           54.06067
-## 28  SF0288445     MO               0.2055009     3           14.59847
-## 59  SF0197166     FA               0.2550314   100          392.10863
-## 104 SF0364547     MO               0.3277593     9           27.45917
-## 157 SF0363100     FA               0.3803137     7           18.40586
-
-1, MOSAIC_PARENTAL_TRANS, WES3.MQ
-##       FAMILY PERSON PERCENT_BASES_AUTOSOMAL COUNT SNVS_PER_EXOMEBASE
-## 57 SF0369960     FA               0.3092882     2           6.466462
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="SPARK" /><summary type="html">These markdowns represent the data preparation and figure generation for identifying outliers. Coverages are merged across lists in a separate markdown.</summary></entry></feed>
+&lt;br /&gt;&lt;a href=&quot;https://www.dropbox.com/s/utobouaeouw3nqr/blog_scrna.220324_HB_Coassay_RNA.cistopic.30.UMAP_pass2.plot.png?dl=0&quot;&gt;UMAP of scRNA-seq&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="scrna" /><summary type="html">This describes a second pass at the processing pipeline for sc-RNAseq. The main changes from the first pass are the name changes to the tags and breaking the final steps into multiple parts to use the intermediate output for filtering purposes. Talking with Zach from the Saunders lab, here are some differences or elaborations we can add. Their work seems structured around DropSeq pipelines and tools related to edgeR and making DGE objects. Tag usage seems to indicate a lot being originally adapted from this link to DropSeq PDF. built around snakemake paired with SLURM jobs uses condaenvs instead of modules since they are on exacloud uses XC, XM, XG tags vs. the current choice of BC, XU, and XT tags performs read adapter trimming uses cellbender(?) for background removal uses DropSeq tools(?) for cell calling (some method to choose cell filtering thresholds rather than arbitrary thresholds)</summary></entry></feed>

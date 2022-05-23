@@ -1,0 +1,12 @@
+I"'<p>FINAL REPORT OF FILES:
+	Nothing of my own is on lustre1, here’s the sizes of directories remaining on lustre1: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/dirsizes.lustre1.nov42021.txt</code>
+	The only thing copied from lustre1 was the kruppd directory. It now lives <code class="language-plaintext highlighter-rouge">/home/groups/oroakdata/lustre1_kruppd</code>
+	TEMP spark files, coverages and pileups, can be deleted eventually or regenerated: /home/groups/oroakdata/TEMP_SPARK</p>
+
+<p>There are only a few folders left on /home/exacloud/gscratch/radpantry
+	but these are just scripts, programs, and empty folders I don’t have permissions to delete.
+	But there’s no data and anything here can be deleted whenever.</p>
+
+<p>/home/groups/oroaklab/nishida/</p>
+
+:ET

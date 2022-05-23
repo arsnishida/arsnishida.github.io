@@ -1,0 +1,73 @@
+I"D<p>There are a few folder left on <code class="language-plaintext highlighter-rouge">/home/exacloud/gscratch/radpantry</code>. These are all copies of scripts, software, or empty folders that I do not have permissions to delete. There is no data and anything remaining can be deleted whenever.</p>
+
+<p>None of my files exist on lustre1. Here are the sizes of directories remaining on lustre1: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/dirsizes.lustre1.nov42021.txt</code>.</p>
+
+<p>The only directory copied from lustre1 waas the kruppd directory which is copied here: <code class="language-plaintext highlighter-rouge">/home/groups/oroakdata/lustre1_kruppd</code>.</p>
+
+<p>Interemediate SPARK mosaic files, mpileups and GATK coverages, are here.</p>
+
+<p>These can be deleted for space and can always be regenerated from the CRAMs.</p>
+
+<p>The WES1 locations are here: <code class="language-plaintext highlighter-rouge">/home/groups/oroakdata/TEMP_SPARK</code>.</p>
+
+<p>The WES2/3 locations are here: <code class="language-plaintext highlighter-rouge">/home/groups/oroaklab/nishida/spark_mosaic/TEMP/</code>.</p>
+
+<p>No other files of mine exist on <code class="language-plaintext highlighter-rouge">/home/groups/oroakdata/</code>.</p>
+
+<p>###</p>
+
+<p>/home/groups/oroaklab/nishida/</p>
+
+<p>mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom
+mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom.2020-01-10</p>
+
+<ul>
+  <li>libraries environments could be deleted whenever, if anybody happens to be using my libraries or environments they should move them or recreate them in their own space.
+unwritten:</li>
+  <li>plasmid? - abandoned</li>
+  <li>paternity - check with hadley with the final summary; fixed the sample mixups; gone from slack history, mendellian_error output, revisit what the error codes mean</li>
+  <li>ntd - all zipped up by sequence date, last one was done by sally and is a copy of her directory</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Directory	Tag	Size	Notes
+amplicon_220305	amplicon	8.8G	amplicon analysis using shotgun approach and variant calling
+amplicon_220406	amplicon	3.6G	amplicon analysis using shotgun approach and variant calling
+ArchR	libraries	251M	complete ArchR libraries with input reading bugfix, likely obsolete now
+celsee	environment	34G	celsee and docker information for celsee analysis by Eve
+crispr_amplicon	amplicon	130G	old runs of amplicon sequencing by date using CRISPresso, parsing BWA CIGARs, amplican
+crispr_capture	crisprcap	69G	final output for crisprcapture paper
+cron	environment	6.5K	location for holding temp logs and environment for cron
+dirsizes.lustre1.nov42021.txt	.	.	sizes of files remaining on lustre1
+dirsizes.oroaklab_nishida.may22_2022.txt	.	.	sizes of files in this directory
+env	environment	1.7G	miscellaneous python environments
+example_brooke_amplican	amplicon	1.6G	tutorial dataset sent to Brooke to describe amplicon processing
+fimo_scans	motif	32G	fimo scans across hg38 and mm10
+github	libraries	2.1M	personal scitools-dev build, anything new has been included in the main scitools-dev branch
+happy	environment	181M	python environment for happy
+jupyter	environment	1.1G	jupyter notebook environment
+marissa_tbr1_sra	tbr1	6.7G	download of fastqs and beds from GEO, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71384
+miniconda3	environment	6.8G	personal miniconda install with nextstrain environments
+mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom	spark_validations	167G	mosaic confirmation project with variant calls and IGV shots
+mosaic_confirmations_Project_FEL_13640_B01_NAN_Custom.2020-01-10	spark_validations	18G	mosaic confirmation project with variant calls and IGV shots
+motifsim	motif	38M	attempt at defining motif families by pwm via motifsim
+nextseq_organization_may4	seq	88K	records of the accounting checking nextseq runs between drives
+ntd	ntd	209G	tarballs of ntd analysis by sequence, last one was copied from Sally’s directories
+paternity_190726	paternity	17G	first sequence run for checking paternity of samples via mendellian error
+paternity_200130	paternity	21G	second and final sequence run for checking paternity of samples via mendellian error
+pilot24.deepmosaic_exacloud_results.tar.gz	deepmosaic	6.7G	tarball of deepmosaic modified source code and results from running on exacloud
+pilot24_deepmosaic_results	deepmosaic	6.9G	results and IGV shots for Anna’s rotation using deepmosaic
+plasmid_assembly.tar.gz	plasmid	131M	tarball of plasmid assembly attempt
+R_4.0.0_arsn	libraries	4.2G	split of the R 4.0.0 libraries for the purposes of monocle3
+sc_dm6_tau	dm6_tau	5.0G	Eve’s DA results run on exacloud
+scitools_env	environment	2.0G	environment for scitools work
+scitools_tests	scitools	254G	misc. tests with scitools
+scripts	seq	104K	misc. personal scripts
+sc_tmp1	tbr1	162G	ArchR and DA results from Marissa’s TBR1 SC data
+spark_mosaic	SPARK	11T	intermediate data from the spark mosaic analysis, the entire size comes solely the temporary mpileups and coverages
+ssc	ssc	123G	ssc MIP processing split by pools
+stamp	motif	14M	attempt at defining motif families by pwm via stamp
+taylor_ashg	crisprcap	80G	preliminary analysis done for Taylor’s presentation at ASHG
+taylor_vars	crisprcap	117G	initial pass at crispr-capture analysis
+test_scrna_mar29	scrna	39G	test scrna pipeline
+</code></pre></div></div>
+:ET
