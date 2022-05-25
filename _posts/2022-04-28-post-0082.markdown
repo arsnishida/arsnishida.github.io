@@ -89,8 +89,11 @@ Markdowns:
 <br>[03, WES3, Simplex Quad HC and Burden Tables](https://www.dropbox.com/s/zeh30zz2fevmsqw/03_WES3_SQ.hcburdentable.html?dl=0)
 <br>[03, WES3, Simplex Trio HC and Burden Tables](https://www.dropbox.com/s/elfy452hmdtssnh/03_WES3_ST.hcburdentable.html?dl=0)
 <br>[04, Post-Hoc Cohort, IGV, and iWES Filter Lists](https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0)
+<br>[05, Joined Splice Distances](https://www.dropbox.com/s/lu2x079h77bzv4h/05_splice_dists.html?dl=0)
+<br>[06, Joined Allele Frequencies](https://www.dropbox.com/s/yg0kwr50f367mky/06_allele_freqs.html?dl=0)
 
 Reference Lists and Files:
+<br>[Final Families](https://www.dropbox.com/s/aajae2uul9rlewc/final_family_list.txt?dl=0)
 <br>[WES1 Table](https://www.dropbox.com/s/444bqajlndg9qy8/SPARK.27K.mastertable.20190820.txt?dl=0)
 <br>[WES2 Table](https://www.dropbox.com/s/2uw60rpgvhfsp81/SPARK.WES2.mastertable.2021_03.tsv?dl=0)
 <br>[WES2 Table Info](https://www.dropbox.com/s/zupzb4itwe4ehjm/SPARK.WES2.mastertable.2021_03.dictionary.tsv?dl=0)
