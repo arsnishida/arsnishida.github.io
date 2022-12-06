@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Example"
+date:   2020-10-07
+tags: general
+nav_order: 1
+---
+
+Directory: `/home/groups/oroaklab/sample/directory`
+
+Summary of post. Placeholder sentence. Write descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Description of Figure 1. [figure-01]
+
+Description of Figure 2. [figure-02]
+
+1. Function example 1:
+```
+Line 1
+Line 2
+Line 3
+```
+2. Function example 2:
+```
+Line 1
+Line 2
+Line 3
+```
+
+[figure-01]: https://ohsu.app.box.com/file/726755681832
+[figure-02]: https://ohsu.app.box.com/file/726746699799

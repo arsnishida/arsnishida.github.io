@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "SSC Final Validation Tables with Annotations"
+date:   2020-10-09
+tags: ssc
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/ssc`
+<br>Box Directory: `https://ohsu.app.box.com/folder/81820136345`
+
+Updated the SSC variant tables to include annotations derived from the columns.
+
+The biggest discrepancies come from the borderline cases at AF 0.40-0.60 that are hard to call either mosaic or germline. The auto-annotations use the PHET values but can still differ in calls between LCL and WB. Also note that there are cases where it is identified as mosaic parental trans in LCL and mosaic parental nontrans in WB (or vice versa). Twin variant calls in pool 5 do not have twin information in this sheet.
+
+An issue with these annotations are cases where the mutation shows up in small frequency in a non-main sample. This may be more than error and may be evidence of a trans parental mosaic mutation. We are currently only testing pzero on the main sample with the previously derived allele frequency. We could test for novel mosaics in other samples. For now, I am using a hard cutoff where a mutation must have of an allele frequency > 0.01 (found in 1 of 100 reads). 
+
+Three examples taken from pool 1 where the originally identified mutation was in a child but from this validation could be a parental mosaic. The first two cases are germline in the child and could be parental mosaics. [figure-01]
+
+[figure-01]: https://ohsu.app.box.com/file/728529690028
