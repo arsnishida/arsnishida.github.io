@@ -2,7 +2,7 @@ title: ARSN Work Blog
 description: This is a blog for work projects Andrew Nishida, nishidaa@ohsu.edu, in CEDAR at OHSU.
 url: https://https://arsnishida.github.io/
 
-# Theme
+# Theme, use remote
 # theme: "just-the-docs"
 remote_theme: pmarsceill/just-the-docs
 #theme: just-the-docs
