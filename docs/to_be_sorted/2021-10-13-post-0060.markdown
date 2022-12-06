@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "SPARK Burden w/ REVEL Scores Gene Sets, 01"
+date:   2021-10-13
+parent: to_be_sorted
+nav_order: 2
+---
+
+*Update Oct 13*. Updated to add 0 counts for families with absent calls.
+
+This is an extension of the burden analysis but here we are keeping only damaging missense calls by thresholding on REVEL scores >= 0.50. This eliminates many of the calls but does produce a stronger signal in comparing probands to siblings. REVEL scores are available in the supplmental annotation folder.
+
+Markdown:
+<br>[13 Burden REVEL, QS and missense](https://www.dropbox.com/s/ag58qxihyjcc3pk/13_burden_revel_qs_missense.html?dl=0)
+<br>[13 Burden REVEL, QS+TS and missense](https://www.dropbox.com/s/ng86fbx2o4ap3sw/13_burden_revel_qsts_missense.html?dl=0)
+
+Notes:
+<br>Fig 3.1 - This contains the REVEL distributions which are left-skewed towards 0.
+
+Annotations:
+<br>*OUTDATED. Use full annotations on index page.*
+<br>[Supplemental Annotations, REVEL, trio simplex](https://www.dropbox.com/s/4aaak22tpx5r1kl/revel.triosimplex.txt?dl=0)
+<br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/svr5kdpds11chqq/revel.quadsimplex.txt?dl=0)
+<br>[Supplemental Annotations, REVEL, quad simplex](https://www.dropbox.com/s/n5ahznpustist5b/revel.quadmultiplex.txt?dl=0)

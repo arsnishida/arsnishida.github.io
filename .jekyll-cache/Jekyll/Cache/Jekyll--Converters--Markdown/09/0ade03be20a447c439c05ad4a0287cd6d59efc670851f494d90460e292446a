@@ -1,2 +1,0 @@
-I"<p>Here is a rough, first pass processing pipeline for sc-RNAseq. In general, it works by turning the FASTQ into a BAM and adding the barcodes, UMIs, alignment, and annotation to that BAM. The purpose is creating a complete BAM that can then be filtered, de-duped, and counted on the fly. This means there’s only one single BAM with all the information and one can pull out what they need from it without having to go back steps. The broad steps are adapted from the following pipeline: https://github.com/epigen/scifiRNA-seq.</p>
-:ET

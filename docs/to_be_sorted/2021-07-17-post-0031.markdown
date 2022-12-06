@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "SPARK Preliminary Pass 6a and 6b, Simplex Trio Coverages, SNV Counts, and AFs"
+date:   2021-07-17
+parent: to_be_sorted
+nav_order: 2
+---
+
+This is a first pass through the data for the simplex trio families for the purposes of outlier detection.
+
+Link to markdown:
+<br>[Preliminary Outlier Analysis for Trio Simplex Calls, part 6a](https://www.dropbox.com/s/n73w7pyxewrzl2l/prelim_burden_triosimplex_06a.html?dl=0)
+<br>[Preliminary Outlier Analysis for Trio Simplex Calls, part 6b](https://www.dropbox.com/s/jls73uleobac7o5/prelim_burden_triosimplex_06b.html?dl=0)
+
+Notes per section from 6b:
+<br>4.2 - Decile Plot for Joint Coverage Families - Appears similarly to simplex quads. There isn't a tail. No filtering recommended again.
+<br>5.2 - Plot Genomic Coverage, Autosomal - Also similarily expected. To note, joint family coverages here for trios are going to be larger than simplex quad family coverages since there are fewer family members.
+<br>5.8 - Plot SNV Counts Jitter, Mosaic Child - There's a single, clear outlier that would get filtered out with the same simplex quad threshold of >= 10.
+<br>6.3 - Plot SNV Counts Jitter, Germline Child - No outliers. Nothing would be removed with the same simplex quad threshold of >= 12.
+<br>7.3 - Plot SNV Counts Jitter, Mosaic Parental Non-Trans - There are a few clear outliers and a few ambiguous cases like in the simplex quads. 2 families are clear outliers and 5 are near the threshold but still fall above the simplex quad threshold of >= 14.
+<br>8.3 - Plot SNV Counts Jitter, Mosaic Parental Trans - No outliers. Nothing would be removed with the same simplex quad threshold of >= 6.
+<br>11.1 - Plot All Allele Fraction Densities - Looks as expected. The remainder of AF plots also look as expected and in line with the simplex quads.

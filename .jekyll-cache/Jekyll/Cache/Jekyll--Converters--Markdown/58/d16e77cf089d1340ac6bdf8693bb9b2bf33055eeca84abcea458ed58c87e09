@@ -1,4 +1,0 @@
-I"]<p><strong>TSS enrichment at a single cell level:</strong>
-<br />Calculated as the ratio of signal to noise. Signal is defined as the region around TSS +/- 100bp. Noise is defined as the 100bp regions +/- 2000bp from TSS regions that do no overlap with signal. This leads signal and noise being slightly different in size but reads are uniquely counted into a single bin versus other methods where a read can fall into multiple TSS and noise regions. Output is a two-column value file.
-<br /><code class="language-plaintext highlighter-rouge">scitools bam_tssenrich [bam] [hg38 or mm10 or dm6]</code></p>
-:ET

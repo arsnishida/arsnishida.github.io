@@ -1,2 +1,0 @@
-I"f<p>This is the first pass through the data, getting it organized, and the framework for reiteration of these analyses setup. Here I am plotting preliminary coverage figures and getting SNV counts by grouping. Counting and pasting coverages per family should probably be done outside of R to actually work quickly. This is just on the quad simplex files.</p>
-:ET

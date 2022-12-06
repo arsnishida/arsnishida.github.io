@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Single Cell TBR1 Cicero/Monocle3 with TSS > 2.7"
+date:   2021-06-10
+parent: to_be_sorted
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/cicero`
+<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/cicero/cicero.Rscript`
+
+The Cicero instruction was taken from the more specific Monocle3 guide and not the default guide [here.](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/#single-cell-accessibility-trajectories)
+
+Files generated:
+<br>`cicero.conns.txt` - three column file with pairwise comparisons of two peaks and their connectivity score, -1 to 1
+<br>`cicero.CCAN.txt` - two column file with the peak name and its CCAN group membership
+<br>`cicero.pseudotimes.txt` - cell and their pseudotime
+<br>`cicero.cicero.pseudotime_coeffs.txt` - coefficients from fit of expression over time w/ header
+
+Pseudotimes projected onto UMAP made within Cicero/Monocle3. [FIGURE-1](https://www.dropbox.com/s/q5iogpawifl7h31/blog_tmp1_pseudo_monocleumap.png?dl=0)
+
+Pseudotimes projected onto UMAP we made. [FIGURE-2](https://www.dropbox.com/s/c8axbywevhklpas/blog_tmp1_pseudo_umap.png?dl=0)
+
+Two well defined peaks significantly changing over pseudotime. [FIGURE-3](https://www.dropbox.com/s/f72foapl3gbvtxw/blog_tmp1_pseudo_peakexs.png?dl=0)

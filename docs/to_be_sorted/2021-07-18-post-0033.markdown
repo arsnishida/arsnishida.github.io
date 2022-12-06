@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "Single Cell TBR1 BioCluster/Genotype/Line/Time DA with TSS > 2.7"
+date:   2021-07-18
+parent: to_be_sorted
+nav_order: 2
+---
+
+Dir: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA`
+Run: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/third_pass_filt_TSS2p7/DA/run.txt`
+
+The DA information of where and what was run is left here for posterity. None of the comparisons yielded significant results using the raw p-value. The DA was performed after TF normalization using the Wilcoxon rank sum test.
+
+The following tests were performed:
+```
+# comparing genotypes within bioclusters
+excit_het vs excit_hom vs excit_wt
+inhibit_het vs inhibit_hom vs inhibit_wt
+prog_het vs prog_hom vs prog_wt
+
+# comparing lines within bioclusters
+excit_a136pft vs excit_tbr1ko
+inhibit_a136pft vs inhibit_tbr1ko
+prog_a136pft vs prog_tbr1ko
+
+# comparing progression from prog to excitatory
+progenitor_E12.5_a136pfs_het vs excitatory_E16.5_a136pfs_het
+progenitor_E12.5_a136pfs_hom vs excitatory_E16.5_a136pfs_hom
+progenitor_E12.5_a136pfs_wt vs excitatory_E16.5_a136pfs_wt
+progenitor_E12.5_tbr1_ko_het vs excitatory_E16.5_tbr1_ko_het
+progenitor_E12.5_tbr1_ko_hom vs excitatory_E16.5_tbr1_ko_hom
+progenitor_E12.5_tbr1_ko_wt vs excitatory_E16.5_tbr1_ko_wt
+```
+
+Here is a complete breakdown of cell numbers:
+```
+    177 excitatory_E12.5_a136pfs_het
+     42 excitatory_E12.5_a136pfs_hom
+     16 excitatory_E12.5_a136pfs_wt
+     31 excitatory_E12.5_tbr1_ko_het
+      9 excitatory_E12.5_tbr1_ko_hom
+     26 excitatory_E12.5_tbr1_ko_wt
+   1044 excitatory_E16.5_a136pfs_het
+    962 excitatory_E16.5_a136pfs_hom
+    902 excitatory_E16.5_a136pfs_wt
+    655 excitatory_E16.5_tbr1_ko_het
+    183 excitatory_E16.5_tbr1_ko_hom
+    354 excitatory_E16.5_tbr1_ko_wt
+     30 inhibitory_E12.5_a136pfs_het
+     31 inhibitory_E12.5_a136pfs_hom
+     11 inhibitory_E12.5_a136pfs_wt
+      4 inhibitory_E12.5_tbr1_ko_het
+      8 inhibitory_E12.5_tbr1_ko_hom
+      6 inhibitory_E12.5_tbr1_ko_wt
+     19 inhibitory_E16.5_a136pfs_het
+     21 inhibitory_E16.5_a136pfs_hom
+     37 inhibitory_E16.5_a136pfs_wt
+     15 inhibitory_E16.5_tbr1_ko_het
+      5 inhibitory_E16.5_tbr1_ko_hom
+     10 inhibitory_E16.5_tbr1_ko_wt
+    649 progenitor_E12.5_a136pfs_het
+    205 progenitor_E12.5_a136pfs_hom
+    117 progenitor_E12.5_a136pfs_wt
+    177 progenitor_E12.5_tbr1_ko_het
+     70 progenitor_E12.5_tbr1_ko_hom
+    102 progenitor_E12.5_tbr1_ko_wt
+    232 progenitor_E16.5_a136pfs_het
+    271 progenitor_E16.5_a136pfs_hom
+    365 progenitor_E16.5_a136pfs_wt
+    148 progenitor_E16.5_tbr1_ko_het
+     52 progenitor_E16.5_tbr1_ko_hom
+    115 progenitor_E16.5_tbr1_ko_wt
+    155 undetermined_E12.5_a136pfs_het
+    222 undetermined_E12.5_a136pfs_hom
+    138 undetermined_E12.5_a136pfs_wt
+     60 undetermined_E12.5_tbr1_ko_het
+     77 undetermined_E12.5_tbr1_ko_hom
+     40 undetermined_E12.5_tbr1_ko_wt
+    482 undetermined_E16.5_a136pfs_het
+    514 undetermined_E16.5_a136pfs_hom
+    467 undetermined_E16.5_a136pfs_wt
+    162 undetermined_E16.5_tbr1_ko_het
+    192 undetermined_E16.5_tbr1_ko_hom
+    293 undetermined_E16.5_tbr1_ko_wt
+```

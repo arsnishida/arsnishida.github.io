@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "SPARK Parental Trans Mosaics Breakdown"
+date:   2021-10-13
+parent: to_be_sorted
+nav_order: 2
+---
+
+This contains a quick look at how many mosaics are transmitted by the parents to their children. There is no evidence of preference for proband or sibling in these transmission events where 51% go to probands and 49% go to siblings.
+
+Markdown:
+<br>[14 Parental Transmission Breakdown](https://www.dropbox.com/s/t7suz2lrk612wvt/14_parental_transmission_01.html?dl=0)
+
+Notes:
+<br>2.2 - Plot Father Transmitted Mosaics - Pro vs. Sib Allele Frequency Plot
+<br>2.3 - Plot Mother Transmitted Mosaics - Pro vs. Sib Allele Frequency Plot 
+
+Breakdown of transmission to children.
+```
+##                      PaternalTransMosaics MaternalTransMosaics
+## trans to PRO                           26                   24
+## trans to SIB                           24                   22
+## trans to PRO and SIB                    4                    6
+## total                                  54                   52
+```

@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Single Cell TBR1 Bigwig Tracks"
+date:   2021-07-29
+parent: to_be_sorted
+nav_order: 2
+---
+
+Tracks are here and made via:
+<br>Dir: `/home/groups/oroaklab/nishida/sc_tmp1/tracks`
+<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/tracks/run.txt`
+
+Example Regions:
+<br>[Example Shot of HES5](https://www.dropbox.com/s/dp1qjrenece8rnt/blog_sctmp1_hes5.png?dl=0)
+<br>[Example Shot of NEUROD6](https://www.dropbox.com/s/ikzxqr1xjigy2ql/blog_sctmp1_neurod6.png?dl=0)
+<br>[Example Shot of HMGA2](https://www.dropbox.com/s/8d4a1jzkve3ud7b/blog_sctmp1_hmga2.png?dl=0)
+
+Tracks:
+<br>[Box Link to Tracks](https://ohsu.app.box.com/folder/142243614779)

@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Celsee and Docker Info"
+date:   2022-05-18
+parent: to_be_sorted
+nav_order: 2
+---
+
+Dir: `/home/groups/oroaklab/nishida/celsee`
+<br>Run: `notes.txt`
+
+Here is the copy of the steps for using Docker on our cluster and running the Celsee pipeline. You do need sudo privileges to run this and/or setup from ACC to get Docker running.
+```
+Celsee Analysis Steps
+
+1. Start Docker
+I would suggest not normally having Docker running in the background, only bring it up when you want to use it. Installed via convenience scripts.
+Theoretically(?) this is the only step that requires sudo privileges OR a sudo user to grant privileges to run Docker: `sudo usermod -aG docker lowensev`.
+$ sudo service docker start
+
+2. Verify that Docker is running
+$ systemctl status docker
+
+3. Import in the Celsee pipeline as a Docker image
+I have it just living in my directories.
+$ cd /home/groups/oroaklab/nishida/celsee/celsee_analysis
+$ bash import.sh 
+
+4. Verify that the image was imported
+$ docker images
+
+5. Run Celsee pipeline
+- The output location is also used as a temp directory which is a problem.
+- But also Docker requires the drives be mounted into Docker and we can't mount anything in /home/groups/. Instead go to /tmp and copy everything over.
+- You also need sudo privileges to write the output (this is how it is in the manual and I still can't believe this).
+- When running as sudo, acc does weird things to group/user privileges so you need to copy EVERYTHING into the /tmp directory.
+- Copy over the config file, the fastqs, all reference files, and the entirety of the celsee-analysis script folder (I think you only need some of these copied but do everything to be safe).
+- Also, in the config file, the optional fields are actually required to run and FASTQ files MUST end with either '.fastq' or '.fastq.gz'.
+$ # move ALL files to a directory in /tmp
+$ sudo python3 run_celsee.py eve_test.config . output Human_GRCh38_genomeSAsparseD3
+
+6. Copy output folder back to /home/groups and delete the /tmp directory
+
+7. Remove the Celsee analysis pipeline image
+$ docker image rm celsee-analysis
+
+8. And then shut down Docker (also needs sudo privileges)
+$ sudo service docker stop
+```

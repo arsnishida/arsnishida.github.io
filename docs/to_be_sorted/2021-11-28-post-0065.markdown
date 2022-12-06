@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Single Cell TBR1 Pseudo-Bulk Depth Tests"
+date:   2021-11-28
+parent: to_be_sorted
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example`
+<br>Run: `/home/groups/oroaklab/nishida/sc_tmp1/pseudo_bulk_example/run.txt`
+
+This gives an example of how to take the single-cell data and transform it to bulk. I then subsampled the full BAM by increments of 5% and called macs3 on each subset. The plot shows a linear increase of the number of peaks called relative to the log number of reads present. This indicates that we are not at saturation of reads for calling peaks and gives a rough approximation of what we can expect. From my personal experience with bulk DNase data, saturation for peaks called needs ~500M reads. With single-cell data you get a lot more repetition of common open sites from each individual cell.
+
+Figure of peaks called from pseudo-bulk data:
+<br>[Number of Macs 3 peaks and Log Read Depth](https://www.dropbox.com/s/ch1iq5sodb6eoia/blog_tmp1.reads_v_macs3peaks.png?dl=0)

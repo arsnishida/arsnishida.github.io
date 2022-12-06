@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "Single Cell TBR1 ENCODE DHS Index Final UMAP and Clusters"
+date:   2021-05-27
+parent: to_be_sorted
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index`
+<br>Run: `run.txt`
+<br>Final Matrix: `tbr1_ko_encodeDHSindex_finalfilter.filt.sparseMatrix.values`
+<br>Final UMAP Dims: `tbr1_ko_encodeDHSindex_finalfilter.filt.cistopic.30.UMAP.dims`
+<br>Final Clusters: `tbr1_ko_encodeDHSindex_finalfilter.filt.cistopic.30.k50.pg.annot`
+
+Here is the final UMAP and clusters. This was performed using the ENCODE DHS index, a milder TSS enrichment filter for cells > 1.5 TSS enrichment, and default scrublet calling. Why does this end up looking better? My guess is that the cells with lower TSS enrichment are genuine clusters (like a cell type that is hard to get in general). These lower TSS cells cannot get normal peaks called so using the ENCODE DHS index is able to better identify their signal. And their inclusion helps cluster everything else. [figure-01]
+
+Compare these to some failed attempts using higher TSS enrichment filters at 2 and 2.7 which lose all form. [figure-02]
+
+[figure-01]: https://ohsu.app.box.com/file/815609175624
+[figure-02]: https://ohsu.app.box.com/file/815609354066

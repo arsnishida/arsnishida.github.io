@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "SPARK Burden Tables Gene Sets 04"
+date:   2021-10-6
+parent: to_be_sorted
+nav_order: 2
+---
+
+This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of mosaic burden in the subsets.
+
+This differs from "SPARK Burden Tables Gene Sets 03" by using the final filters from IGV shots and recalculated cohort counts. This also uses the more exact NS and LGD family lists.
+
+Markdown:
+<br>[07_04 Burden Gene Sets](https://www.dropbox.com/s/pjrsx5sgete3fzr/07_burden_genesets_04.html?dl=0)
+
+Notes per section:
+<br>10.4 - Print Table of Wilcoxon Rank Sums for Germline Missense - This indicates the statistical significant difference, p < 0.001, with the NS list
+<br>10.6 - Plot for Germline Missense, All Genes - This shows the germline missense burden from the test above. This is similar for the other gene subsets.

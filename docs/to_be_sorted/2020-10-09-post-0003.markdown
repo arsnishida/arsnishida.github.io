@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Two Week Update: 2020-10-09"
+date:   2020-10-09
+parent: to_be_sorted
+nav_order: 2
+---
+
+Mosaic - Read through Deidre's notes and now have a clear picture of the next steps in collating the data after variant calls. I will first send a draft description of what I believe the next round of summary files should look like. If these seem good I will get them all together across all the data for summarization for the progress report.
+
+Glial Atlas - Resolved the issue with global TSS enrichments and finished the dimensionality reduction on the full set of data (all peaks and all cells). Will ping Casey to get cluster information for the individual DA's. Exacloud's pay structure is changing so we might need to think about a longer-term solution for how to process these larger data sets.
+
+MIPs - The Friday Illumina run seemed to have died at the tail end. I demuxed everything and gave Sara her share. I need to give Sally a different suite of scripts to deal with the data quality issues of R2 for her processing.
+
+SSC - New auto-annotations were generated for each pool, manually checked, and I wrote up the few common discrepencies found. This should conclude any changes to the final variant validation tables for the time being.
+
+CRISPRcapture - The modified tables were finished and I gave some more QC metrics split out by the genome stratifications for sanity checks. Methods writeup was sent to Taylor and I'll finish a more static summary of where everything is and put it on this blog.
+
+Spark Networks - Presented some preliminary data fixing the enrichment test and showing the enrichments across the layers/area in addition to age. Similar enrichment patterns across clusters indicate how to best group these clusters together for redoing the enrichments to give us more meaningful results (because everything is enriched currently). Do some qualitative heatmaps and pseudotime-sorted summaries of key genes.
+
+Coussen's - Finish pseudotime DA. We will probably have to set up data migration with Google Cloud, which is what they are using instead of exacloud, eventually.

@@ -1,2 +1,0 @@
-I"<p>This performs the burden analysis across the genesets using the combined and harmonized Spark and SSC lists. The SSC is transformed to hg38 but the joint coverages remain in hg19. Joint coverages were manually filtered for duplicate entries for two families, 13431 and 12839.</p>
-:ET
