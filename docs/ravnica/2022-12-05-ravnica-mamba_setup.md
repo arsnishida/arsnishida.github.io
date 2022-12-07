@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mamba Setup"
+title:  "22-12-05, Mamba Setup"
 date:   2022-12-05
 parent: ravnica
 nav_order: 2

@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Mamba Install - Initial"
+title:  "22-12-05, Mamba Install - Initial"
 date:   2022-12-05
 parent: ravnica
 nav_order: 2
 ---
 
 Install mambaforge
-```
+```sh
 cd /home/groups/ravnica/src/mamba
 bash Mambaforge-Linux-x86_64.sh
 conda config --set auto_activate_base false
@@ -18,7 +18,7 @@ mamba info # check this
 ```
 
 `mamba info` should look like this:
-```
+```sh
      active environment : None
             shell level : 0
        user config file : /home/users/nishidaa/.condarc
@@ -53,7 +53,7 @@ mamba info # check this
 ```
 
 Set up scitools py env in a slightly older version of python so all the libraries are actually found.
-```
+```sh
 mamba create --name scitools python="3.9"
 mamba activate scitools
 mamba install numpy
