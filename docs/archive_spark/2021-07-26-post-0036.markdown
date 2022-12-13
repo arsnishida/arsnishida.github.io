@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "21-07-26, SPARK First Pass, Synonymous SNV Splice Distances"
+date:   2021-07-26
+parent: archive_spark
+nav_order: 2
+---
+
+This replicates Figure 5 from original paper using the now defunct final simplex quad list looking at synonymous SNVs and their distances from splice sites.
+
+Link to Markdown:
+<br>[Simplex Quad Synonymous SNV Splice Distances](https://www.dropbox.com/s/8vwd6t3ap2g8t0n/firstpass_simplexquads_splicedist_08.html?dl=0)
+
+Markdown Notes:
+<br>3.2 - Plot Densities, Match Fig 5 - The splice distances here show the opposite of what was observed before, they are further from splice sites. They are nonetheless different in distribution.

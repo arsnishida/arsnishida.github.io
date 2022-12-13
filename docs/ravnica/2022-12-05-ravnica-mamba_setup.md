@@ -45,3 +45,5 @@ nav_order: 2
 4. Try loading an environment: `mamba activate scitools`.
 
 5. Deactivate: `mamba deactivate`.
+
+6. Users are encouraged to take the 'base' environment 'scitools' which will be maintained by Andrew Nishida and clone it for use for their own personal environments or specific project environments, `mamba create --name CLONE_ENV_NAME --clone ENV_NAME`

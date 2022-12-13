@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "21-06-02, SPARK Joint Coverage Table Fix"
+date:   2021-06-02
+parent: archive_spark
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/spark_mosaic/refs/cds_splice_sites/annovar_hg38`
+<br>Run: `run.txt`
+
+Directory: `/home/groups/oroaklab/nishida/spark_mosaic/burden`
+<br>Run: `run.2_redo_newref.txt`
+
+References are regenerated from ANNOVAR. Comparisons between this Annovar 2018 hg38 reference and the current 2021 reference are here showing > 99% bases present in the older version relative to the newer. [figure-01]
+
+Joint coverage across families were recalled with this new reference and with the small bug fixed (coverage counts are no longer off by 1).
+
+Joint coverage plots were recreated separately for simplex quads, multiplex quads, and simplex trios. These count the number of bases over 52 thresholds (from the range of needing 1-250 counts) for each member of a family, the total of the family, and the average of the family.  These are subset into six regions, non-SDTRF (CDS) sites and SDTRF sites and then those are split into autosomal, X, and Y chromosomes.
+
+Coverage plots are in the following markdown. There is now appropriate coverage across the exome and thresholds can be picked. [figure-02]
+
+Links to Burden Data:
+<br>[jointcoverage.simplextrios.txt](https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplextrios.txt)
+<br>[jointcoverage.simplexquads.txt](https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.simplexquads.txt)
+<br>[jointcoverage.multiplexquads.txt](https://www.dropbox.com/home/SPARK%20Mosaics/burden?preview=jointcoverage.multiplexquads.txt)
+
+[figure-01]: https://ohsu.app.box.com/file/817670565940
+[figure-02]: https://www.dropbox.com/home/SPARK%20Mosaics/markdowns?preview=burden_coverage_plots.html

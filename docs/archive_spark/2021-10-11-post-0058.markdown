@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "21-10-11, SPARK Monozygotic Twins in Quad Families"
+date:   2021-10-11
+parent: archive_spark
+nav_order: 2
+---
+
+There are 24 multiplex quad and 9 simplex quad monozygotic twin families in our analysis. If you check their upstream calls for "MULTI_MOSAIC" calls in just the proband and siblings you return 6 and 2 sites respectively from the multiplex and simplex families. These 8 IGV shots are uploaded but 7 of them show evidence of the variant also in the parent (visually it appears but isn't technically called and retained in our lists as mosaic). There remains one mosaic (a synonymous mutation) from the multiplex quads that looks like a real mosaic in the proband and sibling. Here is a link to that shot: [IGV Screenshot of Real Multi-Mosaic](https://www.dropbox.com/s/omc3tbbv647e3sc/MULTI_MOSAIC_19_53351779_A_G_SF0080300.png?dl=0).
+
+These are the specific sites tested:
+```
+Simplex:
+14	19433918	G	A	SF0027672	MULTI_MOSAIC
+15	41565075	C	T	SF0099414	MULTI_MOSAIC
+
+Multiplex:
+1	155660816	T	C	SF0028355	MULTI_MOSAIC
+3	195784717	G	A	SF0051712	MULTI_MOSAIC
+7	101000375	C	T	SF0051712	MULTI_MOSAIC
+20	58840493	T	C	SF0054416	MULTI_MOSAIC
+15	75682880	G	C	SF0064210	MULTI_MOSAIC
+19	53351779	A	G	SF0080300	MULTI_MOSAIC
+```

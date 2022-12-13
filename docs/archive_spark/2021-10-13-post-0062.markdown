@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "21-10-13, SPARK HC Tables Against SPARK 167"
+date:   2021-10-13
+parent: archive_spark
+nav_order: 2
+---
+
+This intersects our lists with the SPARK 167. We find 20 mosaic child calls intersecting these genes. Breakdowns and the genes are below.
+
+Links:
+<br>[HC list Variants Intersecting w/ SPARK 167, Mosaic Child only](https://www.dropbox.com/s/ivp1z6l7hyqr4my/spark167.mosaic_child.txt?dl=0)
+<br>[HC list Variants Intersecting w/ SPARK 167](https://www.dropbox.com/s/ftzjerfi7ebhw4q/spark167.txt?dl=0)
+
+Markdown:
+<br>[15 SPARK 167 Intersection](https://www.dropbox.com/s/5v9xiutv72g4tj1/15_spark_167_list_01.html?dl=0)
+
+Mutation types of the 20 overlapping mosaic child calls:
+```
+##          missense nonsense_splicing        synonymous 
+##                16                 1                 3
+```
+
+The 20 mosaic hits fell in the following genes:
+```
+   1 ADNP
+   1 AHDC1
+   1 ANKRD11
+   1 ARID1B
+   1 CASZ1
+   2 CIC
+   1 DNMT3A
+   1 GIGYF1
+   1 GRIN2A
+   1 NRXN2
+   2 PACS1
+   1 PHF3
+   1 POMGNT1
+   1 SETD5
+   1 SHANK3
+   1 SRCAP
+   1 SYNGAP1
+   1 TCF20
+```
+
+List of origin for all overlapping calls:
+```
+## multiplex_simplex      quad_simplex      trio_simplex 
+##                23                78                65
+```
+
+Variant types for all overlapping calls:
+```
+##                 GERMLINE_CHILD                   MOSAIC_CHILD 
+##                             84                             20 
+##       MOSAIC_PARENTAL_NONTRANS MOSAIC_PARENTAL_TRANS_MATERNAL 
+##                             56                              2 
+## MOSAIC_PARENTAL_TRANS_PATERNAL 
+##                              4
+```

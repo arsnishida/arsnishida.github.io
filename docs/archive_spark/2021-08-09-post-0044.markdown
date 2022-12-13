@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "21-08-09, SPARK Burden Tables Gene Sets 01"
+date:   2021-08-09
+parent: archive_spark
+nav_order: 2
+---
+
+This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.
+
+Markdown:
+<br>[07 Burden Gene Sets](https://www.dropbox.com/s/879g61jul2vnryi/07_burden_genesets_01.html?dl=0)
+
+Notes per section:
+<br>7.4 - Print Table of Wilcoxon Rank Sums for All Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>7.6 - Plot for All Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>8.4 - Print Table of Wilcoxon Rank Sums for Essential Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>8.6 - Plot for Essential Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>9.4 - Print Table of Wilcoxon Rank Sums for Intolerant Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>9.6 - Plot for Intolerant Genes - These are the Wilcoxon rank sum test p-values. None of them are significant at 0.05.

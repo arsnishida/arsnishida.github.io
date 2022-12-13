@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "21-11-30, SPARK SSC List Formatting to Current SPARK"
+date:   2021-11-30
+parent: archive_spark
+nav_order: 2
+---
+
+The SSC variant calls are taken from this Box file, `https://ohsu.box.com/s/dqm3garunt0xobvgdz41onpexi87yqin`, on this path, `All Files/kruppd/Writing/SSC somatic pilot/data/Data Used for Mosaic Paper/High Confidence Variants/HighConfidence Variants Collapsed_2.csv`. This appears to be a similar version of Table S5 from the Krupp 2017 paper with the columns with the statistics which are excluded from the paper. Unlike the table in the paper, this also collapses sites in overlapping genes into a single entry which is more in line with the SPARK lists where genes are combined in one entry separated by commas. All SSC columns are transformed to match the columns for the SPARK list.
+
+Here is the transformed SSC list. It has the same columns as the SPARK lists and has extra columns representing the SSC specific entries. The two important extra columns to consider that are unique to the SSC list are column 90 and 91 which are the 'FILTER' and 'OLD_TYPE' respectively. 'FILTER' is TRUE or FALSE. TRUE entries should be filtered from the analysis and their designation is explained below. In general they are calls that do not meet our criteria after reannotation in hg38 versus hg19. 'OLD_TYPE' designates whether the call comes from a quad or trio family which may or may not be important for us.
+
+SSC list in SPARK list format:
+<br>[SSC List in SPARK List Format](https://www.dropbox.com/s/hkjkeqibfk2nkyw/ssc.transformed.txt?dl=0)
+
+Markdown showing how the list was modified:
+<br>[17 SSC List Formatting to Current SPARK](https://www.dropbox.com/s/j1flcekwsrp6s03/17_ssc_list.html?dl=0)
+
+The column 'FILTER' designates calls to remove from downstream analysis. 'TRUE' calls should be removed and are given if:
+```
+- there are no FRACTION calls made (not labeled GERMLINE or MOSAIC, labeled 'NA')
+- the variant falls in a region that is annotated in either a non-exonic, super duplicate, or trf region
+- the variant does not have a predicted functional mutation type
+```
+
+The following columns were modified in the transformation:
+```
+Coordinates were changed via LiftOver with 100% of the sites found going from hg19 to hg38.
+All genomic and functional annotations were redone with AnnoVAR for hg38.
+FRACTION_MORE is derived from FRACTION with name changes to match the SPARK list ("GERMLINE_C" is changed to "GERMLINE_CHILD").
+ACC_DIST and DON_DIST are the same value. The SSC list keeps only the closest wheras the SPARK list keeps both separate.
+COMPLEX_EVENT is descriptive in the SSC list and binary in the SPARK list.
+NUM_FAMILY_FOUND and filteredCohortCount represent cohort counts before and after filtering. In the SSC list, only the final count is kept so these are the same for the SSC list.
+HGNCsymbol_to_ENSID and RefSeq_to_ENSID are the ENSEMBL ID's determined from the hg38 annotations.
+```
+	
+The following columns were dropped and all set to 'NA':
+```
+There are no numerical sample IDs in the SSC list.
+SSC uses combined family stats from the variant callers whereas the SPARK list keeps them by individual so these are dropped.
+Mismatch stats for raw mismatch counts, 'other' read counts, and the means are not present in the SSC list.
+gnomAD allele fractions are not present in the earlier SSC table.
+The only error columns in the SSC list are the calculated rates.
+FRACTION_OLD is a legacy column in the SPARK list and does not have meaning in the SSC list.
+The splice site transcript IDs are not present just the distances.
+```
+
+The following extra columns specific to the SSC list were added at the end. These are potentially important for analysis:
+```
+FILTER - TRUE or FALSE and represent variants that should be filtered out after the transformation of hg19 to hg38
+OLD_TYPE - TRIO or QUAD
+OLD_SEGDUP, OLD_RMSK, OLD_TRF, OLD_FUNC_TYPE, OLD_TRANS_REF, OLD_CLASS_REF, OLD_GENE_REF - these are the original hg19 AnnoVAR annotations
+```
+
+The following SSC specific columns were kept and added at the end. These can likely be ignored. I've tried to describe them as best as possible without knowing their exact provenance:
+```
+OLD_STUDY - COHORT or PILOT24 or PILOT400
+OLD_PUBLISHED - IOSSIFOV_2014 or KRUMM_2015
+OLD_AF_ESP, OLD_AF_1KG - allele fractions from other databases
+OLD_PCTILE_CDS_AUTO_45X - 5% percentiles of CDS AUTO 45x
+OLD_FORMAT_VARSCAN, OLD_FORMAT_LOFREQ, OLD_FORMAT_SMOC, OLD_VARSCAN_232_FA, OLD_LOFREQ_211_FA, OLD_SMOC_FA, OLD_VARSCAN_232_MO, OLD_LOFREQ_211_MO, OLD_SMOC_MO, OLD_VARSCAN_232_PRO, OLD_LOFREQ_211_PRO, OLD_SMOC_PRO, OLD_VARSCAN_232_SIB, OLD_LOFREQ_211_SIB, OLD_SMOC_SIB - family-based variant calling output
+OLD_DIST_TO_PREV, OLD_DIST_TO_NEXT, OLD_PERSON_PREV, OLD_PERSON_NEXT - closest call and person	
+OLD_QC_STATUS - at this stage they are all 'PASS', unknown criteria
+OLD_COHORT_DP, OLD_COHORT_DPALT, OLD_P400_COUNT_MOS, OLD_P400_COUNT_GERM, OLD_COHORT_COUNT_MOS, OLD_COHORT_COUNT_GERM, OLD_COHORT_MAX_AD, OLD_P400_COUNT_ALL - various counts within the cohort subsets
+OLD_AF_FA, OLD_AF_MO, OLD_AF_PRO, OLD_AF_SIB, OLD_CALLED_FA, OLD_CALLED_MO, OLD_CALLED_PRO, OLD_CALLED_SIB, OLD_DETECT_FA, OLD_DETECT_MO, OLD_DETECT_PRO, OLD_DETECT_SIB, OLD_PHET_MAIN, OLD_SITE_KEY, OLD_PARENTAL, OLD_GONADAL, OLD_CALLED_VARSCAN, OLD_CALLED_LOFREQ, OLD_CALLED_SMOC - these are all redundant derived columns
+```

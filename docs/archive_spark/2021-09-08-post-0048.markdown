@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "21-09-08, SPARK Burden Tables Gene Sets 02"
+date:   2021-09-08
+parent: archive_spark
+nav_order: 2
+---
+
+This is the gene set burden analysis using just the simplex quad burden table. This breaks the variants into categories dependent on if they are Germline LGD or Germline NS and looks at the gene sets and areas under the lists for EXINTOL and ESSENTIAL. The same one-sided Wilcoxon rank sum test is performed and does not find evidence of burden in the subsets.
+
+This differs from "SPARK Burden Tables Gene Sets 01" by using the most final non-hg19 version of the DNV call list. The burden results are roughly the same as expected and there is a quick comparison of our lists and theirs at the end.
+
+Markdown:
+<br>[07_02 Burden Gene Sets](https://www.dropbox.com/s/zwvp4yolro6gdvp/07_burden_genesets_02.html?dl=0)
+
+Notes per section:
+<br>7.4 - Print Table of Wilcoxon Rank Sums for All Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>7.6 - Plot for All Genes - Barplots for all genes. None of them are significant at 0.05.
+<br>8.4 - Print Table of Wilcoxon Rank Sums for Essential Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>8.6 - Plot for Essential Genes - Barplots for essential genes. None of them are significant at 0.05.
+<br>9.4 - Print Table of Wilcoxon Rank Sums for Intolerant Genes - These are the one-sided Wilcoxon rank sum test p-values. None of them are significant at 0.05.
+<br>9.6 - Plot for Intolerant Genes - Barplots for intolerant genes. None of them are significant at 0.05.
+<br>11.1 - Comparison of Lists, Mosaics - There are 82 DNV calls that we flag as mosaics. DNV calls that we call as mosaic are higher in AF than our mosaic child calls.
+<br>11.2 - Comparisons of Lists, Germline - 97% of our Germline calls in the high confidence list are also found in the DNV list. The ones that are unique in our list are slightly lower in depth.

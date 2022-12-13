@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Single Cell TBR1 Cluster DA"
+date:   2021-05-28
+parent: archive_sc_tbr1
+nav_order: 2
+---
+
+Directory: `/home/groups/oroaklab/nishida/sc_tmp1/encode_DHS_index/DA`
+<br>Run: `run.txt`
+<br>Header for DA: `header.txt`
+
+These are the results from comparing all the clusters against one another to look for differentially accessible peaks. I performed a term factor transformation to adjust for depth and compared cells by pheograph cluster annotation via the Wilcoxon rank sum test. Peaks are annotated to their nearest gene and p-values are corrected with an FDR correction.
+
+The FDR correction does not work on this dataset. There are +1M peaks but peaks with p-values of < 0.01 are usually in the few hundreds or lower. The FDR correction ends up setting everything to 1. For now, just use the regular p-values. Probably start it at a threshold of 0.01 but you can move it up to 0.05 or even higher if desirable. I left the files with the FDR column in there with the suffix FDR but they won't be of use.
+
+Here's an example of how I'd start parsing through the data. This example would show you the nearby genes that have statistically different peaks between pg_10 and pg_11. This example yields 55 results which is consistent with what we normally see from this analysis (and also a friendly number for humans to parse through).
+```
+# open the file, filter for peaks with a pvalue < 0.01, filter for peaks +/- 10000bp to a TSS, pull out gene names, sort, print unique results
+# move the thresholds as desired
+cat DA_pg.pg_10_pg_11.txt | awk '$7 < 0.01' | awk '$10 < 10000 && $10 > -10000' | cut -f 9 | sort | uniq
+```

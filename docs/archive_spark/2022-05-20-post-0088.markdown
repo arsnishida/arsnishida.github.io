@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "22-05-20, SPARK Post-Hoc Cohort, IGV, and iWES Filter Lists"
+date:   2022-05-20
+parent: archive_spark
+nav_order: 2
+---
+
+Markdown:
+<br>[04, Post-Hoc Cohort, IGV, and iWES Filter Lists](https://www.dropbox.com/s/6poq7001gt3y4l0/04_concat_calls.html?dl=0)
+
+This describes the creation of the lists for post-hoc filtering of the high-confidence and burden lists. The criteria for removal include having a combined cohort count 3 or greater, flagged for removal by manual IGV inspection, or an absence of the downstream iWES lists.
+
+Post-hoc Filter Lists:
+<br>[Post-hoc Filter Sites](https://www.dropbox.com/s/rfy6mre2dfuy16p/posthoc_filterlist.sites.txt?dl=0)
+<br>[Post-hoc Filter Families](https://www.dropbox.com/s/6i5mp2x0vefl2gc/posthoc_filterlist.families.txt?dl=0)

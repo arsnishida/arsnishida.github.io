@@ -38,3 +38,29 @@ Setup cron on teferi only. This seems already go to go on Ubuntu relative to cen
 # use sudo to add users to /etc/cron.allow: root, nishidaa, adey
 # but everybody seems allowed natively?
 ```
+
+Setup SLURM on teferi only.
+```
+# install
+sudo apt install slurmd slurmctld
+
+# manually setup the configuration file in /etc/slurm/slurm.conf
+
+# start slurm
+sudo systemctl start slurmctld
+sudo systemctl start slurmd
+sudo scontrol update nodename=localhost state=idle
+
+# edit the configuration and restart as needed (lacking db for sacct currently and using placeholder names and variables)
+```
+
+And then setup the global profile configurations changing aliases and colors. A few things were removed due to differences between the older CentOS and newer Ubuntu environments and versions.
+```
+sudo cp /home/groups/ravnica/users/nishida/old_centos_files/bashrc /etc/
+sudo cp /home/groups/ravnica/users/nishida/old_centos_files/profile.d/* /etc/profile.d
+sudo cp /home/groups/ravnica/users/nishida/old_centos_files/DIR_COLORS* /etc/
+sudo cp /home/groups/ravnica/users/nishida/old_centos_files/grepconf.sh /usr/libexec/
+rm /etc/profile.d/abrt-console-notification.sh
+rm /etc/profile.d/which2.csh
+rm /etc/profile.d/which2.sh
+```

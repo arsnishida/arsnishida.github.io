@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "21-08-03, SPARK High Confidence Allele Frequencies 01"
+date:   2021-08-03
+parent: archive_spark
+nav_order: 2
+---
+
+These are the allele frequency densities but drawn for the high confidence data set. They look as expected and like previous distributions. These are just more final since they use the final tables.
+
+Markdown:
+<br>[04 High Confidence Simplex Quad Allele Frequencies](https://www.dropbox.com/s/6s5dhposyznatnl/04_qs_highconf_allelefreqs_01.html?dl=0)
