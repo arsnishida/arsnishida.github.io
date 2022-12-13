@@ -575,186 +575,114 @@
     "url": "/docs/ravnica/2022-12-06-ravnica-venv_macs3.html",
     "relUrl": "/docs/ravnica/2022-12-06-ravnica-venv_macs3.html"
   },"96": {
-    "doc": "22-12-12, Project Info",
-    "title": "Ryan’s OneDrive:",
-    "content": "hyperlink to OneDrive . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#ryans-onedrive",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#ryans-onedrive"
-  },"97": {
-    "doc": "22-12-12, Project Info",
-    "title": "ARSN’s Directory:",
-    "content": "/home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#arsns-directory",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#arsns-directory"
-  },"98": {
-    "doc": "22-12-12, Project Info",
-    "title": "Input:",
-    "content": "There are three main input files from Ryan. Original/Full - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.SeuratObject.rds Filtered Subset - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.filt.SeuratObject.rds Epithelial Subset (from Filtered Subset currently) - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/epithelial.SeuratObject.rds . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#input",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#input"
-  },"99": {
-    "doc": "22-12-12, Project Info",
-    "title": "Output:",
-    "content": "There are four data groups that were analyzed with Epiconfig. all - epiconfig run on the full dataset epithelial - epiconfig run on the original epithelial calls (the original R object is replaced by the new version, this version is obsolete) phase2_filt_sub - epiconfig run on the filtered dataset phase2_epithelial - epiconfig run on the filtered dataset’s epithelial subset . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#output",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#output"
-  },"100": {
-    "doc": "22-12-12, Project Info",
-    "title": "Refs:",
-    "content": "GTF - /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#refs",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#refs"
-  },"101": {
-    "doc": "22-12-12, Project Info",
-    "title": "Scripts:",
-    "content": "text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#scripts",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#scripts"
-  },"102": {
-    "doc": "22-12-12, Project Info",
-    "title": "22-12-12, Project Info",
-    "content": " ",
+    "doc": "22-12-12, Epiconfig on Filtered Data",
+    "title": "22-12-12, Epiconfig on Filtered Data",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ‘Peaks’ and ‘RNA’ object were obtained from input provided by Ryan Mulqueen. This is data filtered down from the full subset and relabeled therefore also changing the epithelial subset. Epiconfig was run on the data in a hybrid fashion using 10, 20, 30, 40, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, and 200 topics. A window size of 100bp was used to hybridize features, ATACseq data was transformed with TFIDF and filtered for 0.75 variable regions, and 2000 features were chosen from the RNAseq data after using the log normalization and not the Seurat standard clrNormalization due to memory errors going from sparse to dense. A full example of the used options for the call is below: . /home/groups/CEDAR/nishida/epiconfig/epiconfig/1_epiconfig.R \\ --method=hybrid \\ --workDir=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --modelsOut=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --rna=count_matrix.rna.rds \\ --atac=count_matrix.peak.rds \\ --geneAnno=/home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz \\ --windowSize=100 \\ --nFeatures=2000 \\ --nTopics=$ntopics \\ --filterName=TFIDF_var \\ --filterThresh=0.75 \\ --clrNorm=F . Model selection was performed through selection on the elbow plots. UMAPs and heatmaps were made by grouping the molecularTypes (DCIS, ER+/PR-/HER2-, etc.), sample, newly called Seurat clusters, and EMBO labels. Topics are associated to clusters which are mostly clustering by sample. OneDrive Links to Figures: Filtered All Data Filtered Epithelial Only . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html"
-  },"103": {
-    "doc": "22-12-12, Project Info",
-    "title": "Ryan’s OneDrive:",
-    "content": "hyperlink to OneDrive . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#ryans-onedrive",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#ryans-onedrive"
-  },"104": {
-    "doc": "22-12-12, Project Info",
-    "title": "ARSN’s Directory:",
-    "content": "/home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#arsns-directory",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#arsns-directory"
-  },"105": {
-    "doc": "22-12-12, Project Info",
-    "title": "Input:",
-    "content": "There are three main input files from Ryan. Original/Full - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.SeuratObject.rds Filtered Subset - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.filt.SeuratObject.rds Epithelial Subset (from Filtered Subset currently) - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/epithelial.SeuratObject.rds . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#input",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#input"
-  },"106": {
-    "doc": "22-12-12, Project Info",
-    "title": "Output:",
-    "content": "There are four data groups that were analyzed with Epiconfig. all - epiconfig run on the full dataset epithelial - epiconfig run on the original epithelial calls (the original R object is replaced by the new version, this version is obsolete) phase2_filt_sub - epiconfig run on the filtered dataset phase2_epithelial - epiconfig run on the filtered dataset’s epithelial subset . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#output",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#output"
-  },"107": {
-    "doc": "22-12-12, Project Info",
-    "title": "Refs:",
-    "content": "GTF - /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#refs",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#refs"
-  },"108": {
-    "doc": "22-12-12, Project Info",
-    "title": "Scripts:",
-    "content": "text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#scripts",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html#scripts"
-  },"109": {
-    "doc": "22-12-12, Project Info",
-    "title": "22-12-12, Project Info",
-    "content": " ",
+  },"97": {
+    "doc": "22-12-12, Epiconfig on Full and Original Epithelial Subsets",
+    "title": "22-12-12, Epiconfig on Full and Original Epithelial Subsets",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ‘Peaks’ and ‘RNA’ object were obtained from input provided by Ryan Mulqueen. Epiconfig was run on the data in a hybrid fashion using 10, 20, 30, 40, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, and 200 topics. A window size of 100bp was used to hybridize features, ATACseq data was transformed with TFIDF and filtered for 0.75 variable regions, and 2000 features were chosen from the RNAseq data after using the log normalization and not the Seurat standard clrNormalization due to memory errors going from sparse to dense. A full example of the used options for the call is below: . /home/groups/CEDAR/nishida/epiconfig/epiconfig/1_epiconfig.R \\ --method=hybrid \\ --workDir=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --modelsOut=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --rna=count_matrix.rna.rds \\ --atac=count_matrix.peak.rds \\ --geneAnno=/home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz \\ --windowSize=100 \\ --nFeatures=2000 \\ --nTopics=$ntopics \\ --filterName=TFIDF_var \\ --filterThresh=0.75 \\ --clrNorm=F . Model selection was performed through selection on the elbow plots. UMAPs and heatmaps were made by grouping the molecularTypes (DCIS, ER+/PR-/HER2-, etc.), sample, and newly called Seurat clusters. Topics are associated to clusters which are mostly clustering by sample. A filtered version of this data was created which will be moved forward in lieu of this full dataset. OneDrive Links to Figures: All Data Epithelial Only . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html"
-  },"110": {
+  },"98": {
     "doc": "22-12-12, Project Info",
     "title": "Ryan’s OneDrive:",
     "content": "hyperlink to OneDrive . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive"
-  },"111": {
+  },"99": {
     "doc": "22-12-12, Project Info",
     "title": "ARSN’s Directory:",
     "content": "/home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory"
-  },"112": {
+  },"100": {
     "doc": "22-12-12, Project Info",
     "title": "Input:",
     "content": "There are three main input files from Ryan. Original/Full - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.SeuratObject.rds Filtered Subset - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.filt.SeuratObject.rds Epithelial Subset (from Filtered Subset currently) - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/epithelial.SeuratObject.rds . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input"
-  },"113": {
+  },"101": {
     "doc": "22-12-12, Project Info",
     "title": "Output:",
     "content": "There are four data groups that were analyzed with Epiconfig. all - epiconfig run on the full dataset epithelial - epiconfig run on the original epithelial calls (the original R object is replaced by the new version, this version is obsolete) phase2_filt_sub - epiconfig run on the filtered dataset phase2_epithelial - epiconfig run on the filtered dataset’s epithelial subset . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output"
-  },"114": {
+  },"102": {
     "doc": "22-12-12, Project Info",
     "title": "Refs:",
     "content": "GTF - /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs"
-  },"115": {
+  },"103": {
     "doc": "22-12-12, Project Info",
     "title": "Scripts:",
     "content": "text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts"
-  },"116": {
+  },"104": {
     "doc": "22-12-12, Project Info",
     "title": "22-12-12, Project Info",
     "content": " ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html"
-  },"117": {
+  },"105": {
     "doc": "archive_spark",
     "title": "archive_spark",
     "content": " ",
     "url": "/docs/archive_spark/",
     "relUrl": "/docs/archive_spark/"
-  },"118": {
+  },"106": {
     "doc": "archive_ssc",
     "title": "archive_ssc",
     "content": " ",
     "url": "/docs/archive_ssc/",
     "relUrl": "/docs/archive_ssc/"
-  },"119": {
+  },"107": {
     "doc": "archive_amplicon",
     "title": "archive_amplicon",
     "content": " ",
     "url": "/docs/archive_amplicon/",
     "relUrl": "/docs/archive_amplicon/"
-  },"120": {
+  },"108": {
     "doc": "Home",
     "title": "Home",
     "content": "HELLO! Search works well! ^^^ . ",
     "url": "/",
     "relUrl": "/"
-  },"121": {
+  },"109": {
     "doc": "sc_breastmultiome",
     "title": "sc_breastmultiome",
     "content": " ",
     "url": "/docs/sc_breastmultiome/",
     "relUrl": "/docs/sc_breastmultiome/"
-  },"122": {
+  },"110": {
     "doc": "ravnica",
     "title": "ravnica",
     "content": " ",
     "url": "/docs/ravnica/",
     "relUrl": "/docs/ravnica/"
-  },"123": {
+  },"111": {
     "doc": "archive_misc",
     "title": "archive_misc",
     "content": " ",
     "url": "/docs/archive_misc/",
     "relUrl": "/docs/archive_misc/"
-  },"124": {
+  },"112": {
     "doc": "archive_sc_tbr1",
     "title": "archive_sc_tbr1",
     "content": " ",
     "url": "/docs/archive_sc_tbr1/",
     "relUrl": "/docs/archive_sc_tbr1/"
-  },"125": {
+  },"113": {
     "doc": "scitools",
     "title": "scitools",
     "content": " ",
     "url": "/docs/scitools/",
     "relUrl": "/docs/scitools/"
-  },"126": {
+  },"114": {
     "doc": "sc_dm6tau",
     "title": "sc_dm6tau",
     "content": " ",
