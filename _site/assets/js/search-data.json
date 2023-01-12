@@ -575,118 +575,166 @@
     "url": "/docs/ravnica/2022-12-06-ravnica-venv_macs3.html",
     "relUrl": "/docs/ravnica/2022-12-06-ravnica-venv_macs3.html"
   },"96": {
-    "doc": "22-12-12, Epiconfig on Filtered Data",
-    "title": "22-12-12, Epiconfig on Filtered Data",
-    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ‘Peaks’ and ‘RNA’ object were obtained from input provided by Ryan Mulqueen. This is data filtered down from the full subset and relabeled therefore also changing the epithelial subset. Epiconfig was run on the data in a hybrid fashion using 10, 20, 30, 40, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, and 200 topics. A window size of 100bp was used to hybridize features, ATACseq data was transformed with TFIDF and filtered for 0.75 variable regions, and 2000 features were chosen from the RNAseq data after using the log normalization and not the Seurat standard clrNormalization due to memory errors going from sparse to dense. A full example of the used options for the call is below: . /home/groups/CEDAR/nishida/epiconfig/epiconfig/1_epiconfig.R \\ --method=hybrid \\ --workDir=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --modelsOut=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --rna=count_matrix.rna.rds \\ --atac=count_matrix.peak.rds \\ --geneAnno=/home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz \\ --windowSize=100 \\ --nFeatures=2000 \\ --nTopics=$ntopics \\ --filterName=TFIDF_var \\ --filterThresh=0.75 \\ --clrNorm=F . Model selection was performed through selection on the elbow plots. UMAPs and heatmaps were made by grouping the molecularTypes (DCIS, ER+/PR-/HER2-, etc.), sample, newly called Seurat clusters, and EMBO labels. Topics are associated to clusters which are mostly clustering by sample. OneDrive Links to Figures: Filtered All Data Filtered Epithelial Only . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_filterset.html"
+    "doc": "22-12-12, Epiconfig Runs on Full and Subset Data",
+    "title": "22-12-12, Epiconfig Runs on Full and Subset Data",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ‘Peaks’ and ‘RNA’ matrices were obtained from input provided by Ryan Mulqueen. The hybrid method was used on the full dataset and hybrid, combinatorial, and concatenate methods were used on the filtered subset data. Data is also further subset into an epithelial-only subset. In each case, Epiconfig was run using 10, 20, 30, 40, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, and 200 topics. A window size of 100bp was used to hybridize features, ATACseq data was transformed with TFIDF and filtered for 0.75 variable regions, and 2000 features were chosen from the RNAseq data after using the log normalization and not the Seurat standard clrNormalization due to memory errors going from sparse to dense. A full example of the used options for the call is below: . /home/groups/CEDAR/nishida/epiconfig/epiconfig/1_epiconfig.R \\ --method=hybrid \\ --workDir=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --modelsOut=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --rna=count_matrix.rna.rds \\ --atac=count_matrix.peak.rds \\ --geneAnno=/home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz \\ --windowSize=100 \\ --nFeatures=2000 \\ --nTopics=$ntopics \\ --filterName=TFIDF_var \\ --filterThresh=0.75 \\ --clrNorm=F . Model selection was performed through selection on the elbow plots. UMAPs and heatmaps were made by grouping the molecularTypes (DCIS, ER+/PR-/HER2-, etc.), sample, newly called Seurat clusters, and EMBO labels. Topics are associated to clusters which are mostly clustering by sample. The ‘phase2’ filtered subset data run on both all the cells and the epithelial cells using the concatenation method is the basis for downstream analysis. For comparison, the hybrid method is also used in the downstream analyses. OneDrive Links to Figures: All Data - Hybrid Epithelial Only - Hybrid Filtered All Data - Hybrid Filtered Epithelial Only - Hybrid Filtered All Data - Combinatorial Filtered Epithelial Only - Combinatorial Filtered All Data - Concatenate Filtered Epithelial Only - Concatenate . Link to Relevant Presentations: Epiconfig 221103.epiconfig_sc_bcmultiome . ",
+    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig.html",
+    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig.html"
   },"97": {
-    "doc": "22-12-12, Epiconfig on Full and Original Epithelial Subsets",
-    "title": "22-12-12, Epiconfig on Full and Original Epithelial Subsets",
-    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ‘Peaks’ and ‘RNA’ object were obtained from input provided by Ryan Mulqueen. Epiconfig was run on the data in a hybrid fashion using 10, 20, 30, 40, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, and 200 topics. A window size of 100bp was used to hybridize features, ATACseq data was transformed with TFIDF and filtered for 0.75 variable regions, and 2000 features were chosen from the RNAseq data after using the log normalization and not the Seurat standard clrNormalization due to memory errors going from sparse to dense. A full example of the used options for the call is below: . /home/groups/CEDAR/nishida/epiconfig/epiconfig/1_epiconfig.R \\ --method=hybrid \\ --workDir=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --modelsOut=/home/groups/CEDAR/nishida/SC_BREASTMULTIOME/all \\ --rna=count_matrix.rna.rds \\ --atac=count_matrix.peak.rds \\ --geneAnno=/home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz \\ --windowSize=100 \\ --nFeatures=2000 \\ --nTopics=$ntopics \\ --filterName=TFIDF_var \\ --filterThresh=0.75 \\ --clrNorm=F . Model selection was performed through selection on the elbow plots. UMAPs and heatmaps were made by grouping the molecularTypes (DCIS, ER+/PR-/HER2-, etc.), sample, and newly called Seurat clusters. Topics are associated to clusters which are mostly clustering by sample. A filtered version of this data was created which will be moved forward in lieu of this full dataset. OneDrive Links to Figures: All Data Epithelial Only . ",
-    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html",
-    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig_original_fullset.html"
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Table of contents",
+    "content": ". | Data Locations | Seurat Pre-Processing | Seurat Multimodality | InferCNV | XOXO | . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#table-of-contents",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#table-of-contents"
   },"98": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Data Locations",
+    "content": "Single-cell KLF sequence data was processed by Ryan Mulqueen as described at this link here. For reference, the names of the core experiment and sequence runs are: . /home/groups/CEDAR/mulqueen/sequencing_data/EXP211227HM/211229_A01058_0202_AHT33MDRXY /home/groups/CEDAR/mulqueen/sequencing_data/EXP211228HM/211229_A01058_0201_BHT55FDRXY . The main directory for his analysis is /home/groups/CEDAR/mulqueen/projects/multiome/220111_multi. Cellranger-arc was run against the references in /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0. Annotations within R were from EnsDb.Hsapiens.v86. ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#data-locations",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#data-locations"
+  },"99": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Seurat Pre-Processing",
+    "content": "A Seurat object was created for each of the four groups creating the initial RNA and ATAC assays and then merged together: “YW_si_Control_plus_E2”, “YW_si_Control_plus_Veh”, “YW_si_KLF4_plus_E2”, and “YW_si_KLF4_plus_Veh”. The resulting merged object is saved as yw_merged.SeuratObject.rds and the following QC and filtering was performed below thresholding for cells with between 500 to 25000 RNA counts and 500 to 100000 ATAC counts, nucleosome signal less than 2, and TSS enrichment greater than 1: . # before table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7357 6435 7727 # YW_si_KLF4_plus_Veh # 6785 # filter out low quality cells dat &lt;- subset( x = dat, subset = nCount_ATAC &lt; 100000 &amp; nCount_RNA &lt; 25000 &amp; nCount_ATAC &gt; 500 &amp; nCount_RNA &gt; 500 &amp; nucleosome_signal &lt; 2 &amp; TSS.enrichment &gt; 1 ) # after table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7030 6023 7552 # YW_si_KLF4_plus_Veh # 6350 . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-pre-processing",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-pre-processing"
+  },"100": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Seurat Multimodality",
+    "content": "New peaks are called within Seurat with macs2 in a new assay called ‘peaks’ (a default call with no extra parameters). RNA undergoes sctransform normalization and turned into a UMAP with PCA reduction. Peaks are filtered with FindTopFeatures with a minimum cutoff of 5 occurences, transformed via TFIDF and decomposed using SVD creating the LSI matrix and discarding the first dimension. The pca and lsi reductions are used to find multi-modal neighbors in Seurat creating its weighted nearest neighbors for the multimodal UMAP. Clusters are called at 0.8 resolution on the WNN UMAP. Multimodal UMAP Comparisons Merged QC Info by Condition . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-multimodality",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-multimodality"
+  },"101": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "InferCNV",
+    "content": "InfernCNV is used to call CNVs using a gene list re-ordered by chr and start positions. The call is made multiple times due to hanging: . #run infercnv infercnv_obj = CreateInfercnvObject(raw_counts_matrix=\"YW_inferCNV.counts.txt\", annotations_file=\"YW_inferCNV.annotation.txt\", delim=\"\\t\", gene_order_file=\"YW_inferCNV.gene_order.txt\", ref_group_names=NULL) saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") #read in where inferCNV keeps hanging (step 14) infercnv_obj&lt;-readRDS(\"YW_inferCNV.Rds\") infercnv_obj = infercnv::run(infercnv_obj, cutoff=0.1, # cutoff=1 works well for Smart-seq2, and cutoff=0.1 works well for 10x Genomics out_dir=\"./YW_inferCNV\", denoise=TRUE, HMM=FALSE, num_threads=10, cluster_references=FALSE, resume_mode=FALSE ) #other options (removed for now) #k_obs_groups=2, #cluster_by_groups=FALSE, #HMM_type=\"i6\", #output_format=\"pdf\") saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") . At this point, the results from inferCNV are saved back into yw_merged.SeuratObject.rds and split by cell-type into yw_mcf7.SeuratObject.rds and yw_t47d.SeuratObject.rds. Additionally, a control-only subset is created (presumably for Travis). InferCNV Heatmap InferCNV Celltype UMAP InferCNV Celltype UMAP, control only . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#infercnv",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#infercnv"
+  },"102": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "XOXO",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#xoxo",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#xoxo"
+  },"103": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "22-12-13, KLF4 BC Initial Processing",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html"
+  },"104": {
     "doc": "22-12-12, Project Info",
     "title": "Ryan’s OneDrive:",
     "content": "hyperlink to OneDrive . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive"
-  },"99": {
+  },"105": {
+    "doc": "22-12-12, Project Info",
+    "title": "Ryan’s Directory:",
+    "content": "/home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/ . ",
+    "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-directory",
+    "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-directory"
+  },"106": {
     "doc": "22-12-12, Project Info",
     "title": "ARSN’s Directory:",
     "content": "/home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory"
-  },"100": {
+  },"107": {
     "doc": "22-12-12, Project Info",
     "title": "Input:",
     "content": "There are three main input files from Ryan. Original/Full - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.SeuratObject.rds Filtered Subset - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.filt.SeuratObject.rds Epithelial Subset (from Filtered Subset currently) - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/epithelial.SeuratObject.rds . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input"
-  },"101": {
+  },"108": {
     "doc": "22-12-12, Project Info",
     "title": "Output:",
     "content": "There are four data groups that were analyzed with Epiconfig. all - epiconfig run on the full dataset epithelial - epiconfig run on the original epithelial calls (the original R object is replaced by the new version, this version is obsolete) phase2_filt_sub - epiconfig run on the filtered dataset phase2_epithelial - epiconfig run on the filtered dataset’s epithelial subset . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output"
-  },"102": {
+  },"109": {
     "doc": "22-12-12, Project Info",
     "title": "Refs:",
     "content": "GTF - /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs"
-  },"103": {
+  },"110": {
     "doc": "22-12-12, Project Info",
     "title": "Scripts:",
-    "content": "text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
+    "content": "Text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts"
-  },"104": {
+  },"111": {
     "doc": "22-12-12, Project Info",
     "title": "22-12-12, Project Info",
     "content": " ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html"
-  },"105": {
-    "doc": "archive_spark",
-    "title": "archive_spark",
-    "content": " ",
-    "url": "/docs/archive_spark/",
-    "relUrl": "/docs/archive_spark/"
-  },"106": {
+  },"112": {
     "doc": "archive_ssc",
     "title": "archive_ssc",
     "content": " ",
     "url": "/docs/archive_ssc/",
     "relUrl": "/docs/archive_ssc/"
-  },"107": {
-    "doc": "archive_amplicon",
-    "title": "archive_amplicon",
-    "content": " ",
-    "url": "/docs/archive_amplicon/",
-    "relUrl": "/docs/archive_amplicon/"
-  },"108": {
-    "doc": "Home",
-    "title": "Home",
-    "content": "HELLO! Search works well! ^^^ . ",
-    "url": "/",
-    "relUrl": "/"
-  },"109": {
-    "doc": "sc_breastmultiome",
-    "title": "sc_breastmultiome",
-    "content": " ",
-    "url": "/docs/sc_breastmultiome/",
-    "relUrl": "/docs/sc_breastmultiome/"
-  },"110": {
+  },"113": {
     "doc": "ravnica",
     "title": "ravnica",
     "content": " ",
     "url": "/docs/ravnica/",
     "relUrl": "/docs/ravnica/"
-  },"111": {
-    "doc": "archive_misc",
-    "title": "archive_misc",
-    "content": " ",
-    "url": "/docs/archive_misc/",
-    "relUrl": "/docs/archive_misc/"
-  },"112": {
+  },"114": {
     "doc": "archive_sc_tbr1",
     "title": "archive_sc_tbr1",
     "content": " ",
     "url": "/docs/archive_sc_tbr1/",
     "relUrl": "/docs/archive_sc_tbr1/"
-  },"113": {
+  },"115": {
+    "doc": "sc_breastmultiome",
+    "title": "sc_breastmultiome",
+    "content": " ",
+    "url": "/docs/sc_breastmultiome/",
+    "relUrl": "/docs/sc_breastmultiome/"
+  },"116": {
+    "doc": "sc_klf4bc",
+    "title": "sc_klf4bc",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/",
+    "relUrl": "/docs/sc_klf4bc/"
+  },"117": {
+    "doc": "archive_amplicon",
+    "title": "archive_amplicon",
+    "content": " ",
+    "url": "/docs/archive_amplicon/",
+    "relUrl": "/docs/archive_amplicon/"
+  },"118": {
+    "doc": "archive_misc",
+    "title": "archive_misc",
+    "content": " ",
+    "url": "/docs/archive_misc/",
+    "relUrl": "/docs/archive_misc/"
+  },"119": {
     "doc": "scitools",
     "title": "scitools",
     "content": " ",
     "url": "/docs/scitools/",
     "relUrl": "/docs/scitools/"
-  },"114": {
+  },"120": {
+    "doc": "archive_spark",
+    "title": "archive_spark",
+    "content": " ",
+    "url": "/docs/archive_spark/",
+    "relUrl": "/docs/archive_spark/"
+  },"121": {
     "doc": "sc_dm6tau",
     "title": "sc_dm6tau",
     "content": " ",
     "url": "/docs/sc_dm6tau/",
     "relUrl": "/docs/sc_dm6tau/"
+  },"122": {
+    "doc": "Home",
+    "title": "Home",
+    "content": "HELLO! Search works well! ^^^ . ",
+    "url": "/",
+    "relUrl": "/"
   }
 }

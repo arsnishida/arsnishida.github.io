@@ -9,6 +9,9 @@ nav_order: 2
 # Ryan's OneDrive:
 [hyperlink to OneDrive](https://mdandersonorg-my.sharepoint.com/personal/rmulqueen_mdanderson_org/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Frmulqueen%5Fmdanderson%5Forg%2FDocuments%2FMultimodal%20BC)
 
+# Ryan's Directory:
+`/home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/`
+
 # ARSN's Directory:
 `/home/groups/CEDAR/nishida/SC_BREASTMULTIOME`
 
@@ -29,7 +32,7 @@ There are four data groups that were analyzed with Epiconfig.
 GTF - `/home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0`
 
 # Scripts:
-text files with commands for data processing are labeled like, 'run.1_preprocessing.txt', starting with the prefix, 'run'.
+Text files with commands for data processing are labeled like, 'run.1_preprocessing.txt', starting with the prefix, 'run'.
 <br>1 - Preprocessing and preparation of the matrices for Epiconfig.
 <br>2 - Running Epiconfig.
 <br>3 - Generating the elbow plot for model selection.
