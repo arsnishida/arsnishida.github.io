@@ -677,35 +677,35 @@
     "url": "/docs/sc_breastmultiome/2023-01-12-sc_breastmultiome-epiconfig-downsample.html",
     "relUrl": "/docs/sc_breastmultiome/2023-01-12-sc_breastmultiome-epiconfig-downsample.html"
   },"113": {
-    "doc": "archive_misc",
-    "title": "archive_misc",
-    "content": " ",
-    "url": "/docs/archive_misc/",
-    "relUrl": "/docs/archive_misc/"
+    "doc": "23-01-17, PAM50 UMAPs",
+    "title": "23-01-17, PAM50 UMAPs",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . Using the RNA portion of the data, Ryan used two methods, genefu PAM50 and sspbc, to classify cells into breast cancer types. The sspbc method switches some classification of Normal/LumA cells and does not try to classify Basal cells. The classifiations are projected onto the UMAP. Epiconfig and downsampling may not be doing better in clustering relative to Seurat’s WNN but it does make more interpretable topics. The following folders and versions of running Epiconfig were updated with additional sets of figures represented here labeled with the prefix: ‘pass2’. Filtered All Data - Hybrid Filtered Epithelial Only - Hybrid Filtered All Data - Concatenate Filtered Epithelial Only - Concatenate Downsampled Epithelial - Hybrid Downsampled Epithelial - Concatenate . Link to Relevant Presentations: 230117.epiconfig_sc_bcmultiome.pam50umap.pdf . ",
+    "url": "/docs/sc_breastmultiome/2023-01-17-sc_breastmultiome-epiconfig-pam50umaps.html",
+    "relUrl": "/docs/sc_breastmultiome/2023-01-17-sc_breastmultiome-epiconfig-pam50umaps.html"
   },"114": {
-    "doc": "sc_breastmultiome",
-    "title": "sc_breastmultiome",
-    "content": " ",
-    "url": "/docs/sc_breastmultiome/",
-    "relUrl": "/docs/sc_breastmultiome/"
-  },"115": {
     "doc": "Home",
     "title": "Home",
     "content": "HELLO! Search works well! ^^^ . ",
     "url": "/",
     "relUrl": "/"
+  },"115": {
+    "doc": "sc_breastmultiome",
+    "title": "sc_breastmultiome",
+    "content": " ",
+    "url": "/docs/sc_breastmultiome/",
+    "relUrl": "/docs/sc_breastmultiome/"
   },"116": {
-    "doc": "archive_spark",
-    "title": "archive_spark",
+    "doc": "archive_misc",
+    "title": "archive_misc",
     "content": " ",
-    "url": "/docs/archive_spark/",
-    "relUrl": "/docs/archive_spark/"
+    "url": "/docs/archive_misc/",
+    "relUrl": "/docs/archive_misc/"
   },"117": {
-    "doc": "archive_ssc",
-    "title": "archive_ssc",
+    "doc": "sc_dm6tau",
+    "title": "sc_dm6tau",
     "content": " ",
-    "url": "/docs/archive_ssc/",
-    "relUrl": "/docs/archive_ssc/"
+    "url": "/docs/sc_dm6tau/",
+    "relUrl": "/docs/sc_dm6tau/"
   },"118": {
     "doc": "ravnica",
     "title": "ravnica",
@@ -713,30 +713,36 @@
     "url": "/docs/ravnica/",
     "relUrl": "/docs/ravnica/"
   },"119": {
-    "doc": "sc_klf4bc",
-    "title": "sc_klf4bc",
-    "content": " ",
-    "url": "/docs/sc_klf4bc/",
-    "relUrl": "/docs/sc_klf4bc/"
-  },"120": {
-    "doc": "sc_dm6tau",
-    "title": "sc_dm6tau",
-    "content": " ",
-    "url": "/docs/sc_dm6tau/",
-    "relUrl": "/docs/sc_dm6tau/"
-  },"121": {
     "doc": "archive_sc_tbr1",
     "title": "archive_sc_tbr1",
     "content": " ",
     "url": "/docs/archive_sc_tbr1/",
     "relUrl": "/docs/archive_sc_tbr1/"
-  },"122": {
+  },"120": {
+    "doc": "archive_ssc",
+    "title": "archive_ssc",
+    "content": " ",
+    "url": "/docs/archive_ssc/",
+    "relUrl": "/docs/archive_ssc/"
+  },"121": {
     "doc": "scitools",
     "title": "scitools",
     "content": " ",
     "url": "/docs/scitools/",
     "relUrl": "/docs/scitools/"
+  },"122": {
+    "doc": "sc_klf4bc",
+    "title": "sc_klf4bc",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/",
+    "relUrl": "/docs/sc_klf4bc/"
   },"123": {
+    "doc": "archive_spark",
+    "title": "archive_spark",
+    "content": " ",
+    "url": "/docs/archive_spark/",
+    "relUrl": "/docs/archive_spark/"
+  },"124": {
     "doc": "archive_amplicon",
     "title": "archive_amplicon",
     "content": " ",
