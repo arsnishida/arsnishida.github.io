@@ -685,63 +685,63 @@
   },"114": {
     "doc": "23-01-24, Normal and LumA Subsets",
     "title": "23-01-24, Normal and LumA Subsets",
-    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . For further probing of topics related to the classifications of the multiomic breast cancer samples, the full set of RNA features was used along with redoing the analysis with the subset of Normal and LumA cells only. Both of these classifications should be the closest to each other relative to the other classifications and we would ideally hope to capture the differences and transitions between these two states. From the subsetting, samples 7 and 12 look like the only samples split into separate discrete clusters and sample 16 is interesting with its close proximity to the other Normal cells and because the alternative classifier suggests it is also of the Normal subtype. The following folders have figures generated showing their UMAPs and heatmaps: Filtered Epithelial Cells - Concatenate, Full RNA Features Filtered Normal and LumA Only - Concatenate, 2000 RNA Features Filtered Normal and LumA Only - Concatenate, Full RNA Features . The Normal and LumA subset using all RNA features seems most useful for further analysis. Its relevant model files are here: MODEL of Filtered Normal and LumA Only - Concatenate, Full RNA Features . Link to Relevant Presentations: 230124.epiconfig_sc_bcmultiome.luma_normal.pdf . ",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . For further probing of topics related to the classifications of the multiomic breast cancer samples, the full set of RNA features was used along with redoing the analysis with the subset of Normal and LumA cells only. Both of these classifications should be the closest to each other relative to the other classifications and we would ideally hope to capture the differences and transitions between these two states. From the subsetting, samples 7 and 12 look like the only samples split into separate discrete clusters and sample 16 is interesting with its close proximity to the other Normal cells and because the alternative classifier suggests it is also of the Normal subtype. List of GENEFU and SSPBC Classifications per Sample: . NUMCELLS EPICELLS GENEFU SSPBC SAMPLE 1030 135 Basal Her2 RM_2 2392 643 Basal Her2 sample_1 5961 5040 Basal Her2 sample_3 10866 8595 Her2 LumB sample_4 719 601 LumA LumA RM_1 208 164 LumA LumA RM_3 2139 1438 LumA LumA sample_12 162 78 LumA LumA sample_6 208 85 LumA LumA sample_8 454 338 LumA LumA sample_9 230 142 LumA Normal sample_16 13081 12764 LumB LumB sample_10 3218 3051 LumB LumB sample_11 356 158 LumB LumB sample_20 575 255 LumB LumB sample_5 111 104 NA NA RM_4 984 969 NA NA sample_15 944 530 NA NA sample_19 1391 918 Normal LumA sample_7 . The following folders have figures generated showing their UMAPs and heatmaps: Filtered Epithelial Cells - Concatenate, Full RNA Features Filtered Normal and LumA Only - Concatenate, 2000 RNA Features Filtered Normal and LumA Only - Concatenate, Full RNA Features . The Normal and LumA subset using all RNA features seems most useful for further analysis. Its relevant model files are here: MODEL of Filtered Normal and LumA Only - Concatenate, Full RNA Features . Link to Relevant Presentations: 230124.epiconfig_sc_bcmultiome.luma_normal.pdf . ",
     "url": "/docs/sc_breastmultiome/2023-01-24-sc_breastmultiome-epiconfig-norm_luma.html",
     "relUrl": "/docs/sc_breastmultiome/2023-01-24-sc_breastmultiome-epiconfig-norm_luma.html"
   },"115": {
+    "doc": "23-01-30, CNV Normal Calls",
+    "title": "23-01-30, CNV Normal Calls",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . Travis uploaded “Normal” cell calls per sample using consensus CNV calls and a dual cutoff of total number of CNVs and max consecutive CNVs for the labels. These calls were projected onto the Epiconfig UMAPs constructed from topics. Three resolutions were used: full epithelial data, downsampled epithelial data (to adjust for samples with 100x more cells than other samples), and a subset of the epithelial data using only samples/cells called “Normal” or “LumA” by Genefu PAM50 and/or SSPBC (same subset by either or both). Normal-like cells by sample: . Sample Normal-Like Epithelial sample 3 0 2729 sample 4 72 1937 sample 5 0 165 sample 6 0 64 sample 7 449 703 sample 8 1 54 sample 9 1 249 sample 10 280 3718 sample 11 19 2571 sample 12 3 649 sample 15 547 547 sample 16 78 105 sample 19 258 416 sample 20 3 118 . Sample 7 and 16 by these calls and previous topic modeling have the most evidence for a mix of “Normal” and “Non-Normal” cells. Samples 15 and 19 are off by themselves in all UMAPs and are not annotated by Genefu PAM50 or SSPBC (messy data?). Other samples with “Normal” cells by CNV have relatively small fractions compared to the total cells in the dataset. “Normal” cells do not separate from “Non-Normal” cells classified by CNV calls in UMAP clusters or differential topic enrichment at the level of epithelial and downsampled epithelial cells. The normal and LumA subset also shows no cluster seperation but does have specific enriched topics for “Normal” cells for Sample 7. Sample 7 is enriched for topic 20, 21, and 50 and “Normal” cells are relatively more enriched for 20 and 50. However, topic 20 and 50 contain overwhelmingly ATAC features and topic 21 is overwhelmingly RNA features. This may imply a bias for “Normal” cells by CNV for ATAC data though this is only from a extremely granular look at a single sample. The following folders have additional figures with the prefix ‘pass3’: Epithelial Only - Concatenate Downsampled Epithelial - Concatenate Normal and LumA Only - Concatenate, Full RNA Features . Link to Relevant Presentations: 230130.epiconfig_sc_bcmultiome.inferncnv . ",
+    "url": "/docs/sc_breastmultiome/2023-01-30-sc_breastmultiome-epiconfig-cnvnormal.html",
+    "relUrl": "/docs/sc_breastmultiome/2023-01-30-sc_breastmultiome-epiconfig-cnvnormal.html"
+  },"116": {
     "doc": "Home",
     "title": "Home",
     "content": "HELLO! Search works well! ^^^ . ",
     "url": "/",
     "relUrl": "/"
-  },"116": {
-    "doc": "archive_ssc",
-    "title": "archive_ssc",
-    "content": " ",
-    "url": "/docs/archive_ssc/",
-    "relUrl": "/docs/archive_ssc/"
   },"117": {
-    "doc": "sc_klf4bc",
-    "title": "sc_klf4bc",
-    "content": " ",
-    "url": "/docs/sc_klf4bc/",
-    "relUrl": "/docs/sc_klf4bc/"
-  },"118": {
-    "doc": "archive_sc_tbr1",
-    "title": "archive_sc_tbr1",
-    "content": " ",
-    "url": "/docs/archive_sc_tbr1/",
-    "relUrl": "/docs/archive_sc_tbr1/"
-  },"119": {
     "doc": "sc_breastmultiome",
     "title": "sc_breastmultiome",
     "content": " ",
     "url": "/docs/sc_breastmultiome/",
     "relUrl": "/docs/sc_breastmultiome/"
-  },"120": {
-    "doc": "scitools",
-    "title": "scitools",
-    "content": " ",
-    "url": "/docs/scitools/",
-    "relUrl": "/docs/scitools/"
-  },"121": {
-    "doc": "archive_amplicon",
-    "title": "archive_amplicon",
-    "content": " ",
-    "url": "/docs/archive_amplicon/",
-    "relUrl": "/docs/archive_amplicon/"
-  },"122": {
+  },"118": {
     "doc": "archive_spark",
     "title": "archive_spark",
     "content": " ",
     "url": "/docs/archive_spark/",
     "relUrl": "/docs/archive_spark/"
-  },"123": {
+  },"119": {
+    "doc": "archive_amplicon",
+    "title": "archive_amplicon",
+    "content": " ",
+    "url": "/docs/archive_amplicon/",
+    "relUrl": "/docs/archive_amplicon/"
+  },"120": {
+    "doc": "ravnica",
+    "title": "ravnica",
+    "content": " ",
+    "url": "/docs/ravnica/",
+    "relUrl": "/docs/ravnica/"
+  },"121": {
+    "doc": "archive_sc_tbr1",
+    "title": "archive_sc_tbr1",
+    "content": " ",
+    "url": "/docs/archive_sc_tbr1/",
+    "relUrl": "/docs/archive_sc_tbr1/"
+  },"122": {
     "doc": "archive_misc",
     "title": "archive_misc",
     "content": " ",
     "url": "/docs/archive_misc/",
     "relUrl": "/docs/archive_misc/"
+  },"123": {
+    "doc": "scitools",
+    "title": "scitools",
+    "content": " ",
+    "url": "/docs/scitools/",
+    "relUrl": "/docs/scitools/"
   },"124": {
     "doc": "sc_dm6tau",
     "title": "sc_dm6tau",
@@ -749,10 +749,16 @@
     "url": "/docs/sc_dm6tau/",
     "relUrl": "/docs/sc_dm6tau/"
   },"125": {
-    "doc": "ravnica",
-    "title": "ravnica",
+    "doc": "sc_klf4bc",
+    "title": "sc_klf4bc",
     "content": " ",
-    "url": "/docs/ravnica/",
-    "relUrl": "/docs/ravnica/"
+    "url": "/docs/sc_klf4bc/",
+    "relUrl": "/docs/sc_klf4bc/"
+  },"126": {
+    "doc": "archive_ssc",
+    "title": "archive_ssc",
+    "content": " ",
+    "url": "/docs/archive_ssc/",
+    "relUrl": "/docs/archive_ssc/"
   }
 }
