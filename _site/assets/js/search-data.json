@@ -695,70 +695,76 @@
     "url": "/docs/sc_breastmultiome/2023-01-30-sc_breastmultiome-epiconfig-cnvnormal.html",
     "relUrl": "/docs/sc_breastmultiome/2023-01-30-sc_breastmultiome-epiconfig-cnvnormal.html"
   },"116": {
-    "doc": "Home",
-    "title": "Home",
-    "content": "HELLO! Search works well! ^^^ . ",
-    "url": "/",
-    "relUrl": "/"
+    "doc": "23-02-03, Normal Samples with Normal CNV Calls",
+    "title": "23-02-03, Normal Samples with Normal CNV Calls",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . The “Normal” called cells provided by Travis were added to the “Normal” defined samples by Ryan. These are samples RM_4, sample 15, and sample 19. Travis also supplied “Low” and “High” CNV categories for cells which were projected on the previous UMAPs. “Low” and “High” CNV called cells seperately cleanly per sample in the Epiconfig UMAP relative to the Seurat UMAP though they aren’t showing distinct topic enrichment. “Normal” called cells combined with the normal samples still cluster by sample and do not split by CNV category. The following folders have the new subset of called normal samples and cells: Called Normal Epithelial, 2000 RNA Features Called Normal Epithelial, Full RNA Features . The following folders have additional figures with the prefix ‘pass3’: Epithelial Only - Concatenate Downsampled Epithelial - Concatenate Normal and LumA Only - Concatenate, Full RNA Features . Link to Relevant Presentations: 230130.epiconfig_sc_bcmultiome.inferncnv . ",
+    "url": "/docs/sc_breastmultiome/2023-02-03-sc_breastmultiome-epiconfig-callednormalCNV.html",
+    "relUrl": "/docs/sc_breastmultiome/2023-02-03-sc_breastmultiome-epiconfig-callednormalCNV.html"
   },"117": {
-    "doc": "sc_breastmultiome",
-    "title": "sc_breastmultiome",
-    "content": " ",
-    "url": "/docs/sc_breastmultiome/",
-    "relUrl": "/docs/sc_breastmultiome/"
-  },"118": {
-    "doc": "archive_spark",
-    "title": "archive_spark",
-    "content": " ",
-    "url": "/docs/archive_spark/",
-    "relUrl": "/docs/archive_spark/"
-  },"119": {
-    "doc": "archive_amplicon",
-    "title": "archive_amplicon",
-    "content": " ",
-    "url": "/docs/archive_amplicon/",
-    "relUrl": "/docs/archive_amplicon/"
-  },"120": {
-    "doc": "ravnica",
-    "title": "ravnica",
-    "content": " ",
-    "url": "/docs/ravnica/",
-    "relUrl": "/docs/ravnica/"
-  },"121": {
-    "doc": "archive_sc_tbr1",
-    "title": "archive_sc_tbr1",
-    "content": " ",
-    "url": "/docs/archive_sc_tbr1/",
-    "relUrl": "/docs/archive_sc_tbr1/"
-  },"122": {
-    "doc": "archive_misc",
-    "title": "archive_misc",
-    "content": " ",
-    "url": "/docs/archive_misc/",
-    "relUrl": "/docs/archive_misc/"
-  },"123": {
-    "doc": "scitools",
-    "title": "scitools",
-    "content": " ",
-    "url": "/docs/scitools/",
-    "relUrl": "/docs/scitools/"
-  },"124": {
-    "doc": "sc_dm6tau",
-    "title": "sc_dm6tau",
-    "content": " ",
-    "url": "/docs/sc_dm6tau/",
-    "relUrl": "/docs/sc_dm6tau/"
-  },"125": {
     "doc": "sc_klf4bc",
     "title": "sc_klf4bc",
     "content": " ",
     "url": "/docs/sc_klf4bc/",
     "relUrl": "/docs/sc_klf4bc/"
-  },"126": {
+  },"118": {
+    "doc": "archive_amplicon",
+    "title": "archive_amplicon",
+    "content": " ",
+    "url": "/docs/archive_amplicon/",
+    "relUrl": "/docs/archive_amplicon/"
+  },"119": {
+    "doc": "Home",
+    "title": "Home",
+    "content": "HELLO! Search works well! ^^^ . ",
+    "url": "/",
+    "relUrl": "/"
+  },"120": {
+    "doc": "archive_misc",
+    "title": "archive_misc",
+    "content": " ",
+    "url": "/docs/archive_misc/",
+    "relUrl": "/docs/archive_misc/"
+  },"121": {
+    "doc": "ravnica",
+    "title": "ravnica",
+    "content": " ",
+    "url": "/docs/ravnica/",
+    "relUrl": "/docs/ravnica/"
+  },"122": {
+    "doc": "sc_breastmultiome",
+    "title": "sc_breastmultiome",
+    "content": " ",
+    "url": "/docs/sc_breastmultiome/",
+    "relUrl": "/docs/sc_breastmultiome/"
+  },"123": {
+    "doc": "sc_dm6tau",
+    "title": "sc_dm6tau",
+    "content": " ",
+    "url": "/docs/sc_dm6tau/",
+    "relUrl": "/docs/sc_dm6tau/"
+  },"124": {
+    "doc": "archive_spark",
+    "title": "archive_spark",
+    "content": " ",
+    "url": "/docs/archive_spark/",
+    "relUrl": "/docs/archive_spark/"
+  },"125": {
     "doc": "archive_ssc",
     "title": "archive_ssc",
     "content": " ",
     "url": "/docs/archive_ssc/",
     "relUrl": "/docs/archive_ssc/"
+  },"126": {
+    "doc": "archive_sc_tbr1",
+    "title": "archive_sc_tbr1",
+    "content": " ",
+    "url": "/docs/archive_sc_tbr1/",
+    "relUrl": "/docs/archive_sc_tbr1/"
+  },"127": {
+    "doc": "scitools",
+    "title": "scitools",
+    "content": " ",
+    "url": "/docs/scitools/",
+    "relUrl": "/docs/scitools/"
   }
 }
