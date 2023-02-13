@@ -9,7 +9,7 @@ nav_order: 2
 Install major base installs (C libs, etc.) individually with sudo on ajani, liliana, nissa, and teferi.
 ```sh
 # general stuff, most for specific other software downstream
-sudo apt-get install emacs autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev gfortran tcl-dev libssl-dev libbz2-dev liblzma-dev libncurses5-dev libhdf5-dev xorg-dev git build-essential libreadline-dev libxml2-dev libgsl-dev libtiff-dev libharfbuzz-dev libfribidi-dev libopenblas-dev libcairo2-dev
+sudo apt-get install emacs autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev gfortran tcl-dev libssl-dev libbz2-dev liblzma-dev libncurses5-dev libhdf5-dev xorg-dev git build-essential libreadline-dev libxml2-dev libgsl-dev libtiff-dev libharfbuzz-dev libfribidi-dev libopenblas-dev libcairo2-dev openjdk-19-jre-headless
 
 # set python as python3 symlink
 sudo apt install python-is-python3

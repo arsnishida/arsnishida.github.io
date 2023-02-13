@@ -535,13 +535,13 @@
   },"89": {
     "doc": "22-12-05, Global Installs - Initial",
     "title": "22-12-05, Global Installs - Initial",
-    "content": "Install major base installs (C libs, etc.) individually with sudo on ajani, liliana, nissa, and teferi. # general stuff, most for specific other software downstream sudo apt-get install emacs autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev gfortran tcl-dev libssl-dev libbz2-dev liblzma-dev libncurses5-dev libhdf5-dev xorg-dev git build-essential libreadline-dev libxml2-dev libgsl-dev libtiff-dev libharfbuzz-dev libfribidi-dev libopenblas-dev libcairo2-dev # set python as python3 symlink sudo apt install python-is-python3 # update sudo apt-get update . Install Modules. curl -LJO https://github.com/cea-hpc/modules/releases/download/v5.2.0/modules-5.2.0.tar.gz tar xfz modules-5.2.0.tar.gz mkdir modules-5.2.0-install cd modules-5.2.0/ ./configure --prefix=/home/groups/ravnica/src/Modules/modules-5.2.0-install --modulefilesdir=/home/groups/ravnica/modulefiles . Setup Modules individually on ajani, liliana, nissa, and teferi. This lets each of them find Modules. sudo ln -s /home/groups/ravnica/src/Modules/modules-5.2.0-install/init/profile.sh /etc/profile.d/modules.sh sudo ln -s /home/groups/ravnica/src/Modules/modules-5.2.0-install/init/profile.csh /etc/profile.d/modules.csh . Setup cron on teferi only. This seems already go to go on Ubuntu relative to centOS. # use sudo to add users to /etc/cron.allow: root, nishidaa, adey # but everybody seems allowed natively? . Setup SLURM on teferi only. # install sudo apt install slurmd slurmctld # manually setup the configuration file in /etc/slurm/slurm.conf # start slurm sudo systemctl start slurmctld sudo systemctl start slurmd sudo scontrol update nodename=localhost state=idle # edit the configuration and restart as needed (lacking db for sacct currently and using placeholder names and variables) . And then setup the global profile configurations changing aliases and colors. A few things were removed due to differences between the older CentOS and newer Ubuntu environments and versions. sudo cp /home/groups/ravnica/users/nishida/old_centos_files/bashrc /etc/ sudo cp /home/groups/ravnica/users/nishida/old_centos_files/profile.d/* /etc/profile.d sudo cp /home/groups/ravnica/users/nishida/old_centos_files/DIR_COLORS* /etc/ sudo cp /home/groups/ravnica/users/nishida/old_centos_files/grepconf.sh /usr/libexec/ rm /etc/profile.d/abrt-console-notification.sh rm /etc/profile.d/which2.csh rm /etc/profile.d/which2.sh . ",
+    "content": "Install major base installs (C libs, etc.) individually with sudo on ajani, liliana, nissa, and teferi. # general stuff, most for specific other software downstream sudo apt-get install emacs autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev gfortran tcl-dev libssl-dev libbz2-dev liblzma-dev libncurses5-dev libhdf5-dev xorg-dev git build-essential libreadline-dev libxml2-dev libgsl-dev libtiff-dev libharfbuzz-dev libfribidi-dev libopenblas-dev libcairo2-dev openjdk-19-jre-headless # set python as python3 symlink sudo apt install python-is-python3 # update sudo apt-get update . Install Modules. curl -LJO https://github.com/cea-hpc/modules/releases/download/v5.2.0/modules-5.2.0.tar.gz tar xfz modules-5.2.0.tar.gz mkdir modules-5.2.0-install cd modules-5.2.0/ ./configure --prefix=/home/groups/ravnica/src/Modules/modules-5.2.0-install --modulefilesdir=/home/groups/ravnica/modulefiles . Setup Modules individually on ajani, liliana, nissa, and teferi. This lets each of them find Modules. sudo ln -s /home/groups/ravnica/src/Modules/modules-5.2.0-install/init/profile.sh /etc/profile.d/modules.sh sudo ln -s /home/groups/ravnica/src/Modules/modules-5.2.0-install/init/profile.csh /etc/profile.d/modules.csh . Setup cron on teferi only. This seems already go to go on Ubuntu relative to centOS. # use sudo to add users to /etc/cron.allow: root, nishidaa, adey # but everybody seems allowed natively? . Setup SLURM on teferi only. # install sudo apt install slurmd slurmctld # manually setup the configuration file in /etc/slurm/slurm.conf # start slurm sudo systemctl start slurmctld sudo systemctl start slurmd sudo scontrol update nodename=localhost state=idle # edit the configuration and restart as needed (lacking db for sacct currently and using placeholder names and variables) . And then setup the global profile configurations changing aliases and colors. A few things were removed due to differences between the older CentOS and newer Ubuntu environments and versions. sudo cp /home/groups/ravnica/users/nishida/old_centos_files/bashrc /etc/ sudo cp /home/groups/ravnica/users/nishida/old_centos_files/profile.d/* /etc/profile.d sudo cp /home/groups/ravnica/users/nishida/old_centos_files/DIR_COLORS* /etc/ sudo cp /home/groups/ravnica/users/nishida/old_centos_files/grepconf.sh /usr/libexec/ rm /etc/profile.d/abrt-console-notification.sh rm /etc/profile.d/which2.csh rm /etc/profile.d/which2.sh . ",
     "url": "/docs/ravnica/2022-12-05-ravnica-global_install_initial.html",
     "relUrl": "/docs/ravnica/2022-12-05-ravnica-global_install_initial.html"
   },"90": {
     "doc": "22-12-05, Local Installs - Initial",
     "title": "22-12-05, Local Installs - Initial",
-    "content": "Install cmake . tar xfz cmake-3.24.3.tar.gz cd cmake-3.24.3/ ./bootstrap --prefix=/home/groups/ravnica/src/cmake/cmake-3.24.3 make make install . Install boost . tar xfz boost_1_80_0.tar.gz cd boost_1_80_0 ./bootstrap.sh --prefix=/home/groups/ravnica/src/boost/boost_1_80_0 ./b2 install . Install bedtools . wget https://github.com/arq5x/bedtools2/releases/download/v2.29.1/bedtools-2.29.1.tar.gz tar -zxvf bedtools-2.29.1.tar.gz mv bedtools2/ bedtools2.29.1 cd bedtools2.29.1/ make . Install bedops . bzip2 -dk bedops_linux_x86_64-v2.4.41.tar.bz2 tar xf bedops_linux_x86_64-v2.4.41.tar rm bedops_linux_x86_64-v2.4.41.tar mkdir 2.4.41 mv bin 2.4.41 . Install samtools . bzip2 -dk samtools-1.16.1.tar.bz2 tar xf samtools-1.16.1.tar rm samtools-1.16.1.tar cd samtools-1.16.1 ./configure --prefix=/home/groups/ravnica/src/samtools/samtools-1.16.1 make make install . Install htslib . bzip2 -dk htslib-1.16.tar.bz2 tar xf htslib-1.16.tar rm htslib-1.16.tar cd htslib-1.16 ./configure --prefix=/home/groups/ravnica/src/htslib/htslib-1.16/ make make install . Install bcftools . bzip2 -dk bcftools-1.16.tar.bz2 tar xf bcftools-1.16.tar rm bcftools-1.16.tar cd bcftools-1.16 ./configure --prefix=/home/groups/ravnica/src/bcftools/bcftools-1.16 make make install . Install install sratoolkit . tar xfz sratoolkit.3.0.0-ubuntu64.tar.gz . Install subread . tar xfz subread-2.0.3-source.tar.gz cd subread-2.0.3-source/src make -f Makefile.Linux . Install STAR . wget https://github.com/alexdobin/STAR/archive/2.7.10b.tar.gz tar -xzf 2.7.10b.tar.gz cd STAR-2.7.10b/source make STAR . Install bwa, pulled nov14 from master branch 139f68f on Sep 22. There’s a bug with gcc versions that the tagged release cannot handle. git clone https://github.com/lh3/bwa.git mv bwa bwa-139f68f-0.7.17 cd bwa-139f68f-0.7.17 make . Install BLAST . tar xvf ncbi-blast-2.13.0+-src.tar.gz cd ncbi-blast-2.13.0+-src/c++ ./configure --prefix=/home/groups/ravnica/src/blast/ncbi-blast-2.13.0+-src make make install . Install kraken2 . tar xvf kraken2-2.1.2.tar.gz module load blast ./install_kraken2.sh /home/groups/ravnica/src/kraken/kraken2-2.1.2 . Install GMP . tar xf gmp-6.1.0.tar make make install . Install MPFR ./configure --prefix=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 --with-gmp-build=/home/groups/ravnica/src/gmp/gmp-6.1.0 make make install . Install MPC . tar xf mpc-1.0.3.tar ./configure --prefix=/home/groups/ravnica/src/mpc/mpc-1.0.3 --with-gmp=/home/groups/ravnica/src/gmp/gmp-6.1.0 --with-mpfr=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 make make install . Install this older version of gcc for bcl2fastq. tar xfz gcc-8.1.0.tar.gz ./configure --prefix=/home/groups/ravnica/src/gcc/gcc-8.1.0 --with-gmp=/home/groups/ravnica/src/gmp/gmp-6.1.0 --with-mpfr=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 --with-mpc=/home/groups/ravnica/src/mpc/mpc-1.0.3 --disable-multilib --disable-libsanitizer make make install . Separetely install older cmake also for bcl2fastq. There’s a minor issue with the order in which the module should be loaded. I think it has to be done after bootstrapping, not before like on my notes. tar xfz cmake-2.8.9.tar.gz cd cmake-2.8.9/ module load gcc/8.1.0 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/home/groups/ravnica/src/gmp/gmp-6.1.0/lib:/home/groups/ravnica/src/mpfr/mpfr-3.1.4/lib:/home/groups/ravnica/src/mpc/mpc-1.0.3/lib:/home/groups/ravnica/src/gcc/gcc-8.1.0/lib64 ./bootstrap make make install . Install bcl2fastq. bcl2fastq will try to install its specific versions of cmake and boost. cmake-2.8.9 needs an older version of gcc so install separately. But let it install its own version of boost. Add an explicit path to C libraries since cmake-2.8.9 is needed but all its C libraries won’t work. tar xfz bcl2fastq2-v2.20.0.422-Source.tar.gz mv bcl2fastq bcl2fastq-v2.20.0.422 module load cmake/2.8.9 export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu ./src/configure --prefix=/home/groups/ravnica/src/bcl2fastq2/bcl2fastq2-v2.20.0.422 make make install . Install older autoconf . curl -O http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz tar zxvf autoconf-2.69.tar.gz cd autoconf-2.69 ./configure &amp;&amp; make &amp;&amp; sudo make install . Install pcre2 . tar xfz pcre2-10.40.tar.gz ./configure --prefix=\"\" make make install . Install Java . tar xfz openjdk-11.0.2_linux-x64_bin.tar.gz # that’s it . Install R, 4.2.2 . tar xfz R-4.2.2.tar.gz cd R-4.2.2/ module load pcre2/10.40 ./configure --prefix=\"/home/groups/ravnica/src/R/R-4.2.2\" --with-cairo --with-libpng --with-libtiff --with-jpeglib make make install . Install R, 4.2.1 . tar xfz R-4.2.1.tar.gz cd R-4.2.1/ module load pcre2/10.40 ./configure --prefix=\"/home/groups/ravnica/src/R/R-4.2.1\" --with-cairo --with-libpng --with-libtiff --with-jpeglib make make install . Install JAGS . tar xfz JAGS-4.3.1.tar.gz cd JAGS-4.3.1 ./configure --prefix=\"/home/groups/ravnica/src/jags/JAGS-4.3.1\" make make install . Install UCSC Genome Browser Kent tools . $ rsync -azvP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./ $ date Mon Dec 5 09:19:31 PM PST 2022 . Install older python . tar xfz Python-3.9.16.tgz cd Python-3.9.16/ ./configure --prefix=/home/groups/ravnica/src/python/Python-3.9.16 make make install . ",
+    "content": "Install cmake . tar xfz cmake-3.24.3.tar.gz cd cmake-3.24.3/ ./bootstrap --prefix=/home/groups/ravnica/src/cmake/cmake-3.24.3 make make install . Install boost . tar xfz boost_1_80_0.tar.gz cd boost_1_80_0 ./bootstrap.sh --prefix=/home/groups/ravnica/src/boost/boost_1_80_0 ./b2 install . Install bedtools . wget https://github.com/arq5x/bedtools2/releases/download/v2.29.1/bedtools-2.29.1.tar.gz tar -zxvf bedtools-2.29.1.tar.gz mv bedtools2/ bedtools2.29.1 cd bedtools2.29.1/ make . Install bedops . bzip2 -dk bedops_linux_x86_64-v2.4.41.tar.bz2 tar xf bedops_linux_x86_64-v2.4.41.tar rm bedops_linux_x86_64-v2.4.41.tar mkdir 2.4.41 mv bin 2.4.41 . Install samtools . bzip2 -dk samtools-1.16.1.tar.bz2 tar xf samtools-1.16.1.tar rm samtools-1.16.1.tar cd samtools-1.16.1 ./configure --prefix=/home/groups/ravnica/src/samtools/samtools-1.16.1 make make install . Install htslib . bzip2 -dk htslib-1.16.tar.bz2 tar xf htslib-1.16.tar rm htslib-1.16.tar cd htslib-1.16 ./configure --prefix=/home/groups/ravnica/src/htslib/htslib-1.16/ make make install . Install bcftools . bzip2 -dk bcftools-1.16.tar.bz2 tar xf bcftools-1.16.tar rm bcftools-1.16.tar cd bcftools-1.16 ./configure --prefix=/home/groups/ravnica/src/bcftools/bcftools-1.16 make make install . Install install sratoolkit . tar xfz sratoolkit.3.0.0-ubuntu64.tar.gz . Install subread . tar xfz subread-2.0.3-source.tar.gz cd subread-2.0.3-source/src make -f Makefile.Linux . Install STAR . wget https://github.com/alexdobin/STAR/archive/2.7.10b.tar.gz tar -xzf 2.7.10b.tar.gz cd STAR-2.7.10b/source make STAR . Install bwa, pulled nov14 from master branch 139f68f on Sep 22. There’s a bug with gcc versions that the tagged release cannot handle. git clone https://github.com/lh3/bwa.git mv bwa bwa-139f68f-0.7.17 cd bwa-139f68f-0.7.17 make . Install BLAST . tar xvf ncbi-blast-2.13.0+-src.tar.gz cd ncbi-blast-2.13.0+-src/c++ ./configure --prefix=/home/groups/ravnica/src/blast/ncbi-blast-2.13.0+-src make make install . Install kraken2 . tar xvf kraken2-2.1.2.tar.gz module load blast ./install_kraken2.sh /home/groups/ravnica/src/kraken/kraken2-2.1.2 . Install GMP . tar xf gmp-6.1.0.tar make make install . Install MPFR ./configure --prefix=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 --with-gmp-build=/home/groups/ravnica/src/gmp/gmp-6.1.0 make make install . Install MPC . tar xf mpc-1.0.3.tar ./configure --prefix=/home/groups/ravnica/src/mpc/mpc-1.0.3 --with-gmp=/home/groups/ravnica/src/gmp/gmp-6.1.0 --with-mpfr=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 make make install . Install this older version of gcc for bcl2fastq. tar xfz gcc-8.1.0.tar.gz ./configure --prefix=/home/groups/ravnica/src/gcc/gcc-8.1.0 --with-gmp=/home/groups/ravnica/src/gmp/gmp-6.1.0 --with-mpfr=/home/groups/ravnica/src/mpfr/mpfr-3.1.4 --with-mpc=/home/groups/ravnica/src/mpc/mpc-1.0.3 --disable-multilib --disable-libsanitizer make make install . Separetely install older cmake also for bcl2fastq. There’s a minor issue with the order in which the module should be loaded. I think it has to be done after bootstrapping, not before like on my notes. tar xfz cmake-2.8.9.tar.gz cd cmake-2.8.9/ module load gcc/8.1.0 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/home/groups/ravnica/src/gmp/gmp-6.1.0/lib:/home/groups/ravnica/src/mpfr/mpfr-3.1.4/lib:/home/groups/ravnica/src/mpc/mpc-1.0.3/lib:/home/groups/ravnica/src/gcc/gcc-8.1.0/lib64 ./bootstrap make make install . Install bcl2fastq. bcl2fastq will try to install its specific versions of cmake and boost. cmake-2.8.9 needs an older version of gcc so install separately. But let it install its own version of boost. Add an explicit path to C libraries since cmake-2.8.9 is needed but all its C libraries won’t work. tar xfz bcl2fastq2-v2.20.0.422-Source.tar.gz mv bcl2fastq bcl2fastq-v2.20.0.422 module load cmake/2.8.9 export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu ./src/configure --prefix=/home/groups/ravnica/src/bcl2fastq2/bcl2fastq2-v2.20.0.422 make make install . Install older autoconf . curl -O http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz tar zxvf autoconf-2.69.tar.gz cd autoconf-2.69 ./configure &amp;&amp; make &amp;&amp; sudo make install . Install pcre2 . tar xfz pcre2-10.40.tar.gz ./configure --prefix=\"\" make make install . Install Java . tar xfz openjdk-11.0.2_linux-x64_bin.tar.gz # that’s it . Install R, 4.2.2 . tar xfz R-4.2.2.tar.gz cd R-4.2.2/ module load pcre2/10.40 ./configure --prefix=\"/home/groups/ravnica/src/R/R-4.2.2\" --with-cairo --with-libpng --with-libtiff --with-jpeglib make make install . Install R, 4.2.1 . tar xfz R-4.2.1.tar.gz cd R-4.2.1/ module load pcre2/10.40 ./configure --prefix=\"/home/groups/ravnica/src/R/R-4.2.1\" --with-cairo --with-libpng --with-libtiff --with-jpeglib make make install . Install JAGS . tar xfz JAGS-4.3.1.tar.gz cd JAGS-4.3.1 ./configure --prefix=\"/home/groups/ravnica/src/jags/JAGS-4.3.1\" make make install . Install UCSC Genome Browser Kent tools . $ rsync -azvP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./ $ date Mon Dec 5 09:19:31 PM PST 2022 . Install older python . tar xfz Python-3.9.16.tgz cd Python-3.9.16/ ./configure --prefix=/home/groups/ravnica/src/python/Python-3.9.16 make make install . Install FastQC . unzip fastqc_v0.11.9.zip mv FastQC FastQC-0.11.9 . ",
     "url": "/docs/ravnica/2022-12-05-ravnica-local_install_initial.html",
     "relUrl": "/docs/ravnica/2022-12-05-ravnica-local_install_initial.html"
   },"91": {
@@ -581,95 +581,95 @@
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-epiconfig.html"
   },"97": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "Table of contents",
-    "content": ". | Data Locations | Seurat Pre-Processing | Seurat Multimodality | InferCNV | XOXO | . ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#table-of-contents",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#table-of-contents"
-  },"98": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "Data Locations",
-    "content": "Single-cell KLF sequence data was processed by Ryan Mulqueen as described at this link here. For reference, the names of the core experiment and sequence runs are: . /home/groups/CEDAR/mulqueen/sequencing_data/EXP211227HM/211229_A01058_0202_AHT33MDRXY /home/groups/CEDAR/mulqueen/sequencing_data/EXP211228HM/211229_A01058_0201_BHT55FDRXY . The main directory for his analysis is /home/groups/CEDAR/mulqueen/projects/multiome/220111_multi. Cellranger-arc was run against the references in /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0. Annotations within R were from EnsDb.Hsapiens.v86. ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#data-locations",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#data-locations"
-  },"99": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "Seurat Pre-Processing",
-    "content": "A Seurat object was created for each of the four groups creating the initial RNA and ATAC assays and then merged together: “YW_si_Control_plus_E2”, “YW_si_Control_plus_Veh”, “YW_si_KLF4_plus_E2”, and “YW_si_KLF4_plus_Veh”. The resulting merged object is saved as yw_merged.SeuratObject.rds and the following QC and filtering was performed below thresholding for cells with between 500 to 25000 RNA counts and 500 to 100000 ATAC counts, nucleosome signal less than 2, and TSS enrichment greater than 1: . # before table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7357 6435 7727 # YW_si_KLF4_plus_Veh # 6785 # filter out low quality cells dat &lt;- subset( x = dat, subset = nCount_ATAC &lt; 100000 &amp; nCount_RNA &lt; 25000 &amp; nCount_ATAC &gt; 500 &amp; nCount_RNA &gt; 500 &amp; nucleosome_signal &lt; 2 &amp; TSS.enrichment &gt; 1 ) # after table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7030 6023 7552 # YW_si_KLF4_plus_Veh # 6350 . ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-pre-processing",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-pre-processing"
-  },"100": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "Seurat Multimodality",
-    "content": "New peaks are called within Seurat with macs2 in a new assay called ‘peaks’ (a default call with no extra parameters). RNA undergoes sctransform normalization and turned into a UMAP with PCA reduction. Peaks are filtered with FindTopFeatures with a minimum cutoff of 5 occurences, transformed via TFIDF and decomposed using SVD creating the LSI matrix and discarding the first dimension. The pca and lsi reductions are used to find multi-modal neighbors in Seurat creating its weighted nearest neighbors for the multimodal UMAP. Clusters are called at 0.8 resolution on the WNN UMAP. Multimodal UMAP Comparisons Merged QC Info by Condition . ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-multimodality",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#seurat-multimodality"
-  },"101": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "InferCNV",
-    "content": "InfernCNV is used to call CNVs using a gene list re-ordered by chr and start positions. The call is made multiple times due to hanging: . #run infercnv infercnv_obj = CreateInfercnvObject(raw_counts_matrix=\"YW_inferCNV.counts.txt\", annotations_file=\"YW_inferCNV.annotation.txt\", delim=\"\\t\", gene_order_file=\"YW_inferCNV.gene_order.txt\", ref_group_names=NULL) saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") #read in where inferCNV keeps hanging (step 14) infercnv_obj&lt;-readRDS(\"YW_inferCNV.Rds\") infercnv_obj = infercnv::run(infercnv_obj, cutoff=0.1, # cutoff=1 works well for Smart-seq2, and cutoff=0.1 works well for 10x Genomics out_dir=\"./YW_inferCNV\", denoise=TRUE, HMM=FALSE, num_threads=10, cluster_references=FALSE, resume_mode=FALSE ) #other options (removed for now) #k_obs_groups=2, #cluster_by_groups=FALSE, #HMM_type=\"i6\", #output_format=\"pdf\") saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") . At this point, the results from inferCNV are saved back into yw_merged.SeuratObject.rds and split by cell-type into yw_mcf7.SeuratObject.rds and yw_t47d.SeuratObject.rds. Additionally, a control-only subset is created (presumably for Travis). InferCNV Heatmap InferCNV Celltype UMAP InferCNV Celltype UMAP, control only . ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#infercnv",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#infercnv"
-  },"102": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "XOXO",
-    "content": " ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#xoxo",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html#xoxo"
-  },"103": {
-    "doc": "22-12-13, KLF4 BC Initial Processing",
-    "title": "22-12-13, KLF4 BC Initial Processing",
-    "content": " ",
-    "url": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html",
-    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_breastmultiome-epiconfig_filterset.html"
-  },"104": {
     "doc": "22-12-12, Project Info",
     "title": "Ryan’s OneDrive:",
     "content": "hyperlink to OneDrive . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-onedrive"
-  },"105": {
+  },"98": {
     "doc": "22-12-12, Project Info",
     "title": "Ryan’s Directory:",
     "content": "/home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/ . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-directory",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#ryans-directory"
-  },"106": {
+  },"99": {
     "doc": "22-12-12, Project Info",
     "title": "ARSN’s Directory:",
     "content": "/home/groups/CEDAR/nishida/SC_BREASTMULTIOME . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#arsns-directory"
-  },"107": {
+  },"100": {
     "doc": "22-12-12, Project Info",
     "title": "Input:",
     "content": "There are three main input files from Ryan. Original/Full - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.SeuratObject.rds Filtered Subset - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/phase2.QC.filt.SeuratObject.rds Epithelial Subset (from Filtered Subset currently) - /home/groups/CEDAR/mulqueen/projects/multiome/220715_multiome_phase2/epithelial.SeuratObject.rds . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#input"
-  },"108": {
+  },"101": {
     "doc": "22-12-12, Project Info",
     "title": "Output:",
     "content": "There are four data groups that were analyzed with Epiconfig. all - epiconfig run on the full dataset epithelial - epiconfig run on the original epithelial calls (the original R object is replaced by the new version, this version is obsolete) phase2_filt_sub - epiconfig run on the filtered dataset phase2_epithelial - epiconfig run on the filtered dataset’s epithelial subset . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#output"
-  },"109": {
+  },"102": {
     "doc": "22-12-12, Project Info",
     "title": "Refs:",
     "content": "GTF - /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0 . ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#refs"
-  },"110": {
+  },"103": {
     "doc": "22-12-12, Project Info",
     "title": "Scripts:",
     "content": "Text files with commands for data processing are labeled like, ‘run.1_preprocessing.txt’, starting with the prefix, ‘run’. 1 - Preprocessing and preparation of the matrices for Epiconfig. 2 - Running Epiconfig. 3 - Generating the elbow plot for model selection. 4 - Plotting preliminary UMAP and heatmaps. ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html#scripts"
-  },"111": {
+  },"104": {
     "doc": "22-12-12, Project Info",
     "title": "22-12-12, Project Info",
     "content": " ",
     "url": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html",
     "relUrl": "/docs/sc_breastmultiome/2022-12-12-sc_breastmultiome-project_info.html"
+  },"105": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Table of contents",
+    "content": ". | Data Locations | Seurat Pre-Processing | Seurat Multimodality | InferCNV | XOXO | . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#table-of-contents",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#table-of-contents"
+  },"106": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Data Locations",
+    "content": "Single-cell KLF sequence data was processed by Ryan Mulqueen as described at this link here. For reference, the names of the core experiment and sequence runs are: . /home/groups/CEDAR/mulqueen/sequencing_data/EXP211227HM/211229_A01058_0202_AHT33MDRXY /home/groups/CEDAR/mulqueen/sequencing_data/EXP211228HM/211229_A01058_0201_BHT55FDRXY . The main directory for his analysis is /home/groups/CEDAR/mulqueen/projects/multiome/220111_multi. Cellranger-arc was run against the references in /home/groups/CEDAR/mulqueen/ref/refdata-cellranger-arc-GRCh38-2020-A-2.0.0. Annotations within R were from EnsDb.Hsapiens.v86. ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#data-locations",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#data-locations"
+  },"107": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Seurat Pre-Processing",
+    "content": "A Seurat object was created for each of the four groups creating the initial RNA and ATAC assays and then merged together: “YW_si_Control_plus_E2”, “YW_si_Control_plus_Veh”, “YW_si_KLF4_plus_E2”, and “YW_si_KLF4_plus_Veh”. The resulting merged object is saved as yw_merged.SeuratObject.rds and the following QC and filtering was performed below thresholding for cells with between 500 to 25000 RNA counts and 500 to 100000 ATAC counts, nucleosome signal less than 2, and TSS enrichment greater than 1: . # before table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7357 6435 7727 # YW_si_KLF4_plus_Veh # 6785 # filter out low quality cells dat &lt;- subset( x = dat, subset = nCount_ATAC &lt; 100000 &amp; nCount_RNA &lt; 25000 &amp; nCount_ATAC &gt; 500 &amp; nCount_RNA &gt; 500 &amp; nucleosome_signal &lt; 2 &amp; TSS.enrichment &gt; 1 ) # after table(dat$sample) # YW_si_Control_plus_E2 YW_si_Control_plus_Veh YW_si_KLF4_plus_E2 # 7030 6023 7552 # YW_si_KLF4_plus_Veh # 6350 . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#seurat-pre-processing",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#seurat-pre-processing"
+  },"108": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "Seurat Multimodality",
+    "content": "New peaks are called within Seurat with macs2 in a new assay called ‘peaks’ (a default call with no extra parameters). RNA undergoes sctransform normalization and turned into a UMAP with PCA reduction. Peaks are filtered with FindTopFeatures with a minimum cutoff of 5 occurences, transformed via TFIDF and decomposed using SVD creating the LSI matrix and discarding the first dimension. The pca and lsi reductions are used to find multi-modal neighbors in Seurat creating its weighted nearest neighbors for the multimodal UMAP. Clusters are called at 0.8 resolution on the WNN UMAP. Multimodal UMAP Comparisons Merged QC Info by Condition . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#seurat-multimodality",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#seurat-multimodality"
+  },"109": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "InferCNV",
+    "content": "InfernCNV is used to call CNVs using a gene list re-ordered by chr and start positions. The call is made multiple times due to hanging: . #run infercnv infercnv_obj = CreateInfercnvObject(raw_counts_matrix=\"YW_inferCNV.counts.txt\", annotations_file=\"YW_inferCNV.annotation.txt\", delim=\"\\t\", gene_order_file=\"YW_inferCNV.gene_order.txt\", ref_group_names=NULL) saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") #read in where inferCNV keeps hanging (step 14) infercnv_obj&lt;-readRDS(\"YW_inferCNV.Rds\") infercnv_obj = infercnv::run(infercnv_obj, cutoff=0.1, # cutoff=1 works well for Smart-seq2, and cutoff=0.1 works well for 10x Genomics out_dir=\"./YW_inferCNV\", denoise=TRUE, HMM=FALSE, num_threads=10, cluster_references=FALSE, resume_mode=FALSE ) #other options (removed for now) #k_obs_groups=2, #cluster_by_groups=FALSE, #HMM_type=\"i6\", #output_format=\"pdf\") saveRDS(infercnv_obj,file=\"YW_inferCNV.Rds\") . At this point, the results from inferCNV are saved back into yw_merged.SeuratObject.rds and split by cell-type into yw_mcf7.SeuratObject.rds and yw_t47d.SeuratObject.rds. Additionally, a control-only subset is created (presumably for Travis). InferCNV Heatmap InferCNV Celltype UMAP InferCNV Celltype UMAP, control only . ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#infercnv",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#infercnv"
+  },"110": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "XOXO",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#xoxo",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html#xoxo"
+  },"111": {
+    "doc": "22-12-13, KLF4 BC Initial Processing",
+    "title": "22-12-13, KLF4 BC Initial Processing",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html",
+    "relUrl": "/docs/sc_klf4bc/2022-12-12-sc_klf4bc-intial_processing.html"
   },"112": {
     "doc": "23-01-12, Epiconfig Run on Downampled Epithelial",
     "title": "23-01-12, Epiconfig Run on Downampled Epithelial",
@@ -701,70 +701,232 @@
     "url": "/docs/sc_breastmultiome/2023-02-03-sc_breastmultiome-epiconfig-callednormalCNV.html",
     "relUrl": "/docs/sc_breastmultiome/2023-02-03-sc_breastmultiome-epiconfig-callednormalCNV.html"
   },"117": {
-    "doc": "sc_klf4bc",
-    "title": "sc_klf4bc",
-    "content": " ",
-    "url": "/docs/sc_klf4bc/",
-    "relUrl": "/docs/sc_klf4bc/"
+    "doc": "23-02-07, Feature Sets",
+    "title": "Table of contents",
+    "content": ". | 0. What is Feature Sets? | 1. Set Environment . | 1a. Software Modules | 1b. Libraries | 1c. Populate Working Directory | . | 2. Populate Data, References, and Scripts . | 2a. Populate Data | 2b. Populate References | . | 3. Create Feature Lists . | 3a. Features from All | 3b. Features from Vocab | 3c. Features from Topics | . | 4. Distance Analysis . | 4a. Hybrid Matrix | 4b. Distance Distributions, Global TSS | 4c. Distance Distributions, Within Topic TSS | . | 5. Gene Info . | 5a. Prep Gene Info | . | 6. Correlations . | 6a. Pearson / Spearman | 6b. CCAN’s | . | 7. Enrichment - Subset | 8. Enrichment - Similar Set | 9. Enrichment - Superset | . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#table-of-contents",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#table-of-contents"
   },"118": {
-    "doc": "archive_amplicon",
-    "title": "archive_amplicon",
-    "content": " ",
-    "url": "/docs/archive_amplicon/",
-    "relUrl": "/docs/archive_amplicon/"
+    "doc": "23-02-07, Feature Sets",
+    "title": "0. What is Feature Sets?",
+    "content": "Identification of chromatin features in a dataset can easily generate 100K-1M features. To understand the biological relevancy of features and for practical purposes, features will almost always be treated into subset groups. Generally in the single-cell context, subsets of the full feature list attempt to represent variablity within cells and describing features within and between a collection of feature sets is meant to capture biological differences in data. Internally, the only available information of a feature is the region itself usually represented in a BED format of chromosome, start, and stop. Biologically relevancy of the features must be derived from the overlap of these features to outside references. ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#0-what-is-feature-sets",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#0-what-is-feature-sets"
   },"119": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "1. Set Environment",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1-set-environment",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1-set-environment"
+  },"120": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "1a. Software Modules",
+    "content": "Any versions should be work. PLACEHOLDER - add more downstream software. # software modules module load bedops/2.4.41 module load R/4.2.2 . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1a-software-modules",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1a-software-modules"
+  },"121": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "1b. Libraries",
+    "content": "PLACEHOLDER - print a list and move to exacloud. export R_LIBS_USER='/home/groups/ravnica/env/R_library_backups/R-4.2.2_copy' . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1b-libraries",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1b-libraries"
+  },"122": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "1c. Populate Working Directory",
+    "content": "cd /home/groups/ravnica/users/nishida/temp_features mkdir figures; mkdir matrices; mkdir refs; mkdir scripts; mkdir tmp cd matrices/ mkdir 1_distance; mkdir 2_geneinfo; mkdir 3_correlations; mkdir 4_enrichment_subset; mkdir 5_enrichment_set; mkdir 6_enrichment_superset cd .. ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1c-populate-working-directory",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#1c-populate-working-directory"
+  },"123": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "2. Populate Data, References, and Scripts",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2-populate-data-references-and-scripts",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2-populate-data-references-and-scripts"
+  },"124": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "2a. Populate Data",
+    "content": "Data includes the full R object of the complete Seurat multiomics dataset split and fed into Epiconfig, the vocab matrix, and the LDA model with desired number of topics. cp /home/groups/CEDAR/nishida/epiconfig/MCF7_KLF4_wTopics_SO.rds . cp /home/groups/CEDAR/nishida/epiconfig/klf4/CLRNorm_100kb_2000Feats_TFIDFvar75_Model/vocab_matrix.rds . cp /home/groups/CEDAR/nishida/epiconfig/MCF7/CLRNorm_100kb_2000Feats_TFIDFvar75_Model/default_lda_out/lda_65topics.rds . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2a-populate-data",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2a-populate-data"
+  },"125": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "2b. Populate References",
+    "content": "These will always be genome and data dependent. In the future we will start curating these in a centralized location but for now pull them from whenever. Here I am copying across drives on purpose (exacloud to ravnica) but normally these should be symbolic links ln -s. cd refs/ ################# # Genome Specific ################# # GTF, this is an old HAVANA/ENSEMBL GTF default packaged with cellranger missing annotations (like 5' and 3' UTR) cp /home/groups/CEDAR/anno/CellRanger/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf.gz . # GTF, more recent GTF with more discrete annotation cp /home/groups/CEDAR/nishida/refs/hg38/hg38_ucsc/hg38.ensGene.gtf . # ENSEMBL TSS cp /home/groups/CEDAR/nishida/refs/hg38/hg38_ensembl_tss/ensembl.hg38.tss.chr.bed . # DHS Index cp /home/groups/CEDAR/nishida/refs/hg38/hg38_DHS_index/DHS_Index_and_Vocabulary_hg38_WM20190703.bed . # Motifs cp /home/groups/CEDAR/nishida/refs/fimo_scans/cat_hg38.bed . ################################# # Cell-Type/Tissue/Data Specific: ################################# # active enhancer mark, H3K27ac cp /home/groups/CEDAR/nishida/SC_KLF4BC/refs/H3K27Ac_intersect_all3.bed . # superenhancers cp /home/groups/CEDAR/nishida/SC_KLF4BC/refs/Homer_SE_MCF7_sg_NT_1.bed . # CCANs cp /home/groups/CEDAR/nishida/SC_KLF4BC/refs/MCF7.CCANs.txt . # relevant cistrome data # here I'm pulling out relevant cistrome subsets by the \"Tissue_type\" column matching \"Breast\" # and then collapsing into new names by \"Factor\", \"Cell_line\", and \"Cell_type\" columns # change these based on your desired subset and query # I'm removing spaces and backslashes but other annotations might need more character changes mkdir cistrome cat /home/groups/CEDAR/mulqueen/ref/cistrome/human_factor_full_QC.txt | cut -f 1,4-7 | awk '$5 == \"Breast\"' | cut -f 1-4 | sed -e 's/\\t/_/2g' | sed -e 's/\\//-/g' | sed -e 's/ //g' &gt; cistrome/cistrome_subset.txt while IFS= read -r line do a=$(echo \"$line\" | cut -f 1) b=$(echo \"$line\" | cut -f 2) cp /home/groups/CEDAR/mulqueen/ref/cistrome/human_factor/${a}_sort_peaks.narrowPeak.bed cistrome/${a}_${b}.bed done &lt; cistrome/cistrome_subset.txt cd .. ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2b-populate-references",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#2b-populate-references"
+  },"126": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "3. Create Feature Lists",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3-create-feature-lists",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3-create-feature-lists"
+  },"127": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "3a. Features from All",
+    "content": "Pass the input path and output prefix. Seurat object assay names may not be standardized, adjust accordingly. Rscript scripts/pull_features.all.Rscript MCF7_KLF4_wTopics_SO.rds features.all . Content of scripts/pull_features.vocab.Rscript: . # !/usr/bin/R library(Signac) args &lt;- commandArgs(trailingOnly = T) input_path &lt;- args[1] output_prefix &lt;- args[2] input_model &lt;- readRDS(input_path) rna &lt;- rownames(input_model@assays$RNA) atac &lt;- rownames(input_model@assays$ATAC) write.table(rna,paste(output_prefix,\".rna.txt\",sep=\"\"),sep=\"\\t\",quote=F,row.names=F,col.names=F) write.table(atac,paste(output_prefix,\".atac.txt\",sep=\"\"),sep=\"\\t\",quote=F,row.names=F,col.names=F) . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3a-features-from-all",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3a-features-from-all"
+  },"128": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "3b. Features from Vocab",
+    "content": "Pass the vocab matrix input path and the output prefix. Rscript scripts/pull_features.vocab.Rscript vocab_matrix.rds features.vocab . Content of scripts/pull_features.vocab.Rscript: . # !/usr/bin/R library(Matrix) args &lt;- commandArgs(trailingOnly = T) input_path &lt;- args[1] output_prefix &lt;- args[2] input_model &lt;- readRDS(input_path) features &lt;- row.names(input_model) # split features atac_features &lt;- features[which(grepl(\"^chr\",features))] hybrid_features &lt;- features[which(grepl(\"_ON$\",features))] rna_features &lt;- features[! features %in% c(atac_features,hybrid_features)] # check feature counts sum_features &lt;- length(atac_features) + length(hybrid_features) + length(rna_features) if (sum_features != length(features)) { print(\"Feature splitting by feature names does not add to the total number of features. Check feature names.\") quit() } write.table(atac_features,paste(output_prefix,\".atac.txt\",sep=\"\"),row.names=F,col.names=F,quote=F,sep=\"\\t\") write.table(rna_features,paste(output_prefix,\".rna.txt\",sep=\"\"),row.names=F,col.names=F,quote=F,sep=\"\\t\") write.table(hybrid_features,paste(output_prefix,\".hybrid.txt\",sep=\"\"),row.names=F,col.names=F,quote=F,sep=\"\\t\") . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3b-features-from-vocab",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3b-features-from-vocab"
+  },"129": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "3c. Features from Topics",
+    "content": "For every lambda in the range of 0 to 1 in increments of 0.05, pull top words/features. Pass the lda model, lambda, max words, and output path. Number of max words here is 2000 but adjust accordingly to length of full vocab. array=(0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00) for lambda in \"${array[@]}\" do mkdir topwords_${lambda} Rscript scripts/lambda_top_words.Rscript lda_65topics.rds ${lambda} 2000 topwords_${lambda} done . Content of scripts/lambda_top_words.Rscript: . # !/usr/bin/R args &lt;- commandArgs(trailingOnly = T) input_path &lt;- args[1] lambda &lt;- args[2] maxwords &lt;- args[3] output_path &lt;- args[4] selected_model &lt;- readRDS(input_path) num_topics &lt;- nrow(selected_model$topic_word_distribution) # print topwords per topic for (i in 1:num_topics) { top_words_ldavis &lt;- selected_model$get_top_words(n = length(selected_model$.__enclos_env__$private$vocabulary), #61299, topic_number = as.numeric(i), # 1L:selected_model$.__enclos_env__$private$n_topics, lambda = as.numeric(lambda))[1:maxwords] filename &lt;- paste(output_path, \"/topic_\",i,\".txt\",sep=\"\") write.table(top_words_ldavis,filename,sep=\"\\t\",quote=F,row.names=F,col.names=F) } . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3c-features-from-topics",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#3c-features-from-topics"
+  },"130": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "4. Distance Analysis",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4-distance-analysis",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4-distance-analysis"
+  },"131": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "4a. Hybrid Matrix",
+    "content": "Hybrid words are based on distance. Due to their lower number, just count them up per topic/lambda. Makes a matrix, matrix.hybwords.txt, with columns 1. number topics, 2. lambda, 3. number of hybrid words. # variables OUT_PATH=\"/home/groups/ravnica/users/nishida/temp_features/matrices/1_distance\" VOCAB_PATH=\"features.vocab.hybrid.txt\" # create the header echo -e \"TOPIC\\tLAMBDA\\tCOUNT\" &gt; $OUT_PATH/matrix.hybwords.txt # number of hybrid words matrix array=(0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00) for n_topic in $(seq 1 65) do for lambda in \"${array[@]}\" do numhyb=$(cat topwords_${lambda}/topic_${n_topic}.txt | grep \"ON$\" | wc -l) echo -e \"${n_topic}\\t${lambda}\\t$numhyb\" done done &gt;&gt; $OUT_PATH/matrix.hybwords.txt # add the vocab total at the end numhyb=$(cat $VOCAB_PATH | wc -l) echo -e \"VOCAB_TOTAL\\tVOCAB_TOTAL\\t$numhyb\" &gt;&gt; $OUT_PATH/matrix.hybwords.txt . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4a-hybrid-matrix",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4a-hybrid-matrix"
+  },"132": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "4b. Distance Distributions, Global TSS",
+    "content": "Calculates a matrix with the distribution of distances per topic with every lambda. The global distances can be calculated on the full set of features and subset from that. Point TMP to wherever and clean up at your leisure. Output is a matrix for global, vocab, and each topic with distances and counts per lambda. # output path OUT_PATH=\"/home/groups/ravnica/users/nishida/temp_features/matrices/1_distance\" TMP=\"tmp/\" # calculate all distances # reformat to bed, sort bed, find distances relative to TSS, save relevant columns cat features.all.atac.txt | tr '-' '\\t' | sort-bed - | closest-features --closest --delim \"\\t\" --dist - refs/ensembl.hg38.tss.chr.bed | cut -f 1,2,3,7,8,9 &gt; features.all.atac.sorted_distances.txt # calculate vocab distance by overlap to all features cat features.vocab.atac.txt | tr '-' '\\t' | sort-bed - | bedops -e features.all.atac.sorted_distances.txt - &gt; features.vocab.atac.sorted_distances.txt # summarize all feature distances into count distributions INPUT=\"features.all.atac.sorted_distances.txt\" OUTPUT=\"matrix.distance_all.txt\" # header echo -e \"DISTANCE\\tCOUNT_ALL\" &gt; $OUT_PATH/$OUTPUT # grab distances, sort numerically, collapse to counts, reformat white space, swap columns, reformat to tabs cat $INPUT | cut -f 6 | sort -n | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $2,$1}' | tr ' ' '\\t' &gt;&gt; $OUT_PATH/$OUTPUT # summarize all vocab distances into count distributions INPUT=\"features.vocab.atac.sorted_distances.txt\" OUTPUT=\"matrix.distance_vocab.txt\" # header echo -e \"DISTANCE\\tCOUNT_VOCAB\" &gt; $OUT_PATH/$OUTPUT # grab distances, sort numerically, collapse to counts, reformat white space, swap columns, reformat to tabs cat $INPUT | cut -f 6 | sort -n | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $2,$1}' | tr ' ' '\\t' &gt;&gt; $OUT_PATH/$OUTPUT # prep topic matrixes seeding with vocab since topics are a subset of vocab, save to TMP cat $OUT_PATH/$OUTPUT | cut -f 1,2 | sed 1d &gt; ${TMP}/tmp.vocabdist.txt # get padded distance counts per topic and lambda, save to TMP REF=\"features.vocab.atac.sorted_distances.txt\" array=(0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00) for n_topic in $(seq 1 65) do for lambda in \"${array[@]}\" do # get atac features, format to bed, sort, compare overlap, save distance, sort, count, clean whitespace, swap columns, reformat, pad with 0's via key, reformat, save relevant column cat topwords_${lambda}/topic_${n_topic}.txt | grep \"^chr\" | tr '-' '\\t' | sort-bed - | bedops -e $REF - | cut -f 6 | sort -n | uniq -c | sed -e 's/^[ ]*//g' | awk '{print $2,$1}' | tr ' ' '\\t' | awk 'NR == FNR { key[$1] = $2; next } { $2 = ($1 in key) ? key[$1] : 0 }; 1' - ${TMP}/tmp.vocabdist.txt | tr ' ' '\\t' | cut -f 2 &gt; ${TMP}/${n_topic}_${lambda}.txt # if the file is completely empty (no ATAC features) pad it entirely with 0's if [ ! -s ${TMP}/${n_topic}_${lambda}.txt ]; then cat ${TMP}/tmp.vocabdist.txt | awk '{print 0}' &gt; ${TMP}/${n_topic}_${lambda}.txt fi done done # PLACEHOLDER - turn this into a better loop rather than explicity calling each lambda for num in $(seq 1 65) do # header echo -e \"DISTANCE\\tCOUNT_VOCAB\\tCOUNT_L0.05\\tCOUNT_L0.10\\tCOUNT_L0.15\\tCOUNT_L0.20\\tCOUNT_L0.25\\tCOUNT_L0.30\\tCOUNT_L0.35\\tCOUNT_L0.40\\tCOUNT_L0.45\\tCOUNT_L0.50\\tCOUNT_L0.55\\tCOUNT_L0.60\\tCOUNT_L0.65\\tCOUNT_L0.70\\tCOUNT_L0.75\\tCOUNT_L0.80\\tCOUNT_L0.85\\tCOUNT_L0.90\\tCOUNT_L0.95\\tCOUNT_L1.00\" &gt; $OUT_PATH/matrix.distance.topic_${num}.txt paste ${TMP}/tmp.vocabdist.txt ${TMP}/${num}_0.05.txt ${TMP}/${num}_0.10.txt ${TMP}/${num}_0.15.txt ${TMP}/${num}_0.20.txt ${TMP}/${num}_0.25.txt ${TMP}/${num}_0.30.txt ${TMP}/${num}_0.35.txt ${TMP}/${num}_0.40.txt ${TMP}/${num}_0.45.txt ${TMP}/${num}_0.50.txt ${TMP}/${num}_0.55.txt ${TMP}/${num}_0.60.txt ${TMP}/${num}_0.65.txt ${TMP}/${num}_0.70.txt ${TMP}/${num}_0.75.txt ${TMP}/${num}_0.80.txt ${TMP}/${num}_0.85.txt ${TMP}/${num}_0.90.txt ${TMP}/${num}_0.95.txt ${TMP}/${num}_1.00.txt &gt;&gt; $OUT_PATH/matrix.distance.topic_${num}.txt done . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4b-distance-distributions-global-tss",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4b-distance-distributions-global-tss"
+  },"133": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "4c. Distance Distributions, Within Topic TSS",
+    "content": "Calculates a matrix with the distrubution of distances within the realm of a topic. Here I am using the original GTF from Cell Ranger to specifically match names. In the future, we should probably switch to accession ID’s. This GTF is a combination of ENSEMBL and HAVANA, is a bit older, and lacks some discrete categories (like splitting 5’ and 3’ UTR annotations). The output is a bit wide for my liking but with max words of 2000 it isn’t obscene. Columns are 1. Topic, 2. Lambda, 3. Number of ATAC features, 4. Number of RNA features, 5. Number of RNA features found, 6. Number of ATAC features with no match (not on the chromosome) and 7. comma separated distances. OUT_PATH=\"/home/groups/ravnica/users/nishida/temp_features/matrices/1_distance\" REF=\"refs/genes.gtf.gz\" TMP=\"tmp/\" # pull out a reference of start codons and common gene names zcat $REF | awk '$3 == \"start_codon\"' | cut -f 1,4,5 &gt; ${TMP}/tmp.gtf.coords.bed zcat $REF | awk '$3 == \"start_codon\"' | cut -f 9 | sed -e 's/.*gene_name \\\"//g' | sed -e 's/\\\".*//g' &gt; ${TMP}/tmp.gtf.gnames.bed # strangely some of the 'start_codons' here are not 3bp, pad these with by one base to the stop paste ${TMP}/tmp.gtf.coords.bed ${TMP}/tmp.gtf.gnames.bed | awk '{if ($2 == $3) {printf (\"%s\\t%s\\t%s\\t%s\\n\",$1,$2,$3+1,$4)} else {print}}' | sort-bed - &gt; ${TMP}/tmp.gtf_starts.sorted.bed echo \"TOPIC\\tLAMBDA\\tNUM_ATAC\\tNUM_RNA\\tNUM_RNA_FOUND\\tNUM_ATAC_NA\\tDISTANCE_STRING\" &gt; ${OUT_PATH}/matrix.distance.within.txt array=(0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00) for n_topic in $(seq 1 65) do for lambda in \"${array[@]}\" do # per topic and per lambda, write a list of comma-separated sorted distances cat topwords_${lambda}/topic_${n_topic}.txt | grep -v \"_ON$\" | grep \"^chr\" &gt; tmp/tmp.atac.txt cat topwords_${lambda}/topic_${n_topic}.txt | grep -v \"_ON$\" | grep -v \"^chr\" &gt; tmp/tmp.rna.txt # subset rna bed while IFS= read -r line do cat tmp/tmp.gtf_starts.sorted.bed | awk -v name=\"$line\" '$4 == name' done &lt; tmp/tmp.rna.txt | sort-bed - &gt; tmp/tmp.rna.gtf_starts.sorted.bed # calculate values num_atac=$(cat tmp/tmp.atac.txt | wc -l) num_rna=$(cat tmp/tmp.rna.txt | wc -l) num_rna_found=$(cat tmp/tmp.rna.gtf_starts.sorted.bed | cut -f 4 | sort | uniq | wc -l) num_atac_na=$(cat tmp/tmp.atac.txt | tr '-' '\\t' | sort-bed - | closest-features --dist --closest --no-query --delim '\\t' - tmp/tmp.rna.gtf_starts.sorted.bed | cut -f 5 | grep -c \"NA\") dist_str=$(cat tmp/tmp.atac.txt | tr '-' '\\t' | sort-bed - | closest-features --dist --closest --no-query --delim '\\t' - tmp/tmp.rna.gtf_starts.sorted.bed | cut -f 4 | grep -v \"NA\" | tr '\\n' ',' | sed 's/.$//') echo -e \"$n_topic\\t$lambda\\t$num_atac\\t$num_rna\\t$num_rna_found\\t$num_atac_na\\t$dist_str\" &gt;&gt; ${OUT_PATH}/matrix.distance.within.txt done done . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4c-distance-distributions-within-topic-tss",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#4c-distance-distributions-within-topic-tss"
+  },"134": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "5. Gene Info",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#5-gene-info",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#5-gene-info"
+  },"135": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "5a. Prep Gene Info",
+    "content": "Here I’m using a GTF which is more recent and has more annotations (UTR is broken into 5’ and 3’). #what did ryan ryan do? #GTF2 - hg38.ensGene.gtf . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#5a-prep-gene-info",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#5a-prep-gene-info"
+  },"136": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "6. Correlations",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6-correlations",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6-correlations"
+  },"137": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "6a. Pearson / Spearman",
+    "content": ". ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6a-pearson--spearman",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6a-pearson--spearman"
+  },"138": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "6b. CCAN’s",
+    "content": "# CCAN - MCF7.CCANs.txt . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6b-ccans",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#6b-ccans"
+  },"139": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "7. Enrichment - Subset",
+    "content": "# FIMO - cat_hg38.bed # hypergeo cd /home/groups/oroaklab/adey_lab/projects/maga/00_DataFreeze_Cortex_and_Hippocampus/Regions/cortex/cortex.filt.temp40_topic.Rds.topics # tally backgrounds cat *.bed | sort-bed - &gt; all.bed cat all.bed | bedops -e 1 /home/groups/oroaklab/nishida/fimo_scans/cat_hg38.bed - &gt; background.bed cat background.bed | cut -f 5,6 | tr '\\t' '_' | sort | uniq -c | sed -e 's/^[ ]*//g' | tr ' ' '\\t' | awk '{print $2,$1}' | tr ' ' '\\t' &gt; background_counts.txt # tally topics and compare to bg with hypergeo array=(Topic_10 Topic_11 Topic_12 Topic_13 Topic_14 Topic_15 Topic_16 Topic_17 Topic_18 Topic_19 Topic_1 Topic_20 Topic_21 Topic_22 Topic_23 Topic_24 Topic_25 Topic_26 Topic_27 Topic_28 Topic_29 Topic_2 Topic_30 Topic_31 Topic_32 Topic_33 Topic_34 Topic_35 Topic_36 Topic_37 Topic_38 Topic_39 Topic_3 Topic_40 Topic_4 Topic_5 Topic_6 Topic_7 Topic_8 Topic_9) for i in \"${array[@]}\" do cat $i.bed | sort-bed - | bedops -e 1 /home/groups/oroaklab/nishida/fimo_scans/cat_hg38.bed - &gt; $i.motifs.bed cat $i.motifs.bed | cut -f 5,6 | tr '\\t' '_' | sort | uniq -c | sed -e 's/^[ ]*//g' | tr ' ' '\\t' | awk '{print $2,$1}' | tr ' ' '\\t' &gt; $i.motifcounts.txt Rscript /home/groups/oroaklab/nishida/scripts/sc/motifs_hypergeo.Rscript $i.motifcounts.txt background_counts.txt $i.hypergeo.txt done . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#7-enrichment---subset",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#7-enrichment---subset"
+  },"140": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "8. Enrichment - Similar Set",
+    "content": "#DHSi - DHS_Index_and_Vocabulary_hg38_WM20190703.bed #CISTROMES - /cistrome/etc . ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#8-enrichment---similar-set",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#8-enrichment---similar-set"
+  },"141": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "9. Enrichment - Superset",
+    "content": "#SUPERENH - Homer_SE_MCF7_sg_NT_1.bed # SE computed by Aaron in MCF7 WT cells. #ACTIVEENHMARK - H3K27Ac_intersect_all3.bed # This BED is the \"active enhancers\" mark in WT_E2 treated MCF7. ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#9-enrichment---superset",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html#9-enrichment---superset"
+  },"142": {
+    "doc": "23-02-07, Feature Sets",
+    "title": "23-02-07, Feature Sets",
+    "content": " ",
+    "url": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html",
+    "relUrl": "/docs/sc_klf4bc/2023-02-07-sc_klf4bc-feature_sets.html"
+  },"143": {
+    "doc": "23-02-13, CancerSEA Plots w/ Epiconfig Clustesr",
+    "title": "23-02-13, CancerSEA Plots w/ Epiconfig Clustesr",
+    "content": "Dir: /home/groups/CEDAR/nishida/SC_BREASTMULTIOME . CancerSEA values across 14 categories were added to the data by Ryan. Violin plots were made against the three current Epiconfig models (full epithelial, downsampled epithelial, subset epithelial to Normal and LumA). These provide different clusters and subset by which the data is divided for potentially different distributions of CancerSEA values. In addition to the Epiconfig clusters, Travis’ categories created by InfernCNV were also used for grouping. The magnitidues in differences across CancerSEA values is slight though observable. Lingering questions I have are what do negative values represent, what is an exepected magnitude of differences for which we should be looking, and are the values scaled similarly across the 14 categories? From eyeballing the figures, I pulled out some of them showing the most pronounced differences. Broadly, ‘normal’ epithelial cells have higher values for expected categories relative to ‘non-normal’ cells in expected categories like epithelial-mesenchymal transition, quiescence, and stemness. After subsetting, intermediary clusters emerge and have higher scores in differentiation, cell cycle, and DNA repair. The following folders have additional figures with the prefix ‘pass4’: Epithelial Only - Concatenate Downsampled Epithelial - Concatenate Normal and LumA Only - Concatenate, Full RNA Features . Link to Relevant Presentations: 230213.epiconfig_sc_bcmultiome.cancersea . ",
+    "url": "/docs/sc_breastmultiome/2023-02-13-sc_breastmultiome-epiconfig-cancersea-clusters.html",
+    "relUrl": "/docs/sc_breastmultiome/2023-02-13-sc_breastmultiome-epiconfig-cancersea-clusters.html"
+  },"144": {
     "doc": "Home",
     "title": "Home",
     "content": "HELLO! Search works well! ^^^ . ",
     "url": "/",
     "relUrl": "/"
-  },"120": {
-    "doc": "archive_misc",
-    "title": "archive_misc",
+  },"145": {
+    "doc": "sc_klf4bc",
+    "title": "sc_klf4bc",
     "content": " ",
-    "url": "/docs/archive_misc/",
-    "relUrl": "/docs/archive_misc/"
-  },"121": {
-    "doc": "ravnica",
-    "title": "ravnica",
-    "content": " ",
-    "url": "/docs/ravnica/",
-    "relUrl": "/docs/ravnica/"
-  },"122": {
-    "doc": "sc_breastmultiome",
-    "title": "sc_breastmultiome",
-    "content": " ",
-    "url": "/docs/sc_breastmultiome/",
-    "relUrl": "/docs/sc_breastmultiome/"
-  },"123": {
+    "url": "/docs/sc_klf4bc/",
+    "relUrl": "/docs/sc_klf4bc/"
+  },"146": {
     "doc": "sc_dm6tau",
     "title": "sc_dm6tau",
     "content": " ",
     "url": "/docs/sc_dm6tau/",
     "relUrl": "/docs/sc_dm6tau/"
-  },"124": {
+  },"147": {
+    "doc": "archive_misc",
+    "title": "archive_misc",
+    "content": " ",
+    "url": "/docs/archive_misc/",
+    "relUrl": "/docs/archive_misc/"
+  },"148": {
+    "doc": "sc_breastmultiome",
+    "title": "sc_breastmultiome",
+    "content": " ",
+    "url": "/docs/sc_breastmultiome/",
+    "relUrl": "/docs/sc_breastmultiome/"
+  },"149": {
+    "doc": "archive_amplicon",
+    "title": "archive_amplicon",
+    "content": " ",
+    "url": "/docs/archive_amplicon/",
+    "relUrl": "/docs/archive_amplicon/"
+  },"150": {
     "doc": "archive_spark",
     "title": "archive_spark",
     "content": " ",
     "url": "/docs/archive_spark/",
     "relUrl": "/docs/archive_spark/"
-  },"125": {
-    "doc": "archive_ssc",
-    "title": "archive_ssc",
+  },"151": {
+    "doc": "ravnica",
+    "title": "ravnica",
     "content": " ",
-    "url": "/docs/archive_ssc/",
-    "relUrl": "/docs/archive_ssc/"
-  },"126": {
+    "url": "/docs/ravnica/",
+    "relUrl": "/docs/ravnica/"
+  },"152": {
     "doc": "archive_sc_tbr1",
     "title": "archive_sc_tbr1",
     "content": " ",
     "url": "/docs/archive_sc_tbr1/",
     "relUrl": "/docs/archive_sc_tbr1/"
-  },"127": {
+  },"153": {
     "doc": "scitools",
     "title": "scitools",
     "content": " ",
     "url": "/docs/scitools/",
     "relUrl": "/docs/scitools/"
+  },"154": {
+    "doc": "archive_ssc",
+    "title": "archive_ssc",
+    "content": " ",
+    "url": "/docs/archive_ssc/",
+    "relUrl": "/docs/archive_ssc/"
   }
 }

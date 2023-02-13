@@ -236,3 +236,9 @@ cd Python-3.9.16/
 make
 make install
 ```
+
+Install FastQC
+```
+unzip fastqc_v0.11.9.zip
+mv FastQC FastQC-0.11.9
+```
