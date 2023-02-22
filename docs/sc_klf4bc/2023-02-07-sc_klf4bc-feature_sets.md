@@ -13,7 +13,9 @@ nav_order: 2
 {:toc}
 
 # 0. What is Feature Sets?
-Identification of chromatin features in a dataset can easily generate 100K-1M features. To understand the biological relevancy of features and for practical purposes, features will almost always be treated into subset groups. Generally in the single-cell context, subsets of the full feature list attempt to represent variablity within cells and describing features within and between a collection of feature sets is meant to capture biological differences in data. Internally, the only available information of a feature is the region itself usually represented in a BED format of chromosome, start, and stop. Biologically relevancy of the features must be derived from the overlap of these features to outside references.
+Identification of chromatin features in a dataset can easily generate 100K-1M features. To understand the biological relevancy of features and for practical purposes, features will almost always be treated into subset groups. Generally in the single-cell context, subsets of the full feature list attempt to represent variablity within cells and describing features within and between a collection of feature sets is meant to capture biological differences in data. Internally, the only available information of a feature is the region itself usually represented in a BED format of chromosome, start, and stop. Biologically relevancy of the features must be derived from the overlap of these features to outside references. Additionally, in the context of creating subsets of features via topic modeling, biological enrichment must be evaluated relative to the full set of features and other topics. Topic modeling is further complicated by the choice of lamba and number of features to look at per topic. An additional step with Epiconfig is the incorporation of multiomic data and the relationships of this data with topics can further be probed.
+
+This is an example of parsing the topics from the multiomic MCF7 KLF data. Reference files will always need to be gathered, curated, and processed differently for different data sets. Where possible, the global feature list is used leveraging the fact that any other feature set (features within the vocab object or features per topic) will be a subset of the global feature list. Specifically, a global feature list is used, subset to a set of variable features used as the full vocab list for Epiconfig, and then features are attributed to topics using different lambdas.
 
 # 1. Set Environment
 
@@ -332,7 +334,6 @@ done
 ## 5a. Prep Gene Info
 Here I'm using a GTF which is more recent and has more annotations (UTR is broken into 5' and 3').
 ```sh
-#what did ryan ryan do?
 #GTF2 - hg38.ensGene.gtf
 ```
 
@@ -394,4 +395,10 @@ done
 #ACTIVEENHMARK - H3K27Ac_intersect_all3.bed # This BED is the "active enhancers" mark in WT_E2 treated MCF7.
 ```
 
+---
 
+10. Feature Pathway Enrichment
+
+```sh
+# placeholder of full GO enrichment with size/shape, multiple topics, etc.
+```
